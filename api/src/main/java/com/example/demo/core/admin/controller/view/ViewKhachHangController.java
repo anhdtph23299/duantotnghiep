@@ -1,4 +1,4 @@
-package com.example.demo.core.user.controller.view;
+package com.example.demo.core.admin.controller.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +10,6 @@ public class ViewKhachHangController {
 
     @GetMapping("")
     public String index(){
-        return "admin/khachhang/index";
+        return "admin/khachhang/viewkhachhang";
     }
 }

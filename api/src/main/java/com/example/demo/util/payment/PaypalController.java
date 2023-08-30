@@ -1,4 +1,4 @@
-package com.example.demo.core.user.controller.view;
+package com.example.demo.util.payment;
 
 import com.example.demo.util.payment.Order;
 import com.example.demo.util.payment.PaypalService;
@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.paypal.api.payments.Links;
