@@ -1,4 +1,4 @@
-package com.example.demo.core.user.model.request;
+package com.example.demo.core.admin.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

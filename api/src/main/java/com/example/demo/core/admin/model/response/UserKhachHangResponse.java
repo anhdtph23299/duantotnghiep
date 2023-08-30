@@ -1,4 +1,4 @@
-package com.example.demo.core.user.model.response;
+package com.example.demo.core.admin.model.response;
 
 import com.example.demo.entity.KhachHang;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
