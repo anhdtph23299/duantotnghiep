@@ -15,6 +15,6 @@ public interface UserKhachHangRepository extends KhachHangRepository {
 
     @Query(value = "select kh from KhachHang kh")
     Page<UserKhachHangResponse> getDsKhachHang(Pageable pageable);
-    @Query(value = "select kh from KhachHang kh")
+    @Query(value = "select kh from KhachHang kh ")
     List<UserKhachHangResponse> dsKH();
 }
