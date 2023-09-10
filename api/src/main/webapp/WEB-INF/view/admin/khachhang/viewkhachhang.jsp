@@ -10,6 +10,30 @@
           rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            text-align: left;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .tables{
+            margin-top: 10px;
+        }
+        th{
+            position: sticky;
+            top: 0px;
+        }
+
+    </style>
 </head>
 <body>
 <div class="container">
