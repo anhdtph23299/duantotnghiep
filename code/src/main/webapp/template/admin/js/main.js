@@ -1,5 +1,4 @@
-
-//js checkbox table
+//js checkbox
 document.addEventListener("DOMContentLoaded", function () {
     const selectAllCheckbox = document.getElementById("selectAll");
     const checkboxes = document.querySelectorAll('tbody .checkbox');
@@ -51,8 +50,3 @@ $(document).ready(function () {
         $(".filename").text("");
     });
 })
-
-
-
-
-

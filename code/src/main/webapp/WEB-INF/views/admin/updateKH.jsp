@@ -82,7 +82,7 @@
                 <div class="row mt-3">
                     <div class="col">
                         <button class="btn" style="background-color: #A6edab; color: #00852d">Update</button>
-                        <a href="/admin/khachhang" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
+                        <button class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</button>
                     </div>
                 </div>
 

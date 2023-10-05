@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/admin/dashboards")
 public class DashboardController {
 
     @GetMapping
@@ -42,25 +42,4 @@ public class DashboardController {
     public String updateNV(){
         return "admin/updateNV";
     }
-
-    @GetMapping("/profile")
-    public String profile(){
-        return "admin/profile";
-    }
-
-    @GetMapping("/setting_profile")
-    public String setting_profile(){
-        return "admin/setting_profile";
-    }
-
-    @GetMapping("/setting_banner")
-    public String setting_banner(){
-        return "admin/banner";
-    }
-
-    @GetMapping("/hoadon")
-    public String hoadon(){
-        return "admin/hoadon";
-    }
-
 }
