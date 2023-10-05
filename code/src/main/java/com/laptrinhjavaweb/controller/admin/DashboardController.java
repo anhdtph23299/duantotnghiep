@@ -12,4 +12,34 @@ public class DashboardController {
     public String dashboard(){
         return "admin/dashboard";
     }
+
+    @GetMapping("/khachhang")
+    public String khachhang(){
+        return "admin/khachhang";
+    }
+
+    @GetMapping("/createKH")
+    public String createKH(){
+        return "admin/createKH";
+    }
+
+    @GetMapping("/updateKH")
+    public String updateKH(){
+        return "admin/updateKH";
+    }
+
+    @GetMapping("/nhanvien")
+    public String nhanvien(){
+        return "admin/nhanvien";
+    }
+
+    @GetMapping("/addnv")
+    public String addnv(){
+        return "admin/createNV";
+    }
+
+    @GetMapping("/updateNV")
+    public String updateNV(){
+        return "admin/updateNV";
+    }
 }
