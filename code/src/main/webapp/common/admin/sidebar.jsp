@@ -20,11 +20,11 @@
                 <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
             </div>
             <h5 class="name"><span class="font-w400">Hello,</span> Marquez</h5>
-            <p class="email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95f8f4e7e4e0f0efefefefd5f8f4fcf9bbf6faf8">[email&#160;protected]</a></p>
+            <p class="email"><a href="#" class="__cf_email__" data-cfemail="95f8f4e7e4e0f0efefefefd5f8f4fcf9bbf6faf8">[email&#160;protected]</a></p>
         </div>
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
                 <i class="flaticon-144-layout"></i>
                 <span class="nav-text">Dashboard</span>
             </a>
@@ -40,7 +40,7 @@
 
             </li>
             <li class="nav-label">Apps</li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
                 <i class="flaticon-077-menu-1"></i>
                 <span class="nav-text">Apps</span>
             </a>
@@ -66,7 +66,7 @@
                             <li><a href="contact-card.html">Contact Card</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                    <li><a class="has-arrow" href="#" aria-expanded="false">Email</a>
                         <ul aria-expanded="false">
                             <li><a href="email-compose.html">Compose</a></li>
                             <li><a href="email-inbox.html">Inbox</a></li>
@@ -74,7 +74,7 @@
                         </ul>
                     </li>
                     <li><a href="app-calender.html">Calendar</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
+                    <li><a class="has-arrow" href="#" aria-expanded="false">Shop</a>
                         <ul aria-expanded="false">
                             <li><a href="ecom-product-grid.html">Product Grid</a></li>
                             <li><a href="ecom-product-list.html">Product List</a></li>
@@ -88,7 +88,7 @@
                 </ul>
             </li>
 
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
                 <i class="flaticon-061-puzzle"></i>
                 <span class="nav-text">Quản lý người dùng</span>
             </a>
@@ -99,7 +99,12 @@
                 </ul>
             </li>
             <li class="nav-label">components</li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a href="/admin/khuyen-mai" class="ai-icon" aria-expanded="false">
+                <i class="flaticon-381-settings-2"></i>
+                <span class="nav-text">Quản lý khuyến mại</span>
+            </a>
+            </li>
+            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
                 <i class="flaticon-003-diamond"></i>
                 <span class="nav-text">Bootstrap</span>
             </a>
@@ -124,7 +129,7 @@
 
                 </ul>
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
                 <i class="flaticon-053-heart"></i>
                 <span class="nav-text">Plugins</span>
             </a>
@@ -138,12 +143,8 @@
                     <li><a href="uc-lightgallery.html">Light Gallery</a></li>
                 </ul>
             </li>
-            <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-                <i class="flaticon-381-settings-2"></i>
-                <span class="nav-text">Widget</span>
-            </a>
-            </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+
+            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
                 <i class="flaticon-044-file"></i>
                 <span class="nav-text">Forms</span>
             </a>
@@ -155,7 +156,7 @@
                     <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
                 </ul>
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
                 <i class="flaticon-381-network"></i>
                 <span class="nav-text">Table</span>
             </a>
@@ -164,14 +165,14 @@
                     <li><a href="table-datatable-basic.html">Datatable</a></li>
                 </ul>
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
                 <i class="flaticon-049-copy"></i>
                 <span class="nav-text">Pages</span>
             </a>
                 <ul aria-expanded="false">
                     <li><a href="page-register.html">Register</a></li>
                     <li><a href="page-login.html">Login</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
+                    <li><a class="has-arrow" href="#" aria-expanded="false">Error</a>
                         <ul aria-expanded="false">
                             <li><a href="page-error-400.html">Error 400</a></li>
                             <li><a href="page-error-403.html">Error 403</a></li>
