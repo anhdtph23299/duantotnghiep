@@ -35,4 +35,9 @@ public class HomePageController {
     public String contact(){
         return "web/contact";
     }
+
+    @GetMapping("/faqs")
+    public String faqs(){
+        return "web/faqs";
+    }
 }

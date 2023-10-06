@@ -42,4 +42,9 @@ public class DashboardController {
     public String updateNV(){
         return "admin/updateNV";
     }
+
+    @GetMapping("/setting")
+    public String setting(){
+        return "admin/setting";
+    }
 }
