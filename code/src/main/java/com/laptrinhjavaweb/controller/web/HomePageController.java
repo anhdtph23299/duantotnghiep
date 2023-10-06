@@ -40,4 +40,9 @@ public class HomePageController {
     public String gioithieu(){
         return "web/shop_us";
     }
+
+    @GetMapping("/faqs")
+    public String faqs(){
+        return "web/faqs";
+    }
 }
