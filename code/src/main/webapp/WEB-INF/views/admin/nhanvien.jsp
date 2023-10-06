@@ -27,13 +27,15 @@
             <div class="col-xl-12">
                 <div class="card ">
                     <div class=" card-body d-flex mb-3 ">
-                            <div class="p-2">
-                                <a href="/admin/dashboards/addnv" type="button" class="btn" style="background-color: #9df99d;color: #003c00">
-                                   Add
-                                </a>
-                            </div>
                         <div class="p-2">
-                            <button class="btn" style="background-color: #ff4545;color: white" data-bs-toggle="modal" data-bs-target="#kkkk">
+                            <a href="/admin/dashboards/addnv" type="button" class="btn"
+                               style="background-color: #9df99d;color: #003c00">
+                                Add
+                            </a>
+                        </div>
+                        <div class="p-2">
+                            <button class="btn" style="background-color: #ff4545;color: white" data-bs-toggle="modal"
+                                    data-bs-target="#kkkk">
                                 Delete All
                             </button>
                             <div class="modal" id="kkkk" tabindex="-1" aria-labelledby="remove1" aria-hidden="true">
@@ -41,14 +43,17 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h1 class="modal-title  fs-5" id="remove1">Delete All Personnel</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
                                             <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-default" data-bs-dismiss="modal">
+                                                Cancel
+                                            </button>
                                             <button type="button" class="btn btn-danger">Delete</button>
                                         </div>
                                     </div>
@@ -57,30 +62,61 @@
                         </div>
 
                         <div class="p-2">
-                            <button class="btn" style="background-color: orange;color: white" >
+                            <button class="btn" style="background-color: orange;color: white">
                                 Import
                             </button>
                         </div>
 
                         <div class="p-2">
-                            <button class="btn"style="background-color: #EFCACA;color: #BF0000" >
-                                Export
-                            </button>
+                            <div>
+                                <button class="btn" data-bs-toggle="modal" data-bs-target="#addcv"
+                                        style="background-color: #EFCACA;color: #BF0000">
+                                    Export
+                                </button>
+
+                                <div class="modal" id="addcv" tabindex="-1" aria-labelledby="addcv" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="addcv">Export danh sách nhân viên</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <label>Nhập số nhân viên muốn export:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <%--                                            <button type="button" class="btn btn-outline-primary">Export</button>--%>
+                                                <button class="btn" style="background-color: #EFCACA;color: #BF0000">
+                                                    Export
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <%--search--%>
-                    <div class="ms-auto p-2">
-                        <div class="InputContainer ">
-                            <input type="text" name="text" class="input" id="input" placeholder="Search">
+                        <div class="ms-auto p-2">
+                            <div class="InputContainer ">
+                                <input type="text" name="text" class="input" id="input" placeholder="Search">
 
-                            <label for="input" class="labelforsearch">
-                                <svg viewBox="0 0 512 512" class="searchIcon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
-                            </label>
-                            <div class="border"></div>
+                                <label for="input" class="labelforsearch">
+                                    <svg viewBox="0 0 512 512" class="searchIcon">
+                                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                                    </svg>
+                                </label>
+                                <div class="border"></div>
 
-                            <button class="micButton"><svg viewBox="0 0 384 512" class="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"></path></svg>
-                            </button>
+                                <button class="micButton">
+                                    <svg viewBox="0 0 384 512" class="micIcon">
+                                        <path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"></path>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-                    </div>
                     </div>
 
                 </div>
@@ -101,7 +137,8 @@
                                 <span class="" style="color: #eb8153">Senior Developer</span>
                             </div>
                         </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans, and more.</p>
+                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
+                            and more.</p>
 
                     </div>
                     <div class="card-footer d-flex justify-content-between">
@@ -112,7 +149,7 @@
                             </svg>
                         </a>
 
-                        <button class="delete-button"  data-bs-toggle="modal" data-bs-target="#kkk">
+                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
                             <svg class="delete-svgIcon" viewBox="0 0 448 512">
                                 <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                             </svg>
@@ -122,14 +159,16 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
                                         <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
+                                        </button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </div>
                                 </div>
@@ -151,7 +190,8 @@
                                 <span class="" style="color: #eb8153">Junior Developer</span>
                             </div>
                         </div>
-                        <p class="fs-12">Maintain inventory of supplies and order new stock as needed Maintain inventory stock</p>
+                        <p class="fs-12">Maintain inventory of supplies and order new stock as needed Maintain inventory
+                            stock</p>
 
                     </div>
                     <div class="card-footer d-flex justify-content-between">
@@ -162,7 +202,7 @@
                             </svg>
                         </button>
 
-                        <button class="delete-button"  data-bs-toggle="modal" data-bs-target="#kkk">
+                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
                             <svg class="delete-svgIcon" viewBox="0 0 448 512">
                                 <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                             </svg>
@@ -172,14 +212,16 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
                                         <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
+                                        </button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </div>
                                 </div>
@@ -198,10 +240,11 @@
                             </div>
                             <div>
                                 <h5 class="title"><a href="javascript:void(0);">Post Melone</a></h5>
-                                <span class=""  style="color: #eb8153">Senior Designer</span>
+                                <span class="" style="color: #eb8153">Senior Designer</span>
                             </div>
                         </div>
-                        <p class="fs-12">Anticipate guests needs in order to accommodate them and provide an exceptional guest experience</p>
+                        <p class="fs-12">Anticipate guests needs in order to accommodate them and provide an exceptional
+                            guest experience</p>
 
                     </div>
                     <div class="card-footer d-flex justify-content-between">
@@ -212,7 +255,7 @@
                             </svg>
                         </button>
 
-                        <button class="delete-button"  data-bs-toggle="modal" data-bs-target="#kkk">
+                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
                             <svg class="delete-svgIcon" viewBox="0 0 448 512">
                                 <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                             </svg>
@@ -222,14 +265,16 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
                                         <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
+                                        </button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </div>
                                 </div>
@@ -251,7 +296,8 @@
                                 <span class="" style="color: #eb8153">Junior Developer</span>
                             </div>
                         </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans, and more.</p>
+                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
+                            and more.</p>
 
                     </div>
                     <div class="card-footer d-flex justify-content-between">
@@ -262,7 +308,7 @@
                             </svg>
                         </button>
 
-                        <button class="delete-button"  data-bs-toggle="modal" data-bs-target="#kkk">
+                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
                             <svg class="delete-svgIcon" viewBox="0 0 448 512">
                                 <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                             </svg>
@@ -272,14 +318,16 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
                                         <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
+                                        </button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </div>
                                 </div>
@@ -301,7 +349,8 @@
                                 <span class="" style="color: #eb8153">Php Developer</span>
                             </div>
                         </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans, and more.</p>
+                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
+                            and more.</p>
 
                     </div>
                     <div class="card-footer d-flex justify-content-between">
@@ -312,7 +361,7 @@
                             </svg>
                         </button>
 
-                        <button class="delete-button"  data-bs-toggle="modal" data-bs-target="#kkk">
+                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
                             <svg class="delete-svgIcon" viewBox="0 0 448 512">
                                 <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                             </svg>
@@ -322,14 +371,16 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
                                         <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
+                                        </button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </div>
                                 </div>
@@ -348,10 +399,11 @@
                             </div>
                             <div>
                                 <h5 class="title"><a href="javascript:void(0);">Rio Fernandez</a></h5>
-                                <span class=""  style="color: #eb8153">Python Developer</span>
+                                <span class="" style="color: #eb8153">Python Developer</span>
                             </div>
                         </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans, and more.</p>
+                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
+                            and more.</p>
 
                     </div>
                     <div class="card-footer d-flex justify-content-between">
@@ -362,7 +414,7 @@
                             </svg>
                         </button>
 
-                        <button class="delete-button"  data-bs-toggle="modal" data-bs-target="#kkk">
+                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
                             <svg class="delete-svgIcon" viewBox="0 0 448 512">
                                 <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                             </svg>
@@ -372,14 +424,16 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
                                         <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
+                                        </button>
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </div>
                                 </div>
