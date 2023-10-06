@@ -56,108 +56,55 @@
         <div class="col-lg-8 col-md-12 pb-1 ">
                 <div class="tab-pane fade show active" id="tab-pane-1">
                     <h5 class="">Questions and answers about accounts</h5>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs1" aria-expanded="false" aria-controls="faqs1">
-                       <div class="float-left">1. How do I become a member of Shop?</div>
-                    </button>
-                    <div class="collapse" id="faqs1">
-                        <div class="card card-body">
-                            Please click the "Register" button on the top menu bar of the screen (For Desktop) or in the left corner of the screen, select the Menu icon and then select "Register" (For Mobile).
-                        </div>
-                    </div>
                     <hr>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs2" aria-expanded="false" aria-controls="faqs2">
-                        <div class="float-left">2. Why can't I log in to my account?</div>
-                    </button>
-                    <div class="collapse" id="faqs2">
-                        <div class="card card-body">
-                            Please carefully check your typing style or Caps Lock/ CAPS key while filling in member login information. In case you cannot log in successfully, please select the "Forgot password" button right below the box. password and enter registered email.
-                        </div>
-                    </div>
+                    <h6 style="color: #c17a74">1. How do I become a member of Shop?</h6>
+                    <p>Please click the "Register" button on the top menu bar of the screen (For Desktop) or in the left corner of the screen, select the Menu icon and then select "Register" (For Mobile).</p>
                     <hr>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs3" aria-expanded="false" aria-controls="faqs3">
-                        <div class="float-left">3. Can I use the same account with others?</div>
-                    </button>
-                    <div class="collapse" id="faqs3">
-                        <div class="card card-body">
-                            You should use your personal account to ensure reliability as well as your own rights when shopping. Using the same account can lead to errors that are directly affected by the customer.
-                        </div>
-                    </div>
+                    <h6 style="color: #c17a74">2. Why can't I log in to my account?</h6>
+                    <p>Please carefully check your typing style or Caps Lock/ CAPS key while filling in member login information. In case you cannot log in successfully, please select the "Forgot password" button right below the box. password and enter registered email.</p>
                     <hr>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs4" aria-expanded="false" aria-controls="faqs4">
-                        <div class="float-left">4. Why should I register as a Shop member?</div>
-                    </button>
-                    <div class="collapse" id="faqs4">
-                        <div class="card card-body">
-                            Registering an account is an opportunity to help you become one of Dola's loyal customers, with the quickest access to promotions and preferential information when shopping.
-                        </div>
-                    </div>
+                    <h6 style="color: #c17a74">3. Can I use the same account with others?</h6>
+                    <p>You should use your personal account to ensure reliability as well as your own rights when shopping. Using the same account can lead to errors that are directly affected by the customer.</p>
                     <hr>
+                    <h6 style="color: #c17a74">4. Why should I register as a Shop member?</h6>
+                    <p>Registering an account is an opportunity to help you become one of Dola's loyal customers, with the quickest access to promotions and preferential information when shopping.</p>
+                    <hr>
+                    <br>
                     <h5 class="">Q&A about ordering</h5>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs5" aria-expanded="false" aria-controls="faqs5">
-                        <div class="float-left">1. In what ways can I place an order?</div>
-                    </button>
-                    <div class="collapse" id="faqs5">
-                        <div class="card card-body">
-                            You can purchase products at Shop in the following ways:<br>
-                            Order online at the website<br>
-                            Order directly with a consultant via Hotline 1900 2003<br>
-                            Order online on e-commerce platforms<br>
-                            Buy directly at store systems<br>
-                            Shop always encourages you to create an account and order online to enjoy better membership incentives.
-                        </div>
-                    </div>
                     <hr>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs6" aria-expanded="false" aria-controls="faqs6">
-                        <div class="float-left">2. I need purchasing support, how do I contact a consultant?</div>
-                    </button>
-                    <div class="collapse" id="faqs6">
-                        <div class="card card-body">
-                            To contact a consultant, please contact Hotline 1900 2003 from 9:00 - 18:00, Monday - Friday every week.
-                        </div>
-                    </div>
+                    <h6 style="color: #c17a74">1. In what ways can I place an order?</h6>
+                    <p>You can purchase products at Shop in the following ways:<br>
+                        Order online at the website<br>
+                        Order directly with a consultant via Hotline 1900 2003<br>
+                        Order online on e-commerce platforms<br>
+                        Buy directly at store systems<br>
+                        Shop always encourages you to create an account and order online to enjoy better membership incentives.</p>
                     <hr>
-
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs7" aria-expanded="false" aria-controls="faqs7">
-                        <div class="float-left">3. I want to make a complaint/return the goods, what is the process?</div>
-                    </button>
-                    <div class="collapse" id="faqs7">
-                        <div class="card card-body">
-                                Shop is always willing to receive your comments and feedback. Please contact Dola's consultant Hotline 1900 2003 to cancel or change the product in your order.
-                        </div>
-                    </div>
+                    <h6 style="color: #c17a74">2. I need purchasing support, how do I contact a consultant?</h6>
+                    <p>To contact a consultant, please contact Hotline 1900 2003 from 9:00 - 18:00, Monday - Friday every week.</p>
                     <hr>
+                    <h6 style="color: #c17a74">3. I want to make a complaint/return the goods, what is the process?</h6>
+                    <p>Shop is always willing to receive your comments and feedback. Please contact Dola's consultant Hotline 1900 2003 to cancel or change the product in your order.</p>
+                    <hr>
+                    <br>
                     <h5 class="">Q&A about payment</h5>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs8" aria-expanded="false" aria-controls="faqs8">
-                        <div class="float-left">1. In what ways can I pay for my order?</div>
-                    </button>
-                    <div class="collapse" id="faqs8">
-                        <div class="card card-body">
-                            You can pay Shop in the following forms:<br>
-                            1.On-site payment (Ship COD)<br>
-                            2. Advance transfer: Customers can choose to transfer money in advance to the Shop's account:
-                        </div>
-                    </div>
                     <hr>
+                    <h6 style="color: #c17a74">1. In what ways can I pay for my order?</h6>
+                    <p>You can pay Shop in the following forms:<br>
+                        1.On-site payment (Ship COD)<br>
+                        2. Advance transfer: Customers can choose to transfer money in advance to the Shop's account:</p>
+                    <hr>
+                    <br>
                     <h5 class="">Questions and answers about delivery</h5>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs9" aria-expanded="false" aria-controls="faqs9">
-                        <div class="float-left">1. I am not in Ho Chi Minh, does Shop support delivery?</div>
-                    </button>
-                    <div class="collapse" id="faqs9">
-                        <div class="card card-body">
-                            Shop applies nationwide delivery for all order values. Shipping fees and delivery times will vary depending on order value and specific area.
-                        </div>
-                    </div>
                     <hr>
-                    <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faqs10" aria-expanded="false" aria-controls="faqs10">
-                        <div class="float-left">2. Will I receive shipping fees?</div>
-                    </button>
-                    <div class="collapse" id="faqs10">
-                        <div class="card card-body">
-                            Shop supports Free shipping for customers according to area and order value: <br>
-                            Ho Chi Minh City: Free shipping for orders from 500,000 <br>
-                            Nationwide: Free shipping for orders from 1,500,000 <br>
-                            For orders that do not qualify for free shipping, there will be a delivery fee based on the estimate displayed on the website. Delivery fees are calculated based on the weight of the goods, express or regular delivery method and geographical location. Therefore, this cost depends on each specific condition.                        </div>
-                    </div>
+                    <h6 style="color: #c17a74">1. I am not in Ho Chi Minh, does Shop support delivery?</h6>
+                    <p>Shop applies nationwide delivery for all order values. Shipping fees and delivery times will vary depending on order value and specific area.</p>
+                    <hr>
+                    <h6 style="color: #c17a74">2. Will I receive shipping fees?</h6>
+                    <p>Shop supports Free shipping for customers according to area and order value: <br>
+                        Ho Chi Minh City: Free shipping for orders from 500,000 <br>
+                        Nationwide: Free shipping for orders from 1,500,000 <br>
+                        For orders that do not qualify for free shipping, there will be a delivery fee based on the estimate displayed on the website. Delivery fees are calculated based on the weight of the goods, express or regular delivery method and geographical location. Therefore, this cost depends on each specific condition.</p>
                     <hr>
                 </div>
         </div>
