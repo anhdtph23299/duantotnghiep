@@ -3,8 +3,6 @@ package com.laptrinhjavaweb.controller.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.math.BigDecimal;
-
 @Controller
 public class HomePageController {
 
@@ -36,6 +34,11 @@ public class HomePageController {
     @GetMapping("/contact")
     public String contact(){
         return "web/contact";
+    }
+
+    @GetMapping("/shop_us")
+    public String gioithieu(){
+        return "web/shop_us";
     }
 
     @GetMapping("/faqs")
