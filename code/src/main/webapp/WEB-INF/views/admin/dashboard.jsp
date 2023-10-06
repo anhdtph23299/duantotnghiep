@@ -521,7 +521,7 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <img class="mt-1" width="100" height="100"
-                                         src="https://media.istockphoto.com/id/1225070916/vi/vec-to/icon-kh%C3%A1ch-h%C3%A0ng-ng%C6%B0%E1%BB%9Di-%C4%91%C3%A0n-%C3%B4ng-ph%C3%A1c-th%E1%BA%A3o-phong-c%C3%A1ch-thi%E1%BA%BFt-k%E1%BA%BF-h%C3%ACnh-minh-h%E1%BB%8Da-tr%C3%AAn-n%E1%BB%81n-tr%E1%BA%AFng.jpg?s=612x612&w=0&k=20&c=S8So-9324kkFbmVIZIgmV10mRcc4CRh0x-tqfu8FAcg=">
+                                         src="/template/admin/images/customer.png">
 
                                 </div>
                                 <div class="col-sm-9">
@@ -545,7 +545,7 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <img class="mt-1" width="100" height="100"
-                                         src="https://baabrand.com/wp-content/uploads/2018/12/icon-thiet-ke-linh-vuc-logo-thuong-hieu-thoi-trang-my-pham-lam-dep-spa-baa-brand-1.png">
+                                         src="/template/admin/images/product.png">
 
                                 </div>
                                 <div class="col-sm-9">
@@ -569,7 +569,7 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <img class="mt-1" width="100" height="100"
-                                         src="https://congcutot.vn/uploads/store/page/faq/2017/4-giao-hang.jpg">
+                                         src="/template/admin/images/donhang.png">
 
                                 </div>
                                 <div class="col-sm-9">
@@ -593,7 +593,7 @@
                             <div class="row">
                                 <div class="col-sm-3">
                                     <img class="mt-1" width="100" height="100"
-                                         src="https://media.istockphoto.com/id/1026915588/vi/vec-to/k%C3%BD-hi%E1%BB%87u-c%C3%B3-h%E1%BA%A1i-d%E1%BA%A5u-hi%E1%BB%87u-c%E1%BA%A3nh-b%C3%A1o-minh-h%E1%BB%8Da-vector-eps10.jpg?s=612x612&w=0&k=20&c=g0CBSAsJ10xCci0A9TOmTV8dktvcu3ZIMWRClT6cwxw=">
+                                         src="/template/admin/images/hethang.png">
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="card-info">
