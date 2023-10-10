@@ -145,7 +145,7 @@
             </a>
                 <ul aria-expanded="false">
                     <li><a href="/admin/dashboards/profile">Profile</a></li>
-                    <li><a href="#">Change Password</a></li>
+                    <li><a href="/admin/dashboards/setting_banner">Dynamic Interface </a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
