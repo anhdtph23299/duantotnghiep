@@ -8,7 +8,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><dec:title>Dashboard</dec:title></title>
-    <link rel="icon" type="image/png" sizes="50x50" href="<c:url value='/template/admin/images/logoKFC.png'/>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/template/admin/images/favicon.png'/>">
     <link rel="stylesheet" href="<c:url value='/template/admin/vendor/chartist/css/chartist.min.css'/>">
     <link href="<c:url value='/template/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/admin/vendor/owl-carousel/owl.carousel.css'/>" rel="stylesheet">
@@ -57,6 +57,9 @@
     <script src="<c:url value='/template/admin/js/custom.min.js'/>"></script>
     <script src="<c:url value='/template/admin/js/deznav-init.js'/>"></script>
     <script src="<c:url value='/template/admin/js/demo.js'/>"></script>
+    <script src="<c:url value='/template/admin/js/main.js'/>"></script>
     <script src="<c:url value='/template/admin/js/styleSwitcher.js'/>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
