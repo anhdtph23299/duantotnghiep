@@ -43,8 +43,13 @@ public class DashboardController {
         return "admin/updateNV";
     }
 
-    @GetMapping("/setting")
-    public String setting(){
-        return "admin/setting";
+    @GetMapping("/profile")
+    public String profile(){
+        return "admin/profile";
+    }
+
+    @GetMapping("/setting_profile")
+    public String setting_profile(){
+        return "admin/setting_profile";
     }
 }
