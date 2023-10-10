@@ -25,10 +25,10 @@
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="/admin/profile">Profile</a>
+                        <a class="nav-link " aria-current="page" href="/admin/dashboards/profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/setting_profile">Setting</a>
+                        <a class="nav-link active" href="/admin/dashboards/setting_profile">Setting</a>
                     </li>
                 </ul>
             </div>
@@ -38,7 +38,7 @@
                 <div class="col-12 col-sm-4">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center mb-3">
-                            <img src="/template/admin/images/logos.png" width="300px" height="350px" alt="Avatar" />
+                            <img src="/template/admin/images/customer.png" width="300px" height="350px" alt="Avatar" />
                         </div>
 
                         <div class="col-12 d-flex justify-content-center">
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-8" style="border-left: 2px solid #c17a74">
+                <div class="col-12 col-sm-8">
                     <div class="row mb-3">
                         <div class="col-12 col-sm-3 text-start text-sm-end">
                             <label>
