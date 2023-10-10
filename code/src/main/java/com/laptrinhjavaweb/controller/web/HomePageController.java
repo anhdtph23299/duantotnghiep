@@ -36,6 +36,11 @@ public class HomePageController {
         return "web/contact";
     }
 
+    @GetMapping("/shop_us")
+    public String gioithieu(){
+        return "web/shop_us";
+    }
+
     @GetMapping("/faqs")
     public String faqs(){
         return "web/faqs";

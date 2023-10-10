@@ -50,6 +50,7 @@
                             </div>
                         </div>
                         <a href="/contact" class="nav-item nav-link">Contact</a>
+                        <a href="/shop_us" class="nav-item nav-link">Shop Us</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
                         <a href="" class="nav-item nav-link">Login</a>
