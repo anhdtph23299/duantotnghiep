@@ -57,5 +57,4 @@ public class DashboardController {
     public String setting_banner(){
         return "admin/banner";
     }
-
 }
