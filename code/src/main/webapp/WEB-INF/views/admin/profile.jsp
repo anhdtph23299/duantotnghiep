@@ -43,7 +43,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-8">
+                <div class="col-12 col-sm-8" style="border-left: 2px solid #c17a74">
                     <div class="row mb-3">
                         <div class="col-12 col-sm-3 text-start text-sm-end">
                             <label>
