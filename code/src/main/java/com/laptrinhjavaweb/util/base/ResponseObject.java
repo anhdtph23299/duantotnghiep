@@ -1,4 +1,4 @@
-package com.example.demo.core.common.base;
+package com.laptrinhjavaweb.util.base;
 
 import lombok.Getter;
 import lombok.Setter;

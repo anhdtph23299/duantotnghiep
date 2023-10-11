@@ -1,4 +1,4 @@
-package com.example.demo.entity.base;
+package com.laptrinhjavaweb.entity.base;
 
 public enum Status {
     Doing,

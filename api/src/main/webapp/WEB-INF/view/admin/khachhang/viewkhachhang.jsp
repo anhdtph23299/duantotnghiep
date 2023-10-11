@@ -79,7 +79,6 @@
                         `;
                     tbody.append(row);
                 });
-
             },
             error: function(xhr, status, error) {
                 alert('Có lỗi xảy ra: ' + error);
@@ -100,10 +99,10 @@
     }
     $(document).ready(function() {
         loadCustomerTable();
-        // $("#customerTable").DataTable({
-        //     paging: true,      // Bật tính năng phân trang
-        //     searching: true    // Bật tính năng tìm kiếm
-        // });
+        $("#customerTable").DataTable({
+            paging: true,      // Bật tính năng phân trang
+            searching: true    // Bật tính năng tìm kiếm
+        });
         $('#addCustomerButton').click(function() {
             var tenKhachHang = $('#tenKhachHang').val();
 
