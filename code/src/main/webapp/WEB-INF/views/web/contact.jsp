@@ -28,7 +28,15 @@
             <h2 class="section-title px-5"><span class="px-2">Contact For Any Queries</span></h2>
         </div>
         <div class="row px-xl-5">
-            <div class="col-lg-7 mb-5">
+            <div class="col-lg-6 mb-5">
+                <div class="d-flex flex-column mb-3">
+                    <h5 class="font-weight-semi-bold mb-3">King Of Clothes Shop</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>13 Trịnh Văn Bô</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>KOC2003@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>+84 987654321</p>
+                </div>
+                <hr>
+                <h4>CONTACT US</h4>
                 <div class="contact-form">
                     <div id="success"></div>
                     <form name="sentMessage" id="contactForm" novalidate="novalidate">
@@ -60,21 +68,14 @@
                     </form>
                 </div>
             </div>
-            <div class="col-lg-5 mb-5">
+            <div class="col-lg-6 mb-5">
                 <h5 class="font-weight-semi-bold mb-3">Get In Touch</h5>
                 <p>Justo sed diam ut sed amet duo amet lorem amet stet sea ipsum, sed duo amet et. Est elitr dolor elitr erat sit sit. Dolor diam et erat clita ipsum justo sed.</p>
-                <div class="d-flex flex-column mb-3">
-                    <h5 class="font-weight-semi-bold mb-3">Store 1</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
-                </div>
-                <div class="d-flex flex-column">
-                    <h5 class="font-weight-semi-bold mb-3">Store 2</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                    <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
-                </div>
+                <hr>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12525.381622199584!2d105.74598925796502!3d21.03995763828852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345544688c13a3%3A0x598a29eb40c7e5bb!2zVGjGocyAaSBUcmFuZyBWZW51cw!5e0!3m2!1sen!2s!4v1696573970081!5m2!1sen!2s"
+                        style="border:0; width: 100%; height: 500px"  allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
             </div>
         </div>
     </div>

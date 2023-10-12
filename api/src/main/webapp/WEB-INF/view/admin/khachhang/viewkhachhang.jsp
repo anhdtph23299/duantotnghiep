@@ -1,11 +1,14 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
+<%--<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>--%>
+<%--<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>--%>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Khách hàng</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 
     <style>
         table {
@@ -40,51 +43,46 @@
     <button id="addCustomerButton">Thêm</button>
 
 
-    <table class="table" id="customerTable">
+    <table class="table" id="customerTable" border="1">
         <thead>
         <tr>
             <th>ID</th>
             <th>Tên Khách Hàng</th>
             <th></th>
+            <!-- Các cột khác tùy theo cấu trúc của đối tượng KhachHang -->
         </tr>
         </thead>
         <tbody>
         </tbody>
     </table>
 </div>
+
+
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
-<script type="text/javascript">
-    var dataTable ;
-    var currentPageIndex;
-    function reloadDataTable() {
-        currentPageIndex = dataTable.page();
-        dataTable.destroy();
-        loadCustomerTable();
-    }
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script>
     function loadCustomerTable() {
-        $.get('/admin/khachhang/getall').done(function (response) {
-            dataTable = $("#customerTable").DataTable({
-                data: response.data, // Dữ liệu trả về từ server
-                columns: [
-                    { data: "id" },
-                    { data: "tenKhachHang" },
-                    {
-                        data: "id",
-                        title: "Hành động",
-                        render: function (data, type, row) {
-                            return (
-                                `
-                                <button type="button" class="btn btn-outline-primary" onclick="deleteCustomer(\${data})">Delete</button>
-                                                    `
-                            );
-                        },
-                    }
-                ],
-                "order": [[0, "desc"]],
-                page: currentPageIndex
-            });
+        $.ajax({
+            url: '/admin/khachhang/getall',
+            method: 'GET',
+            success: function(req) {
+                var tbody = $('#customerTable tbody');
+                tbody.empty();
+                req.data.forEach(function(customer) {
+                    var row = `
+                            <tr>
+                                <td>\${customer.id}</td>
+                                <td>\${customer.tenKhachHang}</td>
+                                <td><button onclick="deleteCustomer(\${customer.id})">Xoá</button></td>
+                            </tr>
+                        `;
+                    tbody.append(row);
+                });
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+            }
         });
     }
     function deleteCustomer(id) {
@@ -92,7 +90,7 @@
             url: '/admin/khachhang/delete/' + id,
             method: 'DELETE',
             success: function(response) {
-                reloadDataTable();
+                loadCustomerTable();
             },
             error: function(xhr, status, error) {
                 alert('Có lỗi xảy ra: ' + error);
@@ -101,6 +99,10 @@
     }
     $(document).ready(function() {
         loadCustomerTable();
+        $("#customerTable").DataTable({
+            paging: true,      // Bật tính năng phân trang
+            searching: true    // Bật tính năng tìm kiếm
+        });
         $('#addCustomerButton').click(function() {
             var tenKhachHang = $('#tenKhachHang').val();
 
@@ -112,7 +114,9 @@
                     tenKhachHang: tenKhachHang
                 }),
                 success: function(response) {
-                    reloadDataTable();
+                    // alert('Khách hàng đã được thêm thành công.');
+                    // Gọi hàm để load lại dữ liệu trong bảng
+                    loadCustomerTable();
                 },
                 error: function(xhr, status, error) {
                     alert('Có lỗi xảy ra: ' + error);
