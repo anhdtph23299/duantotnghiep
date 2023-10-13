@@ -25,7 +25,7 @@
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/admin/dashboards/setting_banner">Banner</a>
+                        <a class="nav-link active" href="/admin/setting_banner">Banner</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " aria-current="page" href="#">...</a>

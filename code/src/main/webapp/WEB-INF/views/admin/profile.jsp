@@ -25,10 +25,10 @@
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/admin/dashboards/profile">Profile</a>
+                        <a class="nav-link active" aria-current="page" href="/admin/profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/dashboards/setting_profile">Setting</a>
+                        <a class="nav-link" href="/admin/setting_profile">Setting</a>
                     </li>
                 </ul>
             </div>

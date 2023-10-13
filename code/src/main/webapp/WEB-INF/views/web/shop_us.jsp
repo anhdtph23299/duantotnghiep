@@ -6,8 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@include file="/common/taglib.jsp" %>
+<!doctype html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shop Us</title>
 </head>
 <body>
@@ -27,12 +33,13 @@
         <h5 class="text-uppercase my-5" >First of all, King Of Clothes would like to deeply thank customers who have visited our shop and used our services in the past.
         </h5>
     </div>
-    <div class="container">
-        <div class="row px-xl-5">
-            <div class="col-12 pb-1">
-                <img src="/template/web/img/banner1.jpg" width="100%" alt="">
-            </div>
+    <div class="row px-xl-5">
+        <div class="col-12 pb-1">
+            <img src="/template/web/img/banner1.jpg" width="100%" alt="">
         </div>
+    </div>
+    <div class="container">
+
         <div class="row px-xl-5 mt-4">
             <div class="col-lg-6 col-md-12 pb-1 ">
                 <h3>THE ORIGIN </h3>
@@ -143,6 +150,58 @@
                     </div>
                 </div>
             </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5">
+    <div class="text-center mb-4">
+        <h2 class="section-title px-5"><span class="px-2">Our Team</span></h2>
+    </div>
+    <div class="row px-xl-5">
+        <div class="col">
+            <div class="owl-carousel related-carousel">
+                <div class="card product-item border-0">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="<c:url value='/template/web/img/product-1.jpg'/>" alt="">
+                    </div>
+                    <div class="card-footer bg-light border border-left border-right text-center p-0 pt-4 pb-3">
+                        <h5 class="text-truncate mb-3">Nguyễn Thị Khánh Linh</h5>
+                    </div>
+                </div>
+                <div class="card product-item border-0">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="<c:url value='/template/web/img/product-2.jpg'/>" alt="">
+                    </div>
+                    <div class="card-footer bg-light border border-left border-right text-center p-0 pt-4 pb-3">
+                        <h5 class="text-truncate mb-3">Đặng Ngọc Thanh</h5>
+                    </div>
+                </div>
+                <div class="card product-item border-0">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="<c:url value='/template/web/img/product-3.jpg'/>" alt="">
+                    </div>
+                    <div class="card-footer bg-light border border-left border-right text-center p-0 pt-4 pb-3">
+                        <h5 class="text-truncate mb-3">Đinh Tuấn Anh</h5>
+                    </div>
+                </div>
+                <div class="card product-item border-0">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="<c:url value='/template/web/img/product-4.jpg'/>" alt="">
+                    </div>
+                    <div class="card-footer bg-light border border-left border-right text-center p-0 pt-4 pb-3">
+                        <h5 class="text-truncate mb-3">Đỗ Quốc Huy</h5>
+                    </div>
+                </div>
+                <div class="card product-item border-0">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="<c:url value='/template/web/img/product-5.jpg'/>" alt="">
+                    </div>
+                    <div class="card-footer bg-light border border-left border-right text-center p-0 pt-4 pb-3">
+                        <h5 class="text-truncate mb-3">Đinh Anh Tuấn</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
