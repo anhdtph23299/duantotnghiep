@@ -39,7 +39,7 @@
                 <div class="col-12 col-sm-4">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center mb-3">
-                            <img src="/template/admin/images/customer.png" width="300px" height="350px" alt="Avatar" />
+                            <img src="/template/admin/images/logos.png" width="300px" height="350px" alt="Avatar" />
                         </div>
                     </div>
                 </div>
@@ -87,6 +87,19 @@
                             <input class="form-control"  placeholder="Phone number:" disabled/>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Language
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
                 </div>
             </div>
         </div>
