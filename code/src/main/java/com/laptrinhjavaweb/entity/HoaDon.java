@@ -14,7 +14,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
@@ -42,4 +41,5 @@ public class HoaDon extends PrimaryEntity {
     public String getTrangThaiHD() {
         return trangThai==1?"Đang chờ":trangThai==2?"Hoàn thành":"Huỷ";
     }
+
 }
