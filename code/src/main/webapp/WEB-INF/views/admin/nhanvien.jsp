@@ -120,325 +120,274 @@
 
             </div>
 
+            <div class="col-lg-4 col-md-6 col-sm-12" id="cardNhanVien">
 
-            <div class="col-xl-3 col-xxl-4 col-sm-6">
-                <div class="card user-card">
-                    <div class="card-body pb-0">
-                        <div class="d-flex mb-3 align-items-center">
-                            <div class="dz-media mr-3">
-                                <img src="/template/admin/images/users/pic1.jpg" alt="">
-                            </div>
-                            <div>
-                                <h5 class="title"><a href="javascript:void(0);">Thomas Djons</a></h5>
-                                <span class="" style="color: #eb8153">Senior Developer</span>
-                            </div>
-                        </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
-                            and more.</p>
-
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
-
-                        <a class="edit-button" href="/admin/updateNV" style="text-decoration: none">
-                            <svg class="edit-svgIcon" viewBox="0 0 512 512">
-                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
-                            </svg>
-                        </a>
-
-                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
-                            <svg class="delete-svgIcon" viewBox="0 0 448 512">
-                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
-                            </svg>
-                        </button>
-                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
-                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
-                                        </button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
-            <div class="col-xl-3 col-xxl-4 col-sm-6">
-                <div class="card user-card">
-                    <div class="card-body pb-0">
-                        <div class="d-flex mb-3 align-items-center">
-                            <div class="dz-media mr-3 rounded-circle">
-                                <img src="/template/admin/images/users/pic2.jpg" alt="">
-                            </div>
-                            <div>
-                                <h5 class="title"><a href="javascript:void(0);">Oliver Jean</a></h5>
-                                <span class="" style="color: #eb8153">Junior Developer</span>
-                            </div>
-                        </div>
-                        <p class="fs-12">Maintain inventory of supplies and order new stock as needed Maintain inventory
-                            stock</p>
+<%--            <div class="col-xl-3 col-xxl-4 col-sm-6">--%>
+<%--                <div class="card user-card">--%>
+<%--                    <div class="card-body pb-0">--%>
+<%--                        <div class="d-flex mb-3 align-items-center">--%>
+<%--                            <div class="dz-media mr-3 rounded-circle">--%>
+<%--                                <img src="/template/admin/images/users/pic2.jpg" alt="">--%>
+<%--                            </div>--%>
+<%--                            <div>--%>
+<%--                                <h5 class="title"><a href="javascript:void(0);">Oliver Jean</a></h5>--%>
+<%--                                <span class="" style="color: #eb8153">Junior Developer</span>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <p class="fs-12">Maintain inventory of supplies and order new stock as needed Maintain inventory--%>
+<%--                            stock</p>--%>
 
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
+<%--                    </div>--%>
+<%--                    <div class="card-footer d-flex justify-content-between">--%>
 
-                        <button class="edit-button">
-                            <svg class="edit-svgIcon" viewBox="0 0 512 512">
-                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
-                            </svg>
-                        </button>
+<%--                        <button class="edit-button">--%>
+<%--                            <svg class="edit-svgIcon" viewBox="0 0 512 512">--%>
+<%--                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
 
-                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
-                            <svg class="delete-svgIcon" viewBox="0 0 448 512">
-                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
-                            </svg>
-                        </button>
-                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
-                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
-                                        </button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<%--                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">--%>
+<%--                            <svg class="delete-svgIcon" viewBox="0 0 448 512">--%>
+<%--                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
+<%--                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">--%>
+<%--                            <div class="modal-dialog">--%>
+<%--                                <div class="modal-content">--%>
+<%--                                    <div class="modal-header">--%>
+<%--                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>--%>
+<%--                                        <button type="button" class="btn-close" data-bs-dismiss="modal"--%>
+<%--                                                aria-label="Close"></button>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-body">--%>
+<%--                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>--%>
+<%--                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-footer">--%>
+<%--                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel--%>
+<%--                                        </button>--%>
+<%--                                        <button type="button" class="btn btn-danger">Delete</button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-xxl-4 col-sm-6">
-                <div class="card user-card">
-                    <div class="card-body pb-0">
-                        <div class="d-flex mb-3 align-items-center">
-                            <div class="dz-media mr-3">
-                                <span class="icon-placeholder bg-primary text-white">pm</span>
-                            </div>
-                            <div>
-                                <h5 class="title"><a href="javascript:void(0);">Post Melone</a></h5>
-                                <span class="" style="color: #eb8153">Senior Designer</span>
-                            </div>
-                        </div>
-                        <p class="fs-12">Anticipate guests needs in order to accommodate them and provide an exceptional
-                            guest experience</p>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-xl-3 col-xxl-4 col-sm-6">--%>
+<%--                <div class="card user-card">--%>
+<%--                    <div class="card-body pb-0">--%>
+<%--                        <div class="d-flex mb-3 align-items-center">--%>
+<%--                            <div class="dz-media mr-3">--%>
+<%--                                <span class="icon-placeholder bg-primary text-white">pm</span>--%>
+<%--                            </div>--%>
+<%--                            <div>--%>
+<%--                                <h5 class="title"><a href="javascript:void(0);">Post Melone</a></h5>--%>
+<%--                                <span class="" style="color: #eb8153">Senior Designer</span>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <p class="fs-12">Anticipate guests needs in order to accommodate them and provide an exceptional--%>
+<%--                            guest experience</p>--%>
 
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
+<%--                    </div>--%>
+<%--                    <div class="card-footer d-flex justify-content-between">--%>
 
-                        <button class="edit-button">
-                            <svg class="edit-svgIcon" viewBox="0 0 512 512">
-                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
-                            </svg>
-                        </button>
+<%--                        <button class="edit-button">--%>
+<%--                            <svg class="edit-svgIcon" viewBox="0 0 512 512">--%>
+<%--                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
 
-                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
-                            <svg class="delete-svgIcon" viewBox="0 0 448 512">
-                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
-                            </svg>
-                        </button>
-                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
-                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
-                                        </button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<%--                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">--%>
+<%--                            <svg class="delete-svgIcon" viewBox="0 0 448 512">--%>
+<%--                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
+<%--                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">--%>
+<%--                            <div class="modal-dialog">--%>
+<%--                                <div class="modal-content">--%>
+<%--                                    <div class="modal-header">--%>
+<%--                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>--%>
+<%--                                        <button type="button" class="btn-close" data-bs-dismiss="modal"--%>
+<%--                                                aria-label="Close"></button>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-body">--%>
+<%--                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>--%>
+<%--                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-footer">--%>
+<%--                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel--%>
+<%--                                        </button>--%>
+<%--                                        <button type="button" class="btn btn-danger">Delete</button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-xxl-4 col-sm-6">
-                <div class="card user-card">
-                    <div class="card-body pb-0">
-                        <div class="d-flex mb-3 align-items-center">
-                            <div class="dz-media rounded-circle mr-3">
-                                <span class="icon-placeholder bgl-success text-success">km</span>
-                            </div>
-                            <div>
-                                <h5 class="title"><a href="javascript:void(0);">Kevin Mandala</a></h5>
-                                <span class="" style="color: #eb8153">Junior Developer</span>
-                            </div>
-                        </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
-                            and more.</p>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-xl-3 col-xxl-4 col-sm-6">--%>
+<%--                <div class="card user-card">--%>
+<%--                    <div class="card-body pb-0">--%>
+<%--                        <div class="d-flex mb-3 align-items-center">--%>
+<%--                            <div class="dz-media rounded-circle mr-3">--%>
+<%--                                <span class="icon-placeholder bgl-success text-success">km</span>--%>
+<%--                            </div>--%>
+<%--                            <div>--%>
+<%--                                <h5 class="title"><a href="javascript:void(0);">Kevin Mandala</a></h5>--%>
+<%--                                <span class="" style="color: #eb8153">Junior Developer</span>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,--%>
+<%--                            and more.</p>--%>
 
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
+<%--                    </div>--%>
+<%--                    <div class="card-footer d-flex justify-content-between">--%>
 
-                        <button class="edit-button">
-                            <svg class="edit-svgIcon" viewBox="0 0 512 512">
-                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
-                            </svg>
-                        </button>
+<%--                        <button class="edit-button">--%>
+<%--                            <svg class="edit-svgIcon" viewBox="0 0 512 512">--%>
+<%--                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
 
-                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
-                            <svg class="delete-svgIcon" viewBox="0 0 448 512">
-                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
-                            </svg>
-                        </button>
-                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
-                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
-                                        </button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<%--                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">--%>
+<%--                            <svg class="delete-svgIcon" viewBox="0 0 448 512">--%>
+<%--                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
+<%--                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">--%>
+<%--                            <div class="modal-dialog">--%>
+<%--                                <div class="modal-content">--%>
+<%--                                    <div class="modal-header">--%>
+<%--                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>--%>
+<%--                                        <button type="button" class="btn-close" data-bs-dismiss="modal"--%>
+<%--                                                aria-label="Close"></button>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-body">--%>
+<%--                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>--%>
+<%--                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-footer">--%>
+<%--                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel--%>
+<%--                                        </button>--%>
+<%--                                        <button type="button" class="btn btn-danger">Delete</button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-xxl-4 col-sm-6">
-                <div class="card user-card">
-                    <div class="card-body pb-0">
-                        <div class="d-flex mb-3 align-items-center">
-                            <div class="dz-media mr-3">
-                                <img src="/template/admin/images/users/pic3.jpg" alt="">
-                            </div>
-                            <div>
-                                <h5 class="title"><a href="javascript:void(0);">Mc. Kowalski</a></h5>
-                                <span class="" style="color: #eb8153">Php Developer</span>
-                            </div>
-                        </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
-                            and more.</p>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-xl-3 col-xxl-4 col-sm-6">--%>
+<%--                <div class="card user-card">--%>
+<%--                    <div class="card-body pb-0">--%>
+<%--                        <div class="d-flex mb-3 align-items-center">--%>
+<%--                            <div class="dz-media mr-3">--%>
+<%--                                <img src="/template/admin/images/users/pic3.jpg" alt="">--%>
+<%--                            </div>--%>
+<%--                            <div>--%>
+<%--                                <h5 class="title"><a href="javascript:void(0);">Mc. Kowalski</a></h5>--%>
+<%--                                <span class="" style="color: #eb8153">Php Developer</span>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,--%>
+<%--                            and more.</p>--%>
 
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
+<%--                    </div>--%>
+<%--                    <div class="card-footer d-flex justify-content-between">--%>
 
-                        <button class="edit-button">
-                            <svg class="edit-svgIcon" viewBox="0 0 512 512">
-                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
-                            </svg>
-                        </button>
+<%--                        <button class="edit-button">--%>
+<%--                            <svg class="edit-svgIcon" viewBox="0 0 512 512">--%>
+<%--                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
 
-                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
-                            <svg class="delete-svgIcon" viewBox="0 0 448 512">
-                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
-                            </svg>
-                        </button>
-                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
-                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
-                                        </button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<%--                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">--%>
+<%--                            <svg class="delete-svgIcon" viewBox="0 0 448 512">--%>
+<%--                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
+<%--                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">--%>
+<%--                            <div class="modal-dialog">--%>
+<%--                                <div class="modal-content">--%>
+<%--                                    <div class="modal-header">--%>
+<%--                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>--%>
+<%--                                        <button type="button" class="btn-close" data-bs-dismiss="modal"--%>
+<%--                                                aria-label="Close"></button>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-body">--%>
+<%--                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>--%>
+<%--                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-footer">--%>
+<%--                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel--%>
+<%--                                        </button>--%>
+<%--                                        <button type="button" class="btn btn-danger">Delete</button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-xxl-4 col-sm-6">
-                <div class="card user-card">
-                    <div class="card-body pb-0">
-                        <div class="d-flex mb-3 align-items-center">
-                            <div class="dz-media mr-3">
-                                <img src="/template/admin/images/users/pic4.jpg" alt="">
-                            </div>
-                            <div>
-                                <h5 class="title"><a href="javascript:void(0);">Rio Fernandez</a></h5>
-                                <span class="" style="color: #eb8153">Python Developer</span>
-                            </div>
-                        </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
-                            and more.</p>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--            <div class="col-xl-3 col-xxl-4 col-sm-6">--%>
+<%--                <div class="card user-card">--%>
+<%--                    <div class="card-body pb-0">--%>
+<%--                        <div class="d-flex mb-3 align-items-center">--%>
+<%--                            <div class="dz-media mr-3">--%>
+<%--                                <img src="/template/admin/images/users/pic4.jpg" alt="">--%>
+<%--                            </div>--%>
+<%--                            <div>--%>
+<%--                                <h5 class="title"><a href="javascript:void(0);">Rio Fernandez</a></h5>--%>
+<%--                                <span class="" style="color: #eb8153">Python Developer</span>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,--%>
+<%--                            and more.</p>--%>
 
-                    </div>
-                    <div class="card-footer d-flex justify-content-between">
+<%--                    </div>--%>
+<%--                    <div class="card-footer d-flex justify-content-between">--%>
 
-                        <button class="edit-button">
-                            <svg class="edit-svgIcon" viewBox="0 0 512 512">
-                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
-                            </svg>
-                        </button>
+<%--                        <button class="edit-button">--%>
+<%--                            <svg class="edit-svgIcon" viewBox="0 0 512 512">--%>
+<%--                                <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
 
-                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">
-                            <svg class="delete-svgIcon" viewBox="0 0 448 512">
-                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
-                            </svg>
-                        </button>
-                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>
-                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel
-                                        </button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<%--                        <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">--%>
+<%--                            <svg class="delete-svgIcon" viewBox="0 0 448 512">--%>
+<%--                                <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>--%>
+<%--                            </svg>--%>
+<%--                        </button>--%>
+<%--                        <div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">--%>
+<%--                            <div class="modal-dialog">--%>
+<%--                                <div class="modal-content">--%>
+<%--                                    <div class="modal-header">--%>
+<%--                                        <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>--%>
+<%--                                        <button type="button" class="btn-close" data-bs-dismiss="modal"--%>
+<%--                                                aria-label="Close"></button>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-body">--%>
+<%--                                        <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>--%>
+<%--                                        <p class="text-warning"><small>This Action Cannot Be Undone</small></p>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modal-footer">--%>
+<%--                                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel--%>
+<%--                                        </button>--%>
+<%--                                        <button type="button" class="btn btn-danger">Delete</button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
 
-                    </div>
-                </div>
-            </div>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
 
         </div>
         <nav>
@@ -460,3 +409,108 @@
         </nav>
     </div>
 </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script >
+
+    function loadNhanVien(){
+        $.ajax({
+            url: '/api/admin/nhanvien',
+            method: 'GET',
+            success: function(data) {
+                console.log(data.data);
+                var nhanVien = $('#cardNhanVien');
+                nhanVien.empty();
+
+                data.data.forEach(function(item) {
+                    var card = '<div class="card user-card">' +
+                    '<div class="card-body p-2">' +
+                       '<div class="row">' +
+                            '<div class="col-4">' +
+                                '<div class="dz-media mr-3">'+
+                                    '<img src="/template/admin/images/' + item.hinhAnh + '" alt="">' +
+                                '</div>' +
+                            '</div>' +
+                           ' <div class="col-8">' +
+                            '  <div class="row">' +
+                                    '<div class="col-4">' +
+                                        '<span class="title">Name:</span>' +
+                                   '</div>' +
+                                   '<div class="col-8">' +
+                                      '<span class="" style="color: #eb8153">' + item.tenNV + '</span>' +
+                                  ' </div>' +
+                               '</div>' +
+                              '<div class="row">'+
+                                   '<div class="col-4">'+
+                                     ' <span class="title">Email:</span>'+
+                                  '  </div>' +
+                                  '  <div class="col-8">' +
+                                      '<span class="" style="color: #eb8153">' + item.email + '</span>'+
+                                   '</div>'+
+                               '</div>'+
+                               ' <div class="row">' +
+                                  '  <div class="col-4">'+
+                                    '  <span class="title">SDT:</span>'+
+                                   ' </div>'+
+                                   '<div class="col-8">'+
+                                      ' <span class="" style="color: #eb8153">' + item.sdt + '</span>'+
+                                ' </div>'+
+                              '</div>'+
+                            '</div>'+
+                       '</div>'+
+                    '</div>'+
+                  ' <div class="card-footer d-flex justify-content-between">'+
+
+                       '<a class="edit-button" href="/admin/updateNV" style="text-decoration: none">'+
+                         '   <svg class="edit-svgIcon" viewBox="0 0 512 512">'+
+                            '   <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>'+
+                         ' </svg>'+
+                       '</a>'+
+
+                      ' <button class="delete-button" data-bs-toggle="modal" data-bs-target="#kkk">'+
+                          '  <svg class="delete-svgIcon" viewBox="0 0 448 512">'+
+                              ' <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>'+
+                           '</svg>'+
+                       '</button>'+
+                       '<div class="modal" id="kkk" tabindex="-1" aria-labelledby="remove" aria-hidden="true">'+
+                         '  <div class="modal-dialog">'+
+                              '<div class="modal-content">'+
+                                '  <div class="modal-header">'+
+                                      '  <h1 class="modal-title  fs-5" id="remove">Delete Personnel</h1>'+
+                                       ' <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'+
+                                  '</div>'+
+                                  ' <div class="modal-body">'+
+                                  '   <h5 class="text-secondary">Are You Sure You Want To Delete This Records</h5>'+
+                                      '  <p class="text-warning"><small>This Action Cannot Be Undone</small></p>'+
+                                  '</div>'+
+                                 '   <div class="modal-footer">'+
+                                     ' <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancel'+
+                                     '  </button>'+
+                                     '<button type="button" class="btn btn-danger">Delete</button>'+
+                                  '</div>'+
+                             '  </div>'+
+                          ' </div>'+
+                     '  </div>'+
+                    '</div>'+
+                '</div>';
+
+                    nhanVien.append(card);
+                })
+            },
+            error: function(xhr, status, error) {
+                alert('Lỗi khi lấy danh sách nhân viên: ' + error);
+            }
+        });
+    }
+    loadNhanVien()
+
+    function getFormattedDate(longDate) {
+        date = new Date(longDate);
+        let year = date.getFullYear();
+        let month = (1 + date.getMonth()).toString().padStart(2, '0');
+        let day = date.getDate().toString().padStart(2, '0');
+
+        return day + '-' + month + '-' + year;
+    }
+</script>

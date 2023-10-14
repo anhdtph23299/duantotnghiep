@@ -20,11 +20,11 @@ import java.util.Date;
 @Table(name = "nhanvien")
 public class NhanVien extends PrimaryEntity {
 
-    @Column(name = "makh")
-    private String maKH;
+    @Column(name = "manv")
+    private String maNV;
 
     @Column(name = "tennv")
-    private String tenKH;
+    private String tenNV;
 
     @Column(name = "sdt")
     private String sdt;
@@ -38,6 +38,9 @@ public class NhanVien extends PrimaryEntity {
     @Column(name = "ngaysinh")
     private Date ngaySinh;
 
+    @Column(name = "hinhanh")
+    private String hinhAnh;
+
     @Column(name = "trangthai")
     private Integer trangThai;
 
@@ -47,7 +50,10 @@ public class NhanVien extends PrimaryEntity {
     @Column(name = "cccd")
     private String CCCD;
 
-    @Column(name = "mota")
-    private String moTa;
+    @Column(name = "ngaycap")
+    private Date ngayCap;
+
+    @Column(name = "noicap")
+    private String noiCap;
 
 }
