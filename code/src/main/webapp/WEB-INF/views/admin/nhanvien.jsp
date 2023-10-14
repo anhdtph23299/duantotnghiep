@@ -117,7 +117,6 @@
             </div>
         </div>
 
-
         <div id="cardNhanVien">
 
         </div>
@@ -157,7 +156,8 @@
                 nhanVien.empty();
 
                 data.data.forEach(function (item) {
-                    var card = '<div class="col-md-8">' +
+                    var card =
+                        '<div class="row col-md-8">' +
                         '<div class="card user-card">' +
                         '<div class="card-body pb-0">' +
                         ' <div class="d-flex mb-3 align-items-center">' +
@@ -168,6 +168,9 @@
                         '  <h5 class="title">' + item.tenNV + '</h5>' +
                         ' <span class="" style="color: #eb8153">Chức vụ</span>' +
                         '</div>' +
+                        '</div>' +
+                        '<div class="mb-2">' +
+                        '<span>MANV: ' + item.maNV + '</span>' +
                         '</div>' +
                         '<span>Email: ' + item.email + '</span>' +
                         '<div class="d-flex justify-content-between mt-2">' +
