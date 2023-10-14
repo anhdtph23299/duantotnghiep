@@ -126,7 +126,6 @@
             contentType: 'application/json',
             data: JSON.stringify(kh),
             success: function(response) {
-
             },
             error: function(xhr, status, error) {
                 alert('Có lỗi xảy ra: ' + error);
