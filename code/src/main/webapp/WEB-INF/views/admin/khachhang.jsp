@@ -553,6 +553,7 @@
                 console.log(req.data);
                 var tbody = $('#tblKhachHang tbody');
                 tbody.empty();
+                var index = 0;
                 req.data.forEach(function(item) {
                     var row = `
                             <tr>
@@ -561,13 +562,13 @@
                                         <input type="checkbox" class="checkbox" name="option[]" value="1">
                                    </span>
                                 </td>
-                                <td>${index + 1}</td>
+                                <td>\${++index}</td>
                                 <td>\${item.maKH}</td>
                                  <td>\${item.tenKH}</td>
                                  <td>\${item.sdt}</td>
                                  <td>\${item.email}</td>
                                  <td>\${item.gioiTinh == true ? "Nam": "Nữ"}</td>
-                                 <td>\${item.ngaySinh}</td>
+                                 <td>\${getFormattedDate(item.ngaySinh)}</td>
                                  <td>\${item.trangThai}</td>
                                  <td>\${item.diaChi}</td>
                                  <td>\${item.cccd}</td>
@@ -628,6 +629,14 @@
                 alert('Có lỗi xảy ra: ' + error);
             }
         });
+    }
+    function getFormattedDate(longDate) {
+        date = new Date(longDate);
+        let year = date.getFullYear();
+        let month = (1 + date.getMonth()).toString().padStart(2, '0');
+        let day = date.getDate().toString().padStart(2, '0');
+
+        return day + '-' + month + '-' + year;
     }
 </script>
 </body>

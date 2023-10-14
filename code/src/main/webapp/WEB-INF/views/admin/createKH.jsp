@@ -22,7 +22,6 @@
     color: black;">
                 Tạo mới khách hàng
             </h4>
-            <form>
                 <div class="row">
                     <div class="col">
                         <label>Mã khách hàng:</label>
@@ -61,15 +60,15 @@
                     <div class="col">
                         <label>Giới tính:</label>
                         <select class="form-select" id="gioitinh">
-                            <option value="Nam" selected>Nam</option>
-                            <option value="Nữ">Nữ</option>
+                            <option value="true" selected>Nam</option>
+                            <option value="false">Nữ</option>
                         </select>
                     </div>
                     <div class="col">
                         <label>Trạng thái:</label>
                         <select class="form-select" id="trangthai">
-                            <option value="Hoạt động" selected>Hoạt động</option>
-                            <option value="Ngừng hoạt động">Ngừng hoạt động</option>
+                            <option value="1" selected>Hoạt động</option>
+                            <option value="2">Ngừng hoạt động</option>
                         </select>
                     </div>
 
@@ -89,7 +88,6 @@
                         <a href="/admin/khachhang" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
                     </div>
                 </div>
-            </form>
         </div>
     </div>
 </div>
@@ -109,63 +107,33 @@
         var cccd = $("#cccd").val();
         var moTa = $("#mota").val();
 
+        var kh = {
+            maKH: maKH,
+            tenKH: tenKH,
+            sdt: sdt,
+            email: email,
+            gioiTinh:  gioiTinh,
+            ngaySinh: ngaySinh,
+            trangThai: trangThai,
+            diaChi: diaChi,
+            cccd: cccd,
+            moTa: moTa
+        }
+        console.log(kh)
         $.ajax({
             url: '/api/admin/khachhang/insert',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({
-                maKH: maKH,
-                tenKH: tenKH,
-                sdt: sdt,
-                email: email,
-                gioiTinh:  gioiTinh,
-                ngaySinh: ngaySinh,
-                trangThai: trangThai,
-                diaChi: diaChi,
-                cccd: cccd,
-                moTa: moTa
-            }),
+            data: JSON.stringify(kh),
             success: function(response) {
-                loadKhachHang()
+
             },
             error: function(xhr, status, error) {
                 alert('Có lỗi xảy ra: ' + error);
             }
         });
     })
-    function loadKhachHang(){
-        $.ajax({
-            url: '/api/admin/khachhang',
-            method: 'GET',
-            success: function(req) {
-                console.log(req.data);
-                var tbody = $('#tblKhachHang tbody');
-                tbody.empty();
-                req.data.forEach(function(item) {
-                    var row = `
-                            <tr>
-                                <td>\${item.maKH}</td>
-                                 <td>\${item.tenKH}</td>
-                                 <td>\${item.sdt}</td>
-                                 <td>\${item.email}</td>
-                                 <td>\${item.gioiTinh}</td>
-                                 <td>\${item.ngaySinh}</td>
-                                 <td>\${item.trangThai}</td>
-                                 <td>\${item.diaChi}</td>
-                                 <td>\${item.cccd}</td>
-                                 <td>\${item.moTa}</td>
-                                <td onclick="Delete(\${item.id})">Delete</td>
-                            </tr>
-                        `;
-                    tbody.append(row);
-                });
-            },
-            error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra: ' + error);
-            }
-        });
-    }
-    loadKhachHang()
+
 </script>
 </body>
 </html>
