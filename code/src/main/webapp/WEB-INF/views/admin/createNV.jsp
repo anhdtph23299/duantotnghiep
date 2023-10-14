@@ -111,6 +111,13 @@
                             <option value="false">Nữ</option>
                         </select>
                     </div>
+                    <div class="col">
+                        <label>Trạng thái:</label>
+                        <select class="form-select" id="trangthai">
+                            <option value="1" selected>Hoạt động</option>
+                            <option value="2">Ngừng hoạt động</option>
+                        </select>
+                    </div>
                 </div>
 
             <div class="row mt-3">
