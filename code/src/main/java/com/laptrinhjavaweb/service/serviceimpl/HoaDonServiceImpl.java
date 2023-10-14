@@ -17,8 +17,8 @@ public class HoaDonServiceImpl implements HoaDonService {
     }
 
     @Override
-    public HoaDon insert(HoaDon hoaDon) {
-        return hoaDonRepository.save(hoaDon);
+    public String insert(HoaDon hoaDon) {
+        return hoaDonRepository.save(hoaDon)!=null?"Tạo hoá đơn thành công":"Có lỗi xảy ra";
     }
 
     @Override

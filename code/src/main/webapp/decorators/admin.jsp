@@ -38,6 +38,58 @@
         /*    top: 0px;*/
         /*}*/
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script>
+    function getFormattedDate(longDate) {
+        date = new Date(longDate);
+        let year = date.getFullYear();
+        let month = (1 + date.getMonth()).toString().padStart(2, '0');
+        let day = date.getDate().toString().padStart(2, '0');
+
+        return day + '-' + month + '-' + year;
+    }
+    function showSuccess(message){
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: message
+        })
+    }
+    function showError(message){
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: 'error',
+            title: message
+        })
+    }
+</script>
+
+
 </head>
 <body>
     <!--*******************
@@ -60,7 +112,6 @@
         <dec:body/>
         <%@ include file="/common/admin/footer.jsp" %>
     </div>
-
     <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="<c:url value='/template/admin/vendor/global/global.min.js'/>"></script>
     <script src="<c:url value='/template/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js'/>"></script>
@@ -82,6 +133,5 @@
     <script src="<c:url value='/template/admin/js/main.js'/>"></script>
     <script src="<c:url value='/template/admin/js/styleSwitcher.js'/>"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
