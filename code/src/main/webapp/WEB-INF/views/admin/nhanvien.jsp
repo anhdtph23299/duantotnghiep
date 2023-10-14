@@ -122,20 +122,41 @@
 
 
             <div class="col-xl-3 col-xxl-4 col-sm-6">
-                <div class="card user-card">
-                    <div class="card-body pb-0">
-                        <div class="d-flex mb-3 align-items-center">
+                <div class="card user-card" >
+                    <div class="card-body " >
+                        <div class="row">
+                            <div class="col-3">
                             <div class="dz-media mr-3">
                                 <img src="/template/admin/images/users/pic1.jpg" alt="">
                             </div>
-                            <div>
-                                <h5 class="title"><a href="javascript:void(0);">Thomas Djons</a></h5>
-                                <span class="" style="color: #eb8153">Senior Developer</span>
+                            </div>
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <span class="" style="color: #eb8153">Name:</span>
+                                    </div>
+                                    <div class="col-8">
+                                        <h6 class="title"><a href="javascript:void(0);"> Anh Tuan</a></h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <span class="" style="color: #eb8153">Email:</span>
+                                    </div>
+                                    <div class="col-8">
+                                        <h6 class="title"><a href="javascript:void(0);">tuan@gmail.com</a></h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <span class="" style="color: #eb8153">Phone:</span>
+                                    </div>
+                                    <div class="col-8">
+                                        <h6 class="title"><a href="javascript:void(0);">0384082003</a></h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <p class="fs-12">Answering guest inquiries, directing phone calls, coordinating travel plans,
-                            and more.</p>
-
                     </div>
                     <div class="card-footer d-flex justify-content-between">
 
