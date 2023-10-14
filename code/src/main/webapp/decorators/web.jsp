@@ -22,9 +22,12 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<c:url value='/template/web/css/style.css'/>" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
 </head>
 <body>
     <%@ include file="/common/web/topbar.jsp" %>
@@ -46,6 +49,7 @@
 
     <!-- Template Javascript -->
     <script src="<c:url value='/template/web/js/main.js'/>"></script>
+
 
 </body>
 </html>
