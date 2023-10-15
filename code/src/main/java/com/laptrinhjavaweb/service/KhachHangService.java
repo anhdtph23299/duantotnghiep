@@ -8,7 +8,8 @@ public interface KhachHangService {
 
     List<KhachHang> getDsKhachHang();
 
-    KhachHang insert(KhachHang khachHang);
+    String insert(KhachHang khachHang);
 
     void delete(Long id);
+
 }

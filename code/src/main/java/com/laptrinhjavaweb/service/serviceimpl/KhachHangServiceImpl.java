@@ -20,12 +20,14 @@ public class KhachHangServiceImpl implements KhachHangService {
     }
 
     @Override
-    public KhachHang insert(KhachHang khachHang) {
-        return khachHangRepository.save(khachHang);
+    public String insert(KhachHang khachHang) {
+        return khachHangRepository.save(khachHang)!=null?"Tạo mới khách hàng thành công":"Có lỗi xảy ra";
     }
 
     @Override
     public void delete(Long id) {
         khachHangRepository.deleteById(id);
     }
+
+
 }

@@ -126,6 +126,7 @@
             contentType: 'application/json',
             data: JSON.stringify(kh),
             success: function(response) {
+                window.location.href = '/admin/khachhang';
             },
             error: function(xhr, status, error) {
                 alert('Có lỗi xảy ra: ' + error);
