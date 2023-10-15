@@ -26,8 +26,12 @@ public class ApiKhachHangController {
 
     @PostMapping("/insert")
     public ResponseObject insert(@RequestBody KhachHang khachHang){
-        System.out.println(khachHang);
         return new ResponseObject(khachHangService.insert(khachHang));
+    }
+
+    @GetMapping("/detail/{id}")
+    public ResponseObject detail(@PathVariable(name = "id")Long id){
+        return new ResponseObject(khachHangService.findById(id));
     }
 
     @DeleteMapping("/delete/{id}")
