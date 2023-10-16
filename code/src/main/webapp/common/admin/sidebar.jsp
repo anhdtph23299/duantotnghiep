@@ -1,21 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<<<<<<< HEAD
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-=======
 
->>>>>>> tuan
 <!--**********************************
-      Sidebar start
-  ***********************************-->
+Sidebar start
+***********************************-->
 <div class="deznav">
     <div class="deznav-scroll">
         <div class="main-profile">
@@ -24,19 +11,11 @@
                 <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
             </div>
             <h5 class="name"><span class="font-w400">Hello,</span> Marquez</h5>
-<<<<<<< HEAD
-            <p class="email"><a href="#" class="__cf_email__" data-cfemail="95f8f4e7e4e0f0efefefefd5f8f4fcf9bbf6faf8">[email&#160;protected]</a></p>
-        </div>
-        <ul class="metismenu" id="menu">
-            <li class="nav-label first">Main Menu</li>
-            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
-=======
             <p class="email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95f8f4e7e4e0f0efefefefd5f8f4fcf9bbf6faf8">[email&#160;protected]</a></p>
         </div>
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
->>>>>>> tuan
                 <i class="flaticon-144-layout"></i>
                 <span class="nav-text">Dashboard</span>
             </a>
@@ -52,11 +31,7 @@
 
             </li>
             <li class="nav-label">Apps</li>
-<<<<<<< HEAD
-            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
-=======
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
->>>>>>> tuan
                 <i class="flaticon-077-menu-1"></i>
                 <span class="nav-text">Apps</span>
             </a>
@@ -82,11 +57,7 @@
                             <li><a href="contact-card.html">Contact Card</a></li>
                         </ul>
                     </li>
-<<<<<<< HEAD
-                    <li><a class="has-arrow" href="#" aria-expanded="false">Email</a>
-=======
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
->>>>>>> tuan
                         <ul aria-expanded="false">
                             <li><a href="email-compose.html">Compose</a></li>
                             <li><a href="email-inbox.html">Inbox</a></li>
@@ -94,11 +65,7 @@
                         </ul>
                     </li>
                     <li><a href="app-calender.html">Calendar</a></li>
-<<<<<<< HEAD
-                    <li><a class="has-arrow" href="#" aria-expanded="false">Shop</a>
-=======
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
->>>>>>> tuan
                         <ul aria-expanded="false">
                             <li><a href="ecom-product-grid.html">Product Grid</a></li>
                             <li><a href="ecom-product-list.html">Product List</a></li>
@@ -112,36 +79,22 @@
                 </ul>
             </li>
 
-<<<<<<< HEAD
-            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
-=======
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
->>>>>>> tuan
                 <i class="flaticon-061-puzzle"></i>
                 <span class="nav-text">Quản lý người dùng</span>
             </a>
                 <ul aria-expanded="false">
-<<<<<<< HEAD
-                    <li><a href="/admin/dashboards/nhanvien">Nhân viên</a></li>
-                    <li><a href="/admin/dashboards/khachhang">Khách hàng</a></li>
-=======
                     <li><a href="/admin/nhanvien">Nhân viên</a></li>
                     <li><a href="/admin/khachhang">Khách hàng</a></li>
->>>>>>> tuan
 
                 </ul>
             </li>
             <li class="nav-label">components</li>
-<<<<<<< HEAD
-            <li><a href="/admin/khuyen-mai" class="ai-icon" aria-expanded="false">
-                <i class="flaticon-381-settings-2"></i>
-                <span class="nav-text">Quản lý khuyến mại</span>
+            <li><a class="has-arrow ai-icon" href="/admin/khuyen-mai" aria-expanded="false">
+                <span class="nav-text">Khuyến mại</span>
             </a>
             </li>
-            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
-=======
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
->>>>>>> tuan
                 <i class="flaticon-003-diamond"></i>
                 <span class="nav-text">Bootstrap</span>
             </a>
@@ -166,11 +119,7 @@
 
                 </ul>
             </li>
-<<<<<<< HEAD
-            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
-=======
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
->>>>>>> tuan
                 <i class="flaticon-053-heart"></i>
                 <span class="nav-text">Plugins</span>
             </a>
@@ -184,22 +133,17 @@
                     <li><a href="uc-lightgallery.html">Light Gallery</a></li>
                 </ul>
             </li>
-<<<<<<< HEAD
-
-            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
-=======
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-settings-2"></i>
-                <span class="nav-text">Setting</span>
-            </a>
+                    <span class="nav-text">Setting</span>
+                </a>
                 <ul aria-expanded="false">
                     <li><a href="/admin/profile">Profile</a></li>
                     <li><a href="/admin/setting_banner">Dynamic Interface </a></li>
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
->>>>>>> tuan
                 <i class="flaticon-044-file"></i>
                 <span class="nav-text">Forms</span>
             </a>
@@ -211,11 +155,7 @@
                     <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
                 </ul>
             </li>
-<<<<<<< HEAD
-            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
-=======
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
->>>>>>> tuan
                 <i class="flaticon-381-network"></i>
                 <span class="nav-text">Table</span>
             </a>
@@ -224,22 +164,14 @@
                     <li><a href="table-datatable-basic.html">Datatable</a></li>
                 </ul>
             </li>
-<<<<<<< HEAD
-            <li><a class="has-arrow ai-icon" href="#" aria-expanded="false">
-=======
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
->>>>>>> tuan
                 <i class="flaticon-049-copy"></i>
                 <span class="nav-text">Pages</span>
             </a>
                 <ul aria-expanded="false">
                     <li><a href="page-register.html">Register</a></li>
                     <li><a href="page-login.html">Login</a></li>
-<<<<<<< HEAD
-                    <li><a class="has-arrow" href="#" aria-expanded="false">Error</a>
-=======
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
->>>>>>> tuan
                         <ul aria-expanded="false">
                             <li><a href="page-error-400.html">Error 400</a></li>
                             <li><a href="page-error-403.html">Error 403</a></li>
@@ -259,10 +191,5 @@
     </div>
 </div>
 <!--**********************************
-    Sidebar end
+Sidebar end
 ***********************************-->
-<<<<<<< HEAD
-</body>
-</html>
-=======
->>>>>>> tuan

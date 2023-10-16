@@ -42,8 +42,6 @@ public class DashboardController {
     public String updateNV(){
         return "admin/updateNV";
     }
-<<<<<<< HEAD
-=======
 
     @GetMapping("/profile")
     public String profile(){
@@ -65,5 +63,4 @@ public class DashboardController {
         return "admin/hoadon";
     }
 
->>>>>>> tuan
 }
