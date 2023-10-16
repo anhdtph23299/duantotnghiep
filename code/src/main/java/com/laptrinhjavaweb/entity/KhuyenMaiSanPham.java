@@ -2,7 +2,6 @@ package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -11,7 +10,6 @@ import javax.persistence.Table;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 @Getter
 @Setter
 @Builder

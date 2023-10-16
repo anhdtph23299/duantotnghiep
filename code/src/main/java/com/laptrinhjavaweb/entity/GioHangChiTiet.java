@@ -34,6 +34,7 @@ public class GioHangChiTiet implements Serializable {
 
     @JsonProperty("tongTien")
     public BigDecimal getTongTien(){
-        return sanPham.getDonGia().multiply(BigDecimal.valueOf(soLuong));
+//        return sanPham.getDonGia().multiply(BigDecimal.valueOf(soLuong));
+        return null;
     }
 }

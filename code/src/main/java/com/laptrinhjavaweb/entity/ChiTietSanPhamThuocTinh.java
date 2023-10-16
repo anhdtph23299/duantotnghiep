@@ -2,7 +2,6 @@ package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,7 +11,6 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 @Getter
 @Setter
 @Builder
@@ -21,8 +19,8 @@ import java.util.List;
 @Table(name = "chitietsanphamthuoctinh")
 public class ChiTietSanPhamThuocTinh extends PrimaryEntity {
     @ManyToOne
-    @JoinColumn(name = "idchitietsanpham",insertable = false,updatable = false)
-    private ChiTietSanPham chiTietSanPham;
+    @JoinColumn(name = "idsanpham",insertable = false,updatable = false)
+    private SanPham sanPham;
 
     @ManyToOne
     @JoinColumn(name = "idthuoctinh",insertable = false,updatable = false)
@@ -41,25 +39,23 @@ public class ChiTietSanPhamThuocTinh extends PrimaryEntity {
     private Date ngayTao;
 
     @ManyToOne
-    @JoinColumn(name = "idnvtao",insertable = false,updatable = false)
-    private NhanVien nhanVienTao;
+    @JoinColumn(name = "nguoiTao",insertable = false,updatable = false)
+    private NhanVien nguoiTao;
 
     @Column(name = "ngaysua")
     private Date ngaySua;
 
     @ManyToOne
-    @JoinColumn(name = "idnvsua",insertable = false,updatable = false)
-    private NhanVien nhanVienSua;
+    @JoinColumn(name = "nguoiSua",insertable = false,updatable = false)
+    private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
     private int trangThai;
 
-    @OneToMany(mappedBy = "chiTietSanPhamThuocTinh")
-    private List<KhachHangYeuThichSanPham> khachHangYeuThichSanPham  = new ArrayList<>();
+    @OneToMany(mappedBy = "chiTietSanPhamThuocTinh", cascade = CascadeType.REMOVE)
+    private List<KhachHangYeuThichSanPham> dsKhachHangYeuThichSanPham  = new ArrayList<>();
 
-    @OneToMany(mappedBy = "chiTietSanPhamThuocTinh")
-    private List<KhuyenMaiSanPham> khuyenMaiSanPham  = new ArrayList<>();
-
-
+    @OneToMany(mappedBy = "chiTietSanPhamThuocTinh", cascade = CascadeType.REMOVE)
+    private List<KhuyenMaiSanPham> dsKhuyenMaiSanPham  = new ArrayList<>();
 
 }
