@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!--**********************************
-Sidebar start
-***********************************-->
+      Sidebar start
+  ***********************************-->
 <div class="deznav">
     <div class="deznav-scroll">
         <div class="main-profile">
@@ -136,8 +136,8 @@ Sidebar start
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-settings-2"></i>
-                    <span class="nav-text">Setting</span>
-                </a>
+                <span class="nav-text">Setting</span>
+            </a>
                 <ul aria-expanded="false">
                     <li><a href="/admin/profile">Profile</a></li>
                     <li><a href="/admin/setting_banner">Dynamic Interface </a></li>
@@ -191,5 +191,5 @@ Sidebar start
     </div>
 </div>
 <!--**********************************
-Sidebar end
+    Sidebar end
 ***********************************-->

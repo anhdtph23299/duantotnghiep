@@ -23,7 +23,7 @@ public class DashboardController {
         return "admin/createKH";
     }
 
-    @GetMapping("/updateKH")
+    @GetMapping("/updateKH/{id}")
     public String updateKH(){
         return "admin/updateKH";
     }

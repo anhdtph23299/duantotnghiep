@@ -48,49 +48,48 @@
         </div>
         </div>
         <hr>
-        <form>
             <div class="row">
                 <div class="col">
                     <label>Mã nhân viên:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="manv" class="form-control" >
                 </div>
                 <div class="col">
                     <label>Họ và tên:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="tennv" class="form-control" >
                 </div>
                 <div class="col">
                     <label>Địa chỉ email:</label>
-                    <input type="email" class="form-control" >
+                    <input type="email" id="email" class="form-control" >
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col">
                     <label>Địa chỉ thường chú:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="diachi" class="form-control" >
                 </div>
                 <div class="col">
                     <label>Số điện thoại:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="sdt" class="form-control" >
                 </div>
                 <div class="col">
-                    <label for="datepicker" class="form-label">Ngày sinh:</label>
-                    <input type="date" class="form-control" id="datepicker">
+                    <label  class="form-label">Ngày sinh:</label>
+                    <input type="date" class="form-control" id="ngaysinh" >
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col">
                     <label>Số CCCD:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="cccd" class="form-control" >
                 </div>
                 <div class="col">
-                    <label for="datepicker" class="form-label">Ngày cấp:</label>
-                    <input type="date" class="form-control" id="datepicker">
+                    <label class="form-label">Ngày cấp:</label>
+                    <input type="date" class="form-control" id="ngaycap">
                 </div>
                 <div class="col">
                     <label>Nơi cấp:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="noicap" class="form-control" >
                 </div>
             </div>
 
@@ -107,9 +106,9 @@
                     </div>
                     <div class="col">
                         <label>Giới tính:</label>
-                        <select class="form-select">
-                            <option value="Nam" selected>Nam</option>
-                            <option value="Nữ">Nữ</option>
+                        <select class="form-select" id="gioitinh">
+                            <option value="true" selected>Nam</option>
+                            <option value="false">Nữ</option>
                         </select>
                     </div>
                 </div>
@@ -118,7 +117,7 @@
             <div class="form-group col-md-12">
                 <label class="control-label">Ảnh 3x4 nhân viên</label>
                 <div id="myfileupload">
-                    <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);">
+                    <input type="file" id="uploadfile" id="hinhanh" name="ImageUpload" onchange="readURL(this);">
                 </div>
                 <div id="thumbbox">
                     <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none" />
@@ -138,15 +137,59 @@
 
             <div class="row mt-3">
                 <div class="col">
-                    <button class="btn" style="background-color: #A6edab; color: #00852d">Add</button>
+                    <button class="btn" id="them" style="background-color: #A6edab; color: #00852d">Add</button>
                     <button class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</button>
                 </div>
             </div>
-        </form>
-
-
     </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script >
+
+        $("#them").click(function (){
+            var hinhAnh  = $("#hinhanh").val();
+            var maNV  = $("#manv").val();
+            var tenNV = $("#tennv").val();
+            var sdt = $("#sdt").val();
+            var email = $("#email").val();
+            var gioiTinh = $("#gioitinh").val();
+            var ngaySinh = $("#ngaysinh").val();
+            var trangThai = $("#trangthai").val();
+            var diaChi = $("#diachi").val();
+            var cccd = $("#cccd").val();
+            var ngayCap = $("#ngaycap").val();
+            var noiCap = $("#noicap").val();
+
+            var nv = {
+                maNV: maNV,
+                tenNV: tenNV,
+                sdt: sdt,
+                email: email,
+                gioiTinh: gioiTinh,
+                ngaySinh: ngaySinh,
+                trangThai: trangThai,
+                diaChi: diaChi,
+                cccd: cccd,
+                hinhAnh: hinhAnh,
+                ngayCap: ngayCap,
+                noiCap: noiCap
+            }
+            console.log(nv)
+            $.ajax({
+                url: '/api/admin/nhanvien/insert',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(nv),
+                success: function(response) {
+                },
+                error: function(xhr, status, error) {
+                    alert('Có lỗi xảy ra: ' + error);
+                }
+            });
+        })
+
+    </script>
 </div>
 </body>
 </html>
