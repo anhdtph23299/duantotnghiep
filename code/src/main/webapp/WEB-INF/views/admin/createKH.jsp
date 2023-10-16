@@ -92,7 +92,6 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script >
 
     $("#them").click(function (){
@@ -119,7 +118,6 @@
             cccd: cccd,
             moTa: moTa
         }
-        console.log(kh)
         $.ajax({
             url: '/api/admin/khachhang/insert',
             method: 'POST',

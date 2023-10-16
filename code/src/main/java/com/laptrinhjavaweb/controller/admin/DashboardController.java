@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.controller.admin;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -24,8 +25,18 @@ public class DashboardController {
     }
 
     @GetMapping("/updateKH")
-    public String updateKH(){
+    public String update(){
         return "admin/updateKH";
+    }
+//
+//    @PostMapping ("/updateKH/{id}")
+//    public String updateKH(){
+//        return "admin/updateKH";
+//    }
+
+    @GetMapping("/detailKH/{id}")
+    public String detailKH(){
+        return "admin/detailKH";
     }
 
     @GetMapping("/nhanvien")
