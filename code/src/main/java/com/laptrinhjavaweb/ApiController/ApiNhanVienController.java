@@ -25,6 +25,16 @@ public class ApiNhanVienController {
         return new ResponseObject(nhanVienService.insert(nhanVien));
     }
 
+    @GetMapping("/detail/{id}")
+    public ResponseObject detail(@PathVariable(name = "id")Long id){
+        return new ResponseObject(nhanVienService.findById(id));
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseObject update(@RequestBody NhanVien nhanVien){
+        return new ResponseObject(nhanVienService.update(nhanVien));
+    }
+
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable(name = "id")Long id){
         nhanVienService.delete(id);

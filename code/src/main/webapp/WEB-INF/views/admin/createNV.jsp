@@ -189,9 +189,10 @@
                 contentType: 'application/json',
                 data: JSON.stringify(nv),
                 success: function(response) {
+                    window.location.href = '/admin/nhanvien';
                 },
                 error: function(xhr, status, error) {
-                    alert('Có lỗi xảy ra: ' + error);
+                    showError("Thêm thất bại")
                 }
             });
         })
