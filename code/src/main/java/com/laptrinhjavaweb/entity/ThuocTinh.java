@@ -17,30 +17,23 @@ import java.util.List;
 @Builder
 @Entity
 @ToString
-@Table(name = "khuyenmai")
-public class KhuyenMai extends PrimaryEntity {
-    @Column(name = "makm")
-    private String maKM;
-    @Column(name = "tenkm")
-    private String tenKM;
-    @Column(name = "loaikm")
-    private int loaiKM;
-    @Column(name = "giatrigiam")
-    private Float giaTriGiam;
-    @Column(name = "ngaybatdau")
-    private Date ngayBatDau;
-    @Column(name = "ngayketthuc")
-    private Date ngayKetThuc;
+@Table(name = "thuoctinh")
+public class ThuocTinh extends PrimaryEntity {
+    @Column(name = "ma")
+    private String ma;
+
+    @Column(name = "ten")
+    private String ten;
 
     @Column(name = "ngaytao")
     private Date ngayTao;
 
+    @Column(name = "ngaysua")
+    private Date ngaySua;
+
     @ManyToOne
     @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
     private NhanVien nhanVienTao;
-
-    @Column(name = "ngaysua")
-    private Date ngaySua;
 
     @ManyToOne
     @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
@@ -49,6 +42,6 @@ public class KhuyenMai extends PrimaryEntity {
     @Column(name = "trangthai")
     private int trangThai;
 
-    @OneToMany(mappedBy = "khuyenMai")
-    private List<KhuyenMaiSanPham> khuyenMaiSanPham = new ArrayList<>();
+    @OneToMany(mappedBy = "thuocTinh")
+    private List<ChiTietSanPhamThuocTinh> chiTietSanPhamThuocTinh = new ArrayList<>();
 }
