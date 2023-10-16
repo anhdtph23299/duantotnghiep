@@ -127,7 +127,7 @@
                 window.location.href = '/admin/khachhang';
             },
             error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra: ' + error);
+              showError("Thêm thất bại")
             }
         });
     })
