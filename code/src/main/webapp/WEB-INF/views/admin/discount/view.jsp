@@ -46,6 +46,7 @@
             </div>
             <div class="tab-content project-list-group" id="myTabContent">
                 <div class="tab-pane fade active show" id="navpills-1">
+
                     <div class="card">
                         <div class="project-info">
                             <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
@@ -338,24 +339,7 @@
                             </div>
                         </div>
                     </div>
-                    <nav class="mt-5">
-                        <ul class="pagination pagination-gutter pagination-primary no-bg">
-                            <li class="page-item page-indicator">
-                                <a class="page-link" href="javascript:void(0)">
-                                    <i class="la la-angle-left"></i></a>
-                            </li>
-                            <li class="page-item "><a class="page-link" href="javascript:void(0)">1</a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
-                            <li class="page-item page-indicator">
-                                <a class="page-link" href="javascript:void(0)">
-                                    <i class="la la-angle-right"></i></a>
-                            </li>
-                        </ul>
-                    </nav>
+
                 </div>
                 <div class="tab-pane fade" id="navpills-2">
                     <!--  -->
@@ -663,3 +647,36 @@
         </div>
     </div>
 </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    <script >
+
+        function loadKhachHang(){
+        $.ajax({
+            url: '/api/admin/khachhang',
+            method: 'GET',
+            success: function(req) {
+                console.log(req.data);
+                var tbody = $('#tblKhachHang tbody');
+                tbody.empty();
+                var index = 0;
+                req.data.forEach(function(item) {
+                    var row = `
+
+
+                    `;
+
+                    tbody.append(row);
+                });
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+    }
+
+        loadKhachHang();
+</script>
+
+
