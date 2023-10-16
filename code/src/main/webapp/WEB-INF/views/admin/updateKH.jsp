@@ -15,7 +15,7 @@
     padding-bottom: 10px;
     padding-left: 5px;
     color: black;">
-                Cập nhật khách hàng
+               Cập nhật khách hàng
             </h4>
             <div class="row">
                 <div class="col">
@@ -79,7 +79,7 @@
 
             <div class="row mt-3">
                 <div class="col">
-                    <button class="btn" id="update-button" style="background-color: #A6edab; color: #00852d">Update</button>
+                    <button class="btn" id="them" style="background-color: #A6edab; color: #00852d">Add</button>
                     <a href="/admin/khachhang" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
                 </div>
             </div>
@@ -87,70 +87,66 @@
     </div>
 </div>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script >
-//    var url = window.location.pathname.split("/");
-//    var id = url[url.length-1];
-//    $.ajax({
-//        url: '/api/admin/khachhang/detail/'+id,
-//        method: 'GET',
-//        success: function(req) {
-//            var data = req.data;
-//            $("#makh").val(data.maKH);
-//            $("#tenkh").val(data.tenKH);
-//            $("#sdt").val(data.sdt);
-//            $("#email").val(data.email);
-//            $("#gioitinh").val(data.gioiTinh.toString()).change();
-//            $("#ngaysinh").val(formatDateInput(data.ngaySinh));
-//            // $("#trangthai").val();
-//            $("#diachi").val(data.diaChi);
-//            $("#cccd").val(data.cccd);
-//       //     $("#mota").val();
-//        },
-//        error: function(xhr, status, error) {
-//            console.log(error)
-//            alert('Có lỗi xảy ra: ' + error);
-//        }
-//    });
 
+    // $("#them").click(function (){
+    //     var maKH = $("#makh").val();
+    //     var tenKH = $("#tenkh").val();
+    //     var sdt = $("#sdt").val();
+    //     var email = $("#email").val();
+    //     var gioiTinh = $("#gioitinh").val();
+    //     var ngaySinh = $("#ngaysinh").val();
+    //     var trangThai = $("#trangthai").val();
+    //     var diaChi = $("#diachi").val();
+    //     var cccd = $("#cccd").val();
+    //     var moTa = $("#mota").val();
+    //
+    //     var kh = {
+    //         maKH: maKH,
+    //         tenKH: tenKH,
+    //         sdt: sdt,
+    //         email: email,
+    //         gioiTinh:  gioiTinh,
+    //         ngaySinh: ngaySinh,
+    //         trangThai: trangThai,
+    //         diaChi: diaChi,
+    //         cccd: cccd,
+    //         moTa: moTa
+    //     }
+    //     $.ajax({
+    //         url: '/api/admin/khachhang/insert',
+    //         method: 'POST',
+    //         contentType: 'application/json',
+    //         data: JSON.stringify(kh),
+    //         success: function(response) {
+    //         },
+    //         error: function(xhr, status, error) {
+    //             alert('Có lỗi xảy ra: ' + error);
+    //         }
+    //     });
+    // })
 
-    $('#update-button').click(function() {
-        var maKH = $('#makh').val();
-        var tenKH = $('#tenkh').val();
-        var sdt = $('#sdt').val();
-        var email = $('#email').val();
-        var cccd = $('#cccd').val();
-        var diaChi = $('#diachi').val();
-        var ngaySinh = $('#ngaysinh').val();
-        var gioiTinh = $('#gioitinh').val();
-        var trangThai = $('#trangthai').val();
-        var moTa = $('#mota').val();
-
-        var updateKH = {
-            maKH: maKH,
-            tenKH: tenKH,
-            sdt: sdt,
-            email: email,
-            cccd: cccd,
-            diaChi: diaChi,
-            ngaySinh: ngaySinh,
-            gioiTinh: gioiTinh,
-            trangThai: trangThai,
-            moTa: moTa
-        };
-
-        $.ajax({
-            url: '/api/admin/khachhang/update',
-            method: 'PUT',
-            data: JSON.stringify(updateKH),
-            contentType: 'application/json',
-            success: function(response) {
-                window.location.href = '/admin/khachhang';
-            },
-            error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra: ' + error);
-            }
-        });
+    var url = window.location.pathname.split("/");
+    var id = url[url.length-1];
+    $.ajax({
+        url: '/api/admin/khachhang/detail/'+id,
+        method: 'GET',
+        success: function(req) {
+            var data = req.data;
+            $("#makh").val(data.maKH);
+            $("#tenkh").val(data.tenKH);
+            $("#sdt").val(data.sdt);
+            $("#email").val(data.email);
+            $("#gioitinh").val(data.gioiTinh.toString()).change();
+            $("#ngaysinh").val(formatDateInput(data.ngaySinh));
+            // $("#trangthai").val();
+            $("#diachi").val(data.diaChi);
+            $("#cccd").val(data.cccd);
+            //     $("#mota").val();
+        },
+        error: function(xhr, status, error) {
+            console.log(error)
+            alert('Có lỗi xảy ra: ' + error);
+        }
     });
 </script>

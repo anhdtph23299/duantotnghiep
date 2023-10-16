@@ -24,19 +24,9 @@ public class DashboardController {
         return "admin/createKH";
     }
 
-    @GetMapping("/updateKH")
-    public String update(){
+    @GetMapping("/updateKH/{id}")
+    public String updateKH(){
         return "admin/updateKH";
-    }
-//
-//    @PostMapping ("/updateKH/{id}")
-//    public String updateKH(){
-//        return "admin/updateKH";
-//    }
-
-    @GetMapping("/detailKH/{id}")
-    public String detailKH(){
-        return "admin/detailKH";
     }
 
     @GetMapping("/nhanvien")

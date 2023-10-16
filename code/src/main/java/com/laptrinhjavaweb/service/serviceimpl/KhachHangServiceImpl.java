@@ -31,18 +31,18 @@ public class KhachHangServiceImpl implements KhachHangService {
         if(khachHangRepository.findById(khachHang.getId()).orElse(null)==null){
             return "Không có mã khách hàng này";
         }
-       return khachHangRepository.save(khachHang)!=null?"Sửa thành công":"Thêm thất bại";
+        return khachHangRepository.save(khachHang)!=null?"Sửa thành công":"Thêm thất bại";
     }
 
     @Override
-    public String insert(KhachHang khachHang) {
-        return khachHangRepository.save(khachHang)!=null?"Tạo mới khách hàng thành công":"Có lỗi xảy ra";
+    public KhachHang insert(KhachHang khachHang) {
+        return khachHangRepository.save(khachHang);
     }
 
     @Override
     public void delete(Long id) {
         khachHangRepository.deleteById(id);
     }
-
+}
 
 }
