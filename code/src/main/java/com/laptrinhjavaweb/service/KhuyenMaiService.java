@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface KhuyenMaiService {
     List<KhuyenMai> getAll();
+    KhuyenMai findById(Long id);
 }

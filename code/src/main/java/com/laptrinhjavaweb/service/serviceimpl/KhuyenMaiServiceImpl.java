@@ -18,4 +18,9 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     public List<KhuyenMai> getAll() {
         return this.khuyenMaiRepository.findAll();
     }
+
+    @Override
+    public KhuyenMai findById(Long id) {
+        return this.khuyenMaiRepository.findById(id).orElse(null);
+    }
 }
