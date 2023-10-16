@@ -148,7 +148,7 @@
                                  <td>\${item.email}</td>
                                  <td>\${item.gioiTinh == true ? "Nam": "Nữ"}</td>
                                  <td>\${getFormattedDate(item.ngaySinh)}</td>
-                                 <td>\${item.trangThai== 1 ? "Hoạt động": "Ngừng hoạt động"}</td>
+                                 <td>\${item.trangThai == 1 ? "Hoạt động": "Ngừng hoạt động"}</td>
                                  <td>\${item.diaChi}</td>
                                  <td>\${item.cccd}</td>
                                  <td>\${item.moTa}</td>

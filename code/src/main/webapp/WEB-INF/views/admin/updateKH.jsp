@@ -17,7 +17,7 @@
     color: black;">
                Cập nhật khách hàng
             </h4>
-            <input type="hidden" id="id">
+            <input type="hidden"  id="id" >
             <div class="row">
                 <div class="col">
                     <label>Mã khách hàng:</label>
@@ -107,6 +107,7 @@
 
         // Tạo đối tượng KhachHang từ dữ liệu form
         var khachHang = {
+            "id": id,
             "maKH": maKH,
             "tenKH": tenKH,
             "sdt": sdt,
@@ -118,19 +119,18 @@
             "cccd": cccd,
             "moTa": moTa
         };
-
-        // Gửi yêu cầu cập nhật thông tin khách hàng
+        var url = window.location.pathname.split("/");
+        var id = url[url.length-1];
         $.ajax({
-            url: '/api/admin/khachhang/update/' + id,
+            url: '/api/admin/khachhang/update/'+id,
             method: 'PUT',
             contentType: 'application/json',
             data: JSON.stringify(khachHang),
             success: function(response) {
-                alert(response);
                 window.location.href = '/admin/khachhang';
             },
             error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra: ' + error);
+                showError("Update Fail")
             }
         });
     });
@@ -143,6 +143,7 @@
         method: 'GET',
         success: function(req) {
             var data = req.data;
+            $("#id").val(data.id);
             $("#makh").val(data.maKH);
             $("#tenkh").val(data.tenKH);
             $("#sdt").val(data.sdt);
