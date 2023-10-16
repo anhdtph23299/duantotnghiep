@@ -37,48 +37,48 @@
                                     <div class="row">
                                         <div class="col-xl-12">
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-username">Loại khuyến mãi
+                                                <label class="col-lg-2 col-form-label" for="">Loại khuyến mãi
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
                                                     <div class="basic-form">
-                                                        <form>
+                                                        <form id="">
                                                             <div class="form-group mb-0">
-                                                                <label class="radio-inline mr-3"><input type="radio" name="optradio"> Mã giảm giá hóa đơn</label>
-                                                                <label class="radio-inline mr-3"><input type="radio" name="optradio"> Mã giảm giá sản phẩm</label>
+                                                                <label class="radio-inline mr-3"><input type="radio" name="optradio" value="1" > Mã giảm giá hóa đơn</label>
+                                                                <label class="radio-inline mr-3"><input type="radio" name="optradio" value="0"> Mã giảm giá sản phẩm</label>
                                                             </div>
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-text">Tên khuyến mãi
+                                                <label class="col-lg-2 col-form-label" for="">Tên khuyến mãi
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-text" name="val-text" placeholder="Nhập vào">
+                                                    <input type="text" class="form-control" id="tenKM" name="val-text" placeholder="Nhập vào">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-text">Mã khuyến mãi <span class="text-danger">*</span>
+                                                <label class="col-lg-2 col-form-label" for="">Mã khuyến mãi <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-email" name="val-text" placeholder="Nhập vào">
+                                                    <input type="text" class="form-control" id="maKM" name="val-text" placeholder="Nhập vào">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-datetime-local">Thời gian sử dụng mã
+                                                <label class="col-lg-2 col-form-label" for="">Thời gian sử dụng mã
                                                     <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-3">
-                                                    <input type="datetime-local" class="form-control" id="val-password" name="val-datetime-local" placeholder="Choose a safe one..">
+                                                    <input type="datetime-local" class="form-control" id="ngayBatDau" name="val-datetime-local" >
                                                 </div>
                                                 <div class="col-lg-3">
-                                                    <input type="datetime-local" class="form-control" id="val-password" name="val-datetime-local" placeholder="Choose a safe one..">
+                                                    <input type="datetime-local" class="form-control" id="ngayKetThuc" name="val-datetime-local">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-text">Mô tả thêm <span class="text-danger"></span>
+                                                <label class="col-lg-2 col-form-label" for="">Mô tả thêm <span class="text-danger"></span>
                                                 </label>
                                                 <div class="col-lg-6">
                                                     <textarea class="form-control" id="val-suggestions" name="val-text" rows="2" placeholder="..."></textarea>
@@ -109,13 +109,13 @@
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item">Theo mức tiền</a>
                                                                 </div> -->
-                                                                <select id="inputState" class="form-control default-select ">
+                                                                <select id="inputState" class="form-control default-select" id="loaiKM" >
                                                                     <option selected="">Chọn loại</option>
-                                                                    <option >Theo phần trăm</option>
-                                                                    <option>Theo mức tiền</option>
+                                                                    <option value="1">Theo phần trăm</option>
+                                                                    <option value="0">Theo mức tiền</option>
                                                                 </select>
                                                             </div>
-                                                            <input type="text" class="form-control" id="val-text" name="val-text" placeholder="Nhập giá trị">
+                                                            <input type="text" class="form-control" id="giaTriGiam" name="val-text" placeholder="Nhập giá trị">
                                                         </div>
 
 
@@ -126,28 +126,28 @@
                                                 </div> -->
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-text">Mức giảm tối đa <span class="text-danger"></span>
+                                                <label class="col-lg-2 col-form-label" for="">Mức giảm tối đa <span class="text-danger"></span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-text" name="val-text" placeholder="Nhập vào">
+                                                    <input type="text" class="form-control" id="giamToiDa" name="val-text" placeholder="Nhập vào">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-text">Giá trị đơn hàng tối thiểu <span class="text-danger"></span>
+                                                <label class="col-lg-2 col-form-label" for="">Giá trị đơn hàng tối thiểu <span class="text-danger"></span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-text" name="val-text" placeholder="Nhập vào">
+                                                    <input type="text" class="form-control" id="giaTriDonToiThieu" name="val-text" placeholder="Nhập vào">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-text">Tổng số lượng sử dụng <span class="text-danger"></span>
+                                                <label class="col-lg-2 col-form-label" for="">Tổng số lượng sử dụng <span class="text-danger"></span>
                                                 </label>
                                                 <div class="col-lg-6">
-                                                    <input type="text" class="form-control" id="val-text" name="val-text" placeholder="Nhập vào">
+                                                    <input type="text" class="form-control" id="soLuong" name="val-text" placeholder="Nhập vào">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-2 col-form-label" for="val-text">Sản phẩm áp dụng <span class="text-danger"></span>
+                                                <label class="col-lg-2 col-form-label" for="">Sản phẩm áp dụng <span class="text-danger"></span>
                                                 </label>
                                                 <div class="col-lg-6">
                                                     <div class="col-lg-12 ml-auto">
@@ -205,8 +205,8 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-lg-4 ml-auto">
-                                                    <a href="project-list.html" class="btn btn-success">Xác nhận</a>
-                                                    <a href="project-list.html" class="btn btn-danger">Hủy</a>
+                                                    <a href="#" class="btn btn-success" id="addDiscount">Xác nhận</a>
+                                                    <a href="#" class="btn btn-danger">Hủy</a>
                                                     <!-- <button type="button" class="btn btn-primary">Xác nhận</button> -->
                                                 </div>
                                             </div>
@@ -224,3 +224,66 @@
         </div>
     </div>
 </section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+    $("#addDiscount").click(function (){
+        var maKM = $("#maKM").val();
+        var tenKM = $("#tenKM").val();
+        // var loaiKM = $("#loaiKM").val();
+        var ngayBatDau = $("#ngayBatDau").val();
+        var ngayKetThuc = $("#ngayKetThuc").val();
+        var loaiKM = $("#loaiKM").val();
+        var trangThai = $("#trangthai").val();
+        var giaTriGiam = $("#giaTriGiam").val();
+
+        var ngayBatDauFMT = convertDateFormat(ngayBatDau);
+        var ngayKetThucFMT = convertDateFormat(ngayKetThuc);
+        // var ngayTao = getDateNow();
+
+        var km = {
+            maKM: maKM,
+            tenKM: tenKM,
+            loaiKM: loaiKM,
+            ngayBatDau: ngayBatDau,
+            ngayKetThuc:  ngayKetThuc,
+            trangThai: 1,
+            // ngayTao: ngayTao,
+            nguoiTao: 1,
+            giaTriGiam: giaTriGiam
+        }
+        console.log(km)
+        $.ajax({
+            url: '/api/admin/khuyen-mai/insert',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(km),
+            success: function(response) {
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+    })
+
+    function convertDateFormat(inputDate) {
+        var date = new Date(inputDate);
+        var year = date.getFullYear();
+        var month = (date.getMonth() + 1).toString().padStart(2, '0');
+        var day = date.getDate().toString().padStart(2, '0');
+        var hours = date.getHours().toString().padStart(2, '0');
+        var minutes = date.getMinutes().toString().padStart(2, '0');
+        var seconds = date.getSeconds().toString().padStart(2, '0');
+
+        var formattedDate = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+        return formattedDate;
+    }
+    function getDateNow(){
+        const currentDate = new Date();
+
+// Convert the date to a string in a specific format, for example, "yyyy-MM-dd HH:mm:ss"
+        const formattedDate = currentDate.toISOString().slice(0, 19).replace("T", " ");
+
+// Output the formatted date
+        return formattedDate;
+    }
+</script>

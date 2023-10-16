@@ -25,6 +25,7 @@ public class ApiKhuyenMaiController {
 
     @PostMapping("/insert")
     public ResponseObject insert(@RequestBody KhuyenMai khuyenMai){
+
         String res = khuyenMaiService.insert(khuyenMai);
         return new ResponseObject(res);
     }
