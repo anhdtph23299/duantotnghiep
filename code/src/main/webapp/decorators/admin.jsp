@@ -42,121 +42,119 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
-<script>
-    function getFormattedDate(longDate) {
-        date = new Date(longDate);
-        let year = date.getFullYear();
-        let month = (1 + date.getMonth()).toString().padStart(2, '0');
-        let day = date.getDate().toString().padStart(2, '0');
+    <script>
+        function getFormattedDate(longDate) {
+            date = new Date(longDate);
+            let year = date.getFullYear();
+            let month = (1 + date.getMonth()).toString().padStart(2, '0');
+            let day = date.getDate().toString().padStart(2, '0');
 
-        return day + '-' + month + '-' + year;
-    }
+            return day + '-' + month + '-' + year;
+        }
+        function formatDateInput(longDate) {
+            date = new Date(longDate);
+            let year = date.getFullYear();
+            let month = (1 + date.getMonth()).toString().padStart(2, '0');
+            let day = date.getDate().toString().padStart(2, '0');
 
-    function formatDateInput(longDate) {
-        date = new Date(longDate);
-        let year = date.getFullYear();
-        let month = (1 + date.getMonth()).toString().padStart(2, '0');
-        let day = date.getDate().toString().padStart(2, '0');
+            return year + '-' + month + '-' + day;
+        }
+        function showConfirm(message){
+            Swal.fire({
+                title: 'Bạn chắc chắn?',
+                text: message,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Đồng ý!'
+            }).then((result) => {
+                return result.isConfirmed;
+            })
+        }
+        function showSuccess(message){
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
 
-        return year + '-' + month + '-' + day;
-    }
+            Toast.fire({
+                icon: 'success',
+                title: message
+            })
+        }
+        function showError(message){
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
 
-    function showConfirm(message, id) {
-        return Swal.fire({
-            title: 'Bạn chắc chắn?',
-            text: message,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Đồng ý!'
-        }).then((result) => {
-            return result.isConfirmed ? id : null;
-        });
-    }
-    function showSuccess(message){
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-
-        Toast.fire({
-            icon: 'success',
-            title: message
-        })
-    }
-    function showError(message){
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-
-        Toast.fire({
-            icon: 'error',
-            title: message
-        })
-    }
-</script>
+            Toast.fire({
+                icon: 'error',
+                title: message
+            })
+        }
+    </script>
 
 
 </head>
 <body>
-    <!--*******************
-       Preloader start
-    ********************-->
-    <div id="preloader">
-        <div class="sk-three-bounce">
-            <div class="sk-child sk-bounce1"></div>
-            <div class="sk-child sk-bounce2"></div>
-            <div class="sk-child sk-bounce3"></div>
-        </div>
+<!--*******************
+   Preloader start
+********************-->
+<div id="preloader">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
     </div>
-    <!--*******************
-        Preloader end
-    ********************-->
+</div>
+<!--*******************
+    Preloader end
+********************-->
 
-    <div id="main-wrapper">
-        <%@ include file="/common/admin/header.jsp" %>
-        <%@ include file="/common/admin/sidebar.jsp" %>
-        <dec:body/>
-        <%@ include file="/common/admin/footer.jsp" %>
-    </div>
+<div id="main-wrapper">
+    <%@ include file="/common/admin/header.jsp" %>
+    <%@ include file="/common/admin/sidebar.jsp" %>
+    <dec:body/>
+    <%@ include file="/common/admin/footer.jsp" %>
+</div>
 
-    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="<c:url value='/template/admin/vendor/global/global.min.js'/>"></script>
-    <script src="<c:url value='/template/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js'/>"></script>
-    <script src="<c:url value='/template/admin/vendor/chart.js/Chart.bundle.min.js'/>"></script>
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="<c:url value='/template/admin/vendor/global/global.min.js'/>"></script>
+<script src="<c:url value='/template/admin/vendor/bootstrap-select/dist/js/bootstrap-select.min.js'/>"></script>
+<script src="<c:url value='/template/admin/vendor/chart.js/Chart.bundle.min.js'/>"></script>
 
-    <!-- Chart piety plugin files -->
-    <script src="<c:url value='/template/admin/vendor/peity/jquery.peity.min.js'/>"></script>
+<!-- Chart piety plugin files -->
+<script src="<c:url value='/template/admin/vendor/peity/jquery.peity.min.js'/>"></script>
 
-    <!-- Apex Chart -->
-    <script src="<c:url value='/template/admin/vendor/apexchart/apexchart.js'/>"></script>
+<!-- Apex Chart -->
+<script src="<c:url value='/template/admin/vendor/apexchart/apexchart.js'/>"></script>
 
-    <!-- Dashboard 1 -->
-    <script src="<c:url value='/template/admin/js/dashboard/dashboard-1.js'/>"></script>
+<!-- Dashboard 1 -->
+<script src="<c:url value='/template/admin/js/dashboard/dashboard-1.js'/>"></script>
 
-    <script src="<c:url value='/template/admin/vendor/owl-carousel/owl.carousel.js'/>"></script>
-    <script src="<c:url value='/template/admin/js/custom.min.js'/>"></script>
-    <script src="<c:url value='/template/admin/js/deznav-init.js'/>"></script>
-    <script src="<c:url value='/template/admin/js/demo.js'/>"></script>
-    <script src="<c:url value='/template/admin/js/main.js'/>"></script>
-    <script src="<c:url value='/template/admin/js/styleSwitcher.js'/>"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<script src="<c:url value='/template/admin/vendor/owl-carousel/owl.carousel.js'/>"></script>
+<script src="<c:url value='/template/admin/js/custom.min.js'/>"></script>
+<script src="<c:url value='/template/admin/js/deznav-init.js'/>"></script>
+<script src="<c:url value='/template/admin/js/demo.js'/>"></script>
+<script src="<c:url value='/template/admin/js/main.js'/>"></script>
+<script src="<c:url value='/template/admin/js/styleSwitcher.js'/>"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
