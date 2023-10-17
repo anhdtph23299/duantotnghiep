@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class KhachHangServiceImpl implements KhachHangService {
@@ -20,6 +21,20 @@ public class KhachHangServiceImpl implements KhachHangService {
     }
 
     @Override
+    public KhachHang findById(Long id) {
+        Optional<KhachHang> khachHang= khachHangRepository.findById(id);
+        return khachHang.orElse(null);
+    }
+
+    @Override
+    public String update(KhachHang khachHang) {
+        if(khachHangRepository.findById(khachHang.getId()).orElse(null)==null){
+            return "Không có mã khách hàng này";
+        }
+        return khachHangRepository.save(khachHang)!=null?"Sửa thành công":"Thêm thất bại";
+    }
+
+    @Override
     public KhachHang insert(KhachHang khachHang) {
         return khachHangRepository.save(khachHang);
     }
@@ -28,4 +43,6 @@ public class KhachHangServiceImpl implements KhachHangService {
     public void delete(Long id) {
         khachHangRepository.deleteById(id);
     }
+
+
 }

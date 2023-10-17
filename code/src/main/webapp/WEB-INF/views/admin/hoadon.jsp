@@ -7,29 +7,33 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="content-body">
-  <div class="container-fluid">
-
-    <input id="tenkhachhang"> Ten khachhang
-    <button id="them">Thêm </button>
-    <table class="table table-hover style-1" id="tblHoaDon">
-      <thead>
-      <tr class="table-info">
-
-        <th scope="col">Id</th>
-        <th scope="col">Name</th>
-        <th scope="col">ACTION</th>
-      </tr>
-      </thead>
-      <tbody>
-
-      </tbody>
-    </table>
-  </div>
+<div class="row mt-5 mb-5">
+  <div class="col-9"></div>
+  <div class="col-3"><button class="btn" id="taohoadon" style="background-color: #eb8153;color: white">Tạo hoá đơn</button></div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<div class="mb-5">
+  <table id="tblHoaDon" class="table" style="min-width: 845px">
+    <thead class="table-light">
+    <tr>
+      <th>Mã hoá đơn</th>
+      <th>Mã Nhân Viên</th>
+      <th>Ngày tạo</th>
+      <th>Người nhận</th>
+      <th>Số điện thoại</th>
+      <th>Trạng thái</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+</div>
+
 <script >
 
-      $("#them").click(function (){
+      $("#taohoadon").click(function (){
         var tenKhachHang = $("#tenkhachhang").val();
         $.ajax({
           url: '/api/admin/hoadon/insert',
@@ -39,6 +43,7 @@
             tenKhachHang: tenKhachHang
           }),
           success: function(response) {
+            showSuccess(response.data);
             loadHoaDon()
           },
           error: function(xhr, status, error) {
@@ -46,41 +51,61 @@
           }
         });
       })
-     function loadHoaDon(){
-        $.ajax({
-          url: '/api/admin/hoadon',
-          method: 'GET',
-          success: function(req) {
-            console.log(req.data);
-            var tbody = $('#tblHoaDon tbody');
-            tbody.empty();
-            req.data.forEach(function(customer) {
-              var row = `
-                            <tr>
-                                <td>\${customer.id}</td>
-                                <td>\${customer.tenKhachHang}</td>
-                                <td onclick="Delete(\${customer.id})">Xoá</td>
-                            </tr>
-                        `;
-
-              tbody.append(row);
-
-            });
-
-          },
-          error: function(xhr, status, error) {
-            alert('Có lỗi xảy ra: ' + error);
-          }
-        });
+  var datatable = $("#tblHoaDon").DataTable({
+    columns: [
+      { data: 'id', title: 'ID' },
+      { data: null, title: 'Tên Khách Hàng', defaultContent: 'Anh' },
+      {
+        data: 'ngayDat',
+        title: 'Ngày Đặt',
+        render: function (data) {
+          // Chuyển đổi giá trị ngày từ số sang dạng ngày tháng năm
+          return getFormattedDate(data);
+        }
+      },
+      { data: null, title: 'Người Tạo'  ,defaultContent: 'Anh'},
+      { data: null, title: 'Số Điện Thoại', defaultContent: 'Anh' },
+      { data: 'getTrangThaiHD', title: 'Trạng Thái' },
+      {
+        data: 'id',
+        render: function (data) {
+          return `
+                    <div class="d-flex">
+                        <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                        <a onclick="Delete(\${data})" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                    </div>
+                `;
+        }
       }
-      loadHoaDon()
+    ]
+  });
+
+  function loadHoaDon() {
+    $.ajax({
+      url: '/api/admin/hoadon',
+      method: 'GET',
+      success: function (req) {
+        datatable.clear();
+        datatable.rows.add(req.data);
+        datatable.draw();
+      },
+      error: function (xhr, status, error) {
+        alert('Có lỗi xảy ra: ' + error);
+      }
+    });
+  }
+
+  // Gọi loadHoaDon() mỗi khi cần cập nhật dữ liệu
+  loadHoaDon();
+
       function Delete(id){
+        console.log(id)
         $.ajax({
           url: '/api/admin/hoadon/delete/'+id,
           method: 'DELETE',
           success: function(req) {
-            alert(req);
             loadHoaDon()
+            showSuccess("Xoá thành công")
           },
           error: function(xhr, status, error) {
             alert('Có lỗi xảy ra: ' + error);

@@ -85,7 +85,7 @@
                         <label>Trạng thái:</label>
                         <select class="form-select" id="trangthai">
                             <option value="1" selected>Hoạt động</option>
-                            <option value="2">Ngừng hoạt động</option>
+                            <option value="0">Ngừng hoạt động</option>
 =======
                         <label for="datepicker" class="form-label">Ngày sinh:</label>
                         <input type="date" class="form-control" id="datepicker">
@@ -125,7 +125,6 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script >
 
     $("#them").click(function (){
@@ -152,16 +151,16 @@
             cccd: cccd,
             moTa: moTa
         }
-        console.log(kh)
         $.ajax({
             url: '/api/admin/khachhang/insert',
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(kh),
             success: function(response) {
+                window.location.href = '/admin/khachhang';
             },
             error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra: ' + error);
+              showError("Thêm thất bại")
             }
         });
     })

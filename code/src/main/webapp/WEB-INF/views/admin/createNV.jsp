@@ -24,8 +24,9 @@
         </h4>
 
         <div>
-                <button class="btn" data-bs-toggle="modal" data-bs-target="#addcv" style="background-color: #eb8153;color: white" >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M184 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H96c-35.3 0-64 28.7-64 64v16 48V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H376V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H184V24zM80 192H432V448c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V192zm176 40c-13.3 0-24 10.7-24 24v48H184c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24V352h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H280V256c0-13.3-10.7-24-24-24z"/>
+                <button class="btn"  data-bs-toggle="modal" data-bs-target="#addcv" style="background-color: #eb8153;color: white" >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                        <path d="M184 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H96c-35.3 0-64 28.7-64 64v16 48V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H376V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H184V24zM80 192H432V448c0 8.8-7.2 16-16 16H96c-8.8 0-16-7.2-16-16V192zm176 40c-13.3 0-24 10.7-24 24v48H184c-13.3 0-24 10.7-24 24s10.7 24 24 24h48v48c0 13.3 10.7 24 24 24s24-10.7 24-24V352h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H280V256c0-13.3-10.7-24-24-24z"/>
                     </svg> Tạo mới chức vụ
                 </button>
 
@@ -38,78 +39,79 @@
                     </div>
                     <div class="modal-body">
                         <label>Nhập tên chức vụ mới:</label>
-                        <input type="text" class="form-control" >
+                        <input type="text" id="tencv" class="form-control" >
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-primary">Add</button>
+                        <button type="button" id="themcv" class="btn btn-outline-primary">Add</button>
                     </div>
                 </div>
             </div>
         </div>
         </div>
         <hr>
-        <form>
             <div class="row">
                 <div class="col">
                     <label>Mã nhân viên:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="manv" class="form-control" >
                 </div>
                 <div class="col">
                     <label>Họ và tên:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="tennv" class="form-control" >
                 </div>
                 <div class="col">
                     <label>Địa chỉ email:</label>
-                    <input type="email" class="form-control" >
+                    <input type="email" id="email" class="form-control" >
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col">
                     <label>Địa chỉ thường chú:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="diachi" class="form-control" >
                 </div>
                 <div class="col">
                     <label>Số điện thoại:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="sdt" class="form-control" >
                 </div>
                 <div class="col">
-                    <label for="datepicker" class="form-label">Ngày sinh:</label>
-                    <input type="date" class="form-control" id="datepicker">
+                    <label  class="form-label">Ngày sinh:</label>
+                    <input type="date" class="form-control" id="ngaysinh" >
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col">
                     <label>Số CCCD:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="cccd" class="form-control" >
                 </div>
                 <div class="col">
-                    <label for="datepicker" class="form-label">Ngày cấp:</label>
-                    <input type="date" class="form-control" id="datepicker">
+                    <label class="form-label">Ngày cấp:</label>
+                    <input type="date" class="form-control" id="ngaycap">
                 </div>
                 <div class="col">
                     <label>Nơi cấp:</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" id="noicap" class="form-control" >
                 </div>
             </div>
 
                 <div class="row mt-3">
                     <div class="col">
                         <label>Chức vụ:</label>
-                        <select class="form-select">
-                            <option value="Bán hàng" selected>Bán hàng</option>
-                            <option value="Dịch vụ" >Dịch vụ</option>
-                            <option value="Tư vấn" >Tư vấn</option>
-                            <option value="Thu ngân" >Thu ngân</option>
-                            <option value="Kiểm hàng" >Kiểm hàng</option>
+                        <select class="form-select" id="selectChucVu">
                         </select>
                     </div>
                     <div class="col">
                         <label>Giới tính:</label>
-                        <select class="form-select">
-                            <option value="Nam" selected>Nam</option>
-                            <option value="Nữ">Nữ</option>
+                        <select class="form-select" id="gioitinh">
+                            <option value="true" selected>Nam</option>
+                            <option value="false">Nữ</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Trạng thái:</label>
+                        <select class="form-select" id="trangthai">
+                            <option value="1" selected>Hoạt động</option>
+                            <option value="0">Vô hiệu hóa</option>
                         </select>
                     </div>
                 </div>
@@ -118,7 +120,7 @@
             <div class="form-group col-md-12">
                 <label class="control-label">Ảnh 3x4 nhân viên</label>
                 <div id="myfileupload">
-                    <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);">
+                    <input type="file" id="uploadfile" id="hinhanh" name="ImageUpload" onchange="readURL(this);">
                 </div>
                 <div id="thumbbox">
                     <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none" />
@@ -138,15 +140,104 @@
 
             <div class="row mt-3">
                 <div class="col">
-                    <button class="btn" style="background-color: #A6edab; color: #00852d">Add</button>
-                    <button class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</button>
+                    <button class="btn" id="them" style="background-color: #A6edab; color: #00852d">Add</button>
+                    <a href="/admin/nhanvien" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
                 </div>
             </div>
-        </form>
-
-
     </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script >
+
+        $("#them").click(function () {
+            var hinhAnh = $("#hinhanh").val();
+            var maNV = $("#manv").val();
+            var tenNV = $("#tennv").val();
+            var sdt = $("#sdt").val();
+            var email = $("#email").val();
+            var gioiTinh = $("#gioitinh").val();
+            var ngaySinh = $("#ngaysinh").val();
+            var trangThai = $("#trangthai").val();
+            var diaChi = $("#diachi").val();
+            var cccd = $("#cccd").val();
+            var ngayCap = $("#ngaycap").val();
+            var noiCap = $("#noicap").val();
+            var chucVu = $("#selectChucVu").val();
+
+            var nv = {
+                maNV: maNV,
+                tenNV: tenNV,
+                sdt: sdt,
+                email: email,
+                gioiTinh: gioiTinh,
+                ngaySinh: ngaySinh,
+                trangThai: trangThai,
+                diaChi: diaChi,
+                cccd: cccd,
+                hinhAnh: hinhAnh,
+                ngayCap: ngayCap,
+                noiCap: noiCap,
+                chucVu: {id: chucVu}
+            };
+
+                $.ajax({
+                url: '/api/admin/nhanvien/insert',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(nv),
+                success: function (response) {
+                    window.location.href = '/admin/nhanvien';
+                },
+                error: function (xhr, status, error) {
+                    showError("Thêm nhân viên thất bại");
+                }
+            });
+        });
+
+
+        $("#themcv").click(function () {
+            var tenCV = $("#tencv").val();
+            var cv = {
+                tenCV: tenCV
+            };
+
+            $.ajax({
+                url: '/api/admin/chucvu/insert',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(cv),
+                success: function (response) {
+                    updateChucVuSelect()
+                    showSuccess("Thêm chức vụ thành công");
+                },
+                error: function (xhr, status, error) {
+                    showError("Thêm chức vụ thất bại");
+                }
+            });
+        });
+
+        function updateChucVuSelect() {
+            $.ajax({
+                url: '/api/admin/chucvu',
+                method: 'GET',
+                success: function (req) {
+                    var select = $("#selectChucVu");
+                    select.empty();
+                    req.data.forEach(function (chucvu) {
+                        select.append($('<option>', {
+                            value: chucvu.id,
+                            text: chucvu.tenCV
+                        }));
+                    });
+                },
+                error: function (xhr, status, error) {
+                    showError("Lỗi khi cập nhật select chức vụ");
+                }
+            });
+        }
+        updateChucVuSelect();
+    </script>
 </div>
 </body>
 </html>

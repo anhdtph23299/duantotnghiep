@@ -8,7 +8,7 @@ public interface HoaDonService {
 
     List<HoaDon> getDsHoaDon();
 
-    HoaDon insert(HoaDon hoaDon);
+    String insert(HoaDon hoaDon);
 
     void delete(Long id);
 }

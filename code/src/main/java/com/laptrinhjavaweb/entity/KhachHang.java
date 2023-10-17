@@ -4,8 +4,11 @@ import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -50,6 +53,8 @@ public class KhachHang  extends PrimaryEntity {
     @Column(name = "mota")
     private String moTa;
 
-
+//    @OneToOne(mappedBy = "khachHang", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    private GioHang gioHang;
 
 }
