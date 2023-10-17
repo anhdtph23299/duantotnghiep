@@ -14,6 +14,7 @@ import java.util.Date;
 @SuperBuilder
 @Getter
 @Setter
+@Builder
 @Entity
 @ToString
 @Table(name = "khuyenmai")
