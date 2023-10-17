@@ -17,8 +17,8 @@ import java.util.List;
 @Builder
 @Entity
 @ToString
-@Table(name = "sanpham")
-public class SanPham extends PrimaryEntity {
+@Table(name = "danhmuc")
+public class DanhMuc extends PrimaryEntity {
 
     @Column(name = "slug")
     private String slug;
@@ -26,18 +26,21 @@ public class SanPham extends PrimaryEntity {
     @Column(name = "ten")
     private String ten;
 
+    @Column(name = "hienthitrangchu")
+    private int hienThiTrangChu;
+
     @Column(name = "ngaytao")
     private Date ngayTao;
 
     @ManyToOne
-    @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
+    @JoinColumn(name = "idnv",insertable = false,updatable = false)
     private NhanVien nhanVienTao;
 
     @Column(name = "ngaysua")
     private Date ngaySua;
 
     @ManyToOne
-    @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
+    @JoinColumn(name = "idnv",insertable = false,updatable = false)
     private NhanVien nhanVienSua;
 
     @Column(name = "trangthai")
@@ -47,6 +50,10 @@ public class SanPham extends PrimaryEntity {
     @JoinColumn(name = "iddanhmuc",insertable = false,updatable = false)
     private DanhMuc danhMuc;
 
-    @OneToMany(mappedBy = "sanPham")
-    private List<ChiTietSanPham> chiTietSanPham = new ArrayList<>();
+    @OneToMany(mappedBy = "danhMuc", cascade = CascadeType.REMOVE)
+    private List<DanhMuc> danhMucList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "danhMuc", cascade = CascadeType.REMOVE)
+    private List<SanPham> SanPhams = new ArrayList<>();
+
 }

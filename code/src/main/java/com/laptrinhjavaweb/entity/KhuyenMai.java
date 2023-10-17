@@ -17,14 +17,20 @@ import java.util.List;
 @Builder
 @Entity
 @ToString
-@Table(name = "sanpham")
-public class SanPham extends PrimaryEntity {
-
-    @Column(name = "slug")
-    private String slug;
-
-    @Column(name = "ten")
-    private String ten;
+@Table(name = "khuyenmai")
+public class KhuyenMai extends PrimaryEntity {
+    @Column(name = "makm")
+    private String maKM;
+    @Column(name = "tenkm")
+    private String tenKM;
+    @Column(name = "loaikm")
+    private int loaiKM;
+    @Column(name = "giatrigiam")
+    private Float giaTriGiam;
+    @Column(name = "ngaybatdau")
+    private Date ngayBatDau;
+    @Column(name = "ngayketthuc")
+    private Date ngayKetThuc;
 
     @Column(name = "ngaytao")
     private Date ngayTao;
@@ -43,10 +49,6 @@ public class SanPham extends PrimaryEntity {
     @Column(name = "trangthai")
     private int trangThai;
 
-    @ManyToOne
-    @JoinColumn(name = "iddanhmuc",insertable = false,updatable = false)
-    private DanhMuc danhMuc;
-
-    @OneToMany(mappedBy = "sanPham")
-    private List<ChiTietSanPham> chiTietSanPham = new ArrayList<>();
+    @OneToMany(mappedBy = "khuyenMai")
+    private List<KhuyenMaiSanPham> khuyenMaiSanPham = new ArrayList<>();
 }

@@ -99,6 +99,10 @@
                 </ul>
             </li>
             <li class="nav-label">components</li>
+            <li><a class="has-arrow ai-icon" href="/admin/khuyen-mai" aria-expanded="false">
+                <span class="nav-text">Khuyến mại</span>
+            </a>
+            </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-003-diamond"></i>
                 <span class="nav-text">Bootstrap</span>
