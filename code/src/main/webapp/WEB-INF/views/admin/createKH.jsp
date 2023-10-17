@@ -85,7 +85,7 @@
                         <label>Trạng thái:</label>
                         <select class="form-select" id="trangthai">
                             <option value="1" selected>Hoạt động</option>
-                            <option value="2">Ngừng hoạt động</option>
+                            <option value="0">Ngừng hoạt động</option>
 =======
                         <label for="datepicker" class="form-label">Ngày sinh:</label>
                         <input type="date" class="form-control" id="datepicker">
@@ -157,9 +157,10 @@
             contentType: 'application/json',
             data: JSON.stringify(kh),
             success: function(response) {
+                window.location.href = '/admin/khachhang';
             },
             error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra: ' + error);
+              showError("Thêm thất bại")
             }
         });
     })

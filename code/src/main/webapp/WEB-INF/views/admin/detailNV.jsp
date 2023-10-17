@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Sửa nhân viên</title>
+    <title>Thông tin chi tiết nhân viên</title>
 </head>
 <body>
 <div class="content-body">
@@ -20,71 +20,69 @@
     padding-bottom: 10px;
     padding-left: 5px;
     color: black;">
-               Sửa thông tin nhân viên
+                Thông tin chi tiết nhân viên
             </h4>
             <input type="hidden"  id="id" >
             <div class="row">
                 <div class="col">
                     <label>Mã nhân viên:</label>
-                    <input type="text" id="manv" class="form-control" >
+                    <input type="text" id="manv" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label>Họ và tên:</label>
-                    <input type="text" id="tennv" class="form-control" >
+                    <input type="text" id="tennv" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label>Địa chỉ email:</label>
-                    <input type="email" id="email" class="form-control" >
+                    <input type="email" id="email" class="form-control" disabled >
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col">
                     <label>Địa chỉ thường chú:</label>
-                    <input type="text" id="diachi" class="form-control" >
+                    <input type="text" id="diachi" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label>Số điện thoại:</label>
-                    <input type="text" id="sdt" class="form-control" >
+                    <input type="text" id="sdt" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label  class="form-label">Ngày sinh:</label>
-                    <input type="date" class="form-control" id="ngaysinh" >
+                    <input type="date" class="form-control" id="ngaysinh" disabled >
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col">
                     <label>Số CCCD:</label>
-                    <input type="text" id="cccd" class="form-control" >
+                    <input type="text" id="cccd" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label class="form-label">Ngày cấp:</label>
-                    <input type="date" class="form-control" id="ngaycap">
+                    <input type="date" class="form-control" id="ngaycap" disabled>
                 </div>
                 <div class="col">
                     <label>Nơi cấp:</label>
-                    <input type="text" id="noicap" class="form-control" >
+                    <input type="text" id="noicap" class="form-control"  disabled>
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col">
                     <label>Chức vụ:</label>
-                    <select class="form-select" id="selectChucVu">
-                    </select>
-
+                    <input type="text" id="selectChucVu" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label>Giới tính:</label>
-                    <select class="form-select" id="gioitinh">
+                    <select class="form-select" id="gioitinh" disabled>
                         <option value="true" selected>Nam</option>
                         <option value="false">Nữ</option>
                     </select>
                 </div>
                 <div class="col">
                     <label>Trạng thái:</label>
-                    <select class="form-select" id="trangthai">
+                    <select class="form-select" id="trangthai" disabled>
                         <option value="1" selected>Hoạt động</option>
                         <option value="0">Vô hiệu hóa</option>
                     </select>
@@ -115,65 +113,14 @@
 
             <div class="row mt-3">
                 <div class="col">
-                    <button class="btn" id="updateButton" style="background-color: #A6edab; color: #00852d">Update</button>
                     <a href="/admin/nhanvien" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
                 </div>
             </div>
-
-
         </div>
     </div>
 </div>
 
 <script >
-    $("#updateButton").click(function() {
-        var id = $("#id").val();
-
-        var maNV = $("#manv").val();
-        var tenNV = $("#tennv").val();
-        var sdt = $("#sdt").val();
-        var email = $("#email").val();
-        var gioiTinh = $("#gioitinh").val();
-        var ngaySinh = $("#ngaysinh").val();
-        var hinhAnh = $("#hinhanh").val();
-        var trangThai = $("#trangthai").val();
-        var diaChi = $("#diachi").val();
-        var cccd = $("#cccd").val();
-        var ngayCap = $("#ngaycap").val();
-        var noiCap = $("#noicap").val();
-        var chucVu = $("#selectChucVu").val();
-
-        var nhanVien = {
-            "id": id,
-            "maNV": maNV,
-            "tenNV": tenNV,
-            "sdt": sdt,
-            "email": email,
-            "gioiTinh": gioiTinh,
-            "ngaySinh": ngaySinh,
-            "hinhAnh": hinhAnh,
-            "trangThai": trangThai,
-            "diaChi": diaChi,
-            "cccd": cccd,
-            "ngayCap": ngayCap,
-            "noiCap": noiCap,
-            "chucVu":  {id: chucVu}
-        };
-        var url = window.location.pathname.split("/");
-        var id = url[url.length-1];
-        $.ajax({
-            url: '/api/admin/nhanvien/update/'+id,
-            method: 'PUT',
-            contentType: 'application/json',
-            data: JSON.stringify(nhanVien),
-            success: function(response) {
-                window.location.href = '/admin/nhanvien';
-            },
-            error: function(xhr, status, error) {
-                showError("Update Fail")
-            }
-        });
-    });
 
 
     function getNhanVienDetail() {
@@ -197,9 +144,12 @@
                 $("#cccd").val(data.cccd);
                 $("#ngaycap").val(formatDateInput(data.ngayCap));
                 $("#noicap").val(data.noiCap);
-                $("#selectChucVu").val(data.chucVu.tenCV).trigger('change');
 
-                updateChucVuSelect()
+                // Đặt giá trị của trường chức vụ
+                if (data.chucVu) {
+                    $("#selectChucVu").val(data.chucVu.tenCV).trigger('change');
+                }
+                updateChucVuSelect();
             },
             error: function (xhr, status, error) {
                 console.log(error);

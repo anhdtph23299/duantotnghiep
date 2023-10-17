@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class NhanVienServiceImpl implements NhanVienService {
@@ -17,6 +18,20 @@ public class NhanVienServiceImpl implements NhanVienService {
     @Override
     public List<NhanVien> getDsNhanVien() {
         return nhanVienRepository.findAll();
+    }
+
+    @Override
+    public NhanVien findById(Long id) {
+        Optional<NhanVien> nhanVien= nhanVienRepository.findById(id);
+        return nhanVien.orElse(null);
+    }
+
+    @Override
+    public String update(NhanVien nhanVien) {
+        if(nhanVienRepository.findById(nhanVien.getId()).orElse(null)==null){
+            return "Không có mã nhân viên này";
+        }
+        return nhanVienRepository.save(nhanVien)!=null?"Sửa thành công":"Thêm thất bại";
     }
 
     @Override
