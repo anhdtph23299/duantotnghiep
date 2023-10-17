@@ -99,7 +99,18 @@
         <div style="min-height: 120px;">
             <div class="collapse collapse-horizontal" id="collapseWidthExample">
                 <div class="card card-body" style="width: 300px;">
-                    This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                           Vietnamese
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                           English
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
