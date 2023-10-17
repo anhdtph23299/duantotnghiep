@@ -1,6 +1,5 @@
 package com.laptrinhjavaweb.service.serviceimpl;
 
-import com.laptrinhjavaweb.entity.KhachHang;
 import com.laptrinhjavaweb.entity.NhanVien;
 import com.laptrinhjavaweb.repository.NhanVienRepository;
 import com.laptrinhjavaweb.service.NhanVienService;

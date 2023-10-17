@@ -44,6 +44,11 @@ public class DashboardController {
         return "admin/updateNV";
     }
 
+    @GetMapping("/detailNV/{id}")
+    public String detailNV(){
+        return "admin/detailNV";
+    }
+
     @GetMapping("/profile")
     public String profile(){
         return "admin/profile";
