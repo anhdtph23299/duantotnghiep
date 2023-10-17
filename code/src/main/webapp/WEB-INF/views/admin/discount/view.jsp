@@ -378,12 +378,27 @@
                     var ngayBatDauFMT = formatMicrosoftJSONDate(item.ngayBatDau);
                     var ngayKetThucFMT = formatMicrosoftJSONDate(item.ngayKetThuc);
                     var ngayTaoFMT = formatMicrosoftJSONDate(item.ngayTao);
+                    var trangThaiStr = "";
+                    var textColor = "";
+                    var textFront = "text-info";
+                    if(item.trangThai == 0){
+                        trangThaiStr = "Đã dừng";
+                        textColor = "bgl-danger";
+                        textFront = "text-danger";
+                    }else if(item.trangThai == 2){
+                        trangThaiStr = "Sắp diễn ra";
+                        textColor ="bgl-warning";
+                        textFront = "text-warning";
+                    }else{
+                        trangThaiStr = "Hoạt động";
+                        textColor="bgl-info";
+                    }
                     var card =`
                        <div class="card" >
                         <div class="project-info">
                             <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                                <p class="text-primary mb-1">#Giảm giá</p>
-                                <h5 class="title font-w600 mb-2"><a href="/admin/khuyen-mai/detail" class="text-black">\${item.tenKM}</a></h5>
+                                <p class="text-primary mb-1">#\${item.maKM}</p>
+                                <h5 class="title font-w600 mb-2"><a href="/admin/khuyen-mai/detail/\${item.id}" class="text-black">\${item.tenKM}</a></h5>
                                 <div class="text-dark"><i class="fa fa-calendar-o mr-3" aria-hidden="true"></i>Ngày tạo: \${ngayTaoFMT}</div>
                             </div>
                             <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
@@ -391,7 +406,7 @@
 
                                     <div class="ml-2">
                                         <span>Giá trị</span>
-                                        <h5 class="mb-0 pt-1 font-w500 text-black">Giảm: \${item.giaTriGiam} \${item.loaiKM == 1 ? "%": "VND"} </h5>
+                                        <h5 class="mb-0 pt-1 font-w500 text-black">Giảm: \${item.giaTriGiam} \${item.loaiGiamGia == 1 ? "%": "VND"} </h5>
                                     </div>
                                 </div>
                             </div>
@@ -423,7 +438,7 @@
                             </div>
                             <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                                 <div class="d-flex project-status align-items-center">
-                                    <span class="btn bgl-info text-info status-btn mr-3">\${item.trangThai == 1 ? "Đang chạy": "Hoàn tất"}</span>
+                                    <span class="btn \${textColor} \${textFront} status-btn mr-3">\${trangThaiStr}</span>
                                     <div class="dropdown">
                                         <a href="javascript:void(0);" data-toggle="dropdown" aria-expanded="false">
                                             <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -433,8 +448,8 @@
                                             </svg>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="javascript:void(0);">Edit</a>
-                                            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                            <a class="dropdown-item" href="/admin/khuyen-mai/delete/\${item.id}" onclick="Delete(\${item.id})">Dừng khuyến mại</a>
+                                            <a class="dropdown-item" href="/admin/khuyen-mai/edit/\${item.id}" >Chỉnh sửa</a>
                                         </div>
                                     </div>
                                 </div>
@@ -465,6 +480,19 @@
         // Format the date into "HH:MM dd-MM-yyyy" format
         var formattedDate = hours + ':' + minutes + ' ' + day + '/' + month + '/' + year;
         return formattedDate;
+    }
+
+    function Delete(id) {
+        $.ajax({
+            url: '/api/admin/khuyen-mai/delete/' + id,
+            method: 'POST',
+            success: function (response) {
+                window.location.href = "/admin/khuyen-mai";
+            },
+            error: function (xhr, status, error) {
+                showError("Delete fail");
+            }
+        });
     }
 
 

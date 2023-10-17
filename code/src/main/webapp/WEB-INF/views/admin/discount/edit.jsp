@@ -6,24 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<title>Thêm khuyến mại</title>
+<title>Cập nhật khuyến mại</title>
 <section>
     <div class="content-body">
         <div class="container-fluid">
-            <!-- <div class="row page-titles mx-0">
-                <div class="col-sm-6 p-md-0">
-                    <div class="welcome-text">
-                        <h4>Hi, welcome back!</h4>
-                        <p class="mb-0">Validation</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Form</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Validation</a></li>
-                    </ol>
-                </div>
-            </div> -->
+
             <!-- row -->
             <div class="row">
                 <div class="col-lg-12">
@@ -109,7 +96,7 @@
                                                                 <div class="dropdown-menu">
                                                                     <a class="dropdown-item">Theo mức tiền</a>
                                                                 </div> -->
-                                                                <select  class="form-control default-select" id="loaiGiamGia" >
+                                                                <select  class="form-control default-select" id="loaiGiamGia" name="loaiGiamGia">
                                                                     <option selected="">Chọn loại</option>
                                                                     <option value="1">Theo phần trăm</option>
                                                                     <option value="0">Theo mức tiền</option>
@@ -205,7 +192,7 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-lg-4 ml-auto">
-                                                    <a href="#" class="btn btn-success" id="addDiscount">Xác nhận</a>
+                                                    <a href="#" class="btn btn-success" id="update">Xác nhận</a>
                                                     <a href="/admin/khuyen-mai" class="btn btn-danger">Hủy</a>
                                                     <!-- <button type="button" class="btn btn-primary">Xác nhận</button> -->
                                                 </div>
@@ -226,12 +213,46 @@
 </section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
-    $("#addDiscount").click(function (){
+
+    var url = window.location.pathname.split("/");
+    var id = url[url.length-1];
+    var ngayBatDau, ngayKetThuc;
+    $.ajax({
+        url: '/api/admin/khuyen-mai/detail/'+id,
+        method: 'GET',
+        success: function(response) {
+            var data = response.data;
+            console.log(data);
+            // $("#maKM").attr("maKM", data.maKM);
+            $("#maKM").val(data.maKM);
+            $("#tenKM").val(data.tenKM);
+            // var ngayBatDauFMT = formatMicrosoftJSONDate(data.ngayBatDau);
+            // var ngayKetThucFMT = formatMicrosoftJSONDate(data.ngayKetThuc);
+            $("#ngayBatDauFMT").val(data.ngayBatDau);
+            ngayBatDau = data.ngayBatDau;
+            ngayKetThuc = data.ngayKetThuc;
+            $("#ngayketThucFMT").val(data.ngayKetThuc);
+            $("#giaTriGiam").val(data.giaTriGiam);
+            $("#giaTriDonToiThieu").val(data.giaTriDonToiThieu);
+            $("#giaTriGiamToiDa").val(data.giaTriGiamToiDa);
+            $("#soLuong").val(data.soLuong);
+            $("#moTa").text(data.moTa);
+            $("#loaiGiamGia").val(data.loaiGiamGia).change();
+            const selectedValue = data.loaiKM;
+            $("input[name=optradio][value=" + selectedValue + "]").attr('checked', 'checked');
+        },
+        error: function(xhr, status, error) {
+            alert('Có lỗi xảy ra: ' + error);
+        }
+    });
+
+
+    $("#update").click(function (){
         var maKM = $("#maKM").val();
         var tenKM = $("#tenKM").val();
         var loaiGiamGia = $('#loaiGiamGia option:selected').val();
-        var ngayBatDau = $("#ngayBatDau").val();
-        var ngayKetThuc = $("#ngayKetThuc").val();
+        // var ngayBatDau = $("#ngayBatDau").val();
+        // var ngayKetThuc = $("#ngayKetThuc").val();
         var loaiKM = $('form input[type=radio]:checked').val();
         var soLuong = $("#soLuong").val();
         var giaTriGiam = $("#giaTriGiam").val();
@@ -239,11 +260,13 @@
         var giaTriGiamToiDa = $("#giaTriGiamToiDa").val();
         var moTa = $("#moTa").val();
 
+
         var ngayBatDauFMT = convertDateFormat(ngayBatDau);
         var ngayKetThucFMT = convertDateFormat(ngayKetThuc);
         // var ngayTao = getDateNow();
 
         var km = {
+            id:id,
             maKM: maKM,
             tenKM: tenKM,
             loaiKM: loaiKM,
@@ -257,7 +280,9 @@
             trangThai: 1,
             moTa: moTa,
             // ngayTao: ngayTao,
-            nguoiTao: 1,
+            nguoiSua: 1,
+            nguoiTao: 1
+
 
         }
         console.log(km)
@@ -283,15 +308,20 @@
         var hours = date.getHours().toString().padStart(2, '0');
         var minutes = date.getMinutes().toString().padStart(2, '0');
         var seconds = date.getSeconds().toString().padStart(2, '0');
-
         var formattedDate = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
         return formattedDate;
     }
-    function getDateNow(){
-        const currentDate = new Date();
-// Convert the date to a string in a specific format, for example, "yyyy-MM-dd HH:mm:ss"
-        const formattedDate = currentDate.toISOString().slice(0, 19).replace("T", " ");
-// Output the formatted date
+
+    function formatMicrosoftJSONDate(jsonDate) {
+        // Create a Date object from the timestamp
+        var date = new Date(jsonDate);
+        var day = date.getDate().toString().padStart(2, '0');
+        var month = (date.getMonth() + 1).toString().padStart(2, '0');
+        var year = date.getFullYear();
+        var hours = date.getHours().toString().padStart(2, '0');
+        var minutes = date.getMinutes().toString().padStart(2, '0');
+        // Format the date into "HH:MM dd-MM-yyyy" format
+        var formattedDate = hours + ':' + minutes + ' ' + day + '/' + month + '/' + year;
         return formattedDate;
     }
 

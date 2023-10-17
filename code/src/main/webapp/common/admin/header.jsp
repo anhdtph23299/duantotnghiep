@@ -713,9 +713,9 @@
                         </li>
                         <li class="nav-item dropdown header-profile">
                             <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                <img src="<c:url value='/template/admin/images/profile/pic1.jpg'/>" width="20" alt="">
+                                <img src="<c:url value='/template/admin/images/avatars.jpg'/>" width="20" alt="">
                                 <div class="header-info">
-                                    <span>Johndoe</span>
+                                    <span>Admin</span>
                                     <small>Super Admin</small>
                                 </div>
                             </a>

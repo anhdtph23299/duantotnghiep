@@ -34,6 +34,10 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
          Date ngayBatDau = khuyenMai.getNgayBatDau();
          Date ngayKetThuc = khuyenMai.getNgayKetThuc();
         System.out.println(ngayBatDau);
+        Date now = new Date();
+        if(now.compareTo(ngayBatDau)<0){
+            khuyenMai.setTrangThai(2);
+        }
         KhuyenMai km = this.khuyenMaiRepository.save(khuyenMai);
         if(km != null){
             return "Insert thanh cong";
@@ -75,9 +79,10 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     @Override
     public String delete(Long id) {
         KhuyenMai km = this.khuyenMaiRepository.findById(id).orElse(null);
+        km.setTrangThai(0);
         if(km != null){
-            this.khuyenMaiRepository.delete(km);
-            return "Xoa thanh cong";
+            this.khuyenMaiRepository.save(km);
+            return "Dừng thanh cong";
         }else{
             return "Khong tim thay";
         }

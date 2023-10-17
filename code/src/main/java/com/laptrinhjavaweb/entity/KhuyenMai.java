@@ -14,7 +14,6 @@ import java.util.Date;
 @SuperBuilder
 @Getter
 @Setter
-@Builder
 @Entity
 @ToString
 @Table(name = "khuyenmai")
@@ -25,8 +24,16 @@ public class KhuyenMai extends PrimaryEntity {
     private String tenKM;
     @Column(name = "loaikm")
     private int loaiKM;
+    @Column(name = "loaigiamgia")
+    private int loaiGiamGia;
+    @Column(name = "soluong")
+    private int soLuong;
     @Column(name = "giatrigiam")
     private Float giaTriGiam;
+    @Column(name = "giatridontoithieu")
+    private Float giaTriDonToiThieu;
+    @Column(name = "giatrigiamtoida")
+    private Float giaTriGiamToiDa;
     @Column(name = "ngaybatdau")
     private Date ngayBatDau;
     @Column(name = "ngayketthuc")
@@ -35,10 +42,12 @@ public class KhuyenMai extends PrimaryEntity {
     private int trangThai;
     @Column(name = "ngaytao")
     private Date ngayTao;
-    @Column(name = "nguoitao")
+    @Column(name = "idnvtao")
     private Long nguoiTao;
-    @Column(name = "ngayhuy")
-    private Date ngayHuy;
-    @Column(name = "nguoihuy")
-    private Long nguoiHuy;
+    @Column(name = "ngaysua")
+    private Date ngaySua;
+    @Column(name = "idnvsua")
+    private Long nguoiSua;
+    @Column(name = "mota")
+    private String moTa;
 }
