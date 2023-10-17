@@ -64,7 +64,7 @@
                     <label>Trạng thái:</label>
                     <select class="form-select" id="trangthai">
                         <option value="1" selected>Hoạt động</option>
-                        <option value="2">Ngừng hoạt động</option>
+                        <option value="0">Ngừng hoạt động</option>
                     </select>
                 </div>
 
