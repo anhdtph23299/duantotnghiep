@@ -2,7 +2,6 @@ package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 @Getter
 @Setter
 @Builder
@@ -42,6 +40,6 @@ public class ThuocTinh extends PrimaryEntity {
     @Column(name = "trangthai")
     private int trangThai;
 
-    @OneToMany(mappedBy = "thuocTinh")
-    private List<ChiTietSanPhamThuocTinh> chiTietSanPhamThuocTinh = new ArrayList<>();
+    @OneToMany(mappedBy = "thuocTinh", cascade = CascadeType.REMOVE)
+    private List<ChiTietSanPhamThuocTinh> dsCTSPThuocTinh = new ArrayList<>();
 }

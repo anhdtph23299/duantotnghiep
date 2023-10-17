@@ -14,7 +14,6 @@ import java.util.List;
 @SuperBuilder
 @Getter
 @Setter
-@Builder
 @Entity
 @ToString
 @Table(name = "danhmuc")
@@ -33,15 +32,15 @@ public class DanhMuc extends PrimaryEntity {
     private Date ngayTao;
 
     @ManyToOne
-    @JoinColumn(name = "idnv",insertable = false,updatable = false)
-    private NhanVien nhanVienTao;
+    @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
+    private NhanVien nguoiTao;
 
     @Column(name = "ngaysua")
     private Date ngaySua;
 
     @ManyToOne
-    @JoinColumn(name = "idnv",insertable = false,updatable = false)
-    private NhanVien nhanVienSua;
+    @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
+    private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
     private int trangThai;
@@ -54,6 +53,6 @@ public class DanhMuc extends PrimaryEntity {
     private List<DanhMuc> danhMucList = new ArrayList<>();
 
     @OneToMany(mappedBy = "danhMuc", cascade = CascadeType.REMOVE)
-    private List<SanPham> SanPhams = new ArrayList<>();
+    private List<SanPham> dsSanPham = new ArrayList<>();
 
 }

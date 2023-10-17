@@ -2,7 +2,6 @@ package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 @Getter
 @Setter
 @Builder
@@ -25,6 +23,8 @@ public class KhuyenMai extends PrimaryEntity {
     private String tenKM;
     @Column(name = "loaikm")
     private int loaiKM;
+    @Column(name = "loaigiamgia")
+    private int loaigiamgia;
     @Column(name = "giatrigiam")
     private Float giaTriGiam;
     @Column(name = "ngaybatdau")
@@ -36,19 +36,19 @@ public class KhuyenMai extends PrimaryEntity {
     private Date ngayTao;
 
     @ManyToOne
-    @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
+    @JoinColumn(name = "idnvtao",insertable = false,updatable = false)
     private NhanVien nhanVienTao;
 
     @Column(name = "ngaysua")
     private Date ngaySua;
 
     @ManyToOne
-    @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
+    @JoinColumn(name = "idnvsua",insertable = false,updatable = false)
     private NhanVien nhanVienSua;
 
     @Column(name = "trangthai")
     private int trangThai;
 
     @OneToMany(mappedBy = "khuyenMai")
-    private List<KhuyenMaiSanPham> khuyenMaiSanPham = new ArrayList<>();
+    private List<KhuyenMaiSanPham> dsSanPhamKhuyenMai = new ArrayList<>();
 }

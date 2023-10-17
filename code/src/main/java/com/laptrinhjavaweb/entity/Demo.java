@@ -14,7 +14,6 @@ import javax.persistence.Table;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
 @Getter
 @Setter
 @Builder
