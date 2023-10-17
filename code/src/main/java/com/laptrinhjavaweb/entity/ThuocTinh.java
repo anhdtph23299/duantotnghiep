@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Getter
 @Setter
 @Builder
@@ -17,10 +19,10 @@ import java.util.List;
 @ToString
 @Table(name = "thuoctinh")
 public class ThuocTinh extends PrimaryEntity {
-    @Column(name = "ma")
+    @Column(name = "matt")
     private String ma;
 
-    @Column(name = "ten")
+    @Column(name = "tentt")
     private String ten;
 
     @Column(name = "ngaytao")
@@ -31,11 +33,11 @@ public class ThuocTinh extends PrimaryEntity {
 
     @ManyToOne
     @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
-    private NhanVien nhanVienTao;
+    private NhanVien nguoiTao;
 
     @ManyToOne
     @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
-    private NhanVien nhanVienSua;
+    private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
     private int trangThai;

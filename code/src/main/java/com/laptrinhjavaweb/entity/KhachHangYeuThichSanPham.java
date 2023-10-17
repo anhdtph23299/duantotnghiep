@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -10,6 +11,7 @@ import javax.persistence.Table;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Getter
 @Setter
 @Builder
@@ -18,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "khachhangyeuthichsanpham")
 public class KhachHangYeuThichSanPham extends PrimaryEntity {
     @ManyToOne
-    @JoinColumn(name = "idchitietsanphamthuoctinh",insertable = false,updatable = false)
+    @JoinColumn(name = "idctsanphamtt",insertable = false,updatable = false)
     private ChiTietSanPhamThuocTinh chiTietSanPhamThuocTinh;
 
     @ManyToOne

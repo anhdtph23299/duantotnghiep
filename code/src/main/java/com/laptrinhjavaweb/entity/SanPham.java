@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,12 +11,13 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Getter
 @Setter
 @Builder
 @Entity
 @ToString
-@Table(name = "chitietsanpham")
+@Table(name = "sanpham")
 public class SanPham extends PrimaryEntity {
     @Column(name = "slug")
     private String slug;
@@ -35,8 +37,11 @@ public class SanPham extends PrimaryEntity {
     @Column(name = "sanphamnoibat")
     private int sanPhamNoiBat;
 
-    @Column(name = "sanphamnhieuluotxem")
-    private int sanPhamNhieuLuotXem;
+    @Column(name = "sanphamxemnhieunhat")
+    private int sanPhamXemNhieuNhat;
+
+    @Column(name = "sanphamphobien")
+    private int sanPhamPhoBien;
 
     @Column(name = "ngaytao")
     private Date ngayTao;
@@ -56,7 +61,7 @@ public class SanPham extends PrimaryEntity {
     private int trangThai;
 
     @ManyToOne
-    @JoinColumn(name = "iddanhmuc",insertable = false,updatable = false)
+    @JoinColumn(name = "idDM",insertable = false,updatable = false)
     private DanhMuc danhMuc;
 
     @OneToMany(mappedBy = "sanPham", cascade = CascadeType.REMOVE)

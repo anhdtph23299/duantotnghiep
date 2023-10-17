@@ -22,8 +22,8 @@ public class DanhMuc extends PrimaryEntity {
     @Column(name = "slug")
     private String slug;
 
-    @Column(name = "ten")
-    private String ten;
+    @Column(name = "tenDM")
+    private String tenDM;
 
     @Column(name = "hienthitrangchu")
     private int hienThiTrangChu;

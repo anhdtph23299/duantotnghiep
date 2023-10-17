@@ -13,18 +13,19 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Getter
 @Setter
 @Builder
 @Entity
 @ToString
-@Table(name = "lydohuy")
+@Table(name = "LyDoHuyDon")
 public class LiDoHuy extends PrimaryEntity {
-    @Column(name = "tenlido")
-    private String tenLiDo;
+    @Column(name = "tenlydo")
+    private String tenLyDo;
     @Column(name = "mota")
     private String moTa;
 
-    @OneToMany(mappedBy = "hoadon")
+    @OneToMany(mappedBy = "liDoHuy")
     private List<HoaDon> hoaDonHuy  = new ArrayList<>();
 }

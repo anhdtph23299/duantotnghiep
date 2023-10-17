@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -23,7 +25,7 @@ public class ChiTietSanPhamThuocTinh extends PrimaryEntity {
     private SanPham sanPham;
 
     @ManyToOne
-    @JoinColumn(name = "idthuoctinh",insertable = false,updatable = false)
+    @JoinColumn(name = "idtt",insertable = false,updatable = false)
     private ThuocTinh thuocTinh;
 
     @Column(name = "giatri")
@@ -39,14 +41,14 @@ public class ChiTietSanPhamThuocTinh extends PrimaryEntity {
     private Date ngayTao;
 
     @ManyToOne
-    @JoinColumn(name = "nguoiTao",insertable = false,updatable = false)
+    @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
     private NhanVien nguoiTao;
 
     @Column(name = "ngaysua")
     private Date ngaySua;
 
     @ManyToOne
-    @JoinColumn(name = "nguoiSua",insertable = false,updatable = false)
+    @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
     private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
@@ -56,6 +58,6 @@ public class ChiTietSanPhamThuocTinh extends PrimaryEntity {
     private List<KhachHangYeuThichSanPham> dsKhachHangYeuThichSanPham  = new ArrayList<>();
 
     @OneToMany(mappedBy = "chiTietSanPhamThuocTinh", cascade = CascadeType.REMOVE)
-    private List<KhuyenMaiSanPham> dsKhuyenMaiSanPham  = new ArrayList<>();
+    private List<SanPhamGiamGia> dsKhuyenMaiSanPham  = new ArrayList<>();
 
 }

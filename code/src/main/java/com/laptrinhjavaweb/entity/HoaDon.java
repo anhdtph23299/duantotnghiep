@@ -2,20 +2,14 @@ package com.laptrinhjavaweb.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Getter
 @Setter
 @Builder
@@ -40,5 +34,9 @@ public class HoaDon extends PrimaryEntity {
     public String getTrangThaiHD() {
         return trangThai==1?"Đang chờ":trangThai==2?"Hoàn thành":"Huỷ";
     }
+
+    @ManyToOne
+    @JoinColumn(name = "idlydo",insertable = false,updatable = false)
+    private LiDoHuy liDoHuy;
 
 }
