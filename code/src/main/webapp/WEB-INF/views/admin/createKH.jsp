@@ -22,105 +22,72 @@
     color: black;">
                 Tạo mới khách hàng
             </h4>
-            <form>
-                <div class="row">
-                    <div class="col">
-                        <label>Mã khách hàng:</label>
-                        <input type="text" class="form-control" >
-                    </div>
-                    <div class="col">
-                        <label>Họ và tên:</label>
-                        <input type="text" class="form-control" >
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <label>Mã khách hàng:</label>
+                    <input type="text" id="makh" class="form-control" >
+                </div>
+                <div class="col">
+                    <label>Họ và tên:</label>
+                    <input type="text" id="tenkh" class="form-control" >
+                </div>
+                <div class="col">
+                    <label>Số điện thoại:</label>
+                    <input type="text" id="sdt" class="form-control" >
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <label>Địa chỉ email:</label>
+                    <input type="email" id="email" class="form-control" >
+                </div>
+                <div class="col">
+                    <label>Số CCCD:</label>
+                    <input type="text" id="cccd" class="form-control" >
+                </div>
+                <div class="col">
+                    <label>Địa chỉ:</label>
+                    <input type="text" id="diachi" class="form-control" >
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <label class="form-label">Ngày sinh:</label>
+                    <input type="date" id="ngaysinh" class="form-control" >
+                </div>
+                <div class="col">
+                    <label>Giới tính:</label>
+                    <select class="form-select" id="gioitinh">
+                        <option value="true" selected>Nam</option>
+                        <option value="false">Nữ</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label>Trạng thái:</label>
+                    <select class="form-select" id="trangthai">
+                        <option value="1" selected>Hoạt động</option>
+                        <option value="0">Ngừng hoạt động</option>
+                    </select>
                 </div>
 
                 <div class="row mt-3">
                     <div class="col">
-                        <label>Số CCCD:</label>
-                        <input type="text" class="form-control" >
-                    </div>
-                    <div class="col">
-                        <label>Số điện thoại:</label>
-                        <input type="text" class="form-control" >
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col">
-                        <label>Địa chỉ email:</label>
-<<<<<<< HEAD
-                        <input type="email" id="email" class="form-control" >
-                    </div>
-                    <div class="col">
-                        <label>Số CCCD:</label>
-                        <input type="text" id="cccd" class="form-control" >
-                    </div>
-                    <div class="col">
-                        <label>Địa chỉ:</label>
-                        <input type="text" id="diachi" class="form-control" >
-=======
-                        <input type="email" class="form-control" >
-                    </div>
-                    <div class="col">
-                        <label>Địa chỉ:</label>
-                        <input type="text" class="form-control" >
->>>>>>> b461d9c (update giao diện kh, nv)
-                    </div>
-                </div>
-
-                <div class="row mt-3">
-                    <div class="col">
-<<<<<<< HEAD
-                        <label class="form-label">Ngày sinh:</label>
-                        <input type="date" id="ngaysinh" class="form-control" >
-                    </div>
-                    <div class="col">
-                        <label>Giới tính:</label>
-                        <select class="form-select" id="gioitinh">
-                            <option value="true" selected>Nam</option>
-                            <option value="false">Nữ</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <label>Trạng thái:</label>
-                        <select class="form-select" id="trangthai">
-                            <option value="1" selected>Hoạt động</option>
-                            <option value="0">Ngừng hoạt động</option>
-=======
-                        <label for="datepicker" class="form-label">Ngày sinh:</label>
-                        <input type="date" class="form-control" id="datepicker">
-                    </div>
-                    <div class="col">
-                        <label>Giới tính:</label>
-                        <select class="form-select">
-                            <option value="Nam" selected>Nam</option>
-                            <option value="Nữ">Nữ</option>
->>>>>>> b461d9c (update giao diện kh, nv)
-                        </select>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col">
-                            <div class="form-floating">
-<<<<<<< HEAD
-                                <textarea class="form-control" id="mota" placeholder="Leave a comment here" ></textarea>
-                                <label >Mô tả</label>
-=======
-                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                                <label for="floatingTextarea">Mô tả</label>
->>>>>>> b461d9c (update giao diện kh, nv)
-                            </div>
+                        <div class="form-floating">
+                            <textarea class="form-control" id="mota" placeholder="Leave a comment here" ></textarea>
+                            <label >Mô tả</label>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="row mt-3">
-                    <div class="col">
-<<<<<<< HEAD
-                        <button class="btn" id="them" style="background-color: #A6edab; color: #00852d">Add</button>
-                        <a href="/admin/khachhang" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
-                    </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <button class="btn" id="them" style="background-color: #A6edab; color: #00852d">Add</button>
+                    <a href="/admin/khachhang" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
                 </div>
+            </div>
         </div>
     </div>
 </div>
@@ -160,21 +127,11 @@
                 window.location.href = '/admin/khachhang';
             },
             error: function(xhr, status, error) {
-              showError("Thêm thất bại")
+                showError("Thêm thất bại")
             }
         });
     })
 
 </script>
-=======
-                        <button class="btn" style="background-color: #A6edab; color: #00852d">Add</button>
-                        <button class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
->>>>>>> b461d9c (update giao diện kh, nv)
 </body>
 </html>
