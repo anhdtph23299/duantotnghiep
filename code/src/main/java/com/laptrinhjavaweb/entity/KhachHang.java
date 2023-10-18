@@ -1,17 +1,11 @@
 package com.laptrinhjavaweb.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -56,11 +50,11 @@ public class KhachHang  extends PrimaryEntity {
     @Column(name = "mota")
     private String moTa;
 
-//    @OneToOne(mappedBy = "khachHang", cascade = CascadeType.ALL)
+    //    @OneToOne(mappedBy = "khachHang", cascade = CascadeType.ALL)
 //    @PrimaryKeyJoinColumn
 //    private GioHang gioHang;
 
-    @OneToMany(mappedBy = "khachHang",cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("khachHang")
-    private List<ThongTinMuaHang> thongTinMuaHang;
+//    @OneToMany(mappedBy = "khachHang", cascade = CascadeType.REMOVE)
+//    private List<KhachHangYeuThichSanPham> dsYeuThichSanPham  = new ArrayList<>();
+
 }

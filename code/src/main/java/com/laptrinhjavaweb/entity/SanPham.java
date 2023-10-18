@@ -1,18 +1,13 @@
 package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.math.BigDecimal;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,13 +19,52 @@ import java.math.BigDecimal;
 @ToString
 @Table(name = "sanpham")
 public class SanPham extends PrimaryEntity {
+    @Column(name = "slug")
+    private String slug;
 
-    @Column(name = "tensanpham")
-    private String tenSanPham;
-    @Column(name = "soluong")
-    private Integer soLuong;
-    @Column(name = "dongia")
-    private BigDecimal donGia;
+    @Column(name = "ten")
+    private String ten;
+
+    @Column(name = "thongtinchitiet")
+    private String thongTinChiTiet;
+
+    @Column(name = "motasanpham")
+    private String moTaSanPham;
+
+    @Column(name = "sanphammoi")
+    private int sanPhamMoi;
+
+    @Column(name = "sanphamnoibat")
+    private int sanPhamNoiBat;
+
+    @Column(name = "sanphamxemnhieunhat")
+    private int sanPhamXemNhieuNhat;
+
+    @Column(name = "sanphamphobien")
+    private int sanPhamPhoBien;
+
+    @Column(name = "ngaytao")
+    private Date ngayTao;
+
+    @ManyToOne
+    @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
+    private NhanVien nguoiTao;
+
+    @Column(name = "ngaysua")
+    private Date ngaySua;
+
+    @ManyToOne
+    @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
+    private NhanVien nguoiSua;
+
     @Column(name = "trangthai")
-    private Integer trangThai;
+    private int trangThai;
+
+    @ManyToOne
+    @JoinColumn(name = "idDM",insertable = false,updatable = false)
+    private DanhMuc danhMuc;
+
+    @OneToMany(mappedBy = "sanPham", cascade = CascadeType.REMOVE)
+    private List<ChiTietSanPhamThuocTinh> dsCTSPThuocTinh = new ArrayList<>();
+
 }

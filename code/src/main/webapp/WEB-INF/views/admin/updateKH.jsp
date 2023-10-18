@@ -15,8 +15,9 @@
     padding-bottom: 10px;
     padding-left: 5px;
     color: black;">
-                Tạo mới khách hàng
+                Cập nhật khách hàng
             </h4>
+            <input type="hidden"  id="id" >
             <div class="row">
                 <div class="col">
                     <label>Mã khách hàng:</label>
@@ -63,7 +64,7 @@
                     <label>Trạng thái:</label>
                     <select class="form-select" id="trangthai">
                         <option value="1" selected>Hoạt động</option>
-                        <option value="2">Ngừng hoạt động</option>
+                        <option value="0">Ngừng hoạt động</option>
                     </select>
                 </div>
 
@@ -79,7 +80,7 @@
 
             <div class="row mt-3">
                 <div class="col">
-                    <button class="btn" id="them" style="background-color: #A6edab; color: #00852d">Add</button>
+                    <button class="btn" id="updateButton" style="background-color: #A6edab; color: #00852d">Update</button>
                     <a href="/admin/khachhang" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
                 </div>
             </div>
@@ -89,42 +90,51 @@
 
 <script >
 
-    // $("#them").click(function (){
-    //     var maKH = $("#makh").val();
-    //     var tenKH = $("#tenkh").val();
-    //     var sdt = $("#sdt").val();
-    //     var email = $("#email").val();
-    //     var gioiTinh = $("#gioitinh").val();
-    //     var ngaySinh = $("#ngaysinh").val();
-    //     var trangThai = $("#trangthai").val();
-    //     var diaChi = $("#diachi").val();
-    //     var cccd = $("#cccd").val();
-    //     var moTa = $("#mota").val();
-    //
-    //     var kh = {
-    //         maKH: maKH,
-    //         tenKH: tenKH,
-    //         sdt: sdt,
-    //         email: email,
-    //         gioiTinh:  gioiTinh,
-    //         ngaySinh: ngaySinh,
-    //         trangThai: trangThai,
-    //         diaChi: diaChi,
-    //         cccd: cccd,
-    //         moTa: moTa
-    //     }
-    //     $.ajax({
-    //         url: '/api/admin/khachhang/insert',
-    //         method: 'POST',
-    //         contentType: 'application/json',
-    //         data: JSON.stringify(kh),
-    //         success: function(response) {
-    //         },
-    //         error: function(xhr, status, error) {
-    //             alert('Có lỗi xảy ra: ' + error);
-    //         }
-    //     });
-    // })
+    $("#updateButton").click(function() {
+        var id = $("#id").val();
+
+        // Lấy dữ liệu từ các trường input
+        var maKH = $("#makh").val();
+        var tenKH = $("#tenkh").val();
+        var sdt = $("#sdt").val();
+        var email = $("#email").val();
+        var gioiTinh = $("#gioitinh").val();
+        var ngaySinh = $("#ngaysinh").val();
+        var trangThai = $("#trangthai").val();
+        var diaChi = $("#diachi").val();
+        var cccd = $("#cccd").val();
+        var moTa = $("#mota").val();
+
+        // Tạo đối tượng KhachHang từ dữ liệu form
+        var khachHang = {
+            "id": id,
+            "maKH": maKH,
+            "tenKH": tenKH,
+            "sdt": sdt,
+            "email": email,
+            "gioiTinh": gioiTinh,
+            "ngaySinh": ngaySinh,
+            "trangThai": trangThai,
+            "diaChi": diaChi,
+            "cccd": cccd,
+            "moTa": moTa
+        };
+        var url = window.location.pathname.split("/");
+        var id = url[url.length-1];
+        $.ajax({
+            url: '/api/admin/khachhang/update/'+id,
+            method: 'PUT',
+            contentType: 'application/json',
+            data: JSON.stringify(khachHang),
+            success: function(response) {
+                window.location.href = '/admin/khachhang';
+            },
+            error: function(xhr, status, error) {
+                showError("Update Fail")
+            }
+        });
+    });
+
 
     var url = window.location.pathname.split("/");
     var id = url[url.length-1];
@@ -133,16 +143,17 @@
         method: 'GET',
         success: function(req) {
             var data = req.data;
+            $("#id").val(data.id);
             $("#makh").val(data.maKH);
             $("#tenkh").val(data.tenKH);
             $("#sdt").val(data.sdt);
             $("#email").val(data.email);
             $("#gioitinh").val(data.gioiTinh.toString()).change();
             $("#ngaysinh").val(formatDateInput(data.ngaySinh));
-            // $("#trangthai").val();
+            $("#trangthai").val(data.trangThai.toString()).change();
             $("#diachi").val(data.diaChi);
             $("#cccd").val(data.cccd);
-       //     $("#mota").val();
+            $("#mota").val(data.moTa);
         },
         error: function(xhr, status, error) {
             console.log(error)

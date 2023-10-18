@@ -33,14 +33,19 @@ public class DashboardController {
         return "admin/nhanvien";
     }
 
-    @GetMapping("/addnv")
-    public String addnv(){
+    @GetMapping("/createNV")
+    public String createNV(){
         return "admin/createNV";
     }
 
-    @GetMapping("/updateNV")
+    @GetMapping("/updateNV/{id}")
     public String updateNV(){
         return "admin/updateNV";
+    }
+
+    @GetMapping("/detailNV/{id}")
+    public String detailNV(){
+        return "admin/detailNV";
     }
 
     @GetMapping("/profile")
@@ -62,6 +67,5 @@ public class DashboardController {
     public String hoadon(){
         return "admin/hoadon";
     }
-
 
 }
