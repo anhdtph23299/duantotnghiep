@@ -37,7 +37,6 @@
                     <input type="email" id="email" class="form-control" disabled >
                 </div>
             </div>
-
             <div class="row mt-3">
                 <div class="col">
                     <label>Địa chỉ thường chú:</label>
@@ -91,7 +90,7 @@
 
             <div class="row mt-3">
                 <div class="form-group col-md-12">
-                    <label class="control-label">Ảnh 3x4 nhân viên</label>
+                    <label class="control-label">Ảnh nhân viên</label>
                     <div id="myfileupload">
                         <input type="file" id="uploadfile" id="hinhanh" name="ImageUpload" onchange="readURL(this);">
                     </div>
