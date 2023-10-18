@@ -165,7 +165,7 @@
                             <h5 class="font-weight-bold">Total</h5>
                             <h5 class="font-weight-bold" id="total">$160</h5>
                         </div>
-                        <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
+                        <button class="btn btn-block btn-primary my-3 py-3" id="checkout">Proceed To Checkout</button>
                     </div>
                 </div>
             </div>
@@ -173,6 +173,7 @@
     </div>
     <!-- Cart End -->
 <script>
+    function ghct(){
         $.ajax({
             url: '/api/user/ghct/'+1,
             method: 'GET',
@@ -182,6 +183,7 @@
                 var tbody =$("#tblcart tbody");
                 tbody.empty();
                 data.forEach(function (custom){
+                    var idgh = custom.gioHangChiTietId.idGioHang;
                     var sp = custom.sanPham;
                     var html = `
                     <tr>
@@ -190,13 +192,13 @@
                         <td class="align-middle">
                             <div class="input-group quantity mx-auto" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
+                                    <button class="btn btn-sm btn-primary btn-minus" onclick=thayDoiSoLuong(\${sp.id},\${idgh},-1)>
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
                                 <input type="text" class="form-control form-control-sm bg-secondary text-center" value="\${custom.soLuong}">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
+                                    <button class="btn btn-sm btn-primary btn-plus" onclick=thayDoiSoLuong(\${sp.id},\${idgh},1)>
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
@@ -214,17 +216,39 @@
                 alert('Có lỗi xảy ra: ' + error);
             }
         });
-        $.ajax({
-            url: '/api/user/ghct/subtotal/'+1,
-            method: 'GET',
-            success: function(req) {
-                var data = req.data;
-                $("#subtotal").html(convertVND(data));
-                $("#total").html(convertVND(data))
-            },
-            error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra: ' + error);
-            }
-        });
+    }
 
+        function tongTien(){
+            $.ajax({
+                url: '/api/user/ghct/subtotal/'+1,
+                method: 'GET',
+                success: function(req) {
+                    var data = req.data;
+                    $("#subtotal").html(convertVND(data));
+                    $("#total").html(convertVND(data))
+                },
+                error: function(xhr, status, error) {
+                    alert('Có lỗi xảy ra: ' + error);
+                }
+            });
+
+        }
+    ghct()
+    tongTien()
+        function thayDoiSoLuong(idsp,idgh,sl){
+            $.ajax({
+                url: '/api/user/ghct/thaydoisoluong?idsp='+idsp+"&idgh="+idgh+"&sl="+sl,
+                method: 'GET',
+                success: function(req) {
+                    ghct();
+                    tongTien();
+                },
+                error: function(xhr, status, error) {
+                    alert('Có lỗi xảy ra: ' + error);
+                }
+            });
+        }
+        $("#checkout").click(function () {
+            window.location.href = "/checkout"
+        })
 </script>

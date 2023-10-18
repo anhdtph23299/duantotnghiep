@@ -1,14 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Checkout</title>
-</head>
-<body>
+
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
@@ -20,192 +11,175 @@
             </div>
         </div>
     </div>
-    <!-- Page Header End -->
 
+    <!-- Page Header End -->
+<div class="container-fluid row pl-5" >
+    <div class="col-12 mb-2"><h3 >Thông tin mua hàng</h3></div>
+    <div class="col-3"><strong id="tennguoinhan"></strong></div>
+    <div class="col-2"><p id="sdt"></p></div>
+    <div class="col-4"><p id="diachi"></p></div>
+    <div class="col-1"><p id="df">Mặc định</p></div>
+    <div class="col-1"><button class="btn btn-outline-primary">Thay đổi</button></div>
+</div>
     <!-- Checkout Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5">
-            <div class="col-lg-8">
-                <div class="mb-4">
-                    <h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>First Name</label>
-                            <input class="form-control" type="text" placeholder="John">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Last Name</label>
-                            <input class="form-control" type="text" placeholder="Doe">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Mobile No</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Country</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
-                            <input class="form-control" type="text" placeholder="123">
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="newaccount">
-                                <label class="custom-control-label" for="newaccount">Create an account</label>
+    <div class="container-fluid pt-5 pl-4">
+
+        <div class="table-responsive">
+            <table class="table" id="tblcheckout">
+                <thead>
+                <tr>
+                    <th scope="col" class="border-0 bg-light">
+                        <div class="p-2 px-2 text-uppercase">Product</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase">Loại sản phẩm</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase">Price</div>
+                    </th>
+                    <th scope="col" class="border-0 bg-light">
+                        <div class="py-2 text-uppercase">Quantity</div>
+                    </th>
+<%--                    <th scope="col" class="border-0 bg-light">--%>
+<%--                        <div class="py-2 text-uppercase">Remove</div>--%>
+<%--                    </th>--%>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th class="border-0">
+                        <div class="p-2">
+                            <img src="https://product.hstatic.net/200000323177/product/momo_shirt__3__8e0d45a718ee4d5ea9dbc036db3185e6_large.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                            <div class="ml-3 d-inline-block align-middle">
+                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex Originals</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
                             </div>
                         </div>
-                        <div class="col-md-12 form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="shipto">
-                                <label class="custom-control-label" for="shipto"  data-toggle="collapse" data-target="#shipping-address">Ship to different address</label>
+                    </th>
+                    <td class="border-0 align-middle"><strong>Loại sản phẩm</strong></td>
+                    <td class="border-0 align-middle"><strong>$79.00</strong></td>
+                    <td class="border-0 align-middle"><strong>3</strong></td>
+                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <div class="p-2">
+                            <img src="https://product.hstatic.net/1000341630/product/kmsh220633_75cb0c2945474917b2528e802806fb39_master.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                            <div class="ml-3 d-inline-block align-middle">
+                                <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="collapse mb-4" id="shipping-address">
-                    <h4 class="font-weight-semi-bold mb-4">Shipping Address</h4>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>First Name</label>
-                            <input class="form-control" type="text" placeholder="John">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Last Name</label>
-                            <input class="form-control" type="text" placeholder="Doe">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Mobile No</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Country</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
-                            <input class="form-control" type="text" placeholder="123">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Order Total</h4>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="font-weight-medium mb-3">Products</h5>
-                        <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 1</p>
-                            <p>$150</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 2</p>
-                            <p>$150</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 3</p>
-                            <p>$150</p>
-                        </div>
-                        <hr class="mt-0">
-                        <div class="d-flex justify-content-between mb-3 pt-1">
-                            <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="font-weight-medium">$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
-                        </div>
-                    </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Total</h5>
-                            <h5 class="font-weight-bold">$160</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Payment</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Paypal</label>
+                    </th>
+                    <td class="border-0 align-middle"><strong>Loại sản phẩm</strong></td>
+                    <td class="align-middle"><strong>$79.00</strong></td>
+                    <td class="align-middle"><strong>3</strong></td>
+                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <div class="p-2">
+                            <img src="https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/January2022/3recyw2_3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                            <div class="ml-3 d-inline-block align-middle">
+                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Direct Check</label>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
-                    </div>
-                </div>
-            </div>
+                    </th>
+                    <td class="border-0 align-middle"><strong>Loại sản phẩm</strong></td>
+                    <td class="align-middle"><strong>$79.00</strong></td>
+                    <td class="align-middle"><strong>3</strong></td>
+                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+<div class="container text-center">
+    <h2>Tổng tiền</h2>
+    <p id="total"></p>
+    <p id="totaldola"></p>
+    <form action="${pageContext.request.contextPath}/pay" method="post">
+        <input type="hidden" name="method" value="paypal">
+        <input type="hidden" name="intent" value="sale">
+        <input type="hidden" name="currency" value="USD">
+        <input type="hidden" name="description" value="Product Description">
+        <input type="hidden" name="price" id="pricethanhtoan" value="10.00">
+        <button type="submit">Thanh toán</button>
+    </form>
+</div>
     <!-- Checkout End -->
-</body>
-</html>
+<input type="text" id="idttmuahang" style="display: none;">
+<script>
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+    $.ajax({
+        url: '/api/user/ttgh/'+1,
+        method: 'GET',
+        success: function(req) {
+            var data = req.data;
+            $("#idttmuahang").html(data.id);
+            $("#tennguoinhan").html(data.tenNguoiNhan);
+            $("#sdt").html(data.soDienThoai);
+            $("#diachi").html(data.diaChi);
+        },
+        error: function(xhr, status, error) {
+            alert('Có lỗi xảy ra: ' + error);
+        }
+    });
+    function ghct(){
+        $.ajax({
+            url: '/api/user/ghct/'+1,
+            method: 'GET',
+            success: function(req) {
+                var data = req.data;
+
+                var tbody =$("#tblcheckout tbody");
+                tbody.empty();
+                data.forEach(function (custom){
+                    var idgh = custom.gioHangChiTietId.idGioHang;
+                    var sp = custom.sanPham;
+                    var html = `
+                                  <tr>
+                    <th class="border-0">
+                        <div class="p-2">
+                            <img src="https://product.hstatic.net/200000323177/product/momo_shirt__3__8e0d45a718ee4d5ea9dbc036db3185e6_large.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+                            <div class="ml-3 d-inline-block align-middle">
+                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">\${sp.tenSanPham}</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="border-0 align-middle"><strong>Loại sản phẩm</strong></td>
+                    <td class="border-0 align-middle"><strong>\${convertVND(custom.tongTien)}</strong></td>
+                    <td class="border-0 align-middle"><strong>\${custom.soLuong}</strong></td>
+                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                </tr>
+                    `;
+                    tbody.append(html);
+                })
+
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+    }
+
+        $.ajax({
+            url: '/api/user/ghct/subtotal/'+1,
+            method: 'GET',
+            success: function(req) {
+                var data = req.data;
+              //  $("#subtotal").html(convertVND(data));
+                $("#total").html(convertVND(data))
+                $("#totaldola").html(formatter.format(data/24570));
+                $("#pricethanhtoan").val(data/24570);
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+
+    ghct()
+</script>

@@ -50,7 +50,7 @@ public class PaypalController {
         return "cancel";
     }
 
-    @GetMapping(value = SUCCESS_URL)
+    @GetMapping(value = "/success")
     public String successPay(@RequestParam("paymentId") String paymentId, @RequestParam("PayerID") String payerId) {
         try {
             Payment payment = service.executePayment(paymentId, payerId);

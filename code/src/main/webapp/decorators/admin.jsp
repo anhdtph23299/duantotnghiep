@@ -59,8 +59,8 @@
 
         return year + '-' + month + '-' + day;
     }
-    function showConfirm(message){
-        Swal.fire({
+    async function showConfirm(message) {
+        const result = await Swal.fire({
             title: 'Bạn chắc chắn?',
             text: message,
             icon: 'warning',
@@ -68,9 +68,9 @@
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Đồng ý!'
-        }).then((result) => {
-           return result.isConfirmed;
-        })
+        });
+
+        return result.isConfirmed;
     }
     function showSuccess(message){
         const Toast = Swal.mixin({
