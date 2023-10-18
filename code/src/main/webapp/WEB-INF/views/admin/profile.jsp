@@ -39,7 +39,7 @@
                 <div class="col-12 col-sm-4">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center mb-3">
-                            <img src="/template/admin/images/logos.png" width="300px" height="350px" alt="Avatar" />
+                            <img src="/template/admin/images/customer.png" width="300px" height="350px" alt="Avatar" />
                         </div>
                     </div>
                 </div>
@@ -99,10 +99,22 @@
         <div style="min-height: 120px;">
             <div class="collapse collapse-horizontal" id="collapseWidthExample">
                 <div class="card card-body" style="width: 300px;">
-                    This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Vietnamese
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            English
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 

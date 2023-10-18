@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
+    <script>
+        function convertVND(number){
+           return number.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
+        }
+    </script>
 
 </head>
 <body>

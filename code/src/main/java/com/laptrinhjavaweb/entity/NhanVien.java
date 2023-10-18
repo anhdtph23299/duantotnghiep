@@ -4,9 +4,7 @@ import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -42,18 +40,22 @@ public class NhanVien extends PrimaryEntity {
     private String hinhAnh;
 
     @Column(name = "trangthai")
-    private Integer trangThai;
+    private int trangThai;
 
     @Column(name = "diachi")
     private String diaChi;
 
     @Column(name = "cccd")
-    private String CCCD;
+    private String cccd;
 
     @Column(name = "ngaycap")
     private Date ngayCap;
 
     @Column(name = "noicap")
     private String noiCap;
+
+    @ManyToOne
+    @JoinColumn(name = "idchucvu", referencedColumnName = "id")
+    private ChucVu chucVu;
 
 }

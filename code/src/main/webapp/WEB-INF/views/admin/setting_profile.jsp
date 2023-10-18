@@ -38,7 +38,7 @@
                 <div class="col-12 col-sm-4">
                     <div class="row">
                         <div class="col-12 d-flex justify-content-center mb-3">
-                            <img src="/template/admin/images/logos.png" width="300px" height="350px" alt="Avatar" />
+                            <img src="/template/admin/images/customer.png" width="300px" height="350px" alt="Avatar" />
                         </div>
 
                         <div class="col-12 d-flex justify-content-center">
