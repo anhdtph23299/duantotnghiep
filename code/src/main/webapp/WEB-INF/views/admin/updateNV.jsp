@@ -20,7 +20,7 @@
     padding-bottom: 10px;
     padding-left: 5px;
     color: black;">
-               Sửa thông tin nhân viên
+                Sửa thông tin nhân viên
             </h4>
             <input type="hidden"  id="id" >
             <div class="row">
