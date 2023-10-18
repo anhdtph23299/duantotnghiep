@@ -25,10 +25,10 @@
             <div class="col-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/admin/dashboards/profile">Profile</a>
+                        <a class="nav-link active" aria-current="page" href="/admin/profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/dashboards/setting_profile">Setting</a>
+                        <a class="nav-link" href="/admin/setting_profile">Setting</a>
                     </li>
                 </ul>
             </div>
@@ -90,18 +90,31 @@
                 </div>
             </div>
         </div>
-                    This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                Language
+            </button>
+        </p>
+        <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body" style="width: 300px;">
+                    <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                         <label class="form-check-label" for="flexRadioDefault1">
-                           Vietnamese
+                            Vietnamese
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                         <label class="form-check-label" for="flexRadioDefault2">
-                           English
+                            English
                         </label>
                     </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

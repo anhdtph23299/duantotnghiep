@@ -53,7 +53,8 @@ public class KhachHang  extends PrimaryEntity {
     //    @OneToOne(mappedBy = "khachHang", cascade = CascadeType.ALL)
 //    @PrimaryKeyJoinColumn
 //    private GioHang gioHang;
-    @OneToMany(mappedBy = "khachHang", cascade = CascadeType.REMOVE)
-    private List<KhachHangYeuThichSanPham> dsYeuThichSanPham  = new ArrayList<>();
+
+//    @OneToMany(mappedBy = "khachHang", cascade = CascadeType.REMOVE)
+//    private List<KhachHangYeuThichSanPham> dsYeuThichSanPham  = new ArrayList<>();
 
 }

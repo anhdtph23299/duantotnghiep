@@ -19,7 +19,7 @@ import java.util.List;
 @Builder
 @Entity
 @ToString
-@Table(name = "LyDoHuyDon")
+@Table(name = "lydohuydon")
 public class LiDoHuy extends PrimaryEntity {
     @Column(name = "tenlydo")
     private String tenLyDo;
