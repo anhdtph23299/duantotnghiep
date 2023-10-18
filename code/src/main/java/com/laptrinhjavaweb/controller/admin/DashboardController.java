@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin/dashboards")
+@RequestMapping("/admin")
 public class DashboardController {
 
     @GetMapping
@@ -63,4 +63,10 @@ public class DashboardController {
     public String setting_banner(){
         return "admin/banner";
     }
+
+    @GetMapping("/hoadon")
+    public String hoadon(){
+        return "admin/hoadon";
+    }
+
 }

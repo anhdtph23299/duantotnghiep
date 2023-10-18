@@ -14,6 +14,7 @@ import java.util.List;
 @SuperBuilder
 @Getter
 @Setter
+@Builder
 @Entity
 @ToString
 @Table(name = "khachhang")
@@ -49,7 +50,7 @@ public class KhachHang  extends PrimaryEntity {
     @Column(name = "mota")
     private String moTa;
 
-//    @OneToOne(mappedBy = "khachHang", cascade = CascadeType.ALL)
+    //    @OneToOne(mappedBy = "khachHang", cascade = CascadeType.ALL)
 //    @PrimaryKeyJoinColumn
 //    private GioHang gioHang;
     @OneToMany(mappedBy = "khachHang", cascade = CascadeType.REMOVE)
