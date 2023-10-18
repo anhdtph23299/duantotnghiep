@@ -39,6 +39,28 @@
                 </ul>
 
             </li>
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                <i class="flaticon-061-puzzle"></i>
+                <span class="nav-text">Quản lý</span>
+            </a>
+                <ul aria-expanded="false">
+                    <li><a href="/admin/nhanvien">Nhân viên</a></li>
+                    <li><a href="/admin/khachhang">Khách hàng</a></li>
+                    <li><a href="/admin/khuyen-mai">Khuyến mại</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-settings-2"></i>
+                    <span class="nav-text">Setting</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="/admin/profile">Profile</a></li>
+                    <li><a href="/admin/setting_banner">Dynamic Interface </a></li>
+                </ul>
+            </li>
+
             <li class="nav-label">Apps</li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-077-menu-1"></i>
@@ -88,21 +110,8 @@
                 </ul>
             </li>
 
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                <i class="flaticon-061-puzzle"></i>
-                <span class="nav-text">Quản lý người dùng</span>
-            </a>
-                <ul aria-expanded="false">
-                    <li><a href="/admin/nhanvien">Nhân viên</a></li>
-                    <li><a href="/admin/khachhang">Khách hàng</a></li>
 
-                </ul>
-            </li>
-            <li class="nav-label">components</li>
-            <li><a class="has-arrow ai-icon" href="/admin/khuyen-mai" aria-expanded="false">
-                <span class="nav-text">Khuyến mại</span>
-            </a>
-            </li>
+
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-003-diamond"></i>
                 <span class="nav-text">Bootstrap</span>
@@ -142,16 +151,7 @@
                     <li><a href="uc-lightgallery.html">Light Gallery</a></li>
                 </ul>
             </li>
-            <li>
-                <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-381-settings-2"></i>
-                <span class="nav-text">Setting</span>
-            </a>
-                <ul aria-expanded="false">
-                    <li><a href="/admin/profile">Profile</a></li>
-                    <li><a href="/admin/setting_banner">Dynamic Interface </a></li>
-                </ul>
-            </li>
+
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-044-file"></i>
                 <span class="nav-text">Forms</span>
