@@ -4,13 +4,14 @@ import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
-import java.util.ArrayList;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
-import java.util.List;
-@SuperBuilder
+
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Getter
 @Setter
 @Builder
@@ -33,7 +34,8 @@ public class KhuyenMai extends PrimaryEntity {
     private Date ngayBatDau;
     @Column(name = "ngayketthuc")
     private Date ngayKetThuc;
-
+    @Column(name = "trangthai")
+    private int trangThai;
     @Column(name = "ngaytao")
     private Date ngayTao;
 
