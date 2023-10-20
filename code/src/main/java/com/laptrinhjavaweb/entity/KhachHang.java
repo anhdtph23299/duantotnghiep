@@ -45,7 +45,7 @@ public class KhachHang  extends PrimaryEntity {
     private String diaChi;
 
     @Column(name = "cccd")
-    private String CCCD;
+    private String cccd;
 
     @Column(name = "mota")
     private String moTa;
