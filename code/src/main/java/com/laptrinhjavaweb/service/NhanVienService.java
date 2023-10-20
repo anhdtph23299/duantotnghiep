@@ -15,4 +15,7 @@ public interface NhanVienService {
     NhanVien insert(NhanVien nhanVien);
 
     void delete(Long id);
+
+    List<NhanVien> getSearchNhanVien(String maNV, String tenNV, String email, String sdt);
+
 }
