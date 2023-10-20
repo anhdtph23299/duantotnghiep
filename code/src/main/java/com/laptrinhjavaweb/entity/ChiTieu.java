@@ -29,7 +29,7 @@ public class ChiTieu  extends PrimaryEntity {
     private String loaiChiTieu;
 
     @Column(name = "trangthai")
-    private int trangThai;
+    private Integer trangThai;
 
     @ManyToOne
     @JoinColumn(name = "idvdt",referencedColumnName = "id")

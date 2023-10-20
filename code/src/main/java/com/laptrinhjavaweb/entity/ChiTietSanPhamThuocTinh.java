@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -29,10 +30,10 @@ public class ChiTietSanPhamThuocTinh extends PrimaryEntity {
     private ThuocTinh thuocTinh;
 
     @Column(name = "giatri")
-    private int giaTri;
+    private String giaTri;
 
     @Column(name = "gia")
-    private BigDecimal gia;
+    private BigDecimal giaTien;
 
     @Column(name = "hinhanh")
     private String hinhAnh;
@@ -52,7 +53,7 @@ public class ChiTietSanPhamThuocTinh extends PrimaryEntity {
     private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
-    private int trangThai;
+    private Integer trangThai;
 
     @OneToMany(mappedBy = "chiTietSanPhamThuocTinh", cascade = CascadeType.REMOVE)
     private List<KhachHangYeuThichSanPham> dsKhachHangYeuThichSanPham  = new ArrayList<>();

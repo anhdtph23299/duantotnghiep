@@ -26,6 +26,6 @@ public class SanPhamGiamGia extends PrimaryEntity {
     private KhuyenMai khuyenMai;
 
     @Column(name = "soluong")
-    private int soLuong;
+    private Integer soLuong;
 
 }

@@ -179,32 +179,29 @@
             method: 'GET',
             success: function(req) {
                 var data = req.data;
-
                 var tbody =$("#tblcart tbody");
                 tbody.empty();
-                data.forEach(function (custom){
-                    var idgh = custom.gioHangChiTietId.idGioHang;
-                    var sp = custom.sanPham;
+                data.forEach(function (item){
                     var html = `
                     <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-1.jpg'/>" alt="" style="width: 50px;"> \${sp.tenSanPham}</td>
-                        <td class="align-middle">\${convertVND(sp.donGia)}</td>
+                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-1.jpg'/>" alt="" style="width: 50px;"> \${item.tenSanPham}</td>
+                        <td class="align-middle">\${convertVND(item.giaTien)}</td>
                         <td class="align-middle">
                             <div class="input-group quantity mx-auto" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" onclick=thayDoiSoLuong(\${sp.id},\${idgh},-1)>
+                                    <button class="btn btn-sm btn-primary btn-minus" onclick=thayDoiSoLuong(\${item.idSanPhamThuocTinh},\${item.idGioHang},-1)>
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="\${custom.soLuong}">
+                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="\${item.soLuong}">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus" onclick=thayDoiSoLuong(\${sp.id},\${idgh},1)>
+                                    <button class="btn btn-sm btn-primary btn-plus" onclick=thayDoiSoLuong(\${item.idSanPhamThuocTinh},\${item.idGioHang},1)>
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 </div>
                             </div>
                         </td>
-                        <td class="align-middle">\${convertVND(custom.tongTien)}</td>
+                        <td class="align-middle">\${convertVND(item.soLuong*item.giaTien)}</td>
                         <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
                     </tr>
                     `;
@@ -237,11 +234,17 @@
     tongTien()
         function thayDoiSoLuong(idsp,idgh,sl){
             $.ajax({
-                url: '/api/user/ghct/thaydoisoluong?idsp='+idsp+"&idgh="+idgh+"&sl="+sl,
-                method: 'GET',
+                url: '/api/user/ghct/thaydoisoluong',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    idGioHang :idgh,
+                    idSpTT : idsp,
+                    soLuong:sl
+                }),
                 success: function(req) {
                     ghct();
-                    tongTien();
+                   tongTien();
                 },
                 error: function(xhr, status, error) {
                     alert('Có lỗi xảy ra: ' + error);

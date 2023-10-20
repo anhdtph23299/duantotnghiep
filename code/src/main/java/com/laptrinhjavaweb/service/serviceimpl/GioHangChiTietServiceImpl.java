@@ -2,6 +2,8 @@ package com.laptrinhjavaweb.service.serviceimpl;
 
 import com.laptrinhjavaweb.entity.GioHangChiTiet;
 import com.laptrinhjavaweb.entity.GioHangChiTietId;
+import com.laptrinhjavaweb.model.request.ThayDoiSoLuongGioHangRequest;
+import com.laptrinhjavaweb.model.response.GioHangResponse;
 import com.laptrinhjavaweb.repository.GioHangChiTietRepository;
 import com.laptrinhjavaweb.service.GioHangChiTietService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +17,12 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
     @Autowired
     GioHangChiTietRepository gioHangChiTietRepository;
     @Override
-    public String thayDoiSoLuong(Long idSP, Long idGH, Integer soLuong) {
+    public String thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request) {
+
         try{
-            GioHangChiTietId gioHangChiTietId = new GioHangChiTietId(idGH,idSP);
+            GioHangChiTietId gioHangChiTietId = new GioHangChiTietId(request.getIdGioHang(), request.getIdSpTT());
             GioHangChiTiet gioHangChiTiet = gioHangChiTietRepository.getOne(gioHangChiTietId);
-            gioHangChiTiet.setSoLuong(gioHangChiTiet.getSoLuong()+soLuong);
+            gioHangChiTiet.setSoLuong(gioHangChiTiet.getSoLuong()+ request.getSoLuong());
             gioHangChiTietRepository.save(gioHangChiTiet);
             return "Thay đổi số lượng thành công";
         }catch (Exception e){
@@ -28,7 +31,7 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
     }
 
     @Override
-    public List<GioHangChiTiet> dsGioHangChiTietByIdKh(Long idKH) {
+    public List<GioHangResponse> dsGioHangChiTietByIdKh(Long idKH) {
         return gioHangChiTietRepository.dsGioHangChiTietByIdKh(idKH);
     }
 

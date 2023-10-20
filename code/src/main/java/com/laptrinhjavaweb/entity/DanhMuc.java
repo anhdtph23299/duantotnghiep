@@ -26,7 +26,7 @@ public class DanhMuc extends PrimaryEntity {
     private String tenDM;
 
     @Column(name = "hienthitrangchu")
-    private int hienThiTrangChu;
+    private Integer hienThiTrangChu;
 
     @Column(name = "ngaytao")
     private Date ngayTao;
@@ -43,14 +43,14 @@ public class DanhMuc extends PrimaryEntity {
     private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
-    private int trangThai;
+    private Integer trangThai;
 
-    @ManyToOne
-    @JoinColumn(name = "iddanhmuc",insertable = false,updatable = false)
-    private DanhMuc danhMuc;
+//    @ManyToOne
+//    @JoinColumn(name = "iddanhmuc",insertable = false,updatable = false)
+//    private DanhMuc danhMuc;
 
-    @OneToMany(mappedBy = "danhMuc", cascade = CascadeType.REMOVE)
-    private List<DanhMuc> danhMucList = new ArrayList<>();
+//    @OneToMany(mappedBy = "danhMuc", cascade = CascadeType.REMOVE)
+//    private List<DanhMuc> danhMucList = new ArrayList<>();
 
     @OneToMany(mappedBy = "danhMuc", cascade = CascadeType.REMOVE)
     private List<SanPham> dsSanPham = new ArrayList<>();

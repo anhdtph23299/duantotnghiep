@@ -28,15 +28,14 @@ public class GioHangChiTiet implements Serializable {
     @JsonIgnore
     private GioHang gioHang;
     @ManyToOne
-    @JoinColumn(name = "idsp",insertable = false,updatable = false)
-    private SanPham sanPham;
+    @JoinColumn(name = "idsptt",insertable = false,updatable = false)
+    private ChiTietSanPhamThuocTinh chiTietSanPhamThuocTinh;
 
     @Column(name = "soluong")
     private Integer soLuong;
 
-    @JsonProperty("tongTien")
-    public BigDecimal getTongTien(){
-//        return sanPham.getDonGia().multiply(BigDecimal.valueOf(soLuong));
-        return null;
-    }
+//    @JsonProperty("tongTien")
+//    public BigDecimal getTongTien(){
+//        return chiTietSanPhamThuocTinh.getGia().multiply(BigDecimal.valueOf(soLuong));
+//    }
 }

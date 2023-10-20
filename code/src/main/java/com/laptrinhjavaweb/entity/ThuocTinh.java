@@ -40,7 +40,7 @@ public class ThuocTinh extends PrimaryEntity {
     private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
-    private int trangThai;
+    private Integer trangThai;
 
     @OneToMany(mappedBy = "thuocTinh", cascade = CascadeType.REMOVE)
     private List<ChiTietSanPhamThuocTinh> dsCTSPThuocTinh = new ArrayList<>();

@@ -23,9 +23,9 @@ public class KhuyenMai extends PrimaryEntity {
     @Column(name = "tenkm")
     private String tenKM;
     @Column(name = "loaikm")
-    private int loaiKM;
+    private Integer loaiKM;
     @Column(name = "loaigiamgia")
-    private int loaiGiamGia;
+    private Integer loaiGiamGia;
 
     @Column(name = "giatrigiam")
     private Float giaTriGiam;
@@ -38,7 +38,7 @@ public class KhuyenMai extends PrimaryEntity {
     private Date ngayTao;
 
     @Column(name = "soluong")
-    private int soLuong;
+    private Integer soLuong;
 
     @Column(name = "giatridontoithieu")
     private Float giaTriDonToiThieu;
@@ -59,7 +59,7 @@ public class KhuyenMai extends PrimaryEntity {
     private NhanVien nguoisua;
 
     @Column(name = "trangthai")
-    private int trangThai;
+    private Integer trangThai;
 
     @OneToMany(mappedBy = "khuyenMai")
     private List<SanPhamGiamGia> dsSanPhamKhuyenMai = new ArrayList<>();

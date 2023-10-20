@@ -18,7 +18,7 @@ public class GioHangChiTietId implements Serializable {
 
     @Column(name = "idgiohang")
     private Long idGioHang;
-    @Column(name = "idsp")
-    private Long idSanPham;
+    @Column(name = "idsptt")
+    private Long IdSanPhamThuocTinh;
 
 }

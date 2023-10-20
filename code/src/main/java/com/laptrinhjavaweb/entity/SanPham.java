@@ -22,7 +22,7 @@ public class SanPham extends PrimaryEntity {
     @Column(name = "slug")
     private String slug;
 
-    @Column(name = "ten")
+    @Column(name = "tensp")
     private String ten;
 
     @Column(name = "thongtinchitiet")
@@ -32,16 +32,16 @@ public class SanPham extends PrimaryEntity {
     private String moTaSanPham;
 
     @Column(name = "sanphammoi")
-    private int sanPhamMoi;
+    private Integer sanPhamMoi;
 
     @Column(name = "sanphamnoibat")
-    private int sanPhamNoiBat;
+    private Integer sanPhamNoiBat;
 
     @Column(name = "sanphamxemnhieunhat")
-    private int sanPhamXemNhieuNhat;
+    private Integer sanPhamXemNhieuNhat;
 
     @Column(name = "sanphamphobien")
-    private int sanPhamPhoBien;
+    private Integer sanPhamPhoBien;
 
     @Column(name = "ngaytao")
     private Date ngayTao;
@@ -58,10 +58,10 @@ public class SanPham extends PrimaryEntity {
     private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
-    private int trangThai;
+    private Integer trangThai;
 
     @ManyToOne
-    @JoinColumn(name = "idDM",insertable = false,updatable = false)
+    @JoinColumn(name = "iddm",insertable = false,updatable = false)
     private DanhMuc danhMuc;
 
     @OneToMany(mappedBy = "sanPham", cascade = CascadeType.REMOVE)
