@@ -1,29 +1,28 @@
 package com.laptrinhjavaweb.entity;
 
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
 @Getter
 @Setter
-@Builder
 @Entity
 @ToString
-@Table(name = "hoadon")
-public class HoaDon extends PrimaryEntity {
+@Table(name = "product")
+public class Product extends PrimaryEntity {
+    @Column(name = "tensp")
+    private String ten;
 
-    @Column(name = "tenkhachhang")
-    private String tenKhachHang;
+    @OneToMany(mappedBy = "product")
+    private List<CartItem> dsSanPham = new ArrayList<>();
 }

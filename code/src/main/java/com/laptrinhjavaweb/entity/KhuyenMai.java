@@ -14,7 +14,6 @@ import java.util.Date;
 @SuperBuilder
 @Getter
 @Setter
-@Builder
 @Entity
 @ToString
 @Table(name = "khuyenmai")
@@ -43,11 +42,11 @@ public class KhuyenMai extends PrimaryEntity {
     private int trangThai;
     @Column(name = "ngaytao")
     private Date ngayTao;
-    @Column(name = "idnvtao")
+    @Column(name = "nguoitao")
     private Long nguoiTao;
     @Column(name = "ngaysua")
     private Date ngaySua;
-    @Column(name = "idnvsua")
+    @Column(name = "nguoisua    ")
     private Long nguoiSua;
     @Column(name = "mota")
     private String moTa;
