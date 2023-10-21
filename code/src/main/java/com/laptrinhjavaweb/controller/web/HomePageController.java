@@ -42,4 +42,11 @@ public class HomePageController {
     public String faqs(){
         return "web/faqs";
     }
+
+    @GetMapping("/shop_us")
+    public String shop_us(){
+        return "web/shop_us";
+    }
+
+
 }
