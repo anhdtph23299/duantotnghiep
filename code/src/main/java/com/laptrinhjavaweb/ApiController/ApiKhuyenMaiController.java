@@ -13,24 +13,24 @@ public class ApiKhuyenMaiController {
     KhuyenMaiService khuyenMaiService;
 
     @GetMapping
-    public ResponseObject getAll(){
+    public ResponseObject getAll() {
         return new ResponseObject(khuyenMaiService.getAll());
     }
 
     @GetMapping("/detail/{id}")
-    public ResponseObject detail(@PathVariable(name = "id")Long id){
+    public ResponseObject detail(@PathVariable(name = "id") Long id) {
         KhuyenMai km = khuyenMaiService.findById(id);
         return new ResponseObject(km);
     }
 
     @PostMapping("/insert")
-    public ResponseObject insert(@RequestBody KhuyenMai khuyenMai){
+    public ResponseObject insert(@RequestBody KhuyenMai khuyenMai) {
         String res = khuyenMaiService.insert(khuyenMai);
         return new ResponseObject(res);
     }
 
     @PostMapping("/delete/{id}")
-    public ResponseObject delete(@PathVariable(name = "id")Long id){
+    public ResponseObject delete(@PathVariable(name = "id") Long id) {
         String res = khuyenMaiService.delete(id);
         return new ResponseObject(res);
     }

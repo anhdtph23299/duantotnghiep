@@ -27,10 +27,10 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     @Override
     public String insert(KhuyenMai khuyenMai) {
         KhuyenMai km = this.khuyenMaiRepository.save(khuyenMai);
-        if(km != null){
+        if (km != null) {
             return "Insert thanh cong";
-        }else{
-          return "Insert that bai";
+        } else {
+            return "Insert that bai";
         }
     }
 
@@ -42,10 +42,10 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     @Override
     public String delete(Long id) {
         KhuyenMai km = this.khuyenMaiRepository.findById(id).orElse(null);
-        if(km != null){
+        if (km != null) {
             this.khuyenMaiRepository.delete(km);
             return "Xoa thanh cong";
-        }else{
+        } else {
             return "Khong tim thay";
         }
     }

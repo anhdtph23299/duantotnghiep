@@ -4,10 +4,10 @@ import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -50,18 +50,15 @@ public class KhuyenMai extends PrimaryEntity {
     private String moTa;
 
     @ManyToOne
-    @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
+    @JoinColumn(name = "nguoitao", insertable = false, updatable = false)
     private NhanVien nguoiTao;
 
     @Column(name = "ngaysua")
     private Date ngaySua;
 
     @ManyToOne
-    @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
+    @JoinColumn(name = "nguoisua", insertable = false, updatable = false)
     private NhanVien nguoisua;
-
-    @Column(name = "trangthai")
-    private int trangThai;
 
     @OneToMany(mappedBy = "khuyenMai")
     private List<SanPhamGiamGia> dsSanPhamKhuyenMai = new ArrayList<>();

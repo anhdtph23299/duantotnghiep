@@ -14,7 +14,7 @@ import java.util.List;
 @SuperBuilder
 @Getter
 @Setter
-@Builder
+//@Builder
 @Entity
 @ToString
 @Table(name = "sanpham")
@@ -22,7 +22,7 @@ public class SanPham extends PrimaryEntity {
     @Column(name = "slug")
     private String slug;
 
-    @Column(name = "ten")
+    @Column(name = "TenSP")
     private String ten;
 
     @Column(name = "thongtinchitiet")
@@ -47,21 +47,21 @@ public class SanPham extends PrimaryEntity {
     private Date ngayTao;
 
     @ManyToOne
-    @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
+    @JoinColumn(name = "nguoitao", insertable = false, updatable = false)
     private NhanVien nguoiTao;
 
     @Column(name = "ngaysua")
     private Date ngaySua;
 
     @ManyToOne
-    @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
+    @JoinColumn(name = "nguoisua", insertable = false, updatable = false)
     private NhanVien nguoiSua;
 
     @Column(name = "trangthai")
     private int trangThai;
 
     @ManyToOne
-    @JoinColumn(name = "idDM",insertable = false,updatable = false)
+    @JoinColumn(name = "idDM", insertable = false, updatable = false)
     private DanhMuc danhMuc;
 
     @OneToMany(mappedBy = "sanPham", cascade = CascadeType.REMOVE)
