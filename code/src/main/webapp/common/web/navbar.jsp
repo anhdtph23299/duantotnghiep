@@ -55,8 +55,8 @@
                         <a href="/contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="" class="nav-item nav-link">Login</a>
-                        <a href="" class="nav-item nav-link">Register</a>
+                        <a href="/user/login" class="nav-item nav-link">Login</a>
+                        <a href="/user/register" class="nav-item nav-link">Register</a>
                     </div>
                 </div>
             </nav>
