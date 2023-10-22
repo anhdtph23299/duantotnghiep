@@ -17,4 +17,9 @@ public class GiaoCaController {
     public String dongca(){
         return "admin/giaoca/dongca";
     }
+
+    @GetMapping("/thongke")
+    public String thongke(){
+        return "admin/giaoca/thongkegiaoca";
+    }
 }

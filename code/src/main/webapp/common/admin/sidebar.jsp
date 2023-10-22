@@ -57,6 +57,7 @@
                 <ul aria-expanded="false">
                     <li><a href="/admin/giaoca/moca">Mở ca</a></li>
                     <li><a href="/admin/giaoca/dongca">Đóng ca</a></li>
+                    <li><a href="/admin/giaoca/thongke">Thống kê giao ca</a></li>
                 </ul>
             </li>
 
