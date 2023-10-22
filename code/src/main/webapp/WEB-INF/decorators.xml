@@ -12,4 +12,10 @@
     <decorator name="web" page="web.jsp">
         <pattern>/*</pattern>
     </decorator>
+    <decorator name="loginWeb" page="loginWeb.jsp">
+        <pattern>/user*</pattern>
+    </decorator>
+    <decorator name="loginAdmin" page="loginAdmin.jsp">
+        <pattern>/dashboard*</pattern>
+    </decorator>
 </decorators>
