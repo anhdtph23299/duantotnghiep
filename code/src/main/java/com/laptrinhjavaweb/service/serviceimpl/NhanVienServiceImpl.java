@@ -43,4 +43,9 @@ public class NhanVienServiceImpl implements NhanVienService {
     public void delete(Long id) {
         nhanVienRepository.deleteById(id);
     }
+
+    @Override
+    public List<NhanVien> getSearchNhanVien(String maNV, String tenNV, String email, String sdt) {
+        return nhanVienRepository.findByMaNVContainingOrTenNVContainingOrEmailContainingOrSdtContaining(maNV, tenNV, email, sdt);
+    }
 }
