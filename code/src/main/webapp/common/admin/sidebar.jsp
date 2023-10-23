@@ -47,6 +47,8 @@
                     <li><a href="/admin/nhanvien">Nhân viên</a></li>
                     <li><a href="/admin/khachhang">Khách hàng</a></li>
                     <li><a href="/admin/khuyen-mai">Khuyến mại</a></li>
+                    <li><a href="/admin/giaoca/calamviec">Ca làm việc</a></li>
+                    <li><a href="/admin/giaoca/thongke">Thống kê giao ca</a></li>
                 </ul>
             </li>
 

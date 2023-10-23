@@ -34,6 +34,14 @@
                     <div class="card-body ">
                         <div class="row">
                             <div class="col-4">
+                                <h6>Mã ca:</h6>
+                            </div>
+                            <div class="col-8">
+                                <span>CA0001</span>
+                            </div>
+                        </div>
+                        <div class="row mt-2 ">
+                            <div class="col-4">
                                 <h6>Tên nhân viên:</h6>
                             </div>
                             <div class="col-8">
@@ -77,6 +85,3 @@
 </div>
 </body>
 </html>
-<style>
-
-</style>

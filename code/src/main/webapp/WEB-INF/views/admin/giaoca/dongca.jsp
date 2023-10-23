@@ -18,14 +18,17 @@
     border-bottom: 2px solid #FFD43B;
     padding-bottom: 10px;
     padding-left: 5px;
-    color: black;" class="font-weight-bold">Đóng ca làm việc: <span class="text-uppercase">mã ....</span></h4>
+    color: black;" class="font-weight-bold">Đóng ca làm việc: <span class="text-uppercase">CA0001</span></h4>
 
         <div class="row">
             <div class="col-3">
-                <h6>Giờ mở ca: 20/10/2023 7:00</h6>
+                <h6><strong>Giờ mở ca:</strong> 20/10/2023 7:00</h6>
             </div>
             <div class="col-3">
-                <h6 >Nhân viên: Dinh Anh Tuan</h6>
+                <h6 ><strong>Giờ hiện tại:</strong> 20/10/2023 9:00</h6>
+            </div>
+            <div class="col-3">
+                <h6 ><strong>Nhân viên:</strong> Dinh Anh Tuan</h6>
             </div>
         </div>
         <div class="card card-body mt-3" >
@@ -88,142 +91,6 @@
                         </div>
                         <div>
                             485.000
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="bg-light-subtle p-3">
-                    <strong>Phiếu thu </strong>(0 phiếu)
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            1. Tiền mặt
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            2. Chuyển khoản
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            3. Thẻ
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            4. Điểm
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3 font-weight-bold">
-                        <div class="">
-                            Tổng thu
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="bg-light-subtle p-3">
-                    <strong>Phiếu chi </strong>(0 phiếu)
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            1. Tiền mặt
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            2. Chuyển khoản
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            3. Thẻ
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            4. Điểm
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3 font-weight-bold">
-                        <div class="">
-                            Tổng thu
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="bg-light-subtle p-3">
-                    <strong>Trả hàng </strong>(0 hóa đơn)
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            1. Tiền mặt
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            2. Chuyển khoản
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            3. Thẻ
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3" style="border-bottom: 2px solid green;">
-                        <div style="margin-bottom: 10px;">
-                            4. Điểm
-                        </div>
-                        <div>
-                            0
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between my-3 font-weight-bold">
-                        <div class="">
-                            Tổng thu
-                        </div>
-                        <div>
-                            0
                         </div>
                     </div>
                     </div>
