@@ -10,22 +10,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class GioHangChiTietServiceImpl implements GioHangChiTietService {
     @Autowired
     GioHangChiTietRepository gioHangChiTietRepository;
+
     @Override
     public String thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request) {
 
-        try{
+
+        try {
             GioHangChiTietId gioHangChiTietId = new GioHangChiTietId(request.getIdGioHang(), request.getIdSpTT());
             GioHangChiTiet gioHangChiTiet = gioHangChiTietRepository.getOne(gioHangChiTietId);
-            gioHangChiTiet.setSoLuong(gioHangChiTiet.getSoLuong()+ request.getSoLuong());
+            gioHangChiTiet.setSoLuong(gioHangChiTiet.getSoLuong() + request.getSoLuong());
             gioHangChiTietRepository.save(gioHangChiTiet);
             return "Thay đổi số lượng thành công";
-        }catch (Exception e){
+        } catch (Exception e) {
             return "Có lỗi xảy ra";
         }
     }
@@ -39,5 +42,18 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
     public BigDecimal tongTien(Long idKH) {
         return gioHangChiTietRepository.tongTien(idKH);
     }
+
+    @Override
+    public List<List<GioHangResponse>> dsGioHangChiaTheoSanPham(Long idKh) {
+        List<Long> dsIdSanPham = gioHangChiTietRepository.getDsIdSanPhamByKhachHang(idKh);
+        System.out.println(dsIdSanPham);
+        List<List<GioHangResponse>> dsGioHangChiaTheoSanPham = new ArrayList<>();
+        for (Long id: dsIdSanPham
+             ) {
+            dsGioHangChiaTheoSanPham.add(gioHangChiTietRepository.getDsspThuocTinhByIdSanPhamAndIdKh(id,idKh));
+        }
+        return dsGioHangChiaTheoSanPham;
+    }
+
 
 }

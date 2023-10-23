@@ -27,6 +27,8 @@ public interface GioHangResponse {
     @Value("#{target.chiTietSanPhamThuocTinh.giaTri}")
     String getGiaTri();
 
+    @Value("#{target.tongTien}")
+    BigDecimal getTongTien();
     @Value("#{target.chiTietSanPhamThuocTinh.sanPham.ten}")
     String getTenSanPham();
 }

@@ -1,6 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp" %>
+<style>
+    .img-cart{
+        height: 170px;
+    }
+    .soluong{
+        width: 50px;
+    }
 
+</style>
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
@@ -16,196 +24,431 @@
 
     <!-- Cart Start -->
     <div class="container-fluid pt-5">
-        <div class="row px-xl-5">
-            <div class="col-lg-8 table-responsive mb-5">
-                <table class="table table-bordered text-center mb-0" id="tblcart">
-                    <thead class="bg-secondary text-dark">
-                    <tr>
-                        <th>Products</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Remove</th>
-                    </tr>
-                    </thead>
-                    <tbody class="align-middle" >
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-1.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
+        <section class="h-100">
+            <div class="container py-5">
+                <div class=" d-flex justify-content-center my-4">
+                    <div class="card mb-4">
+                        <div class="card-header py-3">
+                            <h5 class="mb-0">Cart - 2 items</h5>
+                        </div>
+                        <div class="card-body" id="cart">
+                            <!-- Single item 1 -->
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <!-- Image -->
+                                    <div
+                                            class="bg-image hover-overlay hover-zoom ripple rounded"
+                                            data-mdb-ripple-color="light"
+                                    >
+                                        <img
+                                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+                                                class="w-100 img-cart"
+                                                alt="Blue Jeans Jacket"
+                                        />
+                                        <a href="#!">
+                                            <div
+                                                    class="mask"
+                                                    style="background-color: rgba(251, 251, 251, 0.2)"
+                                            ></div>
+                                        </a>
+                                    </div>
+                                    <!-- Image -->
                                 </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
+
+                                <div class="col-lg-3 col-md-5 mb-4">
+                                    <!-- Data -->
+                                    <p><strong>Blue denim shirt thịnh hành hot</strong></p>
+                                    <p>Color: blue</p>
+                                    <p>Size: M</p>
+                                    <button
+                                            type="button"
+                                            class="btn btn-primary btn-sm me-1 mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Remove item"
+                                    >
+                                        <i class="fas fa-trash"></i>
                                     </button>
+                                    <button
+                                            type="button"
+                                            class="btn btn-danger btn-sm mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Move to the wish list"
+                                    >
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <!-- Data -->
                                 </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-2.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-3.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-4.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-4.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
+
+                                <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p style="margin-left: 40px"><strong>Số lượng</strong></p>
+                                            <div class="d-flex mb-4">
+                                                <button
+                                                        class="btn btn-primary px-3 nut"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                >
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+
+                                                <div class="form-outline">
+                                                    <input
+                                                            
+                                                            min="0"
+                                                            name="quantity"
+                                                            value="1"
+                                                            type="number"
+                                                            class="form-control  soluong"
+                                                    />
+                                                </div>
+
+                                                <button
+                                                        class="btn btn-primary px-3 nut"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                >
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p><strong>Đơn giá</strong></p>
+                                            <div class="form-outline">
+                                                <label class="form-label" 
+                                                >2.000.000</label
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p><strong>Thành tiền</strong></p>
+                                            <div class="form-outline">
+                                                <label class="form-label" 
+                                                >2.000.000</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-lg-4">
-                <form class="mb-5" action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control p-4" placeholder="Coupon Code">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary">Apply Coupon</button>
+                            <!-- Single item 1 -->
+
+                            <!-- Single item 2 -->
+
+                            <hr class="my-4" />
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <!-- Image -->
+                                    <div
+                                            class="bg-image hover-overlay hover-zoom ripple rounded"
+                                            data-mdb-ripple-color="light"
+                                    >
+                                        <img
+                                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+                                                class="w-100 img-cart"
+                                        />
+                                        <a href="#!">
+                                            <div
+                                                    class="mask"
+                                                    style="background-color: rgba(251, 251, 251, 0.2)"
+                                            ></div>
+                                        </a>
+                                    </div>
+                                    <!-- Image -->
+                                </div>
+
+                                <div class="col-lg-4 col-md-5 mb-4 mb-lg-0">
+                                    <!-- Data -->
+                                    <p><strong>Red hoodie</strong></p>
+                                    <p>Color: red</p>
+                                    <p>Size: M</p>
+
+                                    <button
+                                            type="button"
+                                            class="btn btn-primary btn-sm me-1 mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Remove item"
+                                    >
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                    <button
+                                            type="button"
+                                            class="btn btn-danger btn-sm mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Move to the wish list"
+                                    >
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <!-- Data -->
+                                </div>
+
+                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p style="margin-left: 40px"><strong>Số lượng</strong></p>
+                                            <div class="d-flex mb-4">
+                                                <button
+                                                        class="btn btn-primary px-3 nut"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                >
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+
+                                                <div class="form-outline">
+                                                    <input
+                                                            
+                                                            min="0"
+                                                            name="quantity"
+                                                            value="1"
+                                                            type="number"
+                                                            class="form-control  soluong"
+                                                    />
+                                                </div>
+
+                                                <button
+                                                        class="btn btn-primary px-3 nut"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                >
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p><strong>Đơn giá</strong></p>
+                                            <div class="form-outline">
+                                                <label class="form-label" 
+                                                >2.000.000</label
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p><strong>Thành tiền</strong></p>
+                                            <div class="form-outline">
+                                                <label class="form-label" 
+                                                >2.000.000</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+
+                            <!-- Single item 2 -->
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <!-- Image -->
+                                    <div
+                                            class="bg-image hover-overlay hover-zoom ripple rounded"
+                                            data-mdb-ripple-color="light"
+                                    >
+                                        <img
+                                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+                                                class="w-100 img-cart"
+                                        />
+                                        <a href="#!">
+                                            <div
+                                                    class="mask"
+                                                    style="background-color: rgba(251, 251, 251, 0.2)"
+                                            ></div>
+                                        </a>
+                                    </div>
+                                    <!-- Image -->
+                                </div>
+
+                                <div class="col-lg-4 col-md-5 mb-4 mb-lg-0">
+                                    <!-- Data -->
+                                    <p><strong>Red hoodie</strong></p>
+                                    <p>Color: red</p>
+                                    <p>Size: M</p>
+
+                                    <button
+                                            type="button"
+                                            class="btn btn-primary btn-sm me-1 mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Remove item"
+                                    >
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                    <button
+                                            type="button"
+                                            class="btn btn-danger btn-sm mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Move to the wish list"
+                                    >
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <!-- Data -->
+                                </div>
+
+                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p style="margin-left: 40px"><strong>Số lượng</strong></p>
+                                            <div class="d-flex mb-4">
+                                                <button
+                                                        class="btn btn-primary px-3 nut"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                >
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+
+                                                <div class="form-outline">
+                                                    <input
+                                                            
+                                                            min="0"
+                                                            name="quantity"
+                                                            value="1"
+                                                            type="number"
+                                                            class="form-control  soluong"
+                                                    />
+                                                </div>
+
+                                                <button
+                                                        class="btn btn-primary px-3 nut"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                >
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p><strong>Đơn giá</strong></p>
+                                            <div class="form-outline">
+                                                <label class="form-label" 
+                                                >2.000.000</label
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p><strong>Thành tiền</strong></p>
+                                            <div class="form-outline">
+                                                <label class="form-label" 
+                                                >2.000.000</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End cart trong -->
                         </div>
                     </div>
-                </form>
-                <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3 pt-1">
-                            <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="font-weight-medium" id="subtotal">$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium" id="shipping">0</h6>
-                        </div>
-                    </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Total</h5>
-                            <h5 class="font-weight-bold" id="total">$160</h5>
-                        </div>
-                        <button class="btn btn-block btn-primary my-3 py-3" id="checkout">Proceed To Checkout</button>
-                    </div>
+                    <!-- Các card và nội dung khác -->
                 </div>
             </div>
-        </div>
+        </section>
     </div>
     <!-- Cart End -->
 <script>
     function ghct(){
         $.ajax({
-            url: '/api/user/ghct/'+1,
+            url: '/api/user/ghct/dsspttchiatheosp/'+1,
             method: 'GET',
             success: function(req) {
                 var data = req.data;
-                var tbody =$("#tblcart tbody");
+                console.log(data)
+                var tbody =$("#cart tbody");
                 tbody.empty();
                 data.forEach(function (item){
-                    var html = `
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-1.jpg'/>" alt="" style="width: 50px;"> \${item.tenSanPham}</td>
-                        <td class="align-middle">\${convertVND(item.giaTien)}</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" onclick=thayDoiSoLuong(\${item.idSanPhamThuocTinh},\${item.idGioHang},-1)>
-                                        <i class="fa fa-minus"></i>
-                                    </button>
+                    item.forEach(function (sp){
+                        var html =`
+                        <div class="row">
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <!-- Image -->
+                                    <div
+                                            class="bg-image hover-overlay hover-zoom ripple rounded"
+                                            data-mdb-ripple-color="light"
+                                    >
+                                        <img
+                                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+                                                class="w-100 img-cart"
+                                                alt="Blue Jeans Jacket"
+                                        />
+                                        <a href="#!">
+                                            <div
+                                                    class="mask"
+                                                    style="background-color: rgba(251, 251, 251, 0.2)"
+                                            ></div>
+                                        </a>
+                                    </div>
+                                    <!-- Image -->
                                 </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="\${item.soLuong}">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus" onclick=thayDoiSoLuong(\${item.idSanPhamThuocTinh},\${item.idGioHang},1)>
-                                        <i class="fa fa-plus"></i>
+
+                                <div class="col-lg-3 col-md-5 mb-4">
+                                    <!-- Data -->
+                                    <p><strong>\${sp.tenSanPham}</strong></p>
+                                    <p>Color: blue</p>
+                                    <p>Size: M</p>
+                                    <button
+                                            type="button"
+                                            class="btn btn-primary btn-sm me-1 mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Remove item"
+                                    >
+                                        <i class="fas fa-trash"></i>
                                     </button>
+                                    <button
+                                            type="button"
+                                            class="btn btn-danger btn-sm mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Move to the wish list"
+                                    >
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <!-- Data -->
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 mb-4 mb-lg-0">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <p style="margin-left: 40px"><strong>Số lượng</strong></p>
+                                            <div class="d-flex mb-4">
+                                                <button
+                                                        class="btn btn-primary px-3 nut"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                >
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+
+                                                <div class="form-outline">
+                                                    <input
+
+                                                            min="0"
+                                                            name="quantity"
+                                                            value="1"
+                                                            type="number"
+                                                            class="form-control  soluong"
+                                                    />
+                                                </div>
+
+                                                <button
+                                                        class="btn btn-primary px-3 nut"
+                                                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                >
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p><strong>Đơn giá</strong></p>
+                                            <div class="form-outline">
+                                                <label class="form-label"
+                                                >2.000.000</label
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <p><strong>Thành tiền</strong></p>
+                                            <div class="form-outline">
+                                                <label class="form-label"
+                                                >2.000.000</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </td>
-                        <td class="align-middle">\${convertVND(item.soLuong*item.giaTien)}</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    `;
-                    tbody.append(html);
+                        `
+                    })
                 })
 
             },
@@ -231,7 +474,7 @@
 
         }
     ghct()
-    tongTien()
+    // tongTien()
         function thayDoiSoLuong(idsp,idgh,sl){
             $.ajax({
                 url: '/api/user/ghct/thaydoisoluong',

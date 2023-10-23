@@ -19,4 +19,8 @@ public interface GioHangChiTietRepository extends JpaRepository<GioHangChiTiet, 
     @Query("select sum(ghct.soLuong*ghct.bienTheEntity.gia) from GioHangChiTiet ghct where ghct.gioHang.khachHang.id=:idkh")
     BigDecimal tongTien(@Param("idkh")Long idkh);
 
+    @Query("select distinct ghct.chiTietSanPhamThuocTinh.sanPham.id from GioHangChiTiet ghct where ghct.gioHang.khachHang.id=:idkh")
+    List<Long> getDsIdSanPhamByKhachHang(@Param("idkh")Long idkh);
+    @Query("select ghct from GioHangChiTiet ghct where ghct.chiTietSanPhamThuocTinh.sanPham.id=:idsp and ghct.gioHang.khachHang.id=:idkh")
+    List<GioHangResponse> getDsspThuocTinhByIdSanPhamAndIdKh(@Param("idsp")Long idSp,@Param("idkh")Long idkh);
 }

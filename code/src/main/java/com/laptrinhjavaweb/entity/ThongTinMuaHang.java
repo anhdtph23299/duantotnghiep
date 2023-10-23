@@ -1,5 +1,7 @@
 package com.laptrinhjavaweb.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -27,7 +29,13 @@ public class ThongTinMuaHang extends PrimaryEntity {
     private String diaChi;
 
     @Column(name = "trangthai")
+    @JsonIgnore
     private Integer trangThai;
+
+    @JsonProperty("trangThai")
+    public String getTrangThai(){
+        return trangThai==1?"":trangThai==2?"Mặc định":"Đã xoá";
+    }
 
     @ManyToOne
     @JoinColumn(name = "idkh", referencedColumnName = "id")

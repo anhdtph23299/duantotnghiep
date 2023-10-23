@@ -25,6 +25,8 @@ public class ApiGioHangChiTietController {
         return new ResponseObject(gioHangChiTietService.dsGioHangChiTietByIdKh(idkh));
     }
 
+
+
     @GetMapping("/subtotal/{id}")
     public ResponseObject totalGioHangByKhachHang(@PathVariable(name = "id")Long idkh){
         return new ResponseObject(gioHangChiTietService.tongTien(idkh));
@@ -33,5 +35,9 @@ public class ApiGioHangChiTietController {
     @PostMapping("/thaydoisoluong")
     public ResponseObject totalGioHangByKhachHang(@RequestBody ThayDoiSoLuongGioHangRequest request){
         return new ResponseObject(gioHangChiTietService.thayDoiSoLuong(request));
+    }
+    @GetMapping("/dsspttchiatheosp/{id}")
+    public ResponseObject dsSpttChiaTheoSanPhamByIdKh(@PathVariable(name = "id")Long idkh){
+        return  new ResponseObject(gioHangChiTietService.dsGioHangChiaTheoSanPham(idkh));
     }
 }

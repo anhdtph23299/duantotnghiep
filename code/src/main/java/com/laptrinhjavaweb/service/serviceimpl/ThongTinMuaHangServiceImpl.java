@@ -1,6 +1,7 @@
 package com.laptrinhjavaweb.service.serviceimpl;
 
 import com.laptrinhjavaweb.entity.ThongTinMuaHang;
+import com.laptrinhjavaweb.model.response.ThongTinMuaHangResponse;
 import com.laptrinhjavaweb.repository.ThongTinMuaHangRepository;
 import com.laptrinhjavaweb.service.ThongTinMuaHangService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,10 @@ public class ThongTinMuaHangServiceImpl implements ThongTinMuaHangService {
         List<Integer> trangThai = new ArrayList<>();
         trangThai.add(2);
         return thongTinMuaHangRepository.getTTMuaHangByIdKHAndTrangThai(idkh,trangThai);
+    }
+
+    @Override
+    public List<ThongTinMuaHangResponse> dsThongTinMuaHang(Long idkh) {
+        return thongTinMuaHangRepository.dsThongTinMuaHangByIdKhachHang(idkh);
     }
 }
