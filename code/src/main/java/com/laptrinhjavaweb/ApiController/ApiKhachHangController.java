@@ -1,6 +1,7 @@
 package com.laptrinhjavaweb.ApiController;
 
 import com.laptrinhjavaweb.entity.KhachHang;
+import com.laptrinhjavaweb.repository.KhachHangRepository;
 import com.laptrinhjavaweb.service.KhachHangService;
 import com.laptrinhjavaweb.util.base.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +9,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/admin/khachhang")
 public class ApiKhachHangController {
 
     @Autowired
     private KhachHangService khachHangService;
+
+    @Autowired
+    private KhachHangRepository khachHangRepository;
 
     @GetMapping
     public ResponseObject getKhachHang(){
@@ -55,5 +61,10 @@ public class ApiKhachHangController {
         khachHangService.insert(khachHang);
 
         return new ResponseEntity<>("Update success", HttpStatus.OK);
+    }
+
+    @GetMapping("/search")
+    public ResponseObject getSearchKhachHang( String maKH, String tenKH, String email, String sdt, String diaChi, String cccd){
+        return new ResponseObject(khachHangService.getSearchKhachHang(maKH,tenKH, email, sdt, diaChi, cccd));
     }
 }

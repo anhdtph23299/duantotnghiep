@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Profile</title>
 </head>
 <body>
 <div class="content-body">
@@ -66,9 +66,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="profile-blog">
-                                    <h5 class=" d-inline">Today Highlights</h5>
+                                    <h5 class="text-cyan d-inline">Today Highlights</h5>
                                     <img src="images/profile/1.jpg" alt="" class="img-fluid mt-4 mb-4 w-100">
-                                    <h4><a href="post-details.html" class="text-black">Darwin Creative Agency Theme</a></h4>
+                                    <h4><a href="#" class="text-black" style="text-decoration: none">Darwin Creative Agency Theme</a></h4>
                                     <p class="mb-0">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="profile-interest">
-                                    <h5 class=" d-inline">Image</h5>
+                                    <h5 class="text-cyan d-inline">Image</h5>
                                     <div class="row mt-4 sp4" id="lightgallery">
                                         <a href="/template/admin/images/profile/2.jpg" data-exthumbimage="/template/admin/images/profile/2.jpg" data-src="/template/admin/images/profile/2.jpg" class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
                                             <img src="/template/admin/images/profile/2.jpg" alt="" class="img-fluid">
@@ -121,18 +121,18 @@
                                     <div id="about-me" class="tab-pane fade active show">
                                         <div class="profile-about-me">
                                             <div class="pt-4 border-bottom-1 pb-3">
-                                                <h4 class="">About Me</h4>
+                                                <h4 class="text-cyan">About Me</h4>
                                                 <p class="mb-2">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence was created for the bliss of souls like mine.I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
                                                 <p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
                                             </div>
                                         </div>
                                         <div class="profile-skills mb-5">
-                                            <h4 class="mb-2">Skills</h4>
+                                            <h4 class="text-cyan mb-2">Skills</h4>
                                             <a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Bán hàng</a>
                                             <a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Thu ngân</a>
                                         </div>
                                         <div class="profile-personal-info">
-                                            <h4 class=" mb-4">Personal Information</h4>
+                                            <h4 class="text-cyan mb-4">Personal Information</h4>
 
 
 
@@ -187,7 +187,7 @@
                                     <div id="profile-settings" class="tab-pane fade">
                                         <div class="pt-3">
                                             <div class="settings-form">
-                                                <h4 class="">Account Setting</h4>
+                                                <h4 class="text-cyan">Account Setting</h4>
                                                 <form>
                                                     <div class="form-group">
                                                         <label>Image </label>

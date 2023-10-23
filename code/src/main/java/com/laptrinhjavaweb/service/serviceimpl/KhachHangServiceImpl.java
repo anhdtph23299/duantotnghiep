@@ -44,5 +44,10 @@ public class KhachHangServiceImpl implements KhachHangService {
         khachHangRepository.deleteById(id);
     }
 
+    @Override
+    public List<KhachHang> getSearchKhachHang( String maKH, String tenKH, String email, String sdt, String diaChi, String cccd) {
+        return khachHangRepository.findByMaKHContainingOrTenKHContainingOrEmailContainingOrSdtContainingOrDiaChiContainingOrCccdContaining(maKH,tenKH,email,sdt,diaChi,cccd);
+    }
+
 
 }
