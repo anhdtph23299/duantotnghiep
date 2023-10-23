@@ -19,7 +19,7 @@
     padding-bottom: 10px;
     padding-left: 5px;
     color: black;">
-         Thống kế giao ca
+         Thống kê giao ca
         </h4>
 
                 <div class="project-nav">
@@ -41,11 +41,11 @@
                     </div>
                     <%--search--%>
                     <div class="InputContainer">
-                        <input type="text" id="searchAll"  name="text" class="input"  placeholder="Search">
+                        <input type="text" id=""  name="text" class="input"  placeholder="Search">
 
                         <div class="border"></div>
 
-                        <button id="searchButton" class="micButton">
+                        <button id="" class="micButton">
                             <svg viewBox="0 0 512 512" class="searchIcon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
                         </button>
 
@@ -55,7 +55,7 @@
                     <div class="tab-pane fade active show" id="navpills-1">
                         <div class="card">
                             <div class="project-info">
-                                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
                                     <p class="text-primary mb-1">#nv-0001</p>
                                     <h5 class="title font-w600 mb-2"><a href="#" class="text-black text-decoration-none">Dinh Anh Tuan</a></h5>
                                     <div class="text-dark"><i class="fa fa-calendar-o mr-3" aria-hidden="true"></i>20/10/2023 7:00</div>
@@ -76,7 +76,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="ml-2">
+                                            <span>Tổng tiền tại quầy</span>
+                                            <h5 class="mb-0 pt-1 font-w500 text-black">195000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số tiền chênh lệch</span>
@@ -84,25 +92,26 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                                     <div class="d-flex project-status align-items-center">
-                                        <span class="btn bgl-warning text-warning status-btn mr-3">Pending</span>
+                                        <span class="btn bgl-info text-info status-btn mr-3">Solved</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="project-info">
-                                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                                    <p class="text-primary mb-1">#nv-0001</p>
+                                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                                    <p class="text-primary mb-1">#nv-0002</p>
                                     <h5 class="title font-w600 mb-2"><a href="#" class="text-black text-decoration-none">Dinh Tuan Anh</a></h5>
-                                    <div class="text-dark"><i class="fa fa-calendar-o mr-3" aria-hidden="true"></i>20/10/2023 7:00</div>
+                                    <div class="text-dark"><i class="fa fa-calendar-o mr-3" aria-hidden="true"></i>20/10/2023 9:00</div>
                                 </div>
                                 <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số tiền đầu ca</span>
-                                            <h5 class="mb-0 pt-1 font-w50 text-black">1500000</h5>
+                                            <h5 class="mb-0 pt-1 font-w50 text-black">1950000</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -110,21 +119,30 @@
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số tiền cuối ca</span>
-                                            <h5 class="mb-0 pt-1 font-w500 text-black">1950000</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
-                                    <div class="d-flex align-items-center">
-                                        <div class="ml-2">
-                                            <span>Số tiền chênh lệch</span>
-                                            <h5 class="mb-0 pt-1 font-w500 text-black">0</h5>
+                                            <h5 class="mb-0 pt-1 font-w500 text-black">2500000</h5>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="ml-2">
+                                            <span>Tổng tiền tại quầy</span>
+                                            <h5 class="mb-0 pt-1 font-w500 text-black">2400000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                                    <div class="d-flex align-items-center">
+                                        <div class="ml-2">
+                                            <span>Số tiền chênh lệch</span>
+                                            <h5 class="mb-0 pt-1 font-w500 text-black">100000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                                     <div class="d-flex project-status align-items-center">
-                                        <span class="btn bgl-info text-info status-btn mr-3">Solved</span>
+                                        <span class="btn bgl-warning text-warning status-btn mr-3">Pending</span>
                                     </div>
                                 </div>
                             </div>
