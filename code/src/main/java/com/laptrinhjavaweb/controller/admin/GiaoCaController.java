@@ -22,4 +22,26 @@ public class GiaoCaController {
     public String thongke(){
         return "admin/giaoca/thongkegiaoca";
     }
+
+    @GetMapping("/calamviec")
+    public String calamviec(){
+        return "admin/giaoca/calamviec";
+    }
+
+    @GetMapping("/createCLV")
+    public String createCLV(){
+        return "admin/giaoca/createCLV";
+    }
+
+    @GetMapping("/updateCLV/{id}")
+    public String updateCLV(){
+        return "admin/giaoca/updateCLV";
+    }
+
+    @GetMapping("/detailCLV/{id}")
+    public String detailCLV(){
+        return "admin/giaoca/detailCLV";
+    }
+
+
 }
