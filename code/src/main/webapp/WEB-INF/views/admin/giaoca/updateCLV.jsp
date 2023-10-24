@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Thêm ca làm việc</title>
+    <title>Cập nhật ca làm việc</title>
 </head>
 <body>
 <div class="content-body">
@@ -20,13 +20,13 @@
     padding-bottom: 10px;
     padding-left: 5px;
     color: black;">
-                Tạo mới ca làm việc
+                Cập nhật ca làm việc
             </h4>
-
+            <input type="hidden"  id="id" >
             <div class="row">
                 <div class="col">
                     <label>Mã ca:</label>
-                    <input type="text" id="macalv" class="form-control"  disabled>
+                    <input type="text" id="macalv" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label class="form-label">Ngày làm việc:</label>
@@ -62,7 +62,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col">
-                    <button class="btn" id="them" style="background-color: #A6edab; color: #00852d">Add</button>
+                    <button class="btn" id="updateButton" style="background-color: #A6edab; color: #00852d">Update</button>
                     <a href="/admin/giaoca/calamviec" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
                 </div>
             </div>
@@ -72,41 +72,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script >
 
-        $("#them").click(function () {
+        $("#updateButton").click(function() {
+            var id = $("#id").val();
+
             var maCaLV = $("#macalv").val();
-            var ngayLamViec = $("#ngaylamviec").val();
-            var trangThai = $("#trangthai").val();
-            var nhanVien = $("#selectNhanVien").val();
             var gioBatDau = $("#giobatdau").val();
             var gioKetThuc = $("#gioketthuc").val();
-
-            var gioBatDauTime = gioBatDau + ":00";
-            var gioKetThucTime = gioKetThuc + ":00";
+            var trangThai = $("#trangthai").val();
+            var ngayLamViec = $("#ngaylamviec").val();
+            var nhanVien = $("#selectNhanVien").val();
 
             var ca = {
-                maCaLV: maCaLV,
-                gioBatDau: gioBatDauTime,
-                gioKetThuc: gioKetThucTime,
-                ngayLamViec: ngayLamViec,
-                trangThai: trangThai,
-                nhanVien: {id: nhanVien}
+                "id": id,
+                "maCaLV": maCaLV,
+                "gioBatDau": gioBatDau,
+                "gioKetThuc": gioKetThuc,
+                "trangThai": trangThai,
+                "ngayLamViec": ngayLamViec,
+                "nhanVien":  {id: nhanVien}
             };
-
+            var url = window.location.pathname.split("/");
+            var id = url[url.length-1];
             $.ajax({
-                url: '/api/admin/calamviec/insert',
-                method: 'POST',
+                url: '/api/admin/calamviec/update/'+id,
+                method: 'PUT',
                 contentType: 'application/json',
                 data: JSON.stringify(ca),
-                success: function (response) {
+                success: function(response) {
                     window.location.href = '/admin/giaoca/calamviec';
                 },
-                error: function (xhr, status, error) {
-                    showError("Thêm ca thất bại");
+                error: function(xhr, status, error) {
+                    showError("Update Fail")
                 }
             });
         });
 
-        function getListNhanVien() {
+
+        function getCaLVDetail() {
+            var url = window.location.pathname.split("/");
+            var id = url[url.length - 1];
+            $.ajax({
+                url: '/api/admin/calamviec/detail/' + id,
+                method: 'GET',
+                success: function (req) {
+                    var data = req.data;
+                    $("#id").val(data.id);
+                    $("#macalv").val(data.maCaLV);
+                    $("#giobatdau").val(data.gioBatDau);
+                    $("#gioketthuc").val(data.gioKetThuc);
+                    $("#trangthai").val(data.trangThai.toString());
+                    $("#ngaylamviec").val(formatDateInput(data.ngayLamViec));
+                    $("#selectNhanVien").val(data.nhanVien.tenNV).trigger('change');
+
+                    updateNhanVienSelect()
+                },
+                error: function (xhr, status, error) {
+                    console.log(error);
+                    alert('Có lỗi xảy ra: ' + error);
+                }
+            });
+        }
+
+        getCaLVDetail();
+
+        function updateNhanVienSelect() {
             $.ajax({
                 url: '/api/admin/nhanvien',
                 method: 'GET',
@@ -125,7 +154,6 @@
                 }
             });
         }
-        getListNhanVien();
     </script>
 </div>
 </body>

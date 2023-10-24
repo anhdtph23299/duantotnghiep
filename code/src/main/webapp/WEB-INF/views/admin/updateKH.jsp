@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col">
                     <label>Mã khách hàng:</label>
-                    <input type="text" id="makh" class="form-control" >
+                    <input type="text" id="makh" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label>Họ và tên:</label>

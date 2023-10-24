@@ -66,14 +66,14 @@
                 <div class="">
                     <table class="table table-hover" id="tblKhachHang">
                         <thead>
-                        <tr class="table-info">
+                        <tr>
                             <th>
                                 <span class="custom-checkbox">
                                     <input type="checkbox" id="selectAll">
                                     <label for="selectAll"></label>
                                 </span>
                             </th>
-                            <th scope="col">#</th>
+                            <th scope="col">STT</th>
                             <th scope="col">MaKH</th>
                             <th scope="col">TenKH</th>
                             <th scope="col">SDT</th>

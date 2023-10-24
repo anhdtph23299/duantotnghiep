@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.ApiController;
 
 
 import com.laptrinhjavaweb.entity.CaLamViec;
+import com.laptrinhjavaweb.entity.KhachHang;
 import com.laptrinhjavaweb.service.CaLamViecService;
 import com.laptrinhjavaweb.util.base.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,13 @@ public class ApiCaLamViecController {
 
     @PostMapping("/insert")
     public ResponseObject insert(@RequestBody CaLamViec caLamViec){
-        System.out.println(caLamViec);
-        return new ResponseObject(caLamViecService.insert(caLamViec));
+        CaLamViec maCa = caLamViecService.insert(caLamViec);
+        Long id = maCa.getId();
+        String maCaLV = "CA" + id;
+        maCa.setMaCaLV(maCaLV);
+        caLamViecService.update(maCa);
+
+        return new ResponseObject(maCa);
     }
 
     @GetMapping("/detail/{id}")
