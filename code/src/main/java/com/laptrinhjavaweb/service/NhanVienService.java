@@ -1,5 +1,8 @@
 package com.laptrinhjavaweb.service;
 
+import com.laptrinhjavaweb.dto.LoginDto;
+import com.laptrinhjavaweb.dto.LoginMessage;
+import com.laptrinhjavaweb.dto.NhanVienDto;
 import com.laptrinhjavaweb.entity.NhanVien;
 
 import java.util.List;
@@ -17,5 +20,10 @@ public interface NhanVienService {
     void delete(Long id);
 
     List<NhanVien> getSearchNhanVien(String maNV, String tenNV, String email, String sdt);
+
+    //  login
+    NhanVien addNhanVien(NhanVienDto dto);
+    LoginMessage loginKhachHang(LoginDto loginDto);
+
 
 }

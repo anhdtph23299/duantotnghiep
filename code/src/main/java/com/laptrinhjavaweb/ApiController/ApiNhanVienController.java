@@ -1,6 +1,8 @@
 package com.laptrinhjavaweb.ApiController;
 
-import com.laptrinhjavaweb.entity.KhachHang;
+import com.laptrinhjavaweb.dto.LoginDto;
+import com.laptrinhjavaweb.dto.LoginMessage;
+import com.laptrinhjavaweb.dto.NhanVienDto;
 import com.laptrinhjavaweb.entity.NhanVien;
 import com.laptrinhjavaweb.service.NhanVienService;
 import com.laptrinhjavaweb.util.base.ResponseObject;
@@ -8,10 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/admin/nhanvien")
@@ -66,5 +64,7 @@ public class ApiNhanVienController {
     public ResponseObject getSearchNhanVien( String maNV, String tenNV, String email, String sdt){
         return new ResponseObject(nhanVienService.getSearchNhanVien(maNV,tenNV, email, sdt));
     }
+
+
 
 }

@@ -4,10 +4,10 @@ import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
-import java.util.ArrayList;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -49,6 +49,8 @@ public class KhachHang  extends PrimaryEntity {
 
     @Column(name = "mota")
     private String moTa;
+    @Column(name = "password")
+    private String matKhau;
 
     //    @OneToOne(mappedBy = "khachHang", cascade = CascadeType.ALL)
 //    @PrimaryKeyJoinColumn

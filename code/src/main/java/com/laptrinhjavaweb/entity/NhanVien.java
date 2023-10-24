@@ -54,6 +54,11 @@ public class NhanVien extends PrimaryEntity {
     @Column(name = "noicap")
     private String noiCap;
 
+    @Column(name = "password")
+    private String matKhau;
+
+
+
     @ManyToOne
     @JoinColumn(name = "idchucvu", referencedColumnName = "id")
     private ChucVu chucVu;
