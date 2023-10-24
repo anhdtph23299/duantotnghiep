@@ -16,9 +16,6 @@ public class ApiKhachHangController {
     @Autowired
     private KhachHangService khachHangService;
 
-    @Autowired
-    private KhachHangRepository khachHangRepository;
-
     @GetMapping
     public ResponseObject getKhachHang(){
         return new ResponseObject(khachHangService.getDsKhachHang());
@@ -26,7 +23,14 @@ public class ApiKhachHangController {
 
     @PostMapping("/insert")
     public ResponseObject insert(@RequestBody KhachHang khachHang){
-        return new ResponseObject(khachHangService.insert(khachHang));
+
+        KhachHang maKhachHang = khachHangService.insert(khachHang);
+        Long id = maKhachHang.getId();
+        String maKH = "KH" + id;
+        maKhachHang.setMaKH(maKH);
+        khachHangService.update(maKhachHang);
+
+        return new ResponseObject(maKhachHang);
     }
 
     @GetMapping("/detail/{id}")

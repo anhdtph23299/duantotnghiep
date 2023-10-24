@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col">
                     <label>Mã nhân viên:</label>
-                    <input type="text" id="manv" class="form-control" >
+                    <input type="text" id="manv" class="form-control" disabled>
                 </div>
                 <div class="col">
                     <label>Họ và tên:</label>
