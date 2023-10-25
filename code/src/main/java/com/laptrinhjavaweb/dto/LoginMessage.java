@@ -9,5 +9,5 @@ import lombok.*;
 @ToString
 public class LoginMessage {
     String message;
-    Boolean status;
+        Boolean status;
 }

@@ -35,7 +35,7 @@
                 <div class="card card-lg mb-5">
                     <div class="card-body">
                         <!-- Form -->
-                        <form class="js-validate">
+                        <div class="js-validate">
                             <!-- Form Group -->
                             <div class="js-form-message form-group">
                                 <label class="input-label" for="signinSrEmail">Your email</label>
@@ -53,7 +53,8 @@
                                 </label>
 
                                 <div class="input-group input-group-merge">
-                                    <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="*************" aria-label="*************" required="" data-msg="Your password is invalid. Please try again." data-hs-toggle-password-options='{
+                                    <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="*************" aria-label="*************"
+                                           data-msg="Your password is invalid. Please try again." data-hs-toggle-password-options='{
                                  "target": "#changePassTarget",
                                  "defaultClass": "tio-hidden-outlined",
                                  "showClass": "tio-visible-outlined",
@@ -77,8 +78,8 @@
                             </div>
                             <!-- End Checkbox -->
 
-                            <button type="submit" class="btn btn-lg btn-block btn-primary">Sign in</button>
-                        </form>
+                            <button class="btn btn-lg btn-block btn-primary" onclick="login()">Sign in</button>
+                        </div>
                         <!-- End Form -->
                     </div>
                 </div>
@@ -110,7 +111,7 @@
         </div>
     </div>
     <!-- End Content -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script>
         $(document).on('ready', function () {
             // INITIALIZATION OF SHOW PASSWORD
@@ -126,6 +127,36 @@
                 $.HSCore.components.HSValidation.init($(this));
             });
         });
+
+        function login() {
+            var email = $("#signinSrEmail").val();
+            console.log(email);
+            var pass = document.getElementById("signupSrPassword").value;
+            console.log(pass);
+
+            var nv = {
+                email: email,
+                password: pass
+            };
+            console.log(nv);
+
+            $.ajax({
+                url: '/api/admin/login',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(nv),
+                success: function (response) {
+                    var data = response.data;
+                    console.log(data.status);
+                },
+                error: function (xhr, status, error) {
+                    // Thay thế showError bằng cách in lỗi ra console
+                    console.error("Login thất bại");
+                }
+            });
+        }
+
+
     </script>
 </main>
 </body>
