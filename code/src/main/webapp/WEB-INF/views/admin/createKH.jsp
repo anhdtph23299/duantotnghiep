@@ -71,13 +71,16 @@
                         <option value="0">Ngừng hoạt động</option>
                     </select>
                 </div>
-
-                <div class="row mt-3">
-                    <div class="col">
-                        <div class="form-floating">
-                            <textarea class="form-control" id="mota" placeholder="Leave a comment here" ></textarea>
-                            <label >Mô tả</label>
-                        </div>
+                <div class="col">
+                    <label class="form-label">Ngày đăng ký:</label>
+                    <input type="datetime-local" id="ngaydangky" class="form-control" >
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="mota" placeholder="Leave a comment here" ></textarea>
+                        <label >Mô tả</label>
                     </div>
                 </div>
             </div>
@@ -103,6 +106,7 @@
         var ngaySinh = $("#ngaysinh").val();
         var trangThai = $("#trangthai").val();
         var diaChi = $("#diachi").val();
+        var ngayDangKy = $("#ngaydangky").val();
         var cccd = $("#cccd").val();
         var moTa = $("#mota").val();
 
@@ -115,6 +119,7 @@
             ngaySinh: ngaySinh,
             trangThai: trangThai,
             diaChi: diaChi,
+            ngayDangKy: ngayDangKy,
             cccd: cccd,
             moTa: moTa
         }
@@ -131,6 +136,12 @@
             }
         });
     })
+
+
+    // js ngày đăng ký
+    var currentDate = new Date();
+    var formattedDateTime = currentDate.toISOString().slice(0, 16);
+    document.getElementById("ngaydangky").value = formattedDateTime;
 
 </script>
 </body>

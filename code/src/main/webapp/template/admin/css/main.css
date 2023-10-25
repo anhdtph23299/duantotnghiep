@@ -14,7 +14,7 @@
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 5px 5px 0px rgb(140, 32, 212);
-    transition-duration: .3s;
+    transition-duration: 0.3s;
 }
 
 .svg {
@@ -107,71 +107,6 @@
     background-color: rgb(255, 230, 230);
     transition-duration: .3s;
 }
-
-/*btn xóa all*/
-
-/*.btnxoaall {*/
-/*    --main-focus: #2d8cf0;*/
-/*    --font-color: #fff;*/
-/*    --bg-color-sub: red;*/
-/*    --bg-color: red;*/
-/*    --main-color: #ED8153;*/
-/*    position: relative;*/
-/*    width: 150px;*/
-/*    height: 40px;*/
-/*    cursor: pointer;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    border: 2px solid var(--main-color);*/
-/*    box-shadow: 4px 4px var(--main-color);*/
-/*    background-color: var(--bg-color);*/
-/*    border-radius: 10px;*/
-/*    overflow: hidden;*/
-/*}*/
-
-/*.btnxoaall, .button__icon, .button__text {*/
-/*    transition: all 0.3s;*/
-/*}*/
-
-/*.btnxoaall .button__text {*/
-/*    transform: translateX(22px);*/
-/*    color: var(--font-color);*/
-/*    font-weight: 600;*/
-/*}*/
-
-/*.btnxoaall .button__icon {*/
-/*    position: absolute;*/
-/*    transform: translateX(109px);*/
-/*    height: 100%;*/
-/*    width: 39px;*/
-/*    background-color: var(--bg-color-sub);*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*}*/
-
-/*.btnxoaall .svgxoa {*/
-/*    width: 20px;*/
-/*    fill: var(--main-color);*/
-/*}*/
-
-/*.btnxoaall:hover {*/
-/*    background: var(--bg-color);*/
-/*}*/
-
-/*.btnxoaall:hover .button__text {*/
-/*    color: transparent;*/
-/*}*/
-
-/*.btnxoaall:hover .button__icon {*/
-/*    width: 148px;*/
-/*    transform: translateX(0);*/
-/*}*/
-
-/*.btnxoaall:active {*/
-/*    transform: translate(3px, 3px);*/
-/*    box-shadow: 0px 0px var(--main-color);*/
-/*}*/
 
 
 /*btn xoa*/
@@ -301,56 +236,6 @@
     transition-duration: 0.3s;
 }
 
-
-/*btn add chức vụ*/
-.buttonCV {
-    --primary-color: #9Df99D;
-    --secondary-color: #003C00;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 50px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: all 0.3s ease-in-out;
-}
-
-.buttonCV::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -100%;
-    left: 50%;
-    width: 150%;
-    height: 150%;
-    background-color: var(--secondary-color);
-    border-radius: 50%;
-    transform: translate(-50%, 0) scale(0);
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
-}
-
-.buttonCV:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-}
-
-.buttonCV:hover::before {
-    transform: translate(-50%, -50%) scale(2);
-}
-
-.buttonCV:active {
-    transform: translateY(0);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-
 /*css ảnh */
 
 .Choicefile {
@@ -422,6 +307,7 @@
     margin-top: -2px;
 }
 
+
 /*input giao ca */
 .input-wrapper1 {
     position: relative;
@@ -458,4 +344,69 @@
 
 .input-box1:focus + .underline1 {
     transform: scaleX(1);
+}
+
+
+/*btn export*/
+.buttonExport {
+    --main-focus: #2d8cf0;
+    --font-color: #dedede;
+    --bg-color-sub: #222;
+    --bg-color: #323232;
+    --main-color: #dedede;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.buttonExport, .button__icon, .button__text {
+    transition: all 0.3s;
+}
+
+.buttonExport .button__text {
+    transform: translateX(21px);
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.buttonExport .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonExport .svgExport {
+    width: 20px;
+    fill: var(--main-color);
+}
+
+.buttonExport:hover {
+    background: var(--bg-color);
+}
+
+.buttonExport:hover .button__text {
+    color: transparent;
+}
+
+.buttonExport:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.buttonExport:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
 }
