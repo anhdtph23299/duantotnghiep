@@ -1,10 +1,14 @@
 package com.laptrinhjavaweb.dto;
 
+import java.util.List;
+
 public class GiaTriThuocTinhDTO extends AbstractDTO<GiaTriThuocTinhDTO> {
 
 	private Long sanphamid;
 	
 	private Long thuoctinhid;
+	
+	private List<String> giatris;
 	
 	private String giatri;
 
@@ -24,11 +28,19 @@ public class GiaTriThuocTinhDTO extends AbstractDTO<GiaTriThuocTinhDTO> {
 		this.thuoctinhid = thuoctinhid;
 	}
 
+	public List<String> getGiatris() {
+		return giatris;
+	}
+
+	public void setGiatris(List<String> giatris) {
+		this.giatris = giatris;
+	}
+
 	public String getGiatri() {
 		return giatri;
 	}
 
-	public void setGiatri(String value) {
-		this.giatri = value;
+	public void setGiatri(String giatri) {
+		this.giatri = giatri;
 	}
 }

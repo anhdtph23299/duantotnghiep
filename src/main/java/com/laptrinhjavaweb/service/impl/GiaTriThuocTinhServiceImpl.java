@@ -13,20 +13,21 @@ import com.laptrinhjavaweb.service.IGiaTriThuocTinhService;
 @Service
 public class GiaTriThuocTinhServiceImpl implements IGiaTriThuocTinhService {
 
-	@Autowired
-	private GiaTriThuocTinhRepository giaTriThuocTinhRepository;
+    @Autowired
+    private GiaTriThuocTinhRepository giaTriThuocTinhRepository;
 
-	@Autowired
-	private GiaTriThuocTinhConverter giaTriThuocTinhConvert;
+    @Autowired
+    private GiaTriThuocTinhConverter giaTriThuocTinhConvert;
 
-	@Override
-	@Transactional
-	public GiaTriThuocTinhDTO save(GiaTriThuocTinhDTO giaTriThuocTinhDTO) {
-		GiaTriThuocTinhEntity giaTriThuocTinhEntity = giaTriThuocTinhConvert.convertToEntity(giaTriThuocTinhDTO);
-		giaTriThuocTinhRepository.save(giaTriThuocTinhEntity);
-		giaTriThuocTinhDTO.setId(giaTriThuocTinhEntity.getId());
-		return giaTriThuocTinhDTO;
+    @Override
+    @Transactional
+    public void save(GiaTriThuocTinhDTO giaTriThuocTinhDTO) {
+        for (String giatri : giaTriThuocTinhDTO.getGiatris()) {
+        	giaTriThuocTinhDTO.setGiatri(giatri);
+        	GiaTriThuocTinhEntity giaTriThuocTinhEntity = giaTriThuocTinhConvert.convertToEntity(giaTriThuocTinhDTO);
+            giaTriThuocTinhRepository.save(giaTriThuocTinhEntity);
+        }
 
-	}
+    }
 
 }

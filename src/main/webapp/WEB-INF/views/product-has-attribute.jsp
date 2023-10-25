@@ -35,7 +35,7 @@
         <div class="row mt-4">
             <div class="col-4">
                 <label for="slug" class="form-label">Slug</label>
-                <input name="slug" type="text" class="form-control" id="slug" />
+                <input name="slug" type="text" class="form-control" id="slug" readonly/>
             </div>
 
             <div class="col-4">

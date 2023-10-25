@@ -1,12 +1,27 @@
 $(".btn-add-product").on("click", function (event) {
     event.preventDefault();
     let data = getDataFromForm();
-    callAjaxSanPham(data);
-    // console.log(data);
-    // console.log(images);
-    // console.log(valueAttributes);
-    // const variants = getVariants();
-    // console.log(variants);
+    const variants = getVariants();
+
+    data['sanphamhinhanh'] = images;
+    data['thuoctinh'] = valueAttributes;
+    data['bienthe'] = variants;
+
+    console.log(data);
+
+    $.ajax({
+        url: "/api/sanphams",
+        method: "POST",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(data),
+        success: (response) => {
+
+        },
+        error: (error) => {
+            console.log(error);
+        }
+    });
 });
 
 function getDataFromForm() {
@@ -50,115 +65,5 @@ function getVariants(sanphamid){
         variants.push(data);
     });
     return variants;
-}
-
-function callAjaxSanPham(dataresponse){
-    $.ajax({
-        url: "/api/sanphams",
-        method: "POST",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        data: JSON.stringify(dataresponse),
-        success: (response) => {
-            //messageNotication(createdProductSuccess, "rgb(3, 138, 255)");
-            let dataresponse = [];
-            const sanphamid = response.id;
-            for(const image of images){
-                let data = {};
-                data['sanphamid'] = sanphamid;
-                data['hinhanh'] = image.hinhanh;
-                data['hinhanhbase64'] = image.hinhanhbase64;
-                dataresponse.push(data);
-            }
-            callAjaxSanPhamHinhAnh(dataresponse);
-
-            for (const attribute of valueAttributes){
-                let data = {};
-                data['sanphamid'] = sanphamid;
-                data['slug'] = attribute.slug;
-                data['ten'] = attribute.ten;
-
-                $.ajax({
-                        url: "/api/thuoctinhs",
-                        method: "POST",
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        data: JSON.stringify(data),
-                        success: (response) => {
-
-                            const giatrithuoctinhid = response.id;
-                            for(const value of attribute.giatri){
-                                let data = {};
-                                data['sanphamid'] = sanphamid;
-                                data['thuoctinhid'] = giatrithuoctinhid;
-                                data['giatri'] = value;
-
-                                //console.log(data);
-                                callAjaxGiaTriThuocTinh(data);
-                            }
-                        },
-                        error: (error) => {
-                           console.log(error);
-                        }
-                });
-            }
-
-            const variants = getVariants(sanphamid);
-            callAjaxBienThe(variants);
-            //messageNotication(createdProductSuccess, "rgb(3, 138, 255)");
-        },
-        error: (error) => {
-            console.log(error);
-            messageNotication(error.responseJSON.error, "rgba(255, 99, 71, 1)");
-        }
-    });
-}
-
-function callAjaxSanPhamHinhAnh(dataresponse) {
-    $.ajax({
-        url: "/api/sanphamhinhanhs",
-        method: "POST",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        data: JSON.stringify(dataresponse),
-        success: (response) => {
-            //console.log(response);
-        },
-        error: (error) => {
-            console.log(error);
-        }
-    });
-}
-
-function callAjaxGiaTriThuocTinh(dataresponse){
-    $.ajax({
-        url: "/api/giatrithuoctinhs",
-        method: "POST",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        data: JSON.stringify(dataresponse),
-        success: (response) => {
-            //console.log(response);
-        },
-        error: (error) => {
-            console.log(error);
-        }
-    });
-}
-
-function callAjaxBienThe(dataresponse){
-    $.ajax({
-        url: "/api/bienthes",
-        method: "POST",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        data: JSON.stringify(dataresponse),
-        success: (response) => {
-            //console.log(response);
-        },
-        error: (error) => {
-            console.log(error);
-        }
-    });
 }
 

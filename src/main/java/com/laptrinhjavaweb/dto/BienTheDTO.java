@@ -10,6 +10,8 @@ public class BienTheDTO extends AbstractDTO<BienTheDTO>{
 	
 	private String hinhanh;
 
+	private String hinhanhbase64;
+
 	public String getTen() {
 		return ten;
 	}
@@ -40,5 +42,16 @@ public class BienTheDTO extends AbstractDTO<BienTheDTO>{
 
 	public void setHinhanh(String hinhanh) {
 		this.hinhanh = hinhanh;
+	}
+
+	public String getHinhanhbase64() {
+		if (hinhanhbase64 != null) {
+			return hinhanhbase64.split(",")[1];
+		}
+		return hinhanhbase64;
+	}
+
+	public void setHinhanhbase64(String hinhanhbase64) {
+		this.hinhanhbase64 = hinhanhbase64;
 	}
 }
