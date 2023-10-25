@@ -14,12 +14,14 @@
     <bytecodeTargetLevel>
       <module name="DATN_V1" target="1.8" />
       <module name="project-template" target="8" />
+      <module name="spring-boot-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="DATN_V1" options="-parameters" />
       <module name="project-template" options="-parameters" />
+      <module name="spring-boot-web" options="-parameters" />
     </option>
   </component>
 </project>
