@@ -8,14 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="project-template" />
+        <module name="DATN_V1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="DATN_V1" target="1.8" />
       <module name="project-template" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DATN_V1" options="-parameters" />
       <module name="project-template" options="-parameters" />
     </option>
   </component>

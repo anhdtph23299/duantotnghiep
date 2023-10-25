@@ -10,4 +10,6 @@ public class SanPhamController {
     public String assgimentProducts(){
         return "product-has-attribute";
     }
+
+
 }
