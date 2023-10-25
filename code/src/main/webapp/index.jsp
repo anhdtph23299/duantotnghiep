@@ -1,3 +1,2 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:redirect url="/admin/dashboards"/>
-<%--<c:redirect url="/trang-chu"/>--%>
+<%@include file="/common/taglib.jsp" %>
+<c:redirect url="/assgiment-products"/>
