@@ -18,4 +18,7 @@
     <decorator name="loginAdmin" page="loginAdmin.jsp">
         <pattern>/dashboard*</pattern>
     </decorator>
+    <decorator name="thongtinWeb" page="thongtinWeb.jsp">
+        <pattern>/web*</pattern>
+    </decorator>
 </decorators>
