@@ -32,14 +32,17 @@
                         </a>
                     </div>
                     <div class="p-2">
-                        <input type="file" name="file" id="file" >
-                        <button type="button" class="btn" id="importButton" style="background-color: #A6edab; color: #00852d">Import</button>
+                        <button type="button" class="buttonImport" id="importButton" onclick="importFile()">
+                            <span class="button__text1">Import</span>
+                            <span class="button__icon1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="svgImport" viewBox="0 0 512 512">
+                                    <path d="M128 64c0-35.3 28.7-64 64-64H352V128c0 17.7 14.3 32 32 32H512V448c0 35.3-28.7 64-64 64H192c-35.3 0-64-28.7-64-64V336H302.1l-39 39c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l80-80c9.4-9.4 9.4-24.6 0-33.9l-80-80c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l39 39H128V64zm0 224v48H24c-13.3 0-24-10.7-24-24s10.7-24 24-24H128zM512 128H384V0L512 128z"/>
+                                </svg>
+                            </span>
+                        </button>
                     </div>
                     <div class="p-2">
-                        <button class="btn" id="exportButton" style="background-color: #A6edab; color: #00852d">Export</button>
-                    </div>
-                    <div class="p-2">
-                        <button type="button" class="buttonExport">
+                        <button type="button" class="buttonExport" id="exportButton">
                             <span class="button__text">Export</span>
                             <span class="button__icon"><svg class="svgExport" data-name="Layer 2" id="bdd05811-e15d-428c-bb53-8661459f9307" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
                         </button>
@@ -327,31 +330,35 @@
         window.location.href = "/api/admin/khachhang/exportCustomersToExcel?maKH=" + maKH + "&tenKH=" + tenKH + "&email=" + email + "&sdt=" + sdt + "&diaChi=" + diaChi + "&cccd=" + cccd;
     });
 
-    $("#importButton").click( function () {
-
-        var fileInput = document.getElementById("file");
-        var file = fileInput.files[0];
-
-        var formData = new FormData();
-        formData.append("file", file);
-
-        $.ajax({
-            url: "/api/admin/khachhang/importCustomers",
-            type: "POST",
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (response) {
-                showSuccess("Import success")
-                loadKhachHang();
-            },
-            error: function () {
-               showError("Import Fail")
+    function importFile() {
+        var fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.style.display = "none";
+        document.body.appendChild(fileInput);
+        fileInput.addEventListener("change", function () {
+            var file = fileInput.files[0];
+            if (file) {
+                var formData = new FormData();
+                formData.append("file", file);
+                $.ajax({
+                    url: "/api/admin/khachhang/importCustomers",
+                    type: "POST",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        showSuccess("Import success");
+                        loadKhachHang();
+                    },
+                    error: function () {
+                        showError("Import Fail");
+                    }
+                });
             }
+            document.body.removeChild(fileInput);
         });
-    });
-    //await là đợi sự kiên .. xảy ra xong mới chạy
-    //async là chạy luôn
+        fileInput.click();
+    }
 
 </script>
 </body>
