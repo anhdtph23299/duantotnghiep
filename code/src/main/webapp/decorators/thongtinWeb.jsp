@@ -22,6 +22,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<c:url value='/template/web/css/style.css'/>" rel="stylesheet">
+    <link href="<c:url value='/template/thongtinWeb/css/style.css'/>" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
@@ -31,29 +33,32 @@
         function convertVND(number){
             return number.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
         }
+
+
+        //js click menu
+        const links = document.querySelectorAll('.menu ul li a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                links.forEach(otherLink => {
+                    otherLink.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
     </script>
 
 </head>
-<body>
-<%@ include file="/common/web/topbar.jsp" %>
-
-<dec:body/>
-<%@ include file="/common/web/footer.jsp" %>
+<body >
+<%@ include file="/common/thongtinWeb/topbar.jsp" %>
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <div class="col-lg-3 col-md-12 pb-1">
+            <%@ include file="/common/thongtinWeb/sidebar.jsp" %>
+        </div>
+        <div class="col-lg-9 col-md-12 pb-1">
+            <dec:body/>
+        </div>
+    </div>
+</div>
+<%@ include file="/common/thongtinWeb/footer.jsp" %>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-<script src="<c:url value='/template/web/lib/easing/easing.min.js'/>"></script>
-<script src="<c:url value='/template/web/lib/owlcarousel/owl.carousel.min.js'/>"></script>
-
-<!-- Contact Javascript File -->
-<script src="<c:url value='/template/web/mail/jqBootstrapValidation.min.js'/>"></script>
-<script src="<c:url value='/template/web/mail/contact.js'/>"></script>
-
-<!-- Template Javascript -->
-<script src="<c:url value='/template/web/js/main.js'/>"></script>
-
-
-</body>
-</html>

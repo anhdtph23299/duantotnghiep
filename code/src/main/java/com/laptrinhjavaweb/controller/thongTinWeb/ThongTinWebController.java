@@ -8,9 +8,39 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/web")
 public class ThongTinWebController {
 
-    @GetMapping("/thongtinweb")
+    @GetMapping("/all")
     public String all() {
-        return "thongtinWeb/thongTinWeb";
+        return "thongtinWeb/all";
+    }
+
+    @GetMapping("/account")
+    public String account() {
+        return "thongtinWeb/account";
+    }
+
+    @GetMapping("/chothanhtoan")
+    public String chothanhtoan() {
+        return "thongtinWeb/chothanhtoan";
+    }
+
+    @GetMapping("/hoanthanh")
+    public String hoanthanh() {
+        return "thongtinWeb/hoanthanh";
+    }
+
+    @GetMapping("/vanchuyen")
+    public String vanchuyen() {
+        return "thongtinWeb/vanchuyen";
+    }
+
+    @GetMapping("/danggiao")
+    public String danggiao() {
+        return "thongtinWeb/danggiao";
+    }
+
+    @GetMapping("/dahuy")
+    public String dahuy() {
+        return "thongtinWeb/dahuy";
     }
 
 
