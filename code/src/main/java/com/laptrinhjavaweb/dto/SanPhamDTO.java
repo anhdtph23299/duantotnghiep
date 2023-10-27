@@ -32,7 +32,7 @@ public class SanPhamDTO extends AbstractDTO<SanPhamDTO>{
 
     private List<SanPhamHinhAnhDTO> sanphamhinhanh;
     
-    private List<GiaTriThuocTinhDTO> giatrithuoctinh;
+
 
 	public String getSlug() {
 		return slug;
@@ -144,13 +144,5 @@ public class SanPhamDTO extends AbstractDTO<SanPhamDTO>{
 
 	public void setSanphamhinhanh(List<SanPhamHinhAnhDTO> sanphamhinhanh) {
 		this.sanphamhinhanh = sanphamhinhanh;
-	}
-
-	public List<GiaTriThuocTinhDTO> getGiatrithuoctinh() {
-		return giatrithuoctinh;
-	}
-
-	public void setGiatrithuoctinh(List<GiaTriThuocTinhDTO> giatrithuoctinh) {
-		this.giatrithuoctinh = giatrithuoctinh;
 	}
 }
