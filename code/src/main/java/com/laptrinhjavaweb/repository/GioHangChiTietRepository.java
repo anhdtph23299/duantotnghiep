@@ -16,7 +16,7 @@ public interface GioHangChiTietRepository extends JpaRepository<GioHangChiTiet, 
     List<GioHangResponse> dsGioHangChiTietByIdKh(@Param("idkh")Long idkh);
 
 
-    @Query("select sum(ghct.soLuong*ghct.chiTietSanPhamThuocTinh.giaTien) from GioHangChiTiet ghct where ghct.gioHang.khachHang.id=:idkh")
+    @Query("select sum(ghct.soLuong*ghct.bienTheEntity.gia) from GioHangChiTiet ghct where ghct.gioHang.khachHang.id=:idkh")
     BigDecimal tongTien(@Param("idkh")Long idkh);
 
 }

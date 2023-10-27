@@ -20,8 +20,8 @@ import javax.persistence.Table;
 @Table(name = "khachhangyeuthichsanpham")
 public class KhachHangYeuThichSanPham extends PrimaryEntity {
     @ManyToOne
-    @JoinColumn(name = "idctsanphamtt",insertable = false,updatable = false)
-    private ChiTietSanPhamThuocTinh chiTietSanPhamThuocTinh;
+    @JoinColumn(name = "idsanpham",insertable = false,updatable = false)
+    private SanPhamEntity chiTietSanPhamThuocTinh;
 
     @ManyToOne
     @JoinColumn(name = "idkhachhang",insertable = false,updatable = false)

@@ -1,13 +1,11 @@
 package com.laptrinhjavaweb.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,11 +26,16 @@ public class GioHangChiTiet implements Serializable {
     @JsonIgnore
     private GioHang gioHang;
     @ManyToOne
-    @JoinColumn(name = "idsptt",insertable = false,updatable = false)
-    private ChiTietSanPhamThuocTinh chiTietSanPhamThuocTinh;
+    @JoinColumn(name = "idsp",insertable = false,updatable = false)
+    private SanPhamEntity sanPham;
 
     @Column(name = "soluong")
     private Integer soLuong;
+
+    @ManyToOne
+    @JoinColumn(name = "idspbt",insertable = false,updatable = false)
+    private BienTheEntity bienTheEntity;
+
 
 //    @JsonProperty("tongTien")
 //    public BigDecimal getTongTien(){
