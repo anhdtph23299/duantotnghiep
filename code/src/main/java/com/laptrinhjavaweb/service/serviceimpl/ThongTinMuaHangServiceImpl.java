@@ -21,7 +21,8 @@ public class ThongTinMuaHangServiceImpl implements ThongTinMuaHangService {
     public ThongTinMuaHang findThongTinMuaHangDefault(Long idkh) {
         List<Integer> trangThai = new ArrayList<>();
         trangThai.add(2);
-        return thongTinMuaHangRepository.getTTMuaHangByIdKHAndTrangThai(idkh,trangThai);
+        ThongTinMuaHang thongTinMuaHang =  thongTinMuaHangRepository.getTTMuaHangByIdKHAndTrangThai(idkh,trangThai);
+        return  thongTinMuaHang;
     }
 
     @Override

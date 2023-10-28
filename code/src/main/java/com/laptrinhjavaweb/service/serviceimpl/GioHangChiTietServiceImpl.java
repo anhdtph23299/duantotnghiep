@@ -20,8 +20,6 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
 
     @Override
     public String thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request) {
-
-
         try {
             GioHangChiTietId gioHangChiTietId = new GioHangChiTietId(request.getIdGioHang(), request.getIdSpTT());
             GioHangChiTiet gioHangChiTiet = gioHangChiTietRepository.getOne(gioHangChiTietId);

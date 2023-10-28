@@ -14,21 +14,21 @@ public interface GioHangResponse {
     @Value("#{target.gioHangChiTietId.idGioHang}")
     Long getIdGioHang();
 
-    @Value("#{target.gioHangChiTietId.idSanPhamThuocTinh}")
+    @Value("#{target.gioHangChiTietId.idBienthe}")
     Long getIdSanPhamThuocTinh();
 
     @Value("#{target.soLuong}")
     Integer getSoLuong();
 
-    @Value("#{target.chiTietSanPhamThuocTinh.giaTien}")
+    @Value("#{target.bienThe.gia}")
     BigDecimal getGiaTien();
-    @Value("#{target.chiTietSanPhamThuocTinh.sanPham.danhMuc.tenDM}")
+    @Value("#{target.bienThe.sanphams.danhmucs.tenDanhMuc}")
     String getTenDanhMuc();
-    @Value("#{target.chiTietSanPhamThuocTinh.giaTri}")
+    @Value("#{target.bienThe.gia}")
     String getGiaTri();
 
     @Value("#{target.tongTien}")
     BigDecimal getTongTien();
-    @Value("#{target.chiTietSanPhamThuocTinh.sanPham.ten}")
+    @Value("#{target.bienThe.sanphams.ten}")
     String getTenSanPham();
 }
