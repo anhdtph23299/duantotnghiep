@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.ApiController;
 
+import com.laptrinhjavaweb.model.request.DiaChiGiaoHangRequest;
 import com.laptrinhjavaweb.service.ThongTinMuaHangService;
 import com.laptrinhjavaweb.util.base.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -31,8 +34,25 @@ public class ApiThongTinMuaHangController {
 
     @Value("${tokenghn.string}")
     private String tokenghn;
+    @Value("${urlghn.string}")
+    private String urlGhn ;
 
     RestTemplate restTemplate = new RestTemplate();
+
+    @PostMapping("/insert/{idkh}")
+    public ResponseObject themThongTinGiaoHang(@PathVariable(name = "idkh")Long idkh,@RequestBody DiaChiGiaoHangRequest request){
+        return new ResponseObject(thongTinMuaHangService.themDiaChiGiaoHang(idkh,request));
+    }
+
+    @PostMapping("/update/{idtt}")
+    public ResponseObject suaThongTinGiaoHang(@PathVariable(name = "idtt")Long idttmh,@RequestBody DiaChiGiaoHangRequest request){
+        return new ResponseObject(thongTinMuaHangService.suaDiaChiGiaoHang(idttmh,request));
+    }
+
+    @GetMapping("/findone/{idtt}")
+    public ResponseObject findOneThongTinMuaHang(@PathVariable(name = "idtt")Long idtt){
+        return new ResponseObject(thongTinMuaHangService.findThongTinMuaHangDefault(idtt));
+    }
     @GetMapping("/default/{idkh}")
     public ResponseObject getDefaultThongTinGiaoHang(@PathVariable(name = "idkh")Long idkh){
         return new ResponseObject(thongTinMuaHangService.findThongTinMuaHangDefault(idkh));
@@ -42,10 +62,14 @@ public class ApiThongTinMuaHangController {
     public ResponseObject dsThongTinGiaoHang(@PathVariable(name = "idkh")Long idkh){
         return new ResponseObject(thongTinMuaHangService.dsThongTinMuaHang(idkh));
     }
+    @GetMapping("/findThongTinMuaHangById/{idttmh}")
+    public ResponseObject findThongTinMuaHangById(@PathVariable(name = "idttmh")Long idtt){
+        return new ResponseObject(thongTinMuaHangService.findThongTinMuaHangById(idtt));
+    }
 
     @GetMapping("/thanhpho")
     public Object thanhPho() {
-        final String uri = "https://online-gateway.ghn.vn/shiip/public-api/master-data/province";
+        final String uri = urlGhn+"/province";
 
         // Tạo HttpHeaders và đặt các header mà bạn muốn thêm
         HttpHeaders headers = new HttpHeaders();
@@ -63,7 +87,7 @@ public class ApiThongTinMuaHangController {
 
     @GetMapping("/huyen/{id}")
     public Object quanhuyen(@PathVariable(name = "id")Long id) {
-        final String uri = "https://online-gateway.ghn.vn/shiip/public-api/master-data/district";
+        final String uri = urlGhn+"/district";
 
         // Tạo HttpHeaders và đặt các header
         HttpHeaders headers = new HttpHeaders();
@@ -85,7 +109,7 @@ public class ApiThongTinMuaHangController {
 
     @GetMapping("/xa/{id}")
     public Object xa(@PathVariable(name = "id")Long id) {
-        final String uri = "https://online-gateway.ghn.vn/shiip/public-api/master-data/ward";
+        final String uri = urlGhn+"/ward?district_id";
 
         // Tạo HttpHeaders và đặt các header
         HttpHeaders headers = new HttpHeaders();

@@ -27,6 +27,15 @@ public class ThongTinMuaHang extends PrimaryEntity {
 
     @Column(name = "diachi")
     private String diaChi;
+    @Column(name = "sonha")
+    private String soNha;
+
+    @Column(name = "idthanhpho")
+    private Integer idThanhPho;
+    @Column(name = "idhuyen")
+    private Integer idHuyen;
+    @Column(name = "idxa")
+    private String idXa;
 
     @Column(name = "trangthai")
     @JsonIgnore
@@ -35,6 +44,10 @@ public class ThongTinMuaHang extends PrimaryEntity {
     @JsonProperty("trangThai")
     public String getTrangThai(){
         return trangThai==1?"":trangThai==2?"Mặc định":"Đã xoá";
+    }
+    @JsonProperty("macdinh")
+    public Boolean getMacDinh(){
+        return trangThai==2;
     }
 
     @ManyToOne

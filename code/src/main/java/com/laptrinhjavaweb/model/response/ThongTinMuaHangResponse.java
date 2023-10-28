@@ -15,7 +15,17 @@ public interface ThongTinMuaHangResponse {
     String getSdt();
     @Value("#{target.diaChi}")
     String getDiaChi();
+    @Value("#{target.soNha}")
+    String getSoNha();
+    @Value("#{target.idThanhPho}")
+    String getIdThanhPho();
+    @Value("#{target.idHuyen}")
+    String getIdHuyen();
+    @Value("#{target.idXa}")
+    String getIdXa();
     @Value("#{target.trangThai}")
     String getTrangThai();
 
+    @Value("#{target.macDinh}")
+    Boolean getMacDinh();
 }
