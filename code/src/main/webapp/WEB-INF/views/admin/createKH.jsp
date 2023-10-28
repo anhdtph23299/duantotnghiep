@@ -71,9 +71,9 @@
                         <option value="0">Ngừng hoạt động</option>
                     </select>
                 </div>
-                <div class="col">
+                <div class="col d-none" >
                     <label class="form-label">Ngày đăng ký:</label>
-                    <input type="datetime-local" id="ngaydangky" class="form-control" >
+                    <input type="text" id="ngaydangky" class="form-control"  disabled>
                 </div>
             </div>
             <div class="row mt-3">
@@ -106,7 +106,7 @@
         var ngaySinh = $("#ngaysinh").val();
         var trangThai = $("#trangthai").val();
         var diaChi = $("#diachi").val();
-        var ngayDangKy = $("#ngaydangky").val();
+        var ngayDangKy = new Date();
         var cccd = $("#cccd").val();
         var moTa = $("#mota").val();
 
@@ -139,10 +139,18 @@
 
 
     // js ngày đăng ký
-    var currentDate = new Date();
-    var formattedDateTime = currentDate.toISOString().slice(0, 16);
-    document.getElementById("ngaydangky").value = formattedDateTime;
+    const currentDate = new Date();
 
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Months are zero-based, so we add 1
+    const day = currentDate.getDate();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+
+    const formattedDateTime = currentDate.toLocaleString("en-US", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" });
+    document.getElementById("ngaydangky").value = formattedDateTime;
+    console.log(formattedDateTime);
 </script>
 </body>
 </html>

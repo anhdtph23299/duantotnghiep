@@ -50,7 +50,7 @@ public class KhachHangServiceImpl implements KhachHangService {
 
     @Override
     public List<KhachHang> getSearchKhachHang(String maKH, String tenKH, String email, String sdt, String diaChi, String cccd){
-        return khachHangRepository.findByMaKHContainingOrTenKHContainingOrEmailContainingOrSdtContainingOrDiaChiContainingOrCccdContaining(maKH,tenKH,email,sdt,diaChi,cccd);
+        return khachHangRepository.findByMaKHContainingOrTenKHContainingOrEmailContainingOrSdtContainingOrDiaChiContainingOrCccdContaining(maKH.trim(),tenKH.trim(),email.trim(),sdt.trim(),diaChi.trim(),cccd.trim());
     }
 
     @Override

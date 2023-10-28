@@ -350,10 +350,10 @@
 /*btn export*/
 .buttonExport {
     --main-focus: #2d8cf0;
-    --font-color: #dedede;
-    --bg-color-sub: #222;
-    --bg-color: #323232;
-    --main-color: #dedede;
+    --font-color: #BF0000;
+    --bg-color-sub: #EFCACA;
+    --bg-color: #EFCACA;
+    --main-color: #f2c2c2;
     position: relative;
     width: 150px;
     height: 40px;
@@ -390,7 +390,7 @@
 
 .buttonExport .svgExport {
     width: 20px;
-    fill: var(--main-color);
+    fill: var(--font-color);
 }
 
 .buttonExport:hover {
@@ -409,6 +409,71 @@
 .buttonExport:active {
     transform: translate(3px, 3px);
     box-shadow: 0px 0px var(--main-color);
+}
+
+
+
+/*btn import*/
+.buttonImport {
+    --font-color1: #00852d;
+    --bg-color-sub1: #A6edab;
+    --bg-color1: #A6edab;
+    --main-color1: #8ff296;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color1);
+    box-shadow: 4px 4px var(--main-color1);
+    background-color: var(--bg-color1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.buttonImport, .button__icon1, .button__text1 {
+    transition: all 0.3s;
+}
+
+.buttonImport .button__text1 {
+    transform: translateX(21px);
+    color: var(--font-color1);
+    font-weight: 600;
+}
+
+.buttonImport .button__icon1 {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonImport .svgImport {
+    width: 20px;
+    fill: var(--font-color1);
+}
+
+.buttonImport:hover {
+    background: var(--bg-color1);
+}
+
+.buttonImport:hover .button__text1 {
+    color: transparent;
+}
+
+.buttonImport:hover .button__icon1 {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.buttonImport:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color1);
 }
 
 

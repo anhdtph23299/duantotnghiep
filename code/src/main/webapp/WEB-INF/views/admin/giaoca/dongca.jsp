@@ -25,7 +25,7 @@
                 <h6><strong>Giờ mở ca:</strong> 20/10/2023 7:00</h6>
             </div>
             <div class="col-3">
-                <h6 ><strong>Giờ hiện tại:</strong> 20/10/2023 9:00</h6>
+                <strong>Giờ hiện tại: </strong> <span id="ngayhientai"></span>
             </div>
             <div class="col-3">
                 <h6 ><strong>Nhân viên:</strong> Dinh Anh Tuan</h6>
@@ -139,6 +139,14 @@
     </div>
 </div>
 
-
+<script>
+        function updateDateTime() {
+            $.get("/api/admin/dongca/getDateTime", function(response) {
+                $("#ngayhientai").text(response);
+            });
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+</script>
 </body>
 </html>

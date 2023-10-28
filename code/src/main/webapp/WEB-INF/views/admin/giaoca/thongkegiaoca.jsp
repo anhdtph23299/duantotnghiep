@@ -96,7 +96,7 @@
 
                                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                                     <div class="d-flex project-status align-items-center">
-                                        <span class="btn bgl-info text-info status-btn mr-3">Solved</span>
+                                        <span class="btn badge text-bg-info status-btn mr-3">Solved</span>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
 
                                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                                     <div class="d-flex project-status align-items-center">
-                                        <span class="btn bgl-warning text-warning status-btn mr-3">Pending</span>
+                                        <span class="btn badge text-bg-warning status-btn mr-3">Pending</span>
                                     </div>
                                 </div>
                             </div>
