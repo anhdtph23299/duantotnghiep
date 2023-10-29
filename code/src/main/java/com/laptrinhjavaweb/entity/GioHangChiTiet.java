@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -17,17 +18,17 @@ import java.io.Serializable;
 @Entity
 @ToString
 @Table(name = "giohangchitiet")
-public class GioHangChiTiet implements Serializable {
+public class GioHangChiTiet extends PrimaryEntity implements Serializable {
 
-    @EmbeddedId
-    private GioHangChiTietId gioHangChiTietId;
+//    @EmbeddedId
+//    private GioHangChiTietId gioHangChiTietId;
 
     @ManyToOne
-    @JoinColumn(name = "idgiohang",insertable = false,updatable = false)
+    @JoinColumn(name = "idgiohang")
     @JsonIgnore
     private GioHang gioHang;
     @ManyToOne
-    @JoinColumn(name = "idbienthe",insertable = false,updatable = false)
+    @JoinColumn(name = "idbienthe")
     private BienTheEntity bienThe;
 
     @Column(name = "soluong")
@@ -35,6 +36,9 @@ public class GioHangChiTiet implements Serializable {
 
     @JsonProperty("tongTien")
     public Double getTongTien(){
+        if (bienThe.getGia()==null){
+            return bienThe.getSanphams().getGia()*soLuong;
+        }
         return bienThe.getGia()*soLuong;
     }
 }

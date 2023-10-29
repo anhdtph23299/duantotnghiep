@@ -11,9 +11,7 @@ import lombok.Setter;
 @Setter
 public class ThayDoiSoLuongGioHangRequest {
 
-    private Long idGioHang;
-
-    private Long idSpTT;
+    private Long idGhct;
 
     private Integer soLuong;
 }

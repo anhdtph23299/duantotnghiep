@@ -1,4 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<button type="button" class="btn btn-lg btn-danger"
+        data-bs-toggle="popover" title="Popover title" data-bs-html="true"
+        data-bs-content="<b><i>Văn bản in đậm và in nghiêng</i></b>"
+        data-bs-placement="bottom">
+    Click to toggle popover</button>
+
 <div class="modal fade" id="btnalldiachi" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"  >
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content" >
@@ -221,6 +227,10 @@
 <!-- Styles -->
 
 <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
     var idtt = -1;
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',

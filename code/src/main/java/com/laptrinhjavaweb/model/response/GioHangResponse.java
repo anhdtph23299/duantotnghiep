@@ -8,13 +8,15 @@ import java.math.BigDecimal;
 
 @Projection(types = {GioHangChiTiet.class})
 public interface GioHangResponse {
+    @Value("#{target.id}")
+    Long getIdGhct();
 
     @Value("#{target.gioHang.khachHang.id}")
     Long getIdKhachHang();
-    @Value("#{target.gioHangChiTietId.idGioHang}")
+    @Value("#{target.gioHang.id}")
     Long getIdGioHang();
 
-    @Value("#{target.gioHangChiTietId.idBienthe}")
+    @Value("#{target.bienThe.id}")
     Long getIdSanPhamThuocTinh();
 
     @Value("#{target.soLuong}")
@@ -24,8 +26,8 @@ public interface GioHangResponse {
     BigDecimal getGiaTien();
     @Value("#{target.bienThe.sanphams.danhmucs.tenDanhMuc}")
     String getTenDanhMuc();
-    @Value("#{target.bienThe.gia}")
-    String getGiaTri();
+    @Value("#{target.bienThe.ten}")
+    String getTenBienThe();
 
     @Value("#{target.tongTien}")
     BigDecimal getTongTien();

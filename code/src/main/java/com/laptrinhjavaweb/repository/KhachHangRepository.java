@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface KhachHangRepository extends JpaRepository<KhachHang,Long> {
-
         List<KhachHang> findByMaKHContainingOrTenKHContainingOrEmailContainingOrSdtContainingOrDiaChiContainingOrCccdContaining(String maKH, String tenKH, String email, String sdt, String diaChi, String cccd);
 
 }

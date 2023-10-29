@@ -346,14 +346,14 @@
             success: function(req) {
                 var data = req.data;
                 console.log(data)
-                var tbody =$("#cart tbody");
+                var tbody =$("#cart");
                 tbody.empty();
                 data.forEach(function (item){
                     item.forEach(function (sp){
                         var html =`
-                        <div class="row">
+                        <div class="row mb-3">
                                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                                    <!-- Image -->
+                                   <!-- Image -->
                                     <div
                                             class="bg-image hover-overlay hover-zoom ripple rounded"
                                             data-mdb-ripple-color="light"
@@ -376,8 +376,8 @@
                                 <div class="col-lg-3 col-md-5 mb-4">
                                     <!-- Data -->
                                     <p><strong>\${sp.tenSanPham}</strong></p>
-                                    <p>Color: blue</p>
-                                    <p>Size: M</p>
+                                    <p>\${sp.tenBienThe}</p>
+<!--                                    <p>Size: M</p>-->
                                     <button
                                             type="button"
                                             class="btn btn-primary btn-sm me-1 mb-2"
@@ -414,7 +414,7 @@
 
                                                             min="0"
                                                             name="quantity"
-                                                            value="1"
+                                                            value="\${sp.soLuong}"
                                                             type="number"
                                                             class="form-control  soluong"
                                                     />
@@ -432,7 +432,7 @@
                                             <p><strong>Đơn giá</strong></p>
                                             <div class="form-outline">
                                                 <label class="form-label"
-                                                >2.000.000</label
+                                                >\${sp.giaTien}</label
                                                 >
                                             </div>
                                         </div>
@@ -440,7 +440,7 @@
                                             <p><strong>Thành tiền</strong></p>
                                             <div class="form-outline">
                                                 <label class="form-label"
-                                                >2.000.000</label
+                                                >\${sp.tongTien}</label
                                                 >
                                             </div>
                                         </div>
@@ -448,7 +448,9 @@
                                 </div>
                             </div>
                         `
+                        tbody.append(html);
                     })
+                    tbody.append('<hr class="my-4" />');
                 })
 
             },
@@ -473,7 +475,7 @@
             });
 
         }
-    ghct()
+  //  ghct()
     // tongTien()
         function thayDoiSoLuong(idsp,idgh,sl){
             $.ajax({

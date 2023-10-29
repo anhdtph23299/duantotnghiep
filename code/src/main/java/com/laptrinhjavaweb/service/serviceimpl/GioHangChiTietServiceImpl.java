@@ -1,7 +1,6 @@
 package com.laptrinhjavaweb.service.serviceimpl;
 
 import com.laptrinhjavaweb.entity.GioHangChiTiet;
-import com.laptrinhjavaweb.entity.GioHangChiTietId;
 import com.laptrinhjavaweb.model.request.ThayDoiSoLuongGioHangRequest;
 import com.laptrinhjavaweb.model.response.GioHangResponse;
 import com.laptrinhjavaweb.repository.GioHangChiTietRepository;
@@ -21,8 +20,10 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
     @Override
     public String thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request) {
         try {
-            GioHangChiTietId gioHangChiTietId = new GioHangChiTietId(request.getIdGioHang(), request.getIdSpTT());
-            GioHangChiTiet gioHangChiTiet = gioHangChiTietRepository.getOne(gioHangChiTietId);
+            GioHangChiTiet gioHangChiTiet = gioHangChiTietRepository.findById(request.getIdGhct()).orElse(null);
+            if (gioHangChiTiet==null){
+                return "Không có giỏ hàng chi tiết này";
+            }
             gioHangChiTiet.setSoLuong(gioHangChiTiet.getSoLuong() + request.getSoLuong());
             gioHangChiTietRepository.save(gioHangChiTiet);
             return "Thay đổi số lượng thành công";

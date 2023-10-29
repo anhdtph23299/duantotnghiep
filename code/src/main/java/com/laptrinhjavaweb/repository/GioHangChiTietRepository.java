@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import java.math.BigDecimal;
 import java.util.List;
 
-public interface GioHangChiTietRepository extends JpaRepository<GioHangChiTiet, GioHangChiTietId> {
+public interface GioHangChiTietRepository extends JpaRepository<GioHangChiTiet, Long> {
 
     @Query("select ghct from GioHangChiTiet ghct where ghct.gioHang.khachHang.id=:idkh")
     List<GioHangResponse> dsGioHangChiTietByIdKh(@Param("idkh")Long idkh);
@@ -21,6 +21,6 @@ public interface GioHangChiTietRepository extends JpaRepository<GioHangChiTiet, 
 
     @Query("select distinct ghct.bienThe.sanphams.id from GioHangChiTiet ghct where ghct.gioHang.khachHang.id=:idkh")
     List<Long> getDsIdSanPhamByKhachHang(@Param("idkh")Long idkh);
-    @Query("select ghct from GioHangChiTiet ghct where ghct.bienThe.id=:idsp and ghct.gioHang.khachHang.id=:idkh")
+    @Query("select ghct from GioHangChiTiet ghct where ghct.bienThe.sanphams.id=:idsp and ghct.gioHang.khachHang.id=:idkh")
     List<GioHangResponse> getDsspThuocTinhByIdSanPhamAndIdKh(@Param("idsp")Long idSp,@Param("idkh")Long idkh);
 }
