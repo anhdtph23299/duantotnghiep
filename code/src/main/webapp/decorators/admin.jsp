@@ -8,54 +8,33 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><dec:title>Dashboard</dec:title></title>
-    <link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/template/admin/images/Untitled-1.jpg'/>">
+    <link rel="icon" type="image/png" sizes="50x50" href="<c:url value='/template/admin/images/logoKFC.png'/>">
     <link rel="stylesheet" href="<c:url value='/template/admin/vendor/chartist/css/chartist.min.css'/>">
     <link href="<c:url value='/template/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/admin/vendor/owl-carousel/owl.carousel.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/admin/css/style.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/admin/css/main.css'/>" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-        /*table {*/
-        /*    border-collapse: collapse;*/
-        /*    width: 100%;*/
-        /*    color: #333;*/
-        /*    font-family: Arial, sans-serif;*/
-        /*    font-size: 14px;*/
-        /*    text-align: left;*/
-        /*    border-radius: 30px;*/
-        /*    overflow: hidden;*/
-        /*    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;*/
-        /*    margin: auto;*/
-        /*    margin-top: 50px;*/
-        /*    margin-bottom: 50px;*/
-        /*}*/
-        /*.tables{*/
-        /*    margin-top: 10px;*/
-        /*}*/
-        /*th{*/
-        /*    position: sticky;*/
-        /*    top: 0px;*/
-        /*}*/
-    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
-<script>
-    function getFormattedDate(longDate) {
-        date = new Date(longDate);
-        let year = date.getFullYear();
-        let month = (1 + date.getMonth()).toString().padStart(2, '0');
-        let day = date.getDate().toString().padStart(2, '0');
+    <script>
+        function getFormattedDate(longDate) {
+            date = new Date(longDate);
+            let year = date.getFullYear();
+            let month = (1 + date.getMonth()).toString().padStart(2, '0');
+            let day = date.getDate().toString().padStart(2, '0');
 
-        return day + '-' + month + '-' + year;
-    }
-    function formatDateInput(longDate) {
-        date = new Date(longDate);
-        let year = date.getFullYear();
-        let month = (1 + date.getMonth()).toString().padStart(2, '0');
-        let day = date.getDate().toString().padStart(2, '0');
+            return day + '-' + month + '-' + year;
+        }
+        function formatDateInput(longDate) {
+            date = new Date(longDate);
+            let year = date.getFullYear();
+            let month = (1 + date.getMonth()).toString().padStart(2, '0');
+            let day = date.getDate().toString().padStart(2, '0');
 
             return year + '-' + month + '-' + day;
         }
@@ -160,7 +139,6 @@
 
 <!-- Apex Chart -->
 <script src="<c:url value='/template/admin/vendor/apexchart/apexchart.js'/>"></script>
-
 <!-- Dashboard 1 -->
 <script src="<c:url value='/template/admin/js/dashboard/dashboard-1.js'/>"></script>
 
