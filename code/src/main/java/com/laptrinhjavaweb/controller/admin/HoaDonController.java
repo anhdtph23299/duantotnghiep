@@ -13,5 +13,13 @@ public class HoaDonController {
         return "admin/hoadon/hoadon";
     }
 
+    @GetMapping("/themhoadon")
+    public String themhoadon(){
+        return "admin/hoadon/themhoadon";
+    }
 
+    @GetMapping("/detailhoadon")
+    public String detailhoadon(){
+        return "admin/hoadon/detailhoadon";
+    }
 }
