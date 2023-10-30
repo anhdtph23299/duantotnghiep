@@ -18,7 +18,7 @@ import javax.persistence.*;
 public class TichDiem extends PrimaryEntity {
 
     @Column(name = "sodiem")
-    private int soDiem;
+    private Integer soDiem;
 
     @OneToOne
     @JoinColumn(name = "idkh", referencedColumnName = "id")

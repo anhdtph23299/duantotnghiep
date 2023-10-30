@@ -30,6 +30,10 @@ public class HoaDon extends PrimaryEntity {
     @Column(name = "trangthai")
     private Integer trangThai=1;
 
+    @ManyToOne
+    @JoinColumn(name = "idkh")
+    private KhachHang khachHang;
+
     @JsonProperty("getTrangThaiHD")
     public String getTrangThaiHD() {
         return trangThai==1?"Đang chờ":trangThai==2?"Hoàn thành":"Huỷ";

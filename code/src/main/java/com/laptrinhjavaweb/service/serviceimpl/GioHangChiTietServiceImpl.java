@@ -1,6 +1,58 @@
 package com.laptrinhjavaweb.service.serviceimpl;
 
+import com.laptrinhjavaweb.entity.GioHangChiTiet;
+import com.laptrinhjavaweb.model.request.ThayDoiSoLuongGioHangRequest;
+import com.laptrinhjavaweb.model.response.GioHangResponse;
+import com.laptrinhjavaweb.repository.GioHangChiTietRepository;
 import com.laptrinhjavaweb.service.GioHangChiTietService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
 public class GioHangChiTietServiceImpl implements GioHangChiTietService {
+    @Autowired
+    GioHangChiTietRepository gioHangChiTietRepository;
+
+    @Override
+    public String thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request) {
+        try {
+            GioHangChiTiet gioHangChiTiet = gioHangChiTietRepository.findById(request.getIdGhct()).orElse(null);
+            if (gioHangChiTiet==null){
+                return "Không có giỏ hàng chi tiết này";
+            }
+            gioHangChiTiet.setSoLuong(gioHangChiTiet.getSoLuong() + request.getSoLuong());
+            gioHangChiTietRepository.save(gioHangChiTiet);
+            return "Thay đổi số lượng thành công";
+        } catch (Exception e) {
+            return "Có lỗi xảy ra";
+        }
+    }
+
+    @Override
+    public List<GioHangResponse> dsGioHangChiTietByIdKh(Long idKH) {
+        return gioHangChiTietRepository.dsGioHangChiTietByIdKh(idKH);
+    }
+
+    @Override
+    public BigDecimal tongTien(Long idKH) {
+        return gioHangChiTietRepository.tongTien(idKH);
+    }
+
+    @Override
+    public List<List<GioHangResponse>> dsGioHangChiaTheoSanPham(Long idKh) {
+        List<Long> dsIdSanPham = gioHangChiTietRepository.getDsIdSanPhamByKhachHang(idKh);
+        System.out.println(dsIdSanPham);
+        List<List<GioHangResponse>> dsGioHangChiaTheoSanPham = new ArrayList<>();
+        for (Long id: dsIdSanPham
+             ) {
+            dsGioHangChiaTheoSanPham.add(gioHangChiTietRepository.getDsspThuocTinhByIdSanPhamAndIdKh(id,idKh));
+        }
+        return dsGioHangChiaTheoSanPham;
+    }
+
+
 }

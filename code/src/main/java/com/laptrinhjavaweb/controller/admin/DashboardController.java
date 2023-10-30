@@ -53,6 +53,11 @@ public class DashboardController {
         return "admin/profile";
     }
 
+    @GetMapping("/setting_profile")
+    public String setting_profile(){
+        return "admin/setting_profile";
+    }
+
     @GetMapping("/setting_banner")
     public String setting_banner(){
         return "admin/banner";

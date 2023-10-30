@@ -77,7 +77,8 @@
                 `;
         }
       }
-    ]
+    ],
+    order: [[0, 'desc']]
   });
 
   function loadHoaDon() {
@@ -90,7 +91,7 @@
         datatable.draw();
       },
       error: function (xhr, status, error) {
-        alert('Có lỗi xảy ra: ' + error);
+        showError('Có lỗi xảy ra: ' + error);
       }
     });
   }
@@ -98,18 +99,21 @@
   // Gọi loadHoaDon() mỗi khi cần cập nhật dữ liệu
   loadHoaDon();
 
-      function Delete(id){
-        console.log(id)
-        $.ajax({
-          url: '/api/admin/hoadon/delete/'+id,
-          method: 'DELETE',
-          success: function(req) {
-            loadHoaDon()
-            showSuccess("Xoá thành công")
-          },
-          error: function(xhr, status, error) {
-            alert('Có lỗi xảy ra: ' + error);
-          }
-        });
+      async function Delete(id){
+       var x = await showConfirm("Bạn có muỗn xoá không");
+       if(x){
+         $.ajax({
+           url: '/api/admin/hoadon/delete/'+id,
+           method: 'DELETE',
+           success: function(req) {
+             loadHoaDon()
+             showSuccess("Xoá thành công")
+           },
+           error: function(xhr, status, error) {
+             showError('Có lỗi xảy ra: ' + error);
+           }
+         });
+       }
+
       }
 </script>
