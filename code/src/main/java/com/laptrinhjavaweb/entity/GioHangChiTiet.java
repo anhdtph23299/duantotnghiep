@@ -34,6 +34,9 @@ public class GioHangChiTiet extends PrimaryEntity implements Serializable {
     @Column(name = "soluong")
     private Integer soLuong;
 
+    @Column(name = "trangthai")
+    private Integer trangThai;
+
     @JsonProperty("tongTien")
     public Double getTongTien(){
         if (bienThe.getGia()==null){

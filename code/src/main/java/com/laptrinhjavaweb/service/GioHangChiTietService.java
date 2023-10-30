@@ -9,11 +9,12 @@ import java.util.List;
 
 public interface GioHangChiTietService {
 
-    String thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request);
+    GioHangResponse thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request);
 
    List<GioHangResponse> dsGioHangChiTietByIdKh(Long idKH);
 
    BigDecimal tongTien(Long idKH);
+   BigDecimal tongTienTheoGioHangChiTiet(Long idKH,List<Long> lstGhct);
 
    List<List<GioHangResponse>> dsGioHangChiaTheoSanPham(Long idKh);
 

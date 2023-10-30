@@ -1,17 +1,19 @@
 package com.laptrinhjavaweb.ApiController;
 
 import com.laptrinhjavaweb.model.request.ThayDoiSoLuongGioHangRequest;
-import com.laptrinhjavaweb.repository.GioHangChiTietRepository;
 import com.laptrinhjavaweb.service.GioHangChiTietService;
 import com.laptrinhjavaweb.util.base.ResponseObject;
+import edu.emory.mathcs.backport.java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Map;
 
 @RestController()
 @RequestMapping("/api/user/ghct")
@@ -25,7 +27,13 @@ public class ApiGioHangChiTietController {
         return new ResponseObject(gioHangChiTietService.dsGioHangChiTietByIdKh(idkh));
     }
 
-
+    @PostMapping("/subtotaltheoghct/{idkh}")
+    public ResponseObject totalGioHangByKhachHangAndGioHangChiTiet(
+            @PathVariable(name = "idkh")Long idkh,
+            @RequestBody Map<String, List<Long>> requestBody
+            ){
+        return  new ResponseObject(gioHangChiTietService.tongTienTheoGioHangChiTiet(idkh, requestBody.get("collection")));
+    }
 
     @GetMapping("/subtotal/{id}")
     public ResponseObject totalGioHangByKhachHang(@PathVariable(name = "id")Long idkh){
@@ -40,4 +48,6 @@ public class ApiGioHangChiTietController {
     public ResponseObject dsSpttChiaTheoSanPhamByIdKh(@PathVariable(name = "id")Long idkh){
         return  new ResponseObject(gioHangChiTietService.dsGioHangChiaTheoSanPham(idkh));
     }
+
+
 }

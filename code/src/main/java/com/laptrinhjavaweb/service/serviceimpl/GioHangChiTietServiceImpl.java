@@ -18,17 +18,18 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
     GioHangChiTietRepository gioHangChiTietRepository;
 
     @Override
-    public String thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request) {
+    public GioHangResponse thayDoiSoLuong(ThayDoiSoLuongGioHangRequest request) {
         try {
             GioHangChiTiet gioHangChiTiet = gioHangChiTietRepository.findById(request.getIdGhct()).orElse(null);
             if (gioHangChiTiet==null){
-                return "Không có giỏ hàng chi tiết này";
+                return null;
             }
             gioHangChiTiet.setSoLuong(gioHangChiTiet.getSoLuong() + request.getSoLuong());
-            gioHangChiTietRepository.save(gioHangChiTiet);
-            return "Thay đổi số lượng thành công";
+         gioHangChiTiet =    gioHangChiTietRepository.save(gioHangChiTiet);
+
+            return gioHangChiTietRepository.getGioHangResponseById(gioHangChiTiet.getId());
         } catch (Exception e) {
-            return "Có lỗi xảy ra";
+            return null;
         }
     }
 
@@ -40,6 +41,11 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
     @Override
     public BigDecimal tongTien(Long idKH) {
         return gioHangChiTietRepository.tongTien(idKH);
+    }
+
+    @Override
+    public BigDecimal tongTienTheoGioHangChiTiet(Long idKH, List<Long> lstGhct) {
+        return gioHangChiTietRepository.tongTienTheoGioHangChiTiet(idKH, lstGhct);
     }
 
     @Override
