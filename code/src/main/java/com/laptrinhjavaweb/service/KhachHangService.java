@@ -1,7 +1,9 @@
 package com.laptrinhjavaweb.service;
 
 import com.laptrinhjavaweb.entity.KhachHang;
+import org.apache.poi.ss.usermodel.Workbook;
 
+import java.io.InputStream;
 import java.util.List;
 
 public interface KhachHangService {
@@ -16,4 +18,8 @@ public interface KhachHangService {
     void delete(Long id);
 
     List<KhachHang> getSearchKhachHang( String maKH, String tenKH, String email, String sdt, String diaChi, String cccd);
+
+    void importCustomersFromExcel(InputStream inputStream);
+
+    Workbook exportCustomersToExcel(List<KhachHang> customers);
 }

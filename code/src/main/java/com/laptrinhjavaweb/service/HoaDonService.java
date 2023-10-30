@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface HoaDonService {
 
-    ResponseObject taoHoaDonByIdGioHangChiTiet(Long idkh, List<Long> idGhct);
+    ResponseObject taoHoaDonByIdGioHangChiTiet(Long idkh,Long idttgh, List<Long> idGhct);
 
 
     List<HoaDon> getDsHoaDon();

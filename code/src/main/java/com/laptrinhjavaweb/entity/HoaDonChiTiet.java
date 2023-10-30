@@ -30,12 +30,11 @@ public class HoaDonChiTiet extends PrimaryEntity {
     private HoaDon hoaDon;
     @ManyToOne
     private BienTheEntity bienThe;
-    @Column(name = "ngaythanhtoan")
-    private Date ngayThanhToan;
-    @Column(name = "phuongthucthanhtoan")
-    private Integer PhuongThucThanhToan;
+
+    @Column(name = "soluong")
+    private Integer soLuong;
     @Column(name = "idttmuahang")
     private Long thongTinMuaHang;
     @Column(name = "trangthai")
-    private Integer trangThai=1;
+    private Integer trangThai;
 }

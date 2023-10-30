@@ -23,9 +23,9 @@
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link href="<c:url value='/template/loginWeb/css/vendor.min.css'/>" rel="stylesheet">
-    <link href="<c:url value='/template/loginWeb/vendor/icon-set/style.css'/>" rel="stylesheet">
-    <link href="<c:url value='/template/loginWeb/css/theme.min.css'/>" rel="stylesheet">
+    <link href="<c:url value='/template/login/css/vendor.min.css'/>" rel="stylesheet">
+    <link href="<c:url value='/template/login/vendor/icon-set/style.css'/>" rel="stylesheet">
+    <link href="<c:url value='/template/login/css/theme.min.css'/>" rel="stylesheet">
 </head>
 <body>
 
@@ -38,11 +38,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 
-<script src="<c:url value='/template/loginWeb/js/vendor.min.js'/>"></script>
-<script src="<c:url value='/template/loginWeb/js/theme.min.js'/>"></script>
+<script src="<c:url value='/template/login/js/vendor.min.js'/>"></script>
+<script src="<c:url value='/template/login/js/theme.min.js'/>"></script>
 
 <script>
-    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="<c:url value='/template/loginWeb/vendor/babel-polyfill/polyfill.min.js"'/>"<\/script>');
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="<c:url value='/template/login/vendor/babel-polyfill/polyfill.min.js"'/>"<\/script>');
 </script>
 
 </body>

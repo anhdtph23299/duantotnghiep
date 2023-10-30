@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col">
                     <label>Mã khách hàng:</label>
-                    <input type="text" id="makh" class="form-control" >
+                    <input type="text" id="makh" class="form-control" disabled >
                 </div>
                 <div class="col">
                     <label>Họ và tên:</label>
@@ -71,13 +71,16 @@
                         <option value="0">Ngừng hoạt động</option>
                     </select>
                 </div>
-
-                <div class="row mt-3">
-                    <div class="col">
-                        <div class="form-floating">
-                            <textarea class="form-control" id="mota" placeholder="Leave a comment here" ></textarea>
-                            <label >Mô tả</label>
-                        </div>
+                <div class="col d-none" >
+                    <label class="form-label">Ngày đăng ký:</label>
+                    <input type="text" id="ngaydangky" class="form-control"  disabled>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="form-floating">
+                        <textarea class="form-control" id="mota" placeholder="Leave a comment here" ></textarea>
+                        <label >Mô tả</label>
                     </div>
                 </div>
             </div>
@@ -103,6 +106,7 @@
         var ngaySinh = $("#ngaysinh").val();
         var trangThai = $("#trangthai").val();
         var diaChi = $("#diachi").val();
+        var ngayDangKy = new Date();
         var cccd = $("#cccd").val();
         var moTa = $("#mota").val();
 
@@ -115,6 +119,7 @@
             ngaySinh: ngaySinh,
             trangThai: trangThai,
             diaChi: diaChi,
+            ngayDangKy: ngayDangKy,
             cccd: cccd,
             moTa: moTa
         }
@@ -132,6 +137,20 @@
         });
     })
 
+
+    // js ngày đăng ký
+    const currentDate = new Date();
+
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1; // Months are zero-based, so we add 1
+    const day = currentDate.getDate();
+    const hours = currentDate.getHours();
+    const minutes = currentDate.getMinutes();
+    const seconds = currentDate.getSeconds();
+
+    const formattedDateTime = currentDate.toLocaleString("en-US", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" });
+    document.getElementById("ngaydangky").value = formattedDateTime;
+    console.log(formattedDateTime);
 </script>
 </body>
 </html>

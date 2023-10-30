@@ -59,6 +59,7 @@
                                     <p class="text-primary mb-1">#nv-0001</p>
                                     <h5 class="title font-w600 mb-2"><a href="#" class="text-black text-decoration-none">Dinh Anh Tuan</a></h5>
                                     <div class="text-dark"><i class="fa fa-calendar-o mr-3" aria-hidden="true"></i>20/10/2023 7:00</div>
+                                    <div class="text-dark"><i class="fa fa-calendar-o mr-3" aria-hidden="true"></i>20/10/2023 9:00</div>
                                 </div>
                                 <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
                                     <div class="d-flex align-items-center">
@@ -95,7 +96,7 @@
 
                                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                                     <div class="d-flex project-status align-items-center">
-                                        <span class="btn bgl-info text-info status-btn mr-3">Solved</span>
+                                        <span class="btn badge text-bg-info status-btn mr-3">Solved</span>
                                     </div>
                                 </div>
                             </div>
@@ -106,6 +107,8 @@
                                     <p class="text-primary mb-1">#nv-0002</p>
                                     <h5 class="title font-w600 mb-2"><a href="#" class="text-black text-decoration-none">Dinh Tuan Anh</a></h5>
                                     <div class="text-dark"><i class="fa fa-calendar-o mr-3" aria-hidden="true"></i>20/10/2023 9:00</div>
+                                    <div class="text-dark"><i class="fa fa-calendar-o mr-3" aria-hidden="true"></i>20/10/2023 11:00</div>
+
                                 </div>
                                 <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
                                     <div class="d-flex align-items-center">
@@ -142,7 +145,7 @@
 
                                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                                     <div class="d-flex project-status align-items-center">
-                                        <span class="btn bgl-warning text-warning status-btn mr-3">Pending</span>
+                                        <span class="btn badge text-bg-warning status-btn mr-3">Pending</span>
                                     </div>
                                 </div>
                             </div>
