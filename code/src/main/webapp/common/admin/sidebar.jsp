@@ -76,6 +76,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="/admin/profile">Profile</a></li>
+                    <li><a href="/admin/tichdiem">Tích điểm</a></li>
                     <li><a href="/admin/setting_banner">Dynamic Interface </a></li>
                 </ul>
             </li>

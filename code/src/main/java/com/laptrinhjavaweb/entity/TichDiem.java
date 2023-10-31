@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @ToString
-@Table(name = "thongtinmuahang")
+@Table(name = "tichdiem")
 public class TichDiem extends PrimaryEntity {
 
     @Column(name = "sodiem")

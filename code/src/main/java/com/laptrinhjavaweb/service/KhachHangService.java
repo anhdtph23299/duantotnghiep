@@ -13,6 +13,7 @@ public interface KhachHangService {
     KhachHang findById(Long id);
 
     String update(KhachHang khachHang);
+
     KhachHang insert(KhachHang khachHang);
 
     void delete(Long id);

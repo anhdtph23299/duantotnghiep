@@ -15,7 +15,9 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/admin/khachhang")
@@ -30,9 +32,9 @@ public class ApiKhachHangController {
     }
 
     @PostMapping("/insert")
-    public ResponseObject insert(@RequestBody KhachHang khachHang){
-
+    public ResponseObject insert(@Valid @RequestBody KhachHang khachHang) {
         KhachHang maKhachHang = khachHangService.insert(khachHang);
+
         Long id = maKhachHang.getId();
         String maKH = "KH" + id;
         maKhachHang.setMaKH(maKH);

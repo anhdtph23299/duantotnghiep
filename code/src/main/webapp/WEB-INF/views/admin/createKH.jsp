@@ -87,7 +87,7 @@
 
             <div class="row mt-3">
                 <div class="col">
-                    <button class="btn" id="them" style="background-color: #A6edab; color: #00852d">Add</button>
+                    <button class="btn" id="them" style="background-color: #A6edab; color: #00852d" onclick="kiemTraDuLieu()">Add</button>
                     <a href="/admin/khachhang" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Cancel</a>
                 </div>
             </div>
@@ -97,7 +97,7 @@
 
 <script >
 
-    $("#them").click(function (){
+    function kiemTraDuLieu() {
         var maKH = $("#makh").val();
         var tenKH = $("#tenkh").val();
         var sdt = $("#sdt").val();
@@ -110,33 +110,64 @@
         var cccd = $("#cccd").val();
         var moTa = $("#mota").val();
 
+        // Thực hiện kiểm tra dữ liệu ở đây (ví dụ: kiểm tra xem các trường có bị để trống không)
+        if (tenKH === "" || sdt === "" || email === "" || diaChi === "" || cccd === "" || ngaySinh === "" || moTa === "") {
+            showError("Vui lòng điền đầy đủ thông tin.");
+            return false;
+        }else {
+            if (!checkEmail(email)) {
+                showError("Email không đúng định dạng.");
+                return false;
+            } else if (!checkSDT(sdt)) {
+                showError("Số điện thoại không đúng định dạng.");
+                return false;
+            } else if (!checkCCCD(cccd)) {
+                showError("Số CCCD không đúng định dạng.");
+                return false;
+            }
+        }
+
+        function checkEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+        function checkSDT(sdt) {
+            var phonePattern = /^0\d{9}$/;
+            return phonePattern.test(sdt);
+        }
+
+        function checkCCCD(cccd) {
+            var cccdPattern = /^0\d{11}$/;
+            return cccdPattern.test(cccd);
+        }
+
         var kh = {
             maKH: maKH,
             tenKH: tenKH,
             sdt: sdt,
             email: email,
-            gioiTinh:  gioiTinh,
+            gioiTinh: gioiTinh,
             ngaySinh: ngaySinh,
             trangThai: trangThai,
             diaChi: diaChi,
             ngayDangKy: ngayDangKy,
             cccd: cccd,
             moTa: moTa
-        }
+        };
+
         $.ajax({
             url: '/api/admin/khachhang/insert',
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(kh),
-            success: function(response) {
+            success: function (response) {
                 window.location.href = '/admin/khachhang';
             },
-            error: function(xhr, status, error) {
-                showError("Thêm thất bại")
+            error: function (xhr, status, error) {
+                showError("Thêm thất bại");
             }
         });
-    })
-
+    }
 
     // js ngày đăng ký
     const currentDate = new Date();

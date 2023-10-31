@@ -68,4 +68,9 @@ public class DashboardController {
         return "admin/hoadon";
     }
 
+    @GetMapping("/tichdiem")
+    public String tichdiem(){
+        return "admin/tichdiem";
+    }
+
 }
