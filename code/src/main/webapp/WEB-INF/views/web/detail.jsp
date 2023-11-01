@@ -26,7 +26,21 @@
 <div class="container-fluid py-5">
     <div class="row px-xl-5">
         <div class="col-lg-5 pb-5">
-            <img class="w-100 h-100" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
+            <img class="w-100" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
+            <div class="row mt-3">
+                <div class="col-3">
+                    <img class="w-100" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
+                </div>
+                <div class="col-3">
+                    <img class="w-100" src="<c:url value='/template/web/img/anh3.png'/>" alt="Image">
+                </div>
+                <div class="col-3">
+                    <img class="w-100" src="<c:url value='/template/web/img/anh1.png'/>" alt="Image">
+                </div>
+                <div class="col-3">
+                    <img class="w-100" src="<c:url value='/template/web/img/anh4.png'/>" alt="Image">
+                </div>
+            </div>
         </div>
 
         <div class="col-lg-7 pb-5 ">
@@ -91,11 +105,6 @@
                             <label class="custom-control-label" for="color-5">Green</label>
                         </div>
                     </form>
-                </div>
-                <div class="d-flex pt-2 mb-4">
-                    <img src="/template/web/img/anh2.png" width="70px"  alt="">
-                    <img src="/template/web/img/anh3.png" width="70px" class="ms-2" alt="">
-                    <img src="/template/web/img/anh4.png" width="70px" class="ms-2" alt="">
                 </div>
                 <div class="d-flex align-items-center pt-2 mb-4">
                     <p class="text-dark font-weight-medium mb-0 mr-3">Quantity:</p><div class="input-group quantity mr-3" style="width: 130px;">
