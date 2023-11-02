@@ -1,8 +1,14 @@
 package com.laptrinhjavaweb.ApiController;
 
-import com.laptrinhjavaweb.model.datarq.SanPham;
+import com.laptrinhjavaweb.model.datarq.ApiResponse;
+import com.laptrinhjavaweb.model.datarq.PreviewGiaoHang;
+import com.laptrinhjavaweb.model.datarq.SanPhamGhnApi;
 import com.laptrinhjavaweb.model.request.ThongTinDatHangRequest;
+import com.laptrinhjavaweb.util.convertjson.ConvertJson;
+import com.laptrinhjavaweb.util.convertjson.DiaChiBuuCuc;
+import org.apache.commons.lang.ArrayUtils;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -15,10 +21,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,9 +40,20 @@ public class ApiGiaoHangController {
 
     RestTemplate restTemplate = new RestTemplate();
 
+  //  @Value("${diachibuucuc.string}")
+    private String diaChiBuuCuc ="Số 97 Thiên hiền , Phường Mỹ Đình 1, QUận Nam Từ Liêm , Hà Nội, Vietnam";
+
+    private String[] getDiaChi(){
+        String[] diaChi =  diaChiBuuCuc.replace(" ","").split(",");
+        ArrayUtils.reverse(diaChi);
+        diaChi[0] = diaChiBuuCuc;
+       return diaChi;
+    }
     ThongTinDatHangRequest getData (){
-        List<SanPham> sps = new ArrayList<>();
-        SanPham sp = SanPham.builder()
+        String[] diaChi = getDiaChi();
+        System.out.println(diaChi);
+        List<SanPhamGhnApi> sps = new ArrayList<>();
+        SanPhamGhnApi sp = SanPhamGhnApi.builder()
                 .name("Áo Polo")
                 //  .code("Polo123")
                 .quantity(1)
@@ -54,10 +71,10 @@ public class ApiGiaoHangController {
                 .client_order_code("")
                 .from_name("Lợn ABC")
                 .from_phone("0389478937")
-                .from_address("Nhà 28 ngõ 25 ngách 106 đường phú minh, Phường Minh Khai, Quận Bắc Từ Liêm, Hà Nội, Vietnam")
-                .from_ward_name("Phường Minh Khai")
-                .from_district_name("Quận Bắc Từ Liêm")
-                .from_province_name("Hà Nội")
+                .from_address(diaChi[0])
+                .from_ward_name(diaChi[3])
+                .from_district_name(diaChi[2])
+                .from_province_name(diaChi[1])
                 .to_name("Nguyễn thị thơ")
                 .to_phone("0977853450")
                 .to_address("Ninh Hoà, Xã Yên Trị, Huyện Yên Thủy, Hòa Bình, Vietnam")
@@ -74,7 +91,7 @@ public class ApiGiaoHangController {
                 .service_id(0L)
                 .service_type_id(2L)
                 .items(Arrays.asList(
-                        SanPham.builder()
+                        SanPhamGhnApi.builder()
                                 .name("Áo Polo")
                                // .code("Polo123")
                                 .quantity(1)
@@ -93,7 +110,7 @@ public class ApiGiaoHangController {
         return  headers;
     }
     @GetMapping("/preview")
-    public ResponseEntity<Object> preview() {
+    public ResponseEntity<Object> preview() throws IOException {
         final String uri = urlGiaoHang + "/preview";
 
         // Tạo HttpHeaders và đặt các header
@@ -106,19 +123,12 @@ public class ApiGiaoHangController {
         HttpEntity<ThongTinDatHangRequest> requestEntity = new HttpEntity<>(request, headers);
 
         // Gọi API với yêu cầu POST và `requestEntity`
-        ResponseEntity<Object> responseEntity = restTemplate.exchange(uri, HttpMethod.POST, requestEntity, Object.class);
-
-        HttpStatus httpStatus = responseEntity.getStatusCode();
-
-        if (httpStatus.is2xxSuccessful()) {
+        PreviewGiaoHang responseEntity = ConvertJson.convert(restTemplate,uri
+                ,HttpMethod.POST,requestEntity
+        ,   new ParameterizedTypeReference<ApiResponse<PreviewGiaoHang>>() {}
+        );
             // Xử lý khi yêu cầu thành công
-            Object result = responseEntity.getBody();
-            return ResponseEntity.ok(result);
-        } else {
-            // Trả về phản hồi từ API với mã lỗi và thông báo lỗi
-            Object apiErrorResponse = responseEntity.getBody();
-            return ResponseEntity.status(httpStatus).body(apiErrorResponse);
-        }
+            return ResponseEntity.ok(responseEntity);
     }
 
     @GetMapping("/order")

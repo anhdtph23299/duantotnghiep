@@ -1,6 +1,6 @@
 package com.laptrinhjavaweb.model.request;
 
-import com.laptrinhjavaweb.model.datarq.SanPham;
+import com.laptrinhjavaweb.model.datarq.SanPhamGhnApi;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -55,5 +55,5 @@ public class ThongTinDatHangRequest {
     // private Object coupon;           // Mã khuyến mãi
     private Long pickup_time;        // Thời gian mong muốn lấy hàng
 
-    private List<SanPham> items;
+    private List<SanPhamGhnApi> items;
 }

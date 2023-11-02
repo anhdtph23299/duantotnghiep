@@ -14,8 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/user/dathang")
-public class ApiUserHoaDonController {
-
+public class ApiUserDatHangController {
     @Autowired
     HoaDonService hoaDonService;
     @GetMapping("/{idkh}")
