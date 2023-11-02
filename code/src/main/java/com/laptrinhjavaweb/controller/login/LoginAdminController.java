@@ -12,4 +12,9 @@ public class LoginAdminController {
     public String login(){
         return "loginAdmin/login";
     }
+
+    @GetMapping("/changePass")
+    public String changePass(){
+        return "loginAdmin/changePass";
+    }
 }

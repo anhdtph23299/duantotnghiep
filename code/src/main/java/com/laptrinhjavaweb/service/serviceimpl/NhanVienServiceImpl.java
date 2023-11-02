@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 @Service
 public class NhanVienServiceImpl implements NhanVienService {
@@ -47,5 +48,18 @@ public class NhanVienServiceImpl implements NhanVienService {
     @Override
     public List<NhanVien> getSearchNhanVien(String maNV, String tenNV, String email, String sdt) {
         return nhanVienRepository.findByMaNVContainingOrTenNVContainingOrEmailContainingOrSdtContaining(maNV, tenNV, email, sdt);
+    }
+
+    @Override
+    public NhanVien findByEmail(String email) {
+        return nhanVienRepository.findByEmail(email);
+    }
+
+
+    @Override
+    public String generateRandomPassword() {
+        java.util.Random random = new Random();
+        int password = 1000 + random.nextInt(9000);
+        return String.valueOf(password);
     }
 }

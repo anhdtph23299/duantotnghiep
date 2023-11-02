@@ -9,4 +9,5 @@ public interface NhanVienRepository extends JpaRepository<NhanVien, Long> {
 
     List<NhanVien> findByMaNVContainingOrTenNVContainingOrEmailContainingOrSdtContaining(String maNV, String tenNV, String email, String sdt);
 
+    NhanVien findByEmail(String email);
 }
