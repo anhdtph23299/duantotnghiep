@@ -1,185 +1,405 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp" %>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping Cart</title>
-</head>
-<body>
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Shopping Cart</h1>
-            <div class="d-inline-flex">
-                <p class="m-0"><a href="">Home</a></p>
-                <p class="m-0 px-2">-</p>
-                <p class="m-0">Shopping Cart</p>
-            </div>
+
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Shopping Cart</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Home</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Shopping Cart</p>
         </div>
     </div>
-    <!-- Page Header End -->
-
-    <!-- Cart Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5">
-            <div class="col-lg-8 table-responsive mb-5">
-                <table class="table table-bordered text-center mb-0">
-                    <thead class="bg-secondary text-dark">
-                    <tr>
-                        <th>Products</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                        <th>Remove</th>
-                    </tr>
-                    </thead>
-                    <tbody class="align-middle">
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-1.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-2.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-3.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-4.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="align-middle"><img src="<c:url value='/template/web/img/product-4.jpg'/>" alt="" style="width: 50px;"> Colorful Stylish Shirt</td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle">
-                            <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
-                    </tr>
-                    </tbody>
-                </table>
+</div>
+<div class="container-fluid pt-5">
+    <div class="px-xl-5">
+        <div class="khung mb-3">
+            <div class="row">
+                <div class="col-5">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="allchecked">
+                        <label class="form-check-label">
+                            Sản phẩm
+                        </label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <span>Đơn giá</span>
+                </div>
+                <div class="col-2">
+                    <span>Số lượng</span>
+                </div>
+                <div class="col-2">
+                    <span>Tổng tiền</span>
+                </div>
+                <div class="col-1">
+                    <span>Thao tác</span>
+                </div>
             </div>
-            <div class="col-lg-4">
-                <form class="mb-5" action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control p-4" placeholder="Coupon Code">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary">Apply Coupon</button>
+        </div>
+        <div class="khung mb-3">
+            <div id="cart">
+                <div class="row mt-2" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" >
+                                <div class="mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-lg-3">
+                                            <img src="/template/web/img/anh2.png" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Áo polo nam </h5>
+                                                <span>Trắng, Size M</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
                     </div>
-                </form>
-                <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Cart Summary</h4>
+                    <div class="col-2">
+                        <span>99.000₫</span>
                     </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3 pt-1">
-                            <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="font-weight-medium">$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
+                    <div class="col-2">
+                    <span>
+                        <div class="input-group quantity" style="width: 100px;">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-primary btn-minus" >
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-primary btn-plus">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                    </span>
+                    </div>
+                    <div class="col-2">
+                        <span>99.000₫</span>
+                    </div>
+                    <div class="col-1">
+                        <a>Xóa</a>
+                    </div>
+                </div>
+                <div class="row mt-2" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                            <input type="checkbox" class="custom-control-input" checked id="price-2">
+                            <label class="custom-control-label" for="price-2">
+                                <div class="mb-3" style="max-width: 540px;">
+                                    <div class="row g-0">
+                                        <div class="col-lg-3">
+                                            <img src="/template/web/img/anh3.png" class="img-fluid rounded-start" alt="...">
+                                        </div>
+                                        <div class="col-lg-9">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Áo polo nam </h5>
+                                                <span>Xanh than, Size L</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
                     </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Total</h5>
-                            <h5 class="font-weight-bold">$160</h5>
+                    <div class="col-2">
+                        <span>99.000₫</span>
+                    </div>
+                    <div class="col-2">
+                    <span>
+                        <div class="input-group quantity" style="width: 100px;">
+                                    <div class="input-group-btn">
+<button class="btn btn-sm btn-primary btn-minus" >
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-primary btn-plus">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                    </span>
+                    </div>
+                    <div class="col-2">
+                        <span>99.000₫</span>
+                    </div>
+                    <div class="col-1">
+                        <a>Xóa</a>
+                    </div>
+                </div>
+                <%--    Tổng tiền    --%>
+            </div>
+
+<%--           Thành tiền --%>
+            <div>
+                <div class="row mt-2" style="border-bottom: 1px solid #dedede;height: 75px">
+                    <div class="col-5">
+                    </div>
+                    <div class="col-2">
+                    </div>
+                    <div class="col-2 mt-3" >
+                        <strong>Thành tiền : </strong>
+                    </div>
+                    <div class="col-2 mt-3" >
+                        <span><strong id="thanhtien">0 ₫</strong></span>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="khung mb-3" >
+            <div class="row" style="border-bottom: 1px solid #dedede; padding-bottom: 10px">
+                <div class="col-7"></div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <span><i class='bx bxs-coupon bx-tada bx-flip-vertical' style='color:#b29898' ></i> Voucher</span>
                         </div>
-                        <button class="btn btn-block btn-primary my-3 py-3">Proceed To Checkout</button>
+                        <div class="col-6 text-right">
+                            <span class=" text-cyan">Chọn hoặc nhập mã</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-2 mt-2">
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" checked id="price-all1">
+                        <label class="custom-control-label" for="price-all1">Chọn tất cả (3)</label>
+                    </div>
+                </div>
+                <div class="col-1 mt-2">
+                    <a>Xóa</a>
+                </div>
+                <div class="col-4 mt-2" >
+                    <span>Lưu vào mục đã thích</span>
+                </div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-6">
+                            Tổng thanh toán (<span id="totalproduct">0</span> sản phẩm): <span class="text-danger" style="font-size: 25px" id="tongthanhtoan">0₫</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <button class="btn text-light w-75" onclick=" muahang()" style="background-color: #C3817B">Mua hàng</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
     </div>
-    <!-- Cart End -->
-</body>
-</html>
+</div>
+
+
+
+<script>
+    var idkh = 1;
+    var dsCheckbox = [];
+
+    $("#allchecked").click(function (){
+        var isChecked = $(this).is(":checked");
+        if (isChecked){
+            $("input[name='idghct']").prop('checked',true)
+        }else{
+            $("input[name='idghct']").prop('checked',false)
+        }
+        loadDataCheckbox();
+
+    })
+   async function ghct(){
+      await  $.ajax({
+            url: '/api/user/ghct/dsspttchiatheosp/'+idkh,
+            method: 'GET',
+            success: function(req) {
+                var data = req.data;
+                var tbody =$("#cart");
+                tbody.empty();
+                data.forEach(function (item){
+                    item.forEach(function (sp){
+                        var html =
+                            `
+                                        <div class="row mt-2" style="border-bottom: 1px solid #dedede">
+                <div class="col-5">
+                    <div class="form-check align-items-center justify-content-between mb-3 datacart">
+                        <input class="form-check-input" type="checkbox" name="idghct" value="\${sp.idGhct}">
+                        <label class="form-check-label">
+                            <div class="mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-lg-3">
+                                        <img src="/template/web/img/anh2.png" class="img-fluid rounded-start" alt="...">
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div class="card-body">
+                                            <h5 class="card-title">\${sp.tenSanPham}</h5>
+                                            <span>\${sp.tenBienThe}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <span>\${sp.giaTien}₫</span>
+                </div>
+                <div class="col-2">
+                    <span>
+                        <div class="input-group quantity" style="width: 100px;">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-primary btn-minus" onclick="thayDoiSoLuong(\${sp.idGhct},-1)">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="\${sp.soLuong}" id="soluong-\${sp.idGhct}">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-sm btn-primary btn-plus" onclick="thayDoiSoLuong(\${sp.idGhct},1)">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                    </span>
+                </div>
+                <div class="col-2">
+                    <span id="tongtien-\${sp.idGhct}">\${sp.tongTien}</span>
+                </div>
+                <div class="col-1">
+                    <a>Xóa</a>
+                </div>
+            </div>
+
+                            `;
+                        tbody.append(html);
+                    })
+                })
+                setCheckBox();
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+    }
+
+        function tongTien(){
+            $.ajax({
+                url: '/api/user/ghct/subtotal/'+idkh,
+                method: 'GET',
+                success: function(req) {
+                    var data = req.data;
+                    $("#thanhtien").html(data+"₫");
+                    $("#tongthanhtoan").html(data+"₫");
+
+                },
+                error: function(xhr, status, error) {
+                    alert('Có lỗi xảy ra: ' + error);
+                }
+            });
+
+        }
+
+   function thayDoiSoLuong(idghct,sl){
+            $.ajax({
+                url: '/api/user/ghct/thaydoisoluong',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    idGhct:idghct,
+                    soLuong:sl
+                }),
+                success: async function (req) {
+            //        await ghct();
+                    var data = req.data;
+                    $("#soluong-"+data.idGhct).val(data.soLuong);
+                    $("#tongtien-"+data.idGhct).html(data.tongTien);
+                    tongTienTheoGhct(dsCheckbox);
+                },
+                error: function(xhr, status, error) {
+                    alert('Có lỗi xảy ra: ' + error);
+                }
+            });
+        }
+     function muahang() {
+         var listsp = getValByCheckbox();
+         var listspAsNumbers = listsp.map(str => parseInt(str, 10));
+         if (listsp.length == 0) {
+             showError("Bạn chưa chọn sản phẩm để mua")
+         }
+         var data = JSON.stringify({
+             dsghct: listspAsNumbers,
+         });
+          $.ajax({
+             url: '/api/user/dathang/' + idkh,
+             method: 'POST',
+             contentType: 'application/json',
+             data: data,
+             success: function (req) {
+                 window.location.href = "/checkout"
+             },
+             error: function (xhr, status, error) {
+                 showError("Có lỗi xảy ra");
+             }
+         });
+    }
+  async function  init(){
+       await ghct();
+       //tongTien()
+   }
+   // Đặt sự kiện delegating cho phần tử body để bắt sự kiện click của checkbox
+
+   function setCheckBox(){
+       $('input[name="idghct"]').click(function() {
+           loadDataCheckbox();
+       });
+   }
+   function loadDataCheckbox(){
+       var listCheckbox = getValByCheckbox();
+
+       dsCheckbox = listCheckbox;
+       tongTienTheoGhct(dsCheckbox)
+   }
+   function getValByCheckbox(){
+        return $("input[name='idghct']:checked").map(function () {
+            return this.value;
+        }).get();
+   }
+function tongTienTheoGhct(listCheckbox){
+    if (listCheckbox.length==0){
+        $("#thanhtien").html(0+"₫");
+        $("#tongthanhtoan").html(0+"₫");
+        $("#totalproduct").html(0);
+        return;
+    }
+       var data = JSON.stringify({
+           collection:listCheckbox
+       });
+    $.ajax({
+        url: '/api/user/ghct/subtotaltheoghct/'+idkh,
+        method: 'POST',
+        contentType: 'application/json',
+        data:data ,
+        success: function (req) {
+            var data = req.data;
+            $("#thanhtien").html(data+"₫");
+            $("#tongthanhtoan").html(data+"₫");
+            $("#totalproduct").html(listCheckbox.length);
+        },
+        error: function(xhr, status, error) {
+            alert('Có lỗi xảy ra: ' + error);
+        }
+    });
+}
+   init();
+</script>
