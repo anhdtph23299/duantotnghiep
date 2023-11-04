@@ -5,6 +5,7 @@ import com.laptrinhjavaweb.util.base.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,11 +18,12 @@ import java.util.Map;
 public class ApiUserDatHangController {
     @Autowired
     HoaDonService hoaDonService;
-    @GetMapping("/{idkh}")
+    @PostMapping("/{idkh}")
     public ResponseObject datHang(@PathVariable(name = "idkh") Long idkh
             ,@RequestBody Map<String, Object> requestBody){
-        List<Long> dsghct = (List<Long>) requestBody.get("dsghct");
-        Long idttgh = (Long) requestBody.get("idttgh");
-        return hoaDonService.taoHoaDonByIdGioHangChiTiet(idkh,idttgh,dsghct);
+        List<Integer> dsghct = (List<Integer>) requestBody.get("dsghct");
+        return hoaDonService.taoHoaDonByIdGioHangChiTiet(idkh,dsghct);
     }
+
+
 }

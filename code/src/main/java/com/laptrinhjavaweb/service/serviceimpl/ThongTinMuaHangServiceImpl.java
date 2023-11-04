@@ -18,11 +18,8 @@ public class ThongTinMuaHangServiceImpl implements ThongTinMuaHangService {
     @Autowired
     private ThongTinMuaHangRepository thongTinMuaHangRepository;
     @Override
-    public ThongTinMuaHang findThongTinMuaHangDefault(Long idkh) {
-        List<Integer> trangThai = new ArrayList<>();
-        trangThai.add(2);
-        ThongTinMuaHang thongTinMuaHang =  thongTinMuaHangRepository.getTTMuaHangByIdKHAndTrangThai(idkh,trangThai);
-        return  thongTinMuaHang;
+    public ThongTinMuaHangResponse findThongTinMuaHangDefault(Long idkh) {
+        return thongTinMuaHangRepository.getTTMuaHangByIdKHAndTrangThai(idkh,2);
     }
 
     @Override

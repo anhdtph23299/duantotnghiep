@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<button type="button" class="btn btn-lg btn-danger"
-        data-bs-toggle="popover" title="Popover title" data-bs-html="true"
-        data-bs-content="<b><i>Văn bản in đậm và in nghiêng</i></b>"
-        data-bs-placement="bottom">
-    Click to toggle popover</button>
-
+<%--
+  Created by IntelliJ IDEA.
+  User: asus
+  Date: 10/31/2023
+  Time: 8:36 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <div class="modal fade" id="btnalldiachi" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"  >
     <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content" >
@@ -113,120 +114,289 @@
 </div>
 
 
-<!-- Link to open the modal -->
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Checkout</h1>
-            <div class="d-inline-flex">
-                <p class="m-0"><a href="">Home</a></p>
-                <p class="m-0 px-2">-</p>
-                <p class="m-0">Checkout</p>
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Check Out</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Home</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Check Out</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5">
+    <div class="px-xl-5">
+        <div class="khung card">
+            <div class="row">
+                <h5 style="color: #C3817B"><i class="bi bi-geo-alt-fill"></i> Địa chỉ nhận hàng</h5>
+            </div>
+            <div class="row mt-2">
+                <div class="col-4">
+                    <h5 class="font-weight-bold" id="tennguoinhan">Tuấn Anh <span id="sdt">0389478937</span> </h5>
+                </div>
+                <div class="col-7">
+                    <span id="diachi">Xóm ninh hoà, Xã Yên Trị, Huyện Yên Thủy, Hòa Bình, Vietnam </span><span style="border: 1px solid #C3817B; background-color: #C3817B; color: white">Mặc định</span>
+                </div>
+                <div class="col-1">
+                    <button class="custom-button" data-bs-target="#btnalldiachi" data-bs-toggle="modal" style="border: none;background: none;padding: 0;cursor: pointer;color: blue;text-decoration: none;">Thay đổi</button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Page Header End -->
-<div class="container-fluid row pl-5" >
-    <div class="col-12 mb-2"><h3 >Thông tin mua hàng</h3></div>
-    <div class="col-3"><strong id="tennguoinhan"></strong></div>
-    <div class="col-2"><p id="sdt"></p></div>
-    <div class="col-4"><p id="diachi"></p></div>
-    <div class="col-1"><p id="df">Mặc định</p></div>
-    <div class="col-1"><button class="btn btn-primary" data-bs-target="#btnalldiachi" data-bs-toggle="modal">Thay đổi</button>
-    </div>
-</div>
-    <!-- Checkout Start -->
-    <div class="container-fluid pt-5 pl-4">
-
-        <div class="table-responsive">
-            <table class="table" id="tblcheckout">
-                <thead>
-                <tr>
-                    <th scope="col" class="border-0 bg-light">
-                        <div class="p-2 px-2 text-uppercase">Product</div>
-                    </th>
-                    <th scope="col" class="border-0 bg-light">
-                        <div class="py-2 text-uppercase">Loại sản phẩm</div>
-                    </th>
-                    <th scope="col" class="border-0 bg-light">
-                        <div class="py-2 text-uppercase">Price</div>
-                    </th>
-                    <th scope="col" class="border-0 bg-light">
-                        <div class="py-2 text-uppercase">Quantity</div>
-                    </th>
-<%--                    <th scope="col" class="border-0 bg-light">--%>
-<%--                        <div class="py-2 text-uppercase">Remove</div>--%>
-<%--                    </th>--%>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th class="border-0">
-                        <div class="p-2">
-                            <img src="https://product.hstatic.net/200000323177/product/momo_shirt__3__8e0d45a718ee4d5ea9dbc036db3185e6_large.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                            <div class="ml-3 d-inline-block align-middle">
-                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex Originals</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+        <div class="khung card mt-3">
+            <div class="row">
+                <div class="col-5">
+                    <h5>Sản phẩm</h5>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-2">
+                    <span>Đơn giá</span>
+                </div>
+                <div class="col-2">
+                    <span>Số lượng</span>
+                </div>
+                <div class="col-1">
+                    <span>Thành tiền</span>
+                </div>
+            </div>
+            <div id="hdct">
+                <div class="row mt-3" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-2">
+                                    <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Áo polo nam aelimited</h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </th>
-                    <td class="border-0 align-middle"><strong>Loại sản phẩm</strong></td>
-                    <td class="border-0 align-middle"><strong>$79.00</strong></td>
-                    <td class="border-0 align-middle"><strong>3</strong></td>
-                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="p-2">
-                            <img src="https://product.hstatic.net/1000341630/product/kmsh220633_75cb0c2945474917b2528e802806fb39_master.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                            <div class="ml-3 d-inline-block align-middle">
-                                <h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">300000</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">2</h6>
+                    </div>
+                    <div class="col-1 mt-3">
+                        <h6 class="card-title">600000</h6>
+                    </div>
+                </div>
+                <div class="row mt-3" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-2">
+                                    <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Áo polo nam aelimited</h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </th>
-                    <td class="border-0 align-middle"><strong>Loại sản phẩm</strong></td>
-                    <td class="align-middle"><strong>$79.00</strong></td>
-                    <td class="align-middle"><strong>3</strong></td>
-                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="p-2">
-                            <img src="https://media.coolmate.me/cdn-cgi/image/quality=80,format=auto/uploads/January2022/3recyw2_3.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-                            <div class="ml-3 d-inline-block align-middle">
-                                <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">300000</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">2</h6>
+                    </div>
+                    <div class="col-1 mt-3">
+                        <h6 class="card-title">600000</h6>
+                    </div>
+                </div>
+                <div class="row mt-3" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-2">
+                                    <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Áo polo nam aelimited</h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </th>
-                    <td class="border-0 align-middle"><strong>Loại sản phẩm</strong></td>
-                    <td class="align-middle"><strong>$79.00</strong></td>
-                    <td class="align-middle"><strong>3</strong></td>
-                    <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">300000</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">2</h6>
+                    </div>
+                    <div class="col-1 mt-3">
+                        <h6 class="card-title">600000</h6>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-<div class="container text-center">
-    <h2>Tổng tiền</h2>
-    <p id="total"></p>
-    <p id="totaldola"></p>
-    <form action="${pageContext.request.contextPath}/pay" method="post">
-        <input type="hidden" name="method" value="paypal">
-        <input type="hidden" name="intent" value="sale">
-        <input type="hidden" name="currency" value="USD">
-        <input type="hidden" name="description" value="Product Description">
-        <input type="hidden" name="price" id="pricethanhtoan" value="10.00">
-        <button type="submit">Thanh toán</button>
-    </form>
-</div>
-    <!-- Checkout End -->
-<input type="text" id="idttmuahang" style="display: none;">
-<!-- Styles -->
 
+        <div class="khung card mt-2">
+            <div class="row" style="border-bottom: 1px solid #dedede; padding-bottom: 10px">
+                <div class="col-7"></div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <span><i class='bx bxs-coupon bx-tada bx-flip-vertical' style='color:#b29898' ></i> Voucher</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span class=" text-cyan">Chọn Voucher</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="border-bottom: 1px solid #dedede;">
+                <div class="col-5" style="border-right: 1px solid #dedede;">
+                    <div class="row mt-3">
+                        <div class="col-2">
+                            <h6 class="mt-2">Lời nhắn:</h6>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" class="form-control w-75" placeholder="Lưu ý cho shop">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7" >
+                    <div class="row my-3" style="border-bottom: 1px solid #dedede; padding-bottom: 10px">
+                        <div class="col-3">
+                            <h6>Đơn vị vận chuyển:</h6>
+                        </div>
+                        <div class="col-7">
+                            <h6>Nhanh</h6>
+                            <span>Nhận hàng vào 2 Th11 - 7 Th11</span>
+                        </div>
+                        <div class="col-2">
+                            <span class="float-right">27500₫</span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <h6>Được đồng kiểm. <span style="font-size: 20px">℗</span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-9"></div>
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <span>Tổng số tiền (3 sản phẩm):</span>
+                        </div>
+                        <div class="col-4 text-right">
+                            <span>1.827.500₫</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="khung card mt-3">
+            <div class="row" style="border-bottom: 1px solid #dedede; padding-bottom: 20px">
+                <div class="col-3">
+                    <h5>Phương thức thanh toán:</h5>
+                </div>
+                <div class="col-9">
+                    <button class="btn btn-light" id="paypalButton" style="border: 1px solid #dedede">Ví PalPay</button>
+                    <button class="btn btn-light ms-2" id="codButton" style="border: 1px solid #dedede">Thanh toán khi nhận hàng</button>
+                </div>
+            </div>
+            <div class="row" style="border-bottom: 1px solid #dedede;">
+                <div class="form-check ms-3 my-3" id="mbBankRadio">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        <img src="/template/web/img/mb.png" alt=""> MB Bank
+                    </label>
+                </div>
+                <div class="form-check ms-3 my-3" id="vpBankRadio">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        <img src="/template/web/img/vp.png" alt=""> VP Bank
+                    </label>
+                </div>
+                <div class="thanhtoan">
+                    <div class="row my-3">
+                        <div class="col-3">
+                            <span>Thanh toán khi nhận hàng</span>
+                        </div>
+                        <div class="col-9">
+                            <span>Phí thu hộ: ₫0 VNĐ. Ưu đãi về phí vận chuyển (nếu có) áp dụng cả với phí thu hộ.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-9"></div>
+                <div class="col-3">
+                    <div class="row my-3">
+                        <div class="col-6">
+                            <span>Tổng tiền hàng</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span>1800000₫</span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-6">
+                            <span>Phí vận chuyển</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span>27500₫</span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-6">
+                            <span>Tổng thanh toán:</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span style="font-size: 30px; color: #C3817B">1.827.500₫</span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <button class="btn w-75 ms-5 text-light" style="background-color: #C3817B;">Đặt hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<input type="hidden" id="idttmuahang">
 <script>
+    // Ẩn thanh toán khi nhận hàng khi load lại trang
+    document.querySelector(".thanhtoan").style.display = "none";
+
+    //click Ví PalPay
+    document.getElementById("paypalButton").addEventListener("click", function() {
+        // Ẩn Thanh toán khi nhận hàng
+        document.querySelector(".thanhtoan").style.display = "none";
+        // Hiển thị radio của MB Bank và VP Bank
+        document.getElementById("mbBankRadio").style.display = "block";
+        document.getElementById("vpBankRadio").style.display = "block";
+    });
+    //click thanh toán khi nhaanh hàng
+    document.getElementById("codButton").addEventListener("click", function() {
+        // Hiển thị thanh toán khi nhận hàng
+        document.querySelector(".thanhtoan").style.display = "block";
+        // Ẩn radio MB Bank và VP Bank
+        document.getElementById("mbBankRadio").style.display = "none";
+        document.getElementById("vpBankRadio").style.display = "none";
+    });
+
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl)
@@ -376,9 +546,14 @@
            method: 'GET',
            success: function(req) {
                var data = req.data;
+               console.log(data)
                $("#idttmuahang").html(data.id);
-               $("#tennguoinhan").html(data.tenNguoiNhan);
-               $("#sdt").html(data.soDienThoai);
+               $("#tennguoinhan").html(
+                   `
+                   \${data.tenNguoiNhan}(\${data.sdt})
+                   `
+               );
+              // $("#sdt").html(data.sdt);
                $("#diachi").html(data.diaChi);
            },
            error: function(xhr, status, error) {
@@ -472,7 +647,7 @@
             }
         });
     }
-    dsthongtinmuahang();
+   dsthongtinmuahang();
     // function ghct(){
     //     $.ajax({
     //         url: '/api/user/ghct/'+1,
@@ -486,20 +661,34 @@
     //                 var idgh = custom.gioHangChiTietId.idGioHang;
     //                 var sp = custom.sanPham;
     //                 var html = `
-    //                               <tr>
-    //                 <th class="border-0">
-    //                     <div class="p-2">
-    //                         <img src="https://product.hstatic.net/200000323177/product/momo_shirt__3__8e0d45a718ee4d5ea9dbc036db3185e6_large.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
-    //                         <div class="ml-3 d-inline-block align-middle">
-    //                             <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">\${sp.tenSanPham}</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+    //                     <div class="col-5">
+    //                         <div class="mb-3">
+    //                             <div class="row g-0">
+    //                                 <div class="col-md-2">
+    //                                     <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+    //                                 </div>
+    //                                 <div class="col-md-10">
+    //                                     <div class="card-body">
+    //                                         <h6 class="card-title">Áo polo nam aelimited</h6>
+    //                                     </div>
+    //                                 </div>
+    //                             </div>
     //                         </div>
     //                     </div>
-    //                 </th>
-    //                 <td class="border-0 align-middle"><strong>Loại sản phẩm</strong></td>
-    //                 <td class="border-0 align-middle"><strong>\${convertVND(custom.tongTien)}</strong></td>
-    //                 <td class="border-0 align-middle"><strong>\${custom.soLuong}</strong></td>
-    //                 <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-    //             </tr>
+    //                     <div class="col-2 mt-3">
+    //                         <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
+    //                     </div>
+    //                     <div class="col-2 mt-3">
+    //                         <h6 class="card-title">300000</h6>
+    //                     </div>
+    //                     <div class="col-2 mt-3">
+    //                         <h6 class="card-title">2</h6>
+    //                     </div>
+    //                     <div class="col-1 mt-3">
+    //                         <h6 class="card-title">600000</h6>
+    //                     </div>
+    //                     </div>
+
     //                 `;
     //                 tbody.append(html);
     //             })

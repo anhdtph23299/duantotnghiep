@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.apache.commons.lang.ArrayUtils;
 
 import java.util.List;
 
@@ -33,6 +34,15 @@ public class ThongTinDatHangRequest {
     private String from_ward_name;   // Tên phường/ngõ người gửi
     private String from_district_name; // Tên quận/huyện người gửi
     private String from_province_name; // Tên tỉnh/thành phố người gửi
+    public void setDiaChiNguoiGui(String diaChi){
+        String[] arrDiaChi = diaChi.split(", ");
+        ArrayUtils.reverse(arrDiaChi);
+
+        from_province_name= arrDiaChi[1];
+        from_district_name= arrDiaChi[2];
+        from_ward_name= arrDiaChi[3];
+        from_address = diaChi;
+    }
 
     private String to_name;          // Tên người nhận
     private String to_phone;         // Số điện thoại người nhận
@@ -41,8 +51,29 @@ public class ThongTinDatHangRequest {
     private String to_district_name; // Tên quận/huyện người nhận
     private String to_province_name; // Tên tỉnh/thành phố người nhận
 
+
+
+    public void setNguoiNhan(String diaChi,String soDienThoai,String tenNguoiNhan){
+        String[] arrDiaChi = diaChi.split(", ");
+        ArrayUtils.reverse(arrDiaChi);
+
+        to_province_name= arrDiaChi[1];
+        to_district_name= arrDiaChi[2];
+        to_ward_name= arrDiaChi[3];
+        to_name= tenNguoiNhan;
+        to_address = diaChi;
+    }
+
+
+
     private Long cod_amount;         // Số tiền thu hộ
+    public void setSoTienThuHo(Long soTienThuHo){
+        cod_amount = soTienThuHo;
+    };
     private String content;          // Nội dung đơn hàng
+    public void setNoiDungDonHang(String noiDungDonHang){
+        content = noiDungDonHang;
+    }
     private Integer weight = 100;    // Trọng lượng
     private Integer length = 10;     // Chiều dài
     private Integer width = 10;      // Chiều rộng
@@ -54,6 +85,9 @@ public class ThongTinDatHangRequest {
     private Long service_type_id;    // 2: Chuyển phát thương mại điện tử, 5: Chuyển phát truyền thống
     // private Object coupon;           // Mã khuyến mãi
     private Long pickup_time;        // Thời gian mong muốn lấy hàng
+    public void setDsSanPham(List<SanPhamGhnApi> dsSanPham){
+        items = dsSanPham;
+    }
 
     private List<SanPhamGhnApi> items;
 }

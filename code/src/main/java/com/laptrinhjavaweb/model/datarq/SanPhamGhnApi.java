@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.model.datarq;
 
+import com.laptrinhjavaweb.model.response.HoaDonChiTietResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,4 +25,9 @@ public class SanPhamGhnApi {
 //    private int weight;
 //    private int height;
 //    private Category category;
+    public SanPhamGhnApi(HoaDonChiTietResponse hoaDonChiTietResponse){
+        name = hoaDonChiTietResponse.getTenSanPham();
+        quantity = hoaDonChiTietResponse.getSoLuong();
+        price = hoaDonChiTietResponse.getGiaTien().longValue();
+    }
 }

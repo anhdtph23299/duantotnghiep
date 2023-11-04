@@ -6,6 +6,7 @@ import com.laptrinhjavaweb.entity.HoaDon;
 import com.laptrinhjavaweb.entity.HoaDonChiTiet;
 import com.laptrinhjavaweb.entity.KhachHang;
 import com.laptrinhjavaweb.entity.ThongTinMuaHang;
+import com.laptrinhjavaweb.model.response.HoaDonChiTietResponse;
 import com.laptrinhjavaweb.repository.BienTheRepository;
 import com.laptrinhjavaweb.repository.GioHangChiTietRepository;
 import com.laptrinhjavaweb.repository.HoaDonChiTietRepository;
@@ -18,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 @Service
@@ -42,22 +44,20 @@ public class HoaDonServiceImpl implements HoaDonService {
 
     @Override
     @Transactional
-    public ResponseObject taoHoaDonByIdGioHangChiTiet(Long idkh,Long idttmh, List<Long> idGhct) {
+    public ResponseObject taoHoaDonByIdGioHangChiTiet(Long idkh, List<Integer> idGhct) {
         HoaDon hoaDon = hoaDonRepository.getHoaDonMoiTaoByIdkh(idkh);
         if (hoaDon!=null){
             return new ResponseObject("Đang có hoá đơn trạng thái chưa giao hàng,vui lòng xem lại");
         }
         KhachHang khachHang = khachHangRepository.findById(idkh).orElse(null);
-        ThongTinMuaHang thongTinMuaHang = thongTinMuaHangRepository.findById(idttmh).orElse(null);
         hoaDon = new HoaDon();
         hoaDon.setKhachHang(khachHang);
-        hoaDon.setThongTinMuaHang(thongTinMuaHang);
         hoaDon.setTrangThai(0);
         hoaDon.setNgayDat(new Date());
         hoaDon = hoaDonRepository.save(hoaDon);
 
-        for (Long idghct:idGhct) {
-            GioHangChiTiet gioHangChiTiet = gioHangChiTietRepo.findById(idghct).orElse(null);
+        for (Integer idghct:idGhct) {
+            GioHangChiTiet gioHangChiTiet = gioHangChiTietRepo.findById(Long.valueOf(idghct)).orElse(null);
 //            if (gioHangChiTiet==null){
 //                return new ResponseObject("Có lỗi xảy ra khi không tìm thấy sản phẩm trong giỏ hàng");
 //            }
@@ -70,6 +70,7 @@ public class HoaDonServiceImpl implements HoaDonService {
             hoaDonChiTiet.setBienThe(bienThe);
             hoaDonChiTiet.setHoaDon(hoaDon);
             hoaDonChiTiet.setSoLuong(gioHangChiTiet.getSoLuong());
+            hoaDonChiTiet.setDonGia(BigDecimal.valueOf(bienThe.getGia()));
             hoaDonChiTietRepository.save(hoaDonChiTiet);
             gioHangChiTiet.setTrangThai(0);
             gioHangChiTietRepo.save(gioHangChiTiet);
@@ -77,6 +78,15 @@ public class HoaDonServiceImpl implements HoaDonService {
         return new ResponseObject("Tạo hoá đơn thành công");
     }
 
+    @Override
+    public HoaDon findHoaDonMoiDat(Long idkh) {
+        return hoaDonRepository.getHoaDonMoiTaoByIdkh(idkh);
+    }
+
+    @Override
+    public List<HoaDonChiTietResponse> dsHoaDonChiTietByIdHoaDon(Long idhd) {
+        return hoaDonChiTietRepository.dsHoaDonChiTietByIdHoaDon(idhd);
+    }
 
 
     @Override
