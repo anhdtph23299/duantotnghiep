@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 @Service
@@ -102,5 +103,12 @@ public class HoaDonServiceImpl implements HoaDonService {
     @Override
     public void delete(Long id) {
         hoaDonRepository.deleteById(id);
+    }
+
+    @Override
+    public String getCurrentDateTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 }

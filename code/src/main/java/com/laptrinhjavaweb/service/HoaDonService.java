@@ -21,4 +21,6 @@ public interface HoaDonService {
     String insert(HoaDon hoaDon);
 
     void delete(Long id);
+
+    String getCurrentDateTime();
 }

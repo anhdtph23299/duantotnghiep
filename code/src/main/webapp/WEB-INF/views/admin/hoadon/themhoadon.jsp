@@ -903,7 +903,7 @@
                                 <h5><strong>Nhân viên:</strong> Khánh Linh</h5>
                             </div>
                             <div class="col-lg-6 text-right">
-                                <h5>28/10/2023 15:00</h5>
+                                <h5 id="thoiGian"></h5>
                             </div>
                         </div>
                         <div class="row">
@@ -1075,6 +1075,16 @@
         </div>
     </div>
 </section>
+
+<script>
+    function updateDateTime() {
+        $.get("/api/admin/hoadon/getDateTime", function(response) {
+            $("#thoiGian").text(response);
+        });
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+</script>
 
 </body>
 </html>

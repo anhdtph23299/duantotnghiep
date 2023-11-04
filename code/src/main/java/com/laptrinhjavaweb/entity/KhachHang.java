@@ -64,4 +64,7 @@ public class KhachHang  extends PrimaryEntity {
     @Column(name = "ngaydangky")
     private Date ngayDangKy;
 
+    @Column(name = "password")
+    private String password;
+
 }
