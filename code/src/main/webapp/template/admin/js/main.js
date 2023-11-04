@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-//js checkbox
-=======
 
 //js checkbox table
->>>>>>> tuan
 document.addEventListener("DOMContentLoaded", function () {
     const selectAllCheckbox = document.getElementById("selectAll");
     const checkboxes = document.querySelectorAll('tbody .checkbox');
@@ -54,13 +50,9 @@ $(document).ready(function () {
         $('.Choicefile').css('cursor', 'pointer');
         $(".filename").text("");
     });
-<<<<<<< HEAD
-})
-=======
 })
 
 
 
 
 
->>>>>>> tuan

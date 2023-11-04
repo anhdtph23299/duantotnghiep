@@ -47,4 +47,6 @@ public class HomePageController {
     public String shop_us(){
         return "web/shop_us";
     }
+
+
 }

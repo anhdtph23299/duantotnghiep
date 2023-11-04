@@ -31,6 +31,7 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
 
     @Override
     public String insert(KhuyenMai khuyenMai) {
+<<<<<<< HEAD
          Date ngayBatDau = khuyenMai.getNgayBatDau();
          Date ngayKetThuc = khuyenMai.getNgayKetThuc();
         System.out.println(ngayBatDau);
@@ -42,10 +43,17 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
         if(km != null){
             return "Insert thanh cong";
         }else{
+=======
+        KhuyenMai km = this.khuyenMaiRepository.save(khuyenMai);
+        if (km != null) {
+            return "Insert thanh cong";
+        } else {
+>>>>>>> 05656fde4f7200afb113438fb319a54853650308
             return "Insert that bai";
         }
     }
 
+<<<<<<< HEAD
 
     public Date convertDate(String str){
         // Input date format
@@ -71,6 +79,8 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
         return null;
     }
 
+=======
+>>>>>>> 05656fde4f7200afb113438fb319a54853650308
     @Override
     public String update(KhuyenMai khuyenMai, Long id) {
         return null;
@@ -79,11 +89,18 @@ public class KhuyenMaiServiceImpl implements KhuyenMaiService {
     @Override
     public String delete(Long id) {
         KhuyenMai km = this.khuyenMaiRepository.findById(id).orElse(null);
+<<<<<<< HEAD
         km.setTrangThai(0);
         if(km != null){
             this.khuyenMaiRepository.save(km);
             return "Dừng thanh cong";
         }else{
+=======
+        if (km != null) {
+            this.khuyenMaiRepository.delete(km);
+            return "Xoa thanh cong";
+        } else {
+>>>>>>> 05656fde4f7200afb113438fb319a54853650308
             return "Khong tim thay";
         }
     }

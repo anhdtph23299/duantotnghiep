@@ -87,69 +87,69 @@
         <h2 class="section-title px-5"><span class="px-2">Why Choose Us</span></h2>
     </div>
     <div class="row px-xl-5">
-            <div class="col-lg-3 col-md-6 col-sm-12 p-2">
-                <div class="card p-3" style="background-color: #C99691">
-                    <div class="single-choose ">
-                        <div class="choose-icon pos-rltv text-center">
-                            <h1 class='bx bx-cart-add'></h1>
-                        </div>
-                        <div class="choose-title text-center">
-                            <h5>Best Product</h5>
-                        </div>
-                        <div class="choose-des">
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+            <div class="card p-3" style="background-color: #C99691">
+                <div class="single-choose ">
+                    <div class="choose-icon pos-rltv text-center">
+                        <h1 class='bx bx-cart-add'></h1>
+                    </div>
+                    <div class="choose-title text-center">
+                        <h5>Best Product</h5>
+                    </div>
+                    <div class="choose-des">
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-12 p-2">
-                <div class="card p-3" style="background-color: #C99691">
-                    <div class="single-choose ">
-                        <div class="choose-icon pos-rltv text-center">
-                            <h1 class='bx bx-headphone'></h1>
-                        </div>
-                        <div class="choose-title text-center">
-                            <h5>24/7 Support</h5>
-                        </div>
-                        <div class="choose-des">
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+            <div class="card p-3" style="background-color: #C99691">
+                <div class="single-choose ">
+                    <div class="choose-icon pos-rltv text-center">
+                        <h1 class='bx bx-headphone'></h1>
+                    </div>
+                    <div class="choose-title text-center">
+                        <h5>24/7 Support</h5>
+                    </div>
+                    <div class="choose-des">
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-12 p-2">
-                <div class="card p-3" style="background-color: #C99691">
-                    <div class="single-choose ">
-                        <div class="choose-icon pos-rltv text-center">
-                            <h1 class='bx bx-strikethrough'></h1>
-                        </div>
-                        <div class="choose-title text-center">
-                            <h5>Secure</h5>
-                        </div>
-                        <div class="choose-des">
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+            <div class="card p-3" style="background-color: #C99691">
+                <div class="single-choose ">
+                    <div class="choose-icon pos-rltv text-center">
+                        <h1 class='bx bx-strikethrough'></h1>
+                    </div>
+                    <div class="choose-title text-center">
+                        <h5>Secure</h5>
+                    </div>
+                    <div class="choose-des">
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-12 p-2">
-                <div class="card p-3" style="background-color: #C99691">
-                    <div class="single-choose ">
-                        <div class="choose-icon pos-rltv text-center">
-                            <h1 class='bx bx-trending-up'></h1>
-                        </div>
-                        <div class="choose-title text-center">
-                            <h5>Best Product</h5>
-                        </div>
-                        <div class="choose-des">
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+            <div class="card p-3" style="background-color: #C99691">
+                <div class="single-choose ">
+                    <div class="choose-icon pos-rltv text-center">
+                        <h1 class='bx bx-trending-up'></h1>
+                    </div>
+                    <div class="choose-title text-center">
+                        <h5>Best Product</h5>
+                    </div>
+                    <div class="choose-des">
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
 

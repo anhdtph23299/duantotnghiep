@@ -13,26 +13,43 @@ public class ApiKhuyenMaiController {
     KhuyenMaiService khuyenMaiService;
 
     @GetMapping
-    public ResponseObject getAll(){
+    public ResponseObject getAll() {
         return new ResponseObject(khuyenMaiService.getAll());
     }
 
     @GetMapping("/detail/{id}")
+<<<<<<< HEAD
     public ResponseObject detail(@PathVariable(name = "id")Long id){
+=======
+    public ResponseObject detail(@PathVariable(name = "id") Long id) {
+>>>>>>> 05656fde4f7200afb113438fb319a54853650308
         KhuyenMai km = khuyenMaiService.findById(id);
         return new ResponseObject(km);
     }
 
     @PostMapping("/insert")
+<<<<<<< HEAD
     public ResponseObject insert(@RequestBody KhuyenMai khuyenMai){
 
+=======
+    public ResponseObject insert(@RequestBody KhuyenMai khuyenMai) {
+>>>>>>> 05656fde4f7200afb113438fb319a54853650308
         String res = khuyenMaiService.insert(khuyenMai);
         return new ResponseObject(res);
     }
 
     @PostMapping("/delete/{id}")
+<<<<<<< HEAD
     public ResponseObject delete(@PathVariable(name = "id")Long id){
         String res = khuyenMaiService.delete(id);
         return new ResponseObject(res);
     }
+=======
+    public ResponseObject delete(@PathVariable(name = "id") Long id) {
+        String res = khuyenMaiService.delete(id);
+        return new ResponseObject(res);
+    }
+
+
+>>>>>>> 05656fde4f7200afb113438fb319a54853650308
 }

@@ -10,25 +10,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class KhuyenMaiController {
 
     @GetMapping("")
-    public String khuyen_mai(){
+    public String khuyen_mai() {
         return "admin/discount/view";
     }
 
+<<<<<<< HEAD
     @GetMapping("/detail/{id}")
     public String detail(){
+=======
+    @GetMapping("/detail")
+    public String detail() {
+>>>>>>> 05656fde4f7200afb113438fb319a54853650308
         return "admin/discount/detail-discount";
     }
 
     @GetMapping("/create")
-    public String create(){
+    public String create() {
         return "admin/discount/create";
     }
 
     @PostMapping("/save")
-    public String save(){
+    public String save() {
         return "admin/discount/view";
     }
 
+<<<<<<< HEAD
     @GetMapping("/delete/{id}")
     public String delete(){
         return "admin/discount/view";
@@ -41,6 +47,20 @@ public class KhuyenMaiController {
 
     @PostMapping("/update/{id}")
     public String update(){
+=======
+    @GetMapping("/delete")
+    public String delete() {
+        return "admin/discount/view";
+    }
+
+    @GetMapping("/edit")
+    public String edit() {
+        return "admin/discount/create";
+    }
+
+    @PostMapping("/update")
+    public String update() {
+>>>>>>> 05656fde4f7200afb113438fb319a54853650308
         return "admin/discount/view";
     }
 }
