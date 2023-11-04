@@ -38,9 +38,12 @@ public class HoaDonChiTiet extends PrimaryEntity {
     private Integer soLuong;
 
     @Column(name = "dongia")
-    private BigDecimal donGia;
+    private Double donGia;
 
-    public BigDecimal getTongTien(){
-        return donGia.multiply(BigDecimal.valueOf(soLuong));
+    public Double getTongTien(){
+        if (donGia==null){
+            return bienThe.getGia()*soLuong;
+        }
+        return donGia*soLuong;
     }
 }

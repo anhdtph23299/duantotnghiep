@@ -5,6 +5,7 @@ import com.laptrinhjavaweb.model.response.HoaDonChiTietResponse;
 import com.laptrinhjavaweb.util.base.ResponseObject;
 import org.springframework.http.ResponseEntity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface HoaDonService {
@@ -14,6 +15,8 @@ public interface HoaDonService {
     HoaDon findHoaDonMoiDat(Long idkh);
 
     List<HoaDonChiTietResponse> dsHoaDonChiTietByIdHoaDon(Long idhd);
+
+    BigDecimal tongTienTheoHoaDon(Long idhd);
 
 
     List<HoaDon> getDsHoaDon();

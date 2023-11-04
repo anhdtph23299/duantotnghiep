@@ -69,7 +69,7 @@ public class HoaDonServiceImpl implements HoaDonService {
             hoaDonChiTiet.setBienThe(bienThe);
             hoaDonChiTiet.setHoaDon(hoaDon);
             hoaDonChiTiet.setSoLuong(gioHangChiTiet.getSoLuong());
-            hoaDonChiTiet.setDonGia(BigDecimal.valueOf(bienThe.getGia()));
+            hoaDonChiTiet.setDonGia(bienThe.getGia());
             hoaDonChiTietRepository.save(hoaDonChiTiet);
             gioHangChiTiet.setTrangThai(0);
             gioHangChiTietRepo.save(gioHangChiTiet);
@@ -85,6 +85,11 @@ public class HoaDonServiceImpl implements HoaDonService {
     @Override
     public List<HoaDonChiTietResponse> dsHoaDonChiTietByIdHoaDon(Long idhd) {
         return hoaDonChiTietRepository.dsHoaDonChiTietByIdHoaDon(idhd);
+    }
+
+    @Override
+    public BigDecimal tongTienTheoHoaDon(Long idhd) {
+        return hoaDonRepository.tongTienByHoaDon(idhd);
     }
 
 

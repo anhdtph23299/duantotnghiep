@@ -45,7 +45,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Xác nhận</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="xacNhanDiaChi()">Xác nhận</button>
             </div>
         </div>
     </div>
@@ -135,7 +135,7 @@
                     <h5 class="font-weight-bold" id="tennguoinhan">Tuấn Anh <span id="sdt">0389478937</span> </h5>
                 </div>
                 <div class="col-7">
-                    <span id="diachi">Xóm ninh hoà, Xã Yên Trị, Huyện Yên Thủy, Hòa Bình, Vietnam </span><span style="border: 1px solid #C3817B; background-color: #C3817B; color: white">Mặc định</span>
+                    <span id="diachi">Xóm ninh hoà, Xã Yên Trị, Huyện Yên Thủy, Hòa Bình, Vietnam </span><span style="background-color: #C3817B; color: white" id="defaultdc">Mặc định</span>
                 </div>
                 <div class="col-1">
                     <button class="custom-button" data-bs-target="#btnalldiachi" data-bs-toggle="modal" style="border: none;background: none;padding: 0;cursor: pointer;color: blue;text-decoration: none;">Thay đổi</button>
@@ -279,10 +279,10 @@
                         </div>
                         <div class="col-7">
                             <h6>Nhanh</h6>
-                            <span>Nhận hàng vào 2 Th11 - 7 Th11</span>
+                            <span >Thời gian giao dự kiến <span id="thoigiandukien">2 Th11 - 7 Th11</span></span>
                         </div>
                         <div class="col-2">
-                            <span class="float-right">27500₫</span>
+                            <span class="float-right" id="sotiengiaohang">27500₫</span>
                         </div>
                     </div>
                     <div class="row my-3">
@@ -295,10 +295,10 @@
                 <div class="col-3">
                     <div class="row">
                         <div class="col-8">
-                            <span>Tổng số tiền (3 sản phẩm):</span>
+                            <span>Tổng số tiền (<span id="tongsanpham"></span> sản phẩm):</span>
                         </div>
                         <div class="col-4 text-right">
-                            <span>1.827.500₫</span>
+                            <span id="tongtienghct">1.827.500₫</span>
                         </div>
                     </div>
                 </div>
@@ -402,6 +402,7 @@
         return new bootstrap.Popover(popoverTriggerEl)
     })
     var idtt = -1;
+    var idkh = 1;
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -439,7 +440,7 @@
                     showSuccess(response.data);
                 },
                 error: function(xhr, status, error) {
-                    showError('Có lỗi xảy ra: ' + error);
+                    console.log('Có lỗi xảy ra: ' + error);
                 }
             });
     }
@@ -473,7 +474,7 @@
                 showSuccess(response.data);
             },
             error: function(xhr, status, error) {
-                showError('Có lỗi xảy ra: ' + error);
+                console.log('Có lỗi xảy ra: ' + error);
             }
         });
 
@@ -500,7 +501,7 @@
 
             },
             error: function(xhr, status, error) {
-                showError("Có lỗi xảy ra")
+                console.log("Có lỗi xảy ra")
             }
         });
     }
@@ -525,7 +526,7 @@
                 xa.trigger("change")
             },
             error: function(xhr, status, error) {
-                showError("Có lỗi xảy ra")
+                console.log("Có lỗi xảy ra")
             }
         });
     }
@@ -546,7 +547,6 @@
            method: 'GET',
            success: function(req) {
                var data = req.data;
-               console.log(data)
                $("#idttmuahang").html(data.id);
                $("#tennguoinhan").html(
                    `
@@ -555,9 +555,32 @@
                );
               // $("#sdt").html(data.sdt);
                $("#diachi").html(data.diaChi);
+               getSoTienVanChuyen(data.id);
            },
            error: function(xhr, status, error) {
-               showError("Có lỗi xảy ra")
+               console.log("Có lỗi xảy ra")
+           }
+       });
+   }
+   function xacNhanDiaChi() {
+       var value = $('input[name=diaChiNhanHang]:checked').val();
+       $.ajax({
+           url: '/api/user/ttgh/findThongTinMuaHangById/'+value,
+           method: 'GET',
+           success: async function (req) {
+               var data = req.data;
+               $("#idttmuahang").html(data.id);
+               $("#tennguoinhan").html(
+                   `
+                   \${data.tenNguoiNhan}(\${data.sdt})
+                   `
+               );
+               $("#defaultdc").html(data.trangThai);
+               getSoTienVanChuyen(data.id)
+
+           },
+           error: function(xhr, status, error) {
+               console.log("Có lỗi xảy ra")
            }
        });
    }
@@ -582,7 +605,7 @@
             });
         },
         error: function(xhr, status, error) {
-            showError("Có lỗi xảy ra")
+            console.log("Có lỗi xảy ra")
         }
     });
 
@@ -596,16 +619,33 @@
                 var data = req.data;
                 $("#tennguoinhanform").val(data.tenNguoiNhan);
                 $("#sdtform").val(data.sdt),
-                    $("#thanhpho").val(data.idThanhPho).change(),
+                    $("#thanhpho").val(data.idThanhPho).change()
                     await findHuyen(data.idThanhPho);
-                  $("#quanhuyen").val(data.idHuyen).change(),
+                  $("#quanhuyen").val(data.idHuyen).change()
                     await findXa(data.idHuyen);
-                    $("#xa").val(data.idXa).change(),
-                    $("#sonha").val(data.soNha),
+                    $("#xa").val(data.idXa).change()
+                    $("#sonha").val(data.soNha)
                     $("#defaultform").prop( "checked", data.macDinh )
             },
             error: function(xhr, status, error) {
-                showError("Có lỗi xảy ra")
+                console.log("Có lỗi xảy ra")
+            }
+        });
+    }
+    function convertMilisToDate(milis){
+        var date =  new Date(milis);
+        return date.getDay()+ " Th"+date.getMonth()
+    }
+    function getSoTienVanChuyen(idtt) {
+        $.ajax({
+            url: 'api/user/giaohang/phiship?idttgh='+idtt+'&idkh='+idkh,
+            method: 'GET',
+            success: async function (data) {
+               $("#thoigiandukien").text(convertMilisToDate(data.expected_delivery_time))
+                $("#sotiengiaohang").html(data.total_fee+"₫");
+            },
+            error: function(xhr, status, error) {
+                console.log("Có lỗi xảy ra")
             }
         });
     }
@@ -616,11 +656,13 @@
             success: function(req) {
                 var diachi = $("#alldiachi");
                 diachi.empty();
-                req.data.forEach(function (data){
+                var data=  req.data;
+                $("#tongsanpham").html(data.length);
+                data.forEach(function (data){
                     var html= `
            <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="diaChiNhanHang" value="\${data.id}" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">\${data.tenNguoiNhan}</span>
@@ -648,72 +690,83 @@
         });
     }
    dsthongtinmuahang();
-    // function ghct(){
-    //     $.ajax({
-    //         url: '/api/user/ghct/'+1,
-    //         method: 'GET',
-    //         success: function(req) {
-    //             var data = req.data;
-    //
-    //             var tbody =$("#tblcheckout tbody");
-    //             tbody.empty();
-    //             data.forEach(function (custom){
-    //                 var idgh = custom.gioHangChiTietId.idGioHang;
-    //                 var sp = custom.sanPham;
-    //                 var html = `
-    //                     <div class="col-5">
-    //                         <div class="mb-3">
-    //                             <div class="row g-0">
-    //                                 <div class="col-md-2">
-    //                                     <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
-    //                                 </div>
-    //                                 <div class="col-md-10">
-    //                                     <div class="card-body">
-    //                                         <h6 class="card-title">Áo polo nam aelimited</h6>
-    //                                     </div>
-    //                                 </div>
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                     <div class="col-2 mt-3">
-    //                         <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
-    //                     </div>
-    //                     <div class="col-2 mt-3">
-    //                         <h6 class="card-title">300000</h6>
-    //                     </div>
-    //                     <div class="col-2 mt-3">
-    //                         <h6 class="card-title">2</h6>
-    //                     </div>
-    //                     <div class="col-1 mt-3">
-    //                         <h6 class="card-title">600000</h6>
-    //                     </div>
-    //                     </div>
+    function ghct(){
+        $.ajax({
+            url: '/api/user/giaohang/hdct/'+idkh,
+            method: 'GET',
+            success: function(req) {
+                var data = req.data;
+                var tbody =$("#hdct");
+                tbody.empty();
+                tongTienTheoHoaDon(data[0].idhd);
+                data.forEach(function (custom){
+                    var html = `
+                        <div class="row mt-3" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-2">
+                                    <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body">
+                                        <h6 class="card-title">\${custom.tenSanPham}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mt-3">
+                        <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: \${custom.tenBienThe}</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">\${custom.giaTien}</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">\${custom.soLuong}</h6>
+                    </div>
+                    <div class="col-1 mt-3">
+                        <h6 class="card-title">\${custom.tongTien}</h6>
+                    </div>
+                </div>
+                    `;
+                    tbody.append(html);
+                })
 
-    //                 `;
-    //                 tbody.append(html);
-    //             })
-    //
-    //         },
-    //         error: function(xhr, status, error) {
-    //             alert('Có lỗi xảy ra: ' + error);
-    //         }
-    //     });
-    // }
-    //
-    //     $.ajax({
-    //         url: '/api/user/ghct/subtotal/'+1,
-    //         method: 'GET',
-    //         success: function(req) {
-    //             var data = req.data;
-    //           //  $("#subtotal").html(convertVND(data));
-    //             $("#total").html(convertVND(data))
-    //             $("#totaldola").html(formatter.format(data/24570));
-    //             $("#pricethanhtoan").val(data/24570);
-    //         },
-    //         error: function(xhr, status, error) {
-    //             alert('Có lỗi xảy ra: ' + error);
-    //         }
-    //     });
-    //
-    // ghct()
+            },
+            error: function(xhr, status, error) {
+                console.log('Có lỗi xảy ra: ' + error);
+            }
+        });
+    }
+
+        // $.ajax({
+        //     url: '/api/user/ghct/subtotal/'+1,
+        //     method: 'GET',
+        //     success: function(req) {
+        //         var data = req.data;
+        //       //  $("#subtotal").html(convertVND(data));
+        //         $("#total").html(convertVND(data))
+        //         $("#totaldola").html(formatter.format(data/24570));
+        //         $("#pricethanhtoan").val(data/24570);
+        //     },
+        //     error: function(xhr, status, error) {
+        //         alert('Có lỗi xảy ra: ' + error);
+        //     }
+        // });
+
+    function tongTienTheoHoaDon(idhd){
+        console.log(idhd)
+        $.ajax({
+            url: 'api/user/giaohang/tongtienhd/'+idhd,
+            method: 'GET',
+            success: function (req) {
+                $("#tongtienghct").html(req.data+"₫");
+            },
+            error: function(xhr, status, error) {
+                console.log("Có lỗi xảy ra")
+            }
+        });
+    }
+    ghct()
 </script>

@@ -4,6 +4,8 @@ import com.laptrinhjavaweb.model.datarq.ApiResponse;
 import com.laptrinhjavaweb.model.datarq.PreviewGiaoHang;
 import com.laptrinhjavaweb.model.request.ThongTinDatHangRequest;
 import com.laptrinhjavaweb.service.GiaoHangService;
+import com.laptrinhjavaweb.service.HoaDonService;
+import com.laptrinhjavaweb.util.base.ResponseObject;
 import com.laptrinhjavaweb.util.convertjson.ConvertJson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +17,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,12 +26,15 @@ import org.springframework.web.client.RestTemplate;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/api/admin/giaohang")
+@RequestMapping("/api/user/giaohang")
 @CrossOrigin(origins = "*")
 public class ApiGiaoHangController {
 
     @Autowired
     private GiaoHangService giaoHangService;
+
+    @Autowired
+    private HoaDonService hoaDonService;
     @Value("${tokenghn.string}")
     private String tokenghn;
     @Value("${urlgiaohang.string}")
@@ -36,10 +42,9 @@ public class ApiGiaoHangController {
 
     RestTemplate restTemplate = new RestTemplate();
 
-  //  @Value("${diachibuucuc.string}")
 
 
-    HttpHeaders getHeader (){
+    private HttpHeaders getHeader (){
         HttpHeaders headers = new HttpHeaders();
         headers.set("Token", tokenghn);
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -47,8 +52,8 @@ public class ApiGiaoHangController {
     }
 
     @GetMapping("/phiship")
-    public ResponseEntity<Object> phiShip(@RequestParam(name = "idttgh") Long idttgh,
-                                          @RequestParam(name = "idkh") Long idkh) throws IOException {
+    public ResponseEntity<?> phiShip(@RequestParam(name = "idttgh") Long idttgh,
+                                          @RequestParam(name = "idkh") Long idkh){
         final String uri = urlGiaoHang + "/preview";
 
         // Tạo HttpHeaders và đặt các header
@@ -70,6 +75,15 @@ public class ApiGiaoHangController {
     }
 
 
+    @GetMapping("/hdct/{idkh}")
+    public ResponseObject getHoaDonChiTiet(@PathVariable(name = "idkh")Long idkh){
+        return new ResponseObject(giaoHangService.dsHoaDonChiTiet(idkh));
+    }
+
+    @GetMapping("/tongtienhd/{idhd}")
+    public ResponseObject tongTienTheoHoaDon(@PathVariable(name = "idhd")Long idhd){
+        return new ResponseObject(hoaDonService.tongTienTheoHoaDon(idhd));
+    }
 //    @GetMapping("/preview")
 //    public ResponseEntity<Object> preview() throws IOException {
 //        final String uri = urlGiaoHang + "/preview";

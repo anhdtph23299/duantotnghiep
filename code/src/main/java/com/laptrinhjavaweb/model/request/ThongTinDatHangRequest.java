@@ -22,6 +22,14 @@ public class ThongTinDatHangRequest {
     // 2: Người mua/Người nhận.
 
     private Long payment_type_id;     // Loại thanh toán
+
+    public void setNguoiThanhToan(String nguoiThanhToan){
+        if (nguoiThanhToan.equals("CUAHANG")){
+            payment_type_id=1L;
+        }else{
+            payment_type_id=2L;
+        }
+    }
     private String note;             // Ghi chú
 
     // CHOTHUHANG, CHOXEMHANGKHONGTHU, KHONGCHOXEMHANG
@@ -60,6 +68,7 @@ public class ThongTinDatHangRequest {
         to_province_name= arrDiaChi[1];
         to_district_name= arrDiaChi[2];
         to_ward_name= arrDiaChi[3];
+        to_phone = soDienThoai;
         to_name= tenNguoiNhan;
         to_address = diaChi;
     }

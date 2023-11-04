@@ -26,7 +26,7 @@ public class GiaoHangServiceImpl implements GiaoHangService {
 
     private ThongTinDatHangRequest getThongTinDatHangRequest (List<SanPhamGhnApi> dssp,ThongTinMuaHangResponse ttmh){
         ThongTinDatHangRequest request = ThongTinDatHangRequest.builder()
-                .payment_type_id(2L)
+              //  .payment_type_id(2L)
                 .note("Chuyển khoản")
                 .required_note("KHONGCHOXEMHANG")
                 .client_order_code("")
@@ -46,6 +46,7 @@ public class GiaoHangServiceImpl implements GiaoHangService {
         request.setDiaChiNguoiGui(diaChiBuuCuc);
         request.setDsSanPham(dssp);
         request.setNguoiNhan(ttmh.getDiaChi(),ttmh.getSdt(),ttmh.getTenNguoiNhan());
+        request.setNguoiThanhToan("NguoiNhan");
         return request;
     }
    private List<SanPhamGhnApi> getListSanPhamGhn(List<HoaDonChiTietResponse> dsHdct){
@@ -58,12 +59,20 @@ public class GiaoHangServiceImpl implements GiaoHangService {
     }
     @Override
     public ThongTinDatHangRequest getThongTinDatHang(Long idttdathang,Long idkh) {
-        HoaDon hoaDon = hoaDonService.findHoaDonMoiDat(idkh);
-        List<HoaDonChiTietResponse> dsHdct = hoaDonService.dsHoaDonChiTietByIdHoaDon(hoaDon.getId());
+        List<HoaDonChiTietResponse> dsHdct = dsHoaDonChiTiet(idkh);
         ThongTinMuaHangResponse thongTinMuaHang = thongTinMuaHangService.findThongTinMuaHangById(idttdathang);
         List<SanPhamGhnApi> sanPhamGhnApiList = getListSanPhamGhn(dsHdct);
         ThongTinDatHangRequest request = getThongTinDatHangRequest(sanPhamGhnApiList,thongTinMuaHang);
-        request.setTo_phone("0325808823");
+      //  request.setTo_phone("0325808823");
         return request;
     }
+
+    @Override
+    public List<HoaDonChiTietResponse> dsHoaDonChiTiet(Long idkh) {
+        HoaDon hoaDon = hoaDonService.findHoaDonMoiDat(idkh);
+        List<HoaDonChiTietResponse> dsHdct = hoaDonService.dsHoaDonChiTietByIdHoaDon(hoaDon.getId());
+        return dsHdct;
+    }
+
+
 }

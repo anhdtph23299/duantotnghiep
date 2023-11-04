@@ -18,7 +18,7 @@ public interface HoaDonChiTietResponse {
     Long getIdHoaDon();
 
     @Value("#{target.bienThe.id}")
-    Long getIdSanPhamThuocTinh();
+    Long getIdBienThe();
 
     @Value("#{target.soLuong}")
     Integer getSoLuong();
@@ -34,4 +34,7 @@ public interface HoaDonChiTietResponse {
     BigDecimal getTongTien();
     @Value("#{target.bienThe.sanphams.ten}")
     String getTenSanPham();
+
+    @Value("#{target.hoaDon.id}")
+    Long getIdhd();
 }

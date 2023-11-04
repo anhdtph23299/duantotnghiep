@@ -50,6 +50,7 @@ public class ThongTinMuaHang extends PrimaryEntity {
         return trangThai==2;
     }
 
+
     @ManyToOne
     @JoinColumn(name = "idkh", referencedColumnName = "id")
     private KhachHang khachHang;

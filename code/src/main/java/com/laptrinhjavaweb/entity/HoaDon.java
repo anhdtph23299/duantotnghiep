@@ -7,6 +7,8 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
@@ -36,6 +38,9 @@ public class HoaDon extends PrimaryEntity {
     @ManyToOne
     @JoinColumn(name = "idttmuahang")
     private ThongTinMuaHang thongTinMuaHang;
+
+    @OneToMany
+    private List<HoaDonChiTiet> dsHoaDonChiTiet;
 
     @JsonProperty("getTrangThaiHD")
     public String getTrangThaiHD() {
