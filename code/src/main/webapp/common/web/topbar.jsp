@@ -20,6 +20,8 @@
             </form>
         </div>
         <div class="col-lg-3 col-6 text-right">
+            <a href="?lang=vi" class="btn border" >Việt</a>
+            <a href="?lang=en" class="btn border" >Anh</a>
             <a href="" class="btn border">
                 <i class="fas fa-heart text-primary"></i>
                 <span class="badge">0</span>
@@ -32,3 +34,17 @@
     </div>
 </div>
 <!-- Topbar End -->
+<script>
+    $(document).ready(function() {
+        $("a[href*=lang]").on("click", function() {
+            var param = $(this).attr("href");
+            $.ajax({
+                url : "/trang-chu" + param,
+                success : function() {
+                    location.reload();
+                }
+            });
+            return false;
+        })
+    })
+</script>

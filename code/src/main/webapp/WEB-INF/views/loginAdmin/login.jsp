@@ -68,14 +68,19 @@
                             </div>
                             <!-- End Form Group -->
 
-                            <!-- Checkbox -->
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox">
-                                    <label class="custom-control-label text-muted" for="termsCheckbox"> Remember me</label>
+                            <div class="d-flex justify-content-between">
+                                <!-- Checkbox -->
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox">
+                                        <label class="custom-control-label text-muted" for="termsCheckbox"> Remember me</label>
+                                    </div>
+                                </div>
+                                <!-- End Checkbox -->
+                                <div>
+                                    <a href="/dashboard/changePass" class="text-decoration-none">Forgot Password</a>
                                 </div>
                             </div>
-                            <!-- End Checkbox -->
 
                             <button type="submit" class="btn btn-lg btn-block btn-primary">Sign in</button>
                         </form>

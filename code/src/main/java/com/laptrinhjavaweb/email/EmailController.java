@@ -32,4 +32,15 @@ public class EmailController {
             return ResponseEntity.badRequest().body("Thất bại");
         }
     }
+
+//    @PostMapping("/resetPassword")
+//    public ResponseEntity<String> resetPassword(@RequestParam String email, @RequestParam String code, @RequestParam String password) {
+//        // Gọi phương thức trong service để xử lý logic đặt lại mật khẩu
+//        String result = nhanVienService.resetPassword(email, code, password);
+//        if ("success".equals(result)) {
+//            return ResponseEntity.ok("Mật khẩu đã được đặt lại thành công.");
+//        } else {
+//            return ResponseEntity.badRequest().body(result);
+//        }
+//    }
 }

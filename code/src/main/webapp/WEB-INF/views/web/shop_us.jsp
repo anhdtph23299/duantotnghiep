@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@include file="/common/taglib.jsp" %>
 <!doctype html>
 <html lang="en">
@@ -29,9 +30,8 @@
 </div>
 <div class="container-fluid pt-5">
     <div class="text-center mb-4">
-        <h2 class="section-title px-5"><span class="px-2">Information About The Store</span></h2>
-        <h5 class="text-uppercase my-5">First of all, King Of Clothes would like to deeply thank customers who have
-            visited our shop and used our services in the past.
+        <h2 class="section-title px-5"><span class="px-2"><s:message code="web.shop.thongtin" /></span></h2>
+        <h5 class="text-uppercase my-5"><s:message code="web.shop.thongtin1" />
         </h5>
     </div>
     <div class="row px-xl-5">
@@ -43,12 +43,8 @@
 
         <div class="row px-xl-5 mt-4">
             <div class="col-lg-6 col-md-12 pb-1 ">
-                <h3>THE ORIGIN </h3>
-                <p>King Of Clothing is a genuine men's clothing brand established in 2020. To date, the brand has made
-                    its mark on the market and is highly appreciated for its professional service standards, high
-                    quality products, diverse designs. Form and update trends quickly. Up to now, despite his young age,
-                    Hiddle has achieved remarkable achievements. In the first half of 2021 alone, the number of products
-                    sold on King Of Clothing's Shopee e-commerce platform has exceeded 2,000 products.</p>
+                <h3><s:message code="web.shop.thongtin2" /></h3>
+                <p><s:message code="web.shop.thongtin3" /></p>
             </div>
             <div class="col-lg-6 col-md-12 ">
                 <div class="row">
@@ -67,20 +63,14 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 pb-1 ">
-                <h3>OUR MISSION</h3>
-                <p>With the mission of bringing perfect looks to Vietnamese men, King Of Clothing has been gradually
-                    perfecting and improving its quality and services. We understand that only creativity can take
-                    fashion far. At the same time, we constantly strive to improve product quality and customer service
-                    to bring the best shopping experience to customers.</p>
+                <h3><s:message code="web.shop.thongtin4" /></h3>
+                <p><s:message code="web.shop.thongtin5" /></p>
             </div>
         </div>
         <div class="row px-xl-5 mt-5">
             <div class="col-lg-6 col-md-12 pb-1 ">
-                <h3>BRAND<br>
-                    GENUINE MEN'S CLOTHING</h3>
-                <p>KOC is proud to be a Vietnamese fashion brand with shirt forms designed based on the body shape of
-                    Vietnamese men. We were born with the desire to spread the beauty of Vietnamese style, a beauty that
-                    is unique, luxurious and harmoniously combined with world fashion.</p>
+                <h3><s:message code="web.shop.thongtin6" /></h3>
+                <p><s:message code="web.shop.thongtin7" /></p>
             </div>
             <div class="col-lg-6 col-md-12 ">
                 <div class="row">
@@ -94,7 +84,7 @@
 </div>
 <div class="container-fluid pt-5">
     <div class="text-center my-5">
-        <h2 class="section-title px-5"><span class="px-2">Why Choose Us</span></h2>
+        <h2 class="section-title px-5"><span class="px-2"><s:message code="web.shop.thongtin8" /></span></h2>
     </div>
     <div class="row px-xl-5">
         <div class="col-lg-3 col-md-6 col-sm-12 p-2">
@@ -169,7 +159,7 @@
 
 <div class="container-fluid py-5">
     <div class="text-center mb-4">
-        <h2 class="section-title px-5"><span class="px-2">Our Team</span></h2>
+        <h2 class="section-title px-5"><span class="px-2"><s:message code="web.shop.thongtin9" /></span></h2>
     </div>
     <div class="row px-xl-5">
         <div class="col">
@@ -545,7 +535,7 @@
 
 <div class="container-fluid pt-5">
     <div class="text-center my-5">
-        <h2 class="section-title px-5"><span class="px-2">Our Store Address</span></h2>
+        <h2 class="section-title px-5"><span class="px-2"><s:message code="web.shop.thongtin10" /></span></h2>
     </div>
     <div class="row px-xl-5">
         <div class="col-12">

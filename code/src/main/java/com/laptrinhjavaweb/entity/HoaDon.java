@@ -17,15 +17,28 @@ import java.util.Date;
 @ToString
 @Table(name = "hoadon")
 public class HoaDon extends PrimaryEntity {
+
+    @Column(name = "mahoadon")
+    private String maHoaDon;
+
     @Column(name = "ngaytao")
     private Date ngayDat=new Date();
 
-    @Column(name = "ngaythanhtoan")
-    private Date ngayThanhToan;
-   @Column(name = "phuongthucthanhtoan")
-    private Integer PhuongThucThanhToan;
     @Column(name = "tgdukiengh")
     private Date thoiGianDuKienGiaoHang;
+
+    @Column(name = "ngaythanhtoan")
+    private Date ngayThanhToan;
+
+    @Column(name = "ngaynhanhang")
+    private Date ngayNhanHang;
+
+    @Column(name = "mota")
+    private String moTa;
+
+    @Column(name = "phuongthucthanhtoan")
+    private Integer PhuongThucThanhToan;
+
     @Column(name = "trangthai")
     private Integer trangThai=1;
 
@@ -36,6 +49,14 @@ public class HoaDon extends PrimaryEntity {
     @ManyToOne
     @JoinColumn(name = "idttmuahang")
     private ThongTinMuaHang thongTinMuaHang;
+
+    @ManyToOne
+    @JoinColumn(name = "idnv")
+    private NhanVien nhanVien;
+
+    @ManyToOne
+    @JoinColumn(name = "idkm")
+    private KhuyenMai khuyenMai;
 
     @JsonProperty("getTrangThaiHD")
     public String getTrangThaiHD() {

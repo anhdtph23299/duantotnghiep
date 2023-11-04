@@ -25,25 +25,44 @@
 
 <div class="container-fluid py-5">
     <div class="row px-xl-5">
-        <div class="col-lg-5 pb-5">
-            <img class="w-100" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="row">
+            <img src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
+            </div>
             <div class="row mt-3">
-                <div class="col-3">
-                    <img class="w-100" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
-                </div>
-                <div class="col-3">
-                    <img class="w-100" src="<c:url value='/template/web/img/anh3.png'/>" alt="Image">
-                </div>
-                <div class="col-3">
-                    <img class="w-100" src="<c:url value='/template/web/img/anh1.png'/>" alt="Image">
-                </div>
-                <div class="col-3">
-                    <img class="w-100" src="<c:url value='/template/web/img/anh4.png'/>" alt="Image">
-                </div>
+                    <div class="col">
+                        <div class="owl-carousel related-carousel">
+                            <div class="card product-item border-0">
+                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                    <img class="img-fluid w-100" src="<c:url value='/template/web/img/product-1.jpg'/>" alt="">
+                                </div>
+                            </div>
+                            <div class="card product-item border-0">
+                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                    <img class="img-fluid w-100" src="<c:url value='/template/web/img/anh2.png'/>" alt="">
+                                </div>
+                            </div>
+                            <div class="card product-item border-0">
+                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                    <img class="img-fluid w-100" src="<c:url value='/template/web/img/anh3.png'/>" alt="">
+                                </div>
+                            </div>
+                            <div class="card product-item border-0">
+                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                    <img class="img-fluid w-100" src="<c:url value='/template/web/img/anh1.png'/>" alt="">
+                                </div>
+                            </div>
+                            <div class="card product-item border-0">
+                                <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                                    <img class="img-fluid w-100" src="<c:url value='/template/web/img/anh4.png'/>" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
 
-        <div class="col-lg-7 pb-5 ">
+        <div class="col-lg-7 col-md-7 col-sm-12">
             <div class="khung">
                 <h3 class="font-weight-semi-bold">Áo polo nam aelimited</h3>
                 <div class="d-flex mb-3">
@@ -202,25 +221,33 @@
                         <small>Your email address will not be published. Required fields are marked *</small>
                         <div class="d-flex my-3">
                             <p class="mb-0 mr-2">Your Rating * :</p>
-                            <div class="text-primary">
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i><i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
+                            <div class="rating">
+                                <input type="radio" id="star-1" name="star-radio" value="star-1">
+                                <label for="star-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
+                                <input type="radio" id="star-2" name="star-radio" value="star-1">
+                                <label for="star-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
+                                <input type="radio" id="star-3" name="star-radio" value="star-1">
+                                <label for="star-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
+                                <input type="radio" id="star-4" name="star-radio" value="star-1">
+                                <label for="star-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
+                                <input type="radio" id="star-5" name="star-radio" value="star-1">
+                                <label for="star-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
                             </div>
                         </div>
                         <form>
                             <div class="form-group">
                                 <label for="message">Your Review *</label>
                                 <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Your Name *</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email *</label>
-                                <input type="email" class="form-control" id="email">
                             </div>
                             <div class="form-group mb-0">
                                 <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
