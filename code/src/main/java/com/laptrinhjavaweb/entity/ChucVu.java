@@ -4,9 +4,9 @@ import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,4 +27,7 @@ public class ChucVu extends PrimaryEntity {
 
     @Column(name = "trangthai")
     private Integer trangThai;
+
+    @OneToMany(mappedBy = "chucVu", fetch = FetchType.LAZY)
+    private List<NhanVien> nhanVienEntities = new ArrayList<>();
 }

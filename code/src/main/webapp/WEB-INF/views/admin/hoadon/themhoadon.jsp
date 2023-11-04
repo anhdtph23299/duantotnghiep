@@ -11,6 +11,78 @@
     <title>Thêm Hóa Đơn</title>
 </head>
 <body>
+<<<<<<< HEAD
+=======
+<%--xem chi tiết--%>
+<div class="offcanvas offcanvas-end w-50" style="border-bottom-left-radius: 30px;border-top-left-radius: 30px " data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+    <div class="offcanvas-header mt-3 ms-3">
+        <h4 class="offcanvas-title font-weight-bold" id="staticBackdropLabel">Áo polo nam aelimited</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="row">
+            <nav class="mt-3">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist" style="font-size: 20px">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Thông tin chung</button>
+                    <button class="nav-link ms-3" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Mô tả sản phẩm</button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <img src="/template/web/img/anh2.png" class="img-fluid" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row p-2">
+                                <div class="col-3">
+                                    <h5>Giá bán:</h5>
+                                </div>
+                                <div class="col-9">
+                                    <h4 class="text-cyan">250,000</h4>
+                                </div>
+                            </div>
+                            <div class="row mt-3" style="border-bottom: 1px solid #dedede; padding: 10px">
+                                <div class="col-3">
+                                    <h5>Số lượng:</h5>
+                                </div>
+                                <div class="col-3">
+                                    <div class="input-group">
+                                        <button class="btn text-light " style="background-color: #EB8153"><i
+                                                class="fa fa-minus"></i></button>
+                                        <input type="text" class="form-control" style="text-align: center" value="1">
+                                        <button class="btn text-light " style="background-color: #EB8153"><i
+                                                class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <h5><span>Tồn: 101</span> <span class="ms-4">| Có thể bán: 101</span></h5>
+                                </div>
+                            </div>
+                            <div class="row mt-3" style="border-bottom: 1px solid #dedede; padding: 10px">
+                                <h5>Thương hiệu: </h5>
+                            </div>
+                            <div class="row mt-3" style="border-bottom: 1px solid #dedede; padding: 10px">
+                                <h5>Vị trí: </h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0"></div>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-footer">
+            <div class="row p-5">
+                <div class="text-right">
+                    <button class="btn btn-light me-3 " data-bs-dismiss="offcanvas" aria-label="Close" style="border: 1px solid #dedede; font-size: 22px; border-radius: 10px ">Bỏ qua</button>
+                    <button class="btn text-light " data-bs-dismiss="offcanvas" aria-label="Close" style="background-color: #EB8153;font-size: 22px; border-radius: 10px">Xong</button>
+                </div>
+            </div>
+    </div>
+</div>
+>>>>>>> thanh
 <section>
     <div class="content-body" style="background-color: #f2eded">
         <div class="container-fluid">
@@ -343,10 +415,17 @@
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số lượng</span>
+<<<<<<< HEAD
                                             <div class="input-group ">
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-minus"></i></button>
                                                 <input type="text" class="form-control" value="2">
+=======
+                                            <div class="input-group w-75">
+                                                <button class="btn text-light " style="background-color: #EB8153"><i
+                                                        class="fa fa-minus"></i></button>
+                                                <input type="text" class="form-control" style="text-align: center" value="2">
+>>>>>>> thanh
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-plus"></i></button>
                                             </div>
@@ -384,8 +463,13 @@
                                                 </svg>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right">
+<<<<<<< HEAD
                                                 <a class="dropdown-item" href="javascript:void(0);">Xóa</a>
                                                 <a class="dropdown-item" href="javascript:void(0);">Xem chi tiết</a>
+=======
+                                                <a class="dropdown-item" href="">Xóa</a>
+                                                <a class="dropdown-item" href="" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">Xem chi tiết</a>
+>>>>>>> thanh
                                             </div>
                                         </div>
                                     </div>
@@ -425,10 +509,17 @@
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số lượng</span>
+<<<<<<< HEAD
                                             <div class="input-group">
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-minus"></i></button>
                                                 <input type="text" class="form-control" value="2">
+=======
+                                            <div class="input-group w-75">
+                                                <button class="btn text-light " style="background-color: #EB8153"><i
+                                                        class="fa fa-minus"></i></button>
+                                                <input type="text" class="form-control" style="text-align: center" value="2">
+>>>>>>> thanh
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-plus"></i></button>
                                             </div>
@@ -507,10 +598,17 @@
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số lượng</span>
+<<<<<<< HEAD
                                             <div class="input-group ">
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-minus"></i></button>
                                                 <input type="text" class="form-control" value="2">
+=======
+                                            <div class="input-group w-75">
+                                                <button class="btn text-light " style="background-color: #EB8153"><i
+                                                        class="fa fa-minus"></i></button>
+                                                <input type="text" class="form-control" style="text-align: center" value="2">
+>>>>>>> thanh
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-plus"></i></button>
                                             </div>
@@ -589,10 +687,17 @@
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số lượng</span>
+<<<<<<< HEAD
                                             <div class="input-group ">
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-minus"></i></button>
                                                 <input type="text" class="form-control" value="1">
+=======
+                                            <div class="input-group w-75">
+                                                <button class="btn text-light " style="background-color: #EB8153"><i
+                                                        class="fa fa-minus"></i></button>
+                                                <input type="text" class="form-control" style="text-align: center" value="1">
+>>>>>>> thanh
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-plus"></i></button>
                                             </div>
@@ -671,10 +776,17 @@
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số lượng</span>
+<<<<<<< HEAD
                                             <div class="input-group ">
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-minus"></i></button>
                                                 <input type="text" class="form-control" value="3">
+=======
+                                            <div class="input-group w-75">
+                                                <button class="btn text-light " style="background-color: #EB8153"><i
+                                                        class="fa fa-minus"></i></button>
+                                                <input type="text" class="form-control" style="text-align: center" value="3">
+>>>>>>> thanh
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-plus"></i></button>
                                             </div>
@@ -753,10 +865,17 @@
                                     <div class="d-flex align-items-center">
                                         <div class="ml-2">
                                             <span>Số lượng</span>
+<<<<<<< HEAD
                                             <div class="input-group ">
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-minus"></i></button>
                                                 <input type="text" class="form-control" value="1">
+=======
+                                            <div class="input-group w-75">
+                                                <button class="btn text-light " style="background-color: #EB8153"><i
+                                                        class="fa fa-minus"></i></button>
+                                                <input type="text" class="form-control" style="text-align: center" value="1">
+>>>>>>> thanh
                                                 <button class="btn text-light " style="background-color: #EB8153"><i
                                                         class="fa fa-plus"></i></button>
                                             </div>

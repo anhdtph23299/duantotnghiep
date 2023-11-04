@@ -29,6 +29,9 @@ public class KhachHang  extends PrimaryEntity {
     @Column(name = "tenkh")
     private String tenKH;
 
+    @Column(name = "matkhau")
+    private String matKhau;
+
     @NotBlank(message = "Số điện thoai không được để trống")
     @Column(name = "sdt")
     private String sdt;

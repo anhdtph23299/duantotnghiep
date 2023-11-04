@@ -1,11 +1,10 @@
 package com.laptrinhjavaweb.service.serviceimpl;
 
-import com.laptrinhjavaweb.entity.BienTheEntity;
+import com.laptrinhjavaweb.entity.BienThe;
 import com.laptrinhjavaweb.entity.GioHangChiTiet;
 import com.laptrinhjavaweb.entity.HoaDon;
 import com.laptrinhjavaweb.entity.HoaDonChiTiet;
 import com.laptrinhjavaweb.entity.KhachHang;
-import com.laptrinhjavaweb.entity.ThongTinMuaHang;
 import com.laptrinhjavaweb.model.response.HoaDonChiTietResponse;
 import com.laptrinhjavaweb.repository.BienTheRepository;
 import com.laptrinhjavaweb.repository.GioHangChiTietRepository;
@@ -62,7 +61,7 @@ public class HoaDonServiceImpl implements HoaDonService {
 //                return new ResponseObject("Có lỗi xảy ra khi không tìm thấy sản phẩm trong giỏ hàng");
 //            }
 
-            BienTheEntity bienThe = bienTheRepository.findById(gioHangChiTiet.getId()).orElse(null);
+            BienThe bienThe = bienTheRepository.findById(gioHangChiTiet.getId()).orElse(null);
 //            if (bienThe==null){
 //                return new ResponseObject("Có lỗi xảy ra khi không tìm thấy biến thể này");
 //            }

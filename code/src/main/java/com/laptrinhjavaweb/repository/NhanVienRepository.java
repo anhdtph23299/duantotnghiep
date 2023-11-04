@@ -1,3 +1,4 @@
+
 package com.laptrinhjavaweb.repository;
 
 import com.laptrinhjavaweb.entity.NhanVien;
@@ -7,6 +8,8 @@ import java.util.List;
 
 public interface NhanVienRepository extends JpaRepository<NhanVien, Long> {
 
-    List<NhanVien> findByMaNVContainingOrTenNVContainingOrEmailContainingOrSdtContaining(String maNV, String tenNV, String email, String sdt);
+    NhanVien findByMaNVAndTrangThai(String maNhanVien, int status);
 
+    List<NhanVien> findByMaNVContainingOrTenNVContainingOrEmailContainingOrSdtContaining(String maNV, String tenNV, String email, String sdt);
 }
+

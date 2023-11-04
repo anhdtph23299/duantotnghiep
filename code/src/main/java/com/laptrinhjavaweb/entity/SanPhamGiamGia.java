@@ -19,7 +19,7 @@ public class SanPhamGiamGia extends PrimaryEntity {
 
     @ManyToOne
     @JoinColumn(name = "idsanpham",insertable = false,updatable = false)
-    private SanPhamEntity sanPhamThuocTinh;
+    private SanPham sanPhamThuocTinh;
 
     @ManyToOne
     @JoinColumn(name = "idkhuyenmai",insertable = false,updatable = false)

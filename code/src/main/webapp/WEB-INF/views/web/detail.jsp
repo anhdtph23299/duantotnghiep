@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: asus
-  Date: 10/31/2023
-  Time: 1:15 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="/common/taglib.jsp" %>
 <html>
@@ -25,13 +18,22 @@
 
 <div class="container-fluid py-5">
     <div class="row px-xl-5">
-        <div class="col-lg-5 pb-5">
-            <img class="w-100 h-100" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
+        <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="row">
+                <img class="product-image-primary" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="owl-carousel related-carousel product-list-images">
+
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="col-lg-7 pb-5 ">
+        <div class="col-lg-7 col-md-7 col-sm-12">
             <div class="khung">
-                <h3 class="font-weight-semi-bold">Áo polo nam aelimited</h3>
+                <h3 class="font-weight-semi-bold product-name">Áo polo nam aelimited</h3>
                 <div class="d-flex mb-3">
                     <div class="text-primary mr-2">
                         <small class="fas fa-star"></small>
@@ -43,60 +45,10 @@
                     <small class="pt-1">(50 Reviews)</small>
                 </div>
                 <h3 class="font-weight-semi-bold mb-4">$150.00</h3>
-                <div class="d-flex mb-3">
-                    <p class="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
-                    <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-1" name="size">
-                            <label class="custom-control-label" for="size-1">S</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-2" name="size">
-                            <label class="custom-control-label" for="size-2">M</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-3" name="size">
-                            <label class="custom-control-label" for="size-3">L</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline"><input type="radio" class="custom-control-input" id="size-4" name="size">
-                            <label class="custom-control-label" for="size-4">XL</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="size-5" name="size">
-                            <label class="custom-control-label" for="size-5">XXL</label>
-                        </div>
-                    </form>
+                <div class="product-attribute">
+
                 </div>
-                <div class="d-flex mb-4">
-                    <p class="text-dark font-weight-medium mb-0 mr-3">Colors:</p>
-                    <form>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-1" name="color">
-                            <label class="custom-control-label" for="color-1">Black</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-2" name="color">
-                            <label class="custom-control-label" for="color-2">White</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-3" name="color">
-                            <label class="custom-control-label" for="color-3">Red</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-4" name="color">
-                            <label class="custom-control-label" for="color-4">Blue</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" class="custom-control-input" id="color-5" name="color">
-                            <label class="custom-control-label" for="color-5">Green</label>
-                        </div>
-                    </form>
-                </div>
-                <div class="d-flex pt-2 mb-4">
-                    <img src="/template/web/img/anh2.png" width="70px"  alt="">
-                    <img src="/template/web/img/anh3.png" width="70px" class="ms-2" alt="">
-                    <img src="/template/web/img/anh4.png" width="70px" class="ms-2" alt="">
-                </div>
+
                 <div class="d-flex align-items-center pt-2 mb-4">
                     <p class="text-dark font-weight-medium mb-0 mr-3">Quantity:</p><div class="input-group quantity mr-3" style="width: 130px;">
                     <div class="input-group-btn">
@@ -122,7 +74,7 @@
 
             <div class="khung mt-4">
                 <h5>Mô tả sản phẩm</h5>
-                <span>Áo thun polo nam thể thao LADOS - 9080 cổ bẻ, chất liệu vải thun lạnh mát mẻ, kiểu dáng DRI-FIT
+                <span class="product-description">Áo thun polo nam thể thao LADOS - 9080 cổ bẻ, chất liệu vải thun lạnh mát mẻ, kiểu dáng DRI-FIT
                 Chất liệu: Vải poli lanh, vải thoáng khí mát mẻ
                 Co giãn tốt, mặc cực thoải mái, thấm hút mồ hôi tốt
                 Chất vải đẹp, đứng form áo
@@ -193,25 +145,33 @@
                         <small>Your email address will not be published. Required fields are marked *</small>
                         <div class="d-flex my-3">
                             <p class="mb-0 mr-2">Your Rating * :</p>
-                            <div class="text-primary">
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i><i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
+                            <div class="rating">
+                                <input type="radio" id="star-1" name="star-radio" value="star-1">
+                                <label for="star-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
+                                <input type="radio" id="star-2" name="star-radio" value="star-1">
+                                <label for="star-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
+                                <input type="radio" id="star-3" name="star-radio" value="star-1">
+                                <label for="star-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
+                                <input type="radio" id="star-4" name="star-radio" value="star-1">
+                                <label for="star-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
+                                <input type="radio" id="star-5" name="star-radio" value="star-1">
+                                <label for="star-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                                </label>
                             </div>
                         </div>
                         <form>
                             <div class="form-group">
                                 <label for="message">Your Review *</label>
                                 <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Your Name *</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email *</label>
-                                <input type="email" class="form-control" id="email">
                             </div>
                             <div class="form-group mb-0">
                                 <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
@@ -224,6 +184,6 @@
     </div>
 </div>
 </div>
-
+<script src="<c:url value='/assets/api/web/detail.js'/> "></script>
 </body>
 </html>

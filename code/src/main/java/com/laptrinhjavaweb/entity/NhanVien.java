@@ -21,6 +21,9 @@ public class NhanVien extends PrimaryEntity {
     @Column(name = "manv")
     private String maNV;
 
+    @Column(name = "matkhau")
+    private String matKhau;
+
     @Column(name = "tennv")
     private String tenNV;
 

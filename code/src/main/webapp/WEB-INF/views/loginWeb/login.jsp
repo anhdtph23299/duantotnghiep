@@ -35,7 +35,7 @@
                 <div class="card card-lg mb-5">
                     <div class="card-body">
                         <!-- Form -->
-                        <form class="js-validate">
+                        <form action="j_spring_security_check" method="POST" class="js-validate">
                             <div class="text-center">
                                 <div class="mb-5">
                                     <h1 class="display-4">Sign in</h1>
@@ -56,7 +56,7 @@
                             <div class="js-form-message form-group">
                                 <label class="input-label" for="signinSrEmail">Your email</label>
 
-                                <input type="email" class="form-control form-control-lg" name="email" id="signinSrEmail" tabindex="1" placeholder="email@address.com" aria-label="email@address.com" required="" data-msg="Please enter a valid email address.">
+                                <input type="text" class="form-control form-control-lg" name="j_username" id="signinSrEmail" tabindex="1" placeholder="Mã khách hàng" aria-label="Mã khách hàng" required="" data-msg="Please enter a valid email address.">
                             </div>
                             <!-- End Form Group -->
 
@@ -70,7 +70,7 @@
                                 </label>
 
                                 <div class="input-group input-group-merge">
-                                    <input type="password" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="*************" aria-label="*************" required="" data-msg="Your password is invalid. Please try again." data-hs-toggle-password-options='{
+                                    <input type="password" class="js-toggle-password form-control form-control-lg" name="j_password" id="signupSrPassword" placeholder="*************" aria-label="*************" required="" data-msg="Your password is invalid. Please try again." data-hs-toggle-password-options='{
                                  "target": "#changePassTarget",
                                  "defaultClass": "tio-hidden-outlined",
                                  "showClass": "tio-visible-outlined",

@@ -29,7 +29,7 @@ public class GioHangChiTiet extends PrimaryEntity implements Serializable {
     private GioHang gioHang;
     @ManyToOne
     @JoinColumn(name = "idbienthe")
-    private BienTheEntity bienThe;
+    private BienThe bienThe;
 
     @Column(name = "soluong")
     private Integer soLuong;
