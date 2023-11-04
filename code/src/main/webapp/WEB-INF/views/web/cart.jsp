@@ -288,7 +288,7 @@
                 setCheckBox();
             },
             error: function(xhr, status, error) {
-                alert('Có lỗi xảy ra: ' + error);
+                console.log('Có lỗi xảy ra: ' + error);
             }
         });
     }
@@ -304,7 +304,7 @@
 
                 },
                 error: function(xhr, status, error) {
-                    alert('Có lỗi xảy ra: ' + error);
+                    console.log('Có lỗi xảy ra: ' + error);
                 }
             });
 
@@ -327,7 +327,7 @@
                     tongTienTheoGhct(dsCheckbox);
                 },
                 error: function(xhr, status, error) {
-                    alert('Có lỗi xảy ra: ' + error);
+                    console.log('Có lỗi xảy ra: ' + error);
                 }
             });
         }
@@ -397,7 +397,7 @@ function tongTienTheoGhct(listCheckbox){
             $("#totalproduct").html(listCheckbox.length);
         },
         error: function(xhr, status, error) {
-            alert('Có lỗi xảy ra: ' + error);
+            console.log('Có lỗi xảy ra: ' + error);
         }
     });
 }

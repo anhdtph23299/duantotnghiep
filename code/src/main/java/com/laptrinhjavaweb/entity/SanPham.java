@@ -19,7 +19,7 @@ public class SanPham extends BaseEntity {
 	@Column(name = "slug", unique = true)
 	private String slug;
 
-	@Column(name = "ten", nullable = false)
+	@Column(name = "tensp", nullable = false)
 	private String ten;
 
 	@Column(name = "gia", nullable = false)
@@ -31,20 +31,20 @@ public class SanPham extends BaseEntity {
 	@Column(name = "motasanpham", columnDefinition = "TEXT")
 	private String motasanpham;
 
-	@Column(name = "isnew")
-	private Integer isnew;
+//	@Column(name = "isnew")
+//	private Integer isnew;
 
-	@Column(name = "ispopular")
-	private Integer ispopular;
-
-	@Column(name = "ismostviewed")
-	private Integer ismostviewed;
-
-	@Column(name = "isbestseller")
-	private Integer isbestseller;
+//	@Column(name = "ispopular")
+//	private Integer ispopular;
+//
+//	@Column(name = "ismostviewed")
+//	private Integer ismostviewed;
+//
+//	@Column(name = "isbestseller")
+//	private Integer isbestseller;
 
 	@ManyToOne
-	@JoinColumn(name = "danhmucid")
+	@JoinColumn(name = "iddm")
 	private DanhMuc danhmucs;
 
 	@ManyToOne
@@ -103,37 +103,37 @@ public class SanPham extends BaseEntity {
 		this.motasanpham = motasanpham;
 	}
 
-	public Integer getIsnew() {
-		return isnew;
-	}
+//	public Integer getIsnew() {
+//		return isnew;
+//	}
+//
+//	public void setIsnew(Integer isnew) {
+//		this.isnew = isnew;
+//	}
 
-	public void setIsnew(Integer isnew) {
-		this.isnew = isnew;
-	}
-
-	public Integer getIspopular() {
-		return ispopular;
-	}
-
-	public void setIspopular(Integer ispopular) {
-		this.ispopular = ispopular;
-	}
-
-	public Integer getIsmostviewed() {
-		return ismostviewed;
-	}
-
-	public void setIsmostviewed(Integer ismostviewed) {
-		this.ismostviewed = ismostviewed;
-	}
-
-	public Integer getIsbestseller() {
-		return isbestseller;
-	}
-
-	public void setIsbestseller(Integer isbestseller) {
-		this.isbestseller = isbestseller;
-	}
+//	public Integer getIspopular() {
+//		return ispopular;
+//	}
+//
+//	public void setIspopular(Integer ispopular) {
+//		this.ispopular = ispopular;
+//	}
+//
+//	public Integer getIsmostviewed() {
+//		return ismostviewed;
+//	}
+//
+//	public void setIsmostviewed(Integer ismostviewed) {
+//		this.ismostviewed = ismostviewed;
+//	}
+//
+//	public Integer getIsbestseller() {
+//		return isbestseller;
+//	}
+//
+//	public void setIsbestseller(Integer isbestseller) {
+//		this.isbestseller = isbestseller;
+//	}
 
 	public DanhMuc getDanhmucs() {
 		return danhmucs;

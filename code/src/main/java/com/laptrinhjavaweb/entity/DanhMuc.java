@@ -19,7 +19,7 @@ public class DanhMuc extends BaseEntity {
 	@Column(name = "slug", unique = true)
 	private String slug;
 
-	@Column(name = "ten")
+	@Column(name = "tendm")
 	private String ten;
 
 	@ManyToOne
@@ -29,7 +29,7 @@ public class DanhMuc extends BaseEntity {
 	@OneToMany(mappedBy = "danhmuccha", fetch = FetchType.LAZY)
 	private List<DanhMuc> danhmuccons = new ArrayList<>();
 	
-	@Column(name = "isshowhomepage")
+	@Column(name = "hienthitrangchu")
     private Integer isshowhomepage;
 	
 	@OneToMany(mappedBy = "danhmucs", fetch = FetchType.LAZY)

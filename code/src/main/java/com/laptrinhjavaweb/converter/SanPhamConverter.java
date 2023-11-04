@@ -52,7 +52,7 @@ public class SanPhamConverter {
         modelMapper.getConfiguration().setAmbiguityIgnored(true);
         SanPhamDTO dto = modelMapper.map(entity, SanPhamDTO.class);
         dto.setDanhmucslug(entity.getDanhmucs().getSlug());
-        dto.setThuonghieuslug(entity.getThuonghieus().getSlug());
+       // dto.setThuonghieuslug(entity.getThuonghieus().getSlug());
         List<ThuocTinhDTO> listThuocTinhDTO = entity.getThuocTinhEntities().stream().map(item -> {
             ThuocTinhDTO thuocTinhDTO = thuocTinhConverter.convertToDTO(item);
             return thuocTinhDTO;
