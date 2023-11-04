@@ -6,7 +6,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "bienthe")
-
 public class BienTheEntity extends BaseEntity{
 
     @Column(name = "ten")
@@ -34,6 +33,9 @@ public class BienTheEntity extends BaseEntity{
     }
 
     public Double getGia() {
+        if (gia==null){
+            return sanphams.getGia();
+        }
         return gia;
     }
 

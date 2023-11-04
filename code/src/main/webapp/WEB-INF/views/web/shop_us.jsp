@@ -221,7 +221,7 @@
                 <div class="row">
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -241,7 +241,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -261,7 +261,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -281,7 +281,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -301,7 +301,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -321,7 +321,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -341,7 +341,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -361,7 +361,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -381,7 +381,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -401,7 +401,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -421,7 +421,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -441,7 +441,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>
@@ -461,7 +461,7 @@
                     </div>
                     <div class="col-10">
                         <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
                             <div class="hstack gap-3 ms-3">
                                 <div>
                                     <span class="text-dark">Khánh Linh</span>

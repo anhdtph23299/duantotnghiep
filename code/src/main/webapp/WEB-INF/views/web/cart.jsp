@@ -192,7 +192,7 @@
                             Tổng thanh toán (<span id="totalproduct">0</span> sản phẩm): <span class="text-danger" style="font-size: 25px" id="tongthanhtoan">0₫</span>
                         </div>
                         <div class="col-6 text-right">
-                            <button class="btn text-light w-75" style="background-color: #C3817B">Mua hàng</button>
+                            <button class="btn text-light w-75" onclick=" muahang()" style="background-color: #C3817B">Mua hàng</button>
                         </div>
                     </div>
                 </div>
@@ -331,9 +331,28 @@
                 }
             });
         }
-        $("#checkout").click(function () {
-            window.location.href = "/checkout"
-        })
+     function muahang() {
+         var listsp = getValByCheckbox();
+         var listspAsNumbers = listsp.map(str => parseInt(str, 10));
+         if (listsp.length == 0) {
+             showError("Bạn chưa chọn sản phẩm để mua")
+         }
+         var data = JSON.stringify({
+             dsghct: listspAsNumbers,
+         });
+          $.ajax({
+             url: '/api/user/dathang/' + idkh,
+             method: 'POST',
+             contentType: 'application/json',
+             data: data,
+             success: function (req) {
+                 window.location.href = "/checkout"
+             },
+             error: function (xhr, status, error) {
+                 showError("Có lỗi xảy ra");
+             }
+         });
+    }
   async function  init(){
        await ghct();
        //tongTien()

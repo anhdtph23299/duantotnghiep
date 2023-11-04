@@ -13,15 +13,8 @@ import lombok.ToString;
 @AllArgsConstructor
 @Builder
 @ToString
-public class SanPham {
-
-    private String name;
- //   private String code;
-    private int quantity;
-    private long price;
-//    private int length;
-//    private int width;
-//    private int weight;
-//    private int height;
-//    private Category category;
+public class ApiResponse<T> {
+    private int code;
+    private String message;
+    private T data;
 }

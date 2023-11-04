@@ -13,8 +13,8 @@ import java.util.List;
 
 @Repository
 public interface ThongTinMuaHangRepository extends JpaRepository<ThongTinMuaHang,Long> {
-    @Query("select tt from ThongTinMuaHang tt where tt.khachHang.id=:idkh and tt.trangThai in (:trangthais)")
-    ThongTinMuaHang getTTMuaHangByIdKHAndTrangThai(@Param("idkh") Long idkh,@Param("trangthais") List<Integer> trangThai);
+    @Query("select tt from ThongTinMuaHang tt where tt.khachHang.id=:idkh and tt.trangThai =:trangthai")
+    ThongTinMuaHangResponse getTTMuaHangByIdKHAndTrangThai(@Param("idkh") Long idkh,@Param("trangthai")Integer idtt);
 
     @Query("select tt from ThongTinMuaHang tt where tt.khachHang.id=:idkh and tt.trangThai <> 0")
     List<ThongTinMuaHangResponse> dsThongTinMuaHangByIdKhachHang(@Param("idkh") Long idkh);

@@ -11,8 +11,10 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -27,14 +29,19 @@ import java.util.Date;
 public class HoaDonChiTiet extends PrimaryEntity {
 
     @ManyToOne
+    @JoinColumn(name = "idhd")
     private HoaDon hoaDon;
     @ManyToOne
+    @JoinColumn(name = "idbienthe")
     private BienTheEntity bienThe;
 
     @Column(name = "soluong")
     private Integer soLuong;
-    @Column(name = "idttmuahang")
-    private Long thongTinMuaHang;
-    @Column(name = "trangthai")
-    private Integer trangThai;
+
+    @Column(name = "dongia")
+    private BigDecimal donGia;
+
+    public BigDecimal getTongTien(){
+        return donGia.multiply(BigDecimal.valueOf(soLuong));
+    }
 }
