@@ -40,7 +40,7 @@ public class NhanVien extends PrimaryEntity {
     private String hinhAnh;
 
     @Column(name = "trangthai")
-    private int trangThai;
+    private Integer trangThai;
 
     @Column(name = "diachi")
     private String diaChi;

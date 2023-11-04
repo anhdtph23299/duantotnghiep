@@ -10,9 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd355402-32c5-4712-9f51-f4e01c81da1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/model/request/DiaChiGiaoHangRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/ApiController/ApiThongTinMuaHangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/ApiController/ApiThongTinMuaHangController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/entity/ThongTinMuaHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/entity/ThongTinMuaHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/model/response/ThongTinMuaHangResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/model/response/ThongTinMuaHangResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/repository/ThongTinMuaHangRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/repository/ThongTinMuaHangRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/service/ThongTinMuaHangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/service/ThongTinMuaHangService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/service/serviceimpl/ThongTinMuaHangServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/java/com/laptrinhjavaweb/service/serviceimpl/ThongTinMuaHangServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/code/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/src/main/resources/application.properties.orig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/webapp/WEB-INF/views/web/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/webapp/WEB-INF/views/web/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/src/main/webapp/decorators/web.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/code/src/main/webapp/decorators/web.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,15 +55,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/code" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/linh/duantotnghiep/code",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.34">
     <configuration name="ProjectTemplateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="project-template" />
@@ -170,7 +177,10 @@
       <workItem from="1697380539186" duration="4066000" />
       <workItem from="1697419127522" duration="14067000" />
       <workItem from="1697438668924" duration="2958000" />
-      <workItem from="1697610739734" duration="170000" />
+<<<<<<<<< Temporary merge branch 1
+=========
+      <workItem from="1698250784815" duration="10000" />
+>>>>>>>>> Temporary merge branch 2
     </task>
     <task id="LOCAL-00001" summary="code entity mapping SP,KM, LiDoHuy">
       <created>1697426282244</created>
@@ -216,7 +226,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="code entity mapping SP,KM, LiDoHuy" />

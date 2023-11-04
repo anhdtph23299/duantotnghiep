@@ -61,7 +61,14 @@
                     <li><a href="/admin/giaoca/dongca">Đóng ca</a></li>
                 </ul>
             </li>
-
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                <i class="flaticon-044-file"></i>
+                <span class="nav-text">Giao dịch</span>
+            </a>
+                <ul aria-expanded="false">
+                    <li><a href="/admin/giaodich/hoadon">Hóa đơn</a></li>
+                </ul>
+            </li>
             <li>
                 <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-settings-2"></i>
@@ -69,6 +76,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="/admin/profile">Profile</a></li>
+                    <li><a href="/admin/tichdiem">Tích điểm</a></li>
                     <li><a href="/admin/setting_banner">Dynamic Interface </a></li>
                 </ul>
             </li>

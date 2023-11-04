@@ -1,211 +1,719 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Checkout</title>
-</head>
-<body>
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-secondary mb-5">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Checkout</h1>
-            <div class="d-inline-flex">
-                <p class="m-0"><a href="">Home</a></p>
-                <p class="m-0 px-2">-</p>
-                <p class="m-0">Checkout</p>
+<%--
+  Created by IntelliJ IDEA.
+  User: asus
+  Date: 10/31/2023
+  Time: 8:36 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<div class="modal fade" id="btnalldiachi" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"  >
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Địa chỉ của tôi</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-        </div>
-    </div>
-    <!-- Page Header End -->
+            <div class="modal-body" style="height: 450px; overflow-y: scroll;">
+                <div class="row" id="alldiachi">
+                    <div class="col-10">
+                        <div class="ms-3" style="border-bottom: #6C757D">
+                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <div class="hstack gap-3 ms-3">
+                                <div>
+                                    <span class="text-dark">Khánh Linh</span>
+                                </div>
+                                <div class="vr" style="height: 30px"></div>
+                                <div >
+                                    <span class="">0987654321</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#formdiachi" data-bs-toggle="modal">Cập nhật</a>
+                    </div>
 
-    <!-- Checkout Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5">
-            <div class="col-lg-8">
-                <div class="mb-4">
-                    <h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>First Name</label>
-                            <input class="form-control" type="text" placeholder="John">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Last Name</label>
-                            <input class="form-control" type="text" placeholder="Doe">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Mobile No</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Country</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
-                            <input class="form-control" type="text" placeholder="123">
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="newaccount">
-                                <label class="custom-control-label" for="newaccount">Create an account</label>
-                            </div>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="shipto">
-                                <label class="custom-control-label" for="shipto"  data-toggle="collapse" data-target="#shipping-address">Ship to different address</label>
-                            </div>
+                </div>
+                <button class="btn btn-light" onclick="themDiaChi()" data-bs-target="#formdiachi" data-bs-toggle="modal" >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                    </svg>
+                    Thêm địa chỉ mới</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="formdiachi" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" style="overflow:hidden;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Cập nhật địa chỉ</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label  class="form-label">Tên người nhận</label>
+                            <input type="text" class="form-control" id="tennguoinhanform">
                         </div>
                     </div>
-                </div>
-                <div class="collapse mb-4" id="shipping-address">
-                    <h4 class="font-weight-semi-bold mb-4">Shipping Address</h4>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            <label>First Name</label>
-                            <input class="form-control" type="text" placeholder="John">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Số điện thoại</label>
+                            <input type="text" id="sdtform" class="form-control" >
                         </div>
-                        <div class="col-md-6 form-group">
-                            <label>Last Name</label>
-                            <input class="form-control" type="text" placeholder="Doe">
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Thành phố</label>
+                            <select style="width: 100%" class="form-control" id="thanhpho"></select>
                         </div>
-                        <div class="col-md-6 form-group">
-                            <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Quận/Huyện</label>
+                            <select class="form-control " style="width: 100%" id="quanhuyen"></select>
                         </div>
-                        <div class="col-md-6 form-group">
-                            <label>Mobile No</label>
-                            <input class="form-control" type="text" placeholder="+123 456 789">
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label class="form-label">Xã</label>
+                            <select class="form-control" style="width: 100%" id="xa"></select>
                         </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label class="form-label">Số nhà</label>
+                            <textarea class="form-control" id="sonha" rows="3"></textarea>
                         </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Country</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>City</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>State</label>
-                            <input class="form-control" type="text" placeholder="New York">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
-                            <input class="form-control" type="text" placeholder="123">
+                    </div>
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true"  id="defaultform">
+                            <label class="form-check-label" >
+                                Đặt làm địa chỉ mặc định
+                            </label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Order Total</h4>
+            <div class="modal-footer">
+                <button class="btn btn-light" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Trở lại</button>
+                <button class="btn btn-danger" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" onclick="hoanThanh()">Hoàn thành</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid bg-secondary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+        <h1 class="font-weight-semi-bold text-uppercase mb-3">Check Out</h1>
+        <div class="d-inline-flex">
+            <p class="m-0"><a href="">Home</a></p>
+            <p class="m-0 px-2">-</p>
+            <p class="m-0">Check Out</p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5">
+    <div class="px-xl-5">
+        <div class="khung card">
+            <div class="row">
+                <h5 style="color: #C3817B"><i class="bi bi-geo-alt-fill"></i> Địa chỉ nhận hàng</h5>
+            </div>
+            <div class="row mt-2">
+                <div class="col-4">
+                    <h5 class="font-weight-bold" id="tennguoinhan">Tuấn Anh <span id="sdt">0389478937</span> </h5>
+                </div>
+                <div class="col-7">
+                    <span id="diachi">Xóm ninh hoà, Xã Yên Trị, Huyện Yên Thủy, Hòa Bình, Vietnam </span><span style="border: 1px solid #C3817B; background-color: #C3817B; color: white">Mặc định</span>
+                </div>
+                <div class="col-1">
+                    <button class="custom-button" data-bs-target="#btnalldiachi" data-bs-toggle="modal" style="border: none;background: none;padding: 0;cursor: pointer;color: blue;text-decoration: none;">Thay đổi</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="khung card mt-3">
+            <div class="row">
+                <div class="col-5">
+                    <h5>Sản phẩm</h5>
+                </div>
+                <div class="col-2"></div>
+                <div class="col-2">
+                    <span>Đơn giá</span>
+                </div>
+                <div class="col-2">
+                    <span>Số lượng</span>
+                </div>
+                <div class="col-1">
+                    <span>Thành tiền</span>
+                </div>
+            </div>
+            <div id="hdct">
+                <div class="row mt-3" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-2">
+                                    <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Áo polo nam aelimited</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="font-weight-medium mb-3">Products</h5>
-                        <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 1</p>
-                            <p>$150</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 2</p>
-                            <p>$150</p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <p>Colorful Stylish Shirt 3</p>
-                            <p>$150</p>
-                        </div>
-                        <hr class="mt-0">
-                        <div class="d-flex justify-content-between mb-3 pt-1">
-                            <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="font-weight-medium">$150</h6>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
-                        </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
                     </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <div class="d-flex justify-content-between mt-2">
-                            <h5 class="font-weight-bold">Total</h5>
-                            <h5 class="font-weight-bold">$160</h5>
-                        </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">300000</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">2</h6>
+                    </div>
+                    <div class="col-1 mt-3">
+                        <h6 class="card-title">600000</h6>
                     </div>
                 </div>
-                <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Payment</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Paypal</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Direct Check</label>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
+                <div class="row mt-3" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-2">
+                                    <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Áo polo nam aelimited</h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">300000</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">2</h6>
+                    </div>
+                    <div class="col-1 mt-3">
+                        <h6 class="card-title">600000</h6>
+                    </div>
+                </div>
+                <div class="row mt-3" style="border-bottom: 1px solid #dedede">
+                    <div class="col-5">
+                        <div class="mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-2">
+                                    <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Áo polo nam aelimited</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">300000</h6>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <h6 class="card-title">2</h6>
+                    </div>
+                    <div class="col-1 mt-3">
+                        <h6 class="card-title">600000</h6>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="khung card mt-2">
+            <div class="row" style="border-bottom: 1px solid #dedede; padding-bottom: 10px">
+                <div class="col-7"></div>
+                <div class="col-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <span><i class='bx bxs-coupon bx-tada bx-flip-vertical' style='color:#b29898' ></i> Voucher</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span class=" text-cyan">Chọn Voucher</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="border-bottom: 1px solid #dedede;">
+                <div class="col-5" style="border-right: 1px solid #dedede;">
+                    <div class="row mt-3">
+                        <div class="col-2">
+                            <h6 class="mt-2">Lời nhắn:</h6>
+                        </div>
+                        <div class="col-10">
+                            <input type="text" class="form-control w-75" placeholder="Lưu ý cho shop">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-7" >
+                    <div class="row my-3" style="border-bottom: 1px solid #dedede; padding-bottom: 10px">
+                        <div class="col-3">
+                            <h6>Đơn vị vận chuyển:</h6>
+                        </div>
+                        <div class="col-7">
+                            <h6>Nhanh</h6>
+                            <span>Nhận hàng vào 2 Th11 - 7 Th11</span>
+                        </div>
+                        <div class="col-2">
+                            <span class="float-right">27500₫</span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <h6>Được đồng kiểm. <span style="font-size: 20px">℗</span></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-9"></div>
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <span>Tổng số tiền (3 sản phẩm):</span>
+                        </div>
+                        <div class="col-4 text-right">
+                            <span>1.827.500₫</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="khung card mt-3">
+            <div class="row" style="border-bottom: 1px solid #dedede; padding-bottom: 20px">
+                <div class="col-3">
+                    <h5>Phương thức thanh toán:</h5>
+                </div>
+                <div class="col-9">
+                    <button class="btn btn-light" id="paypalButton" style="border: 1px solid #dedede">Ví PalPay</button>
+                    <button class="btn btn-light ms-2" id="codButton" style="border: 1px solid #dedede">Thanh toán khi nhận hàng</button>
+                </div>
+            </div>
+            <div class="row" style="border-bottom: 1px solid #dedede;">
+                <div class="form-check ms-3 my-3" id="mbBankRadio">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="exampleRadios1" value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        <img src="/template/web/img/mb.png" alt=""> MB Bank
+                    </label>
+                </div>
+                <div class="form-check ms-3 my-3" id="vpBankRadio">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="exampleRadios2" value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        <img src="/template/web/img/vp.png" alt=""> VP Bank
+                    </label>
+                </div>
+                <div class="thanhtoan">
+                    <div class="row my-3">
+                        <div class="col-3">
+                            <span>Thanh toán khi nhận hàng</span>
+                        </div>
+                        <div class="col-9">
+                            <span>Phí thu hộ: ₫0 VNĐ. Ưu đãi về phí vận chuyển (nếu có) áp dụng cả với phí thu hộ.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-9"></div>
+                <div class="col-3">
+                    <div class="row my-3">
+                        <div class="col-6">
+                            <span>Tổng tiền hàng</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span>1800000₫</span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-6">
+                            <span>Phí vận chuyển</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span>27500₫</span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-6">
+                            <span>Tổng thanh toán:</span>
+                        </div>
+                        <div class="col-6 text-right">
+                            <span style="font-size: 30px; color: #C3817B">1.827.500₫</span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <button class="btn w-75 ms-5 text-light" style="background-color: #C3817B;">Đặt hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <!-- Checkout End -->
-</body>
-</html>
+</div>
+<input type="hidden" id="idttmuahang">
+<script>
+    // Ẩn thanh toán khi nhận hàng khi load lại trang
+    document.querySelector(".thanhtoan").style.display = "none";
+
+    //click Ví PalPay
+    document.getElementById("paypalButton").addEventListener("click", function() {
+        // Ẩn Thanh toán khi nhận hàng
+        document.querySelector(".thanhtoan").style.display = "none";
+        // Hiển thị radio của MB Bank và VP Bank
+        document.getElementById("mbBankRadio").style.display = "block";
+        document.getElementById("vpBankRadio").style.display = "block";
+    });
+    //click thanh toán khi nhaanh hàng
+    document.getElementById("codButton").addEventListener("click", function() {
+        // Hiển thị thanh toán khi nhận hàng
+        document.querySelector(".thanhtoan").style.display = "block";
+        // Ẩn radio MB Bank và VP Bank
+        document.getElementById("mbBankRadio").style.display = "none";
+        document.getElementById("vpBankRadio").style.display = "none";
+    });
+
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+    var idtt = -1;
+    const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+    function themDiaChi(){
+        idtt = -1;
+        $("#tennguoinhanform").val('');
+        $("#sdtform").val(''),
+            $("#thanhpho").val(1).trigger('change.select2'),
+        $("#quanhuyen").val(1).trigger('change.select2'),
+        $("#xa").val(1).trigger('change.select2'),
+            $("#sonha").val(''),
+            $("#defaultform").prop('checked', true);
+    }
+    function hoanThanh(){
+        if (idtt==-1){
+            themDiaChiForm();
+        }else{
+            capNhatDiaChiForm()
+        }
+    }
+
+    function capNhatDiaChiForm(){
+        var idttmuahang  = idtt;
+            var diaChi = $("#sonha").val()+getText($("#xa :selected"))+getText($("#quanhuyen :selected"))+getText($("#thanhpho :selected"));
+            var data = diaChiForm();
+            $.ajax({
+                url: '/api/user/ttgh/update/'+idttmuahang,
+                method: 'POST',
+                contentType: 'application/json',
+                data: data,
+                success: function(response) {
+                    dsthongtinmuahang()
+                    getAddressDefault()
+                    showSuccess(response.data);
+                },
+                error: function(xhr, status, error) {
+                    showError('Có lỗi xảy ra: ' + error);
+                }
+            });
+    }
+    function getText(val){
+        var data = val.text();
+        return ", "+ data;
+    }
+    function diaChiForm(){
+        var diaChi = $("#sonha").val()+getText($("#xa :selected"))+getText($("#quanhuyen :selected"))+getText($("#thanhpho :selected"))+", Vietnam";
+        return JSON.stringify({
+            tenNguoiNhan: $("#tennguoinhanform").val(),
+            soDienThoai : $("#sdtform").val(),
+            idThanhPho : $("#thanhpho").val(),
+            idHuyen : $("#quanhuyen").val(),
+            idXa : $("#xa").val(),
+            soNha : $("#sonha").val(),
+            diaChi:diaChi,
+            macDinh : $("#defaultform").val()
+        });
+    }
+    function themDiaChiForm(){
+        var data = diaChiForm();
+        $.ajax({
+            url: '/api/user/ttgh/insert/1',
+            method: 'POST',
+            contentType: 'application/json',
+            data: data,
+            success: function(response) {
+                dsthongtinmuahang()
+                getAddressDefault()
+                showSuccess(response.data);
+            },
+            error: function(xhr, status, error) {
+                showError('Có lỗi xảy ra: ' + error);
+            }
+        });
+
+    }
+
+    async function findHuyen(idThanhPho) {
+       await $.ajax({
+            url: '/api/user/ttgh/huyen/'+idThanhPho,
+            method: 'GET',
+            success: function(req) {
+                var data = req.data;
+                var huyen =  $("#quanhuyen")
+                huyen.empty();
+                data.forEach(function (param) {
+                    huyen.append($('<option>', {
+                        value: param.DistrictID,
+                        text: param.DistrictName
+                    }));
+                })
+                huyen.select2({
+                    dropdownParent: $('#formdiachi')
+                });
+                findXa(data[0].DistrictID);
+
+            },
+            error: function(xhr, status, error) {
+                showError("Có lỗi xảy ra")
+            }
+        });
+    }
+    async function findXa(idHuyen) {
+      await  $.ajax({
+            url: '/api/user/ttgh/xa/'+idHuyen,
+            method: 'GET',
+            success: function(req) {
+                var data = req.data;
+                var xa =  $("#xa")
+                xa.empty();
+                // data = data.sort((a,b)=> (order.indexOf(a.ProvinceName) - order.indexOf(b.ProvinceName)))
+                data.forEach(function (param) {
+                    xa.append($('<option>', {
+                        value: param.WardCode,
+                        text: param.WardName
+                    }));
+                })
+                xa.select2({
+                    dropdownParent: $('#formdiachi')
+                });
+                xa.trigger("change")
+            },
+            error: function(xhr, status, error) {
+                showError("Có lỗi xảy ra")
+            }
+        });
+    }
+    $('#thanhpho').on('change', async function () {
+        var value = $(this).val()
+        await findHuyen(value);
+
+    });
+        $('#quanhuyen').on('change',async function() {
+            var value = $(this).val()
+           await findXa(value);
+
+        });
+        //Hiển thị thông tin mua hàng mặc định
+   function getAddressDefault(){
+       $.ajax({
+           url: '/api/user/ttgh/default/'+1,
+           method: 'GET',
+           success: function(req) {
+               var data = req.data;
+               console.log(data)
+               $("#idttmuahang").html(data.id);
+               $("#tennguoinhan").html(
+                   `
+                   \${data.tenNguoiNhan}(\${data.sdt})
+                   `
+               );
+              // $("#sdt").html(data.sdt);
+               $("#diachi").html(data.diaChi);
+           },
+           error: function(xhr, status, error) {
+               showError("Có lỗi xảy ra")
+           }
+       });
+   }
+    getAddressDefault()
+//Thành phố
+    $.ajax({
+        url: '/api/user/ttgh/thanhpho',
+        method: 'GET',
+        success: function(req) {
+            var data = req.data;
+            var thanhpho =  $("#thanhpho")
+            thanhpho.empty();
+            // data = data.sort((a,b)=> (order.indexOf(a.ProvinceName) - order.indexOf(b.ProvinceName)))
+            data.forEach(function (param) {
+                thanhpho.append($('<option>', {
+                    value: param.ProvinceID,
+                    text: param.ProvinceName
+                }));
+            })
+            $('#thanhpho').select2({
+                dropdownParent: $('#formdiachi')
+            });
+        },
+        error: function(xhr, status, error) {
+            showError("Có lỗi xảy ra")
+        }
+    });
+
+
+    function findThongTin(idttmh){
+        idtt = idttmh;
+        $.ajax({
+            url: '/api/user/ttgh/findThongTinMuaHangById/'+idtt,
+            method: 'GET',
+            success: async function (req) {
+                var data = req.data;
+                $("#tennguoinhanform").val(data.tenNguoiNhan);
+                $("#sdtform").val(data.sdt),
+                    $("#thanhpho").val(data.idThanhPho).change(),
+                    await findHuyen(data.idThanhPho);
+                  $("#quanhuyen").val(data.idHuyen).change(),
+                    await findXa(data.idHuyen);
+                    $("#xa").val(data.idXa).change(),
+                    $("#sonha").val(data.soNha),
+                    $("#defaultform").prop( "checked", data.macDinh )
+            },
+            error: function(xhr, status, error) {
+                showError("Có lỗi xảy ra")
+            }
+        });
+    }
+    function  dsthongtinmuahang (){
+        $.ajax({
+            url: '/api/user/ttgh/dsthongtingiaohang/'+1,
+            method: 'GET',
+            success: function(req) {
+                var diachi = $("#alldiachi");
+                diachi.empty();
+                req.data.forEach(function (data){
+                    var html= `
+           <div class="col-10">
+                        <div class="ms-3" style="border-bottom: #6C757D">
+                            <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">
+                            <div class="hstack gap-3 ms-3">
+                                <div>
+                                    <span class="text-dark">\${data.tenNguoiNhan}</span>
+                                </div>
+                                <div class="vr" style="height: 30px"></div>
+                                <div >
+                                    <span class="">\${data.sdt}</span>
+                                </div>
+                            </div>
+                            <div class="ms-3">
+                                <p class="">\${data.diaChi}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <button class="text-decoration-none" style="color: #00aced" onclick="findThongTin(\${data.id})" data-bs-target="#formdiachi" data-bs-toggle="modal">Cập nhật</button>
+                    </div>
+           `;
+                    diachi.append(html);
+                })
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+    }
+   dsthongtinmuahang();
+    // function ghct(){
+    //     $.ajax({
+    //         url: '/api/user/ghct/'+1,
+    //         method: 'GET',
+    //         success: function(req) {
+    //             var data = req.data;
+    //
+    //             var tbody =$("#tblcheckout tbody");
+    //             tbody.empty();
+    //             data.forEach(function (custom){
+    //                 var idgh = custom.gioHangChiTietId.idGioHang;
+    //                 var sp = custom.sanPham;
+    //                 var html = `
+    //                     <div class="col-5">
+    //                         <div class="mb-3">
+    //                             <div class="row g-0">
+    //                                 <div class="col-md-2">
+    //                                     <img src="/template/web/img/anh2.png" class="img-fluid rounded-start " alt="...">
+    //                                 </div>
+    //                                 <div class="col-md-10">
+    //                                     <div class="card-body">
+    //                                         <h6 class="card-title">Áo polo nam aelimited</h6>
+    //                                     </div>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                     <div class="col-2 mt-3">
+    //                         <h6 class="card-title" style="border: 1px solid #dedede;padding: 5px">Loại: Trắng,Size M</h6>
+    //                     </div>
+    //                     <div class="col-2 mt-3">
+    //                         <h6 class="card-title">300000</h6>
+    //                     </div>
+    //                     <div class="col-2 mt-3">
+    //                         <h6 class="card-title">2</h6>
+    //                     </div>
+    //                     <div class="col-1 mt-3">
+    //                         <h6 class="card-title">600000</h6>
+    //                     </div>
+    //                     </div>
+
+    //                 `;
+    //                 tbody.append(html);
+    //             })
+    //
+    //         },
+    //         error: function(xhr, status, error) {
+    //             alert('Có lỗi xảy ra: ' + error);
+    //         }
+    //     });
+    // }
+    //
+    //     $.ajax({
+    //         url: '/api/user/ghct/subtotal/'+1,
+    //         method: 'GET',
+    //         success: function(req) {
+    //             var data = req.data;
+    //           //  $("#subtotal").html(convertVND(data));
+    //             $("#total").html(convertVND(data))
+    //             $("#totaldola").html(formatter.format(data/24570));
+    //             $("#pricethanhtoan").val(data/24570);
+    //         },
+    //         error: function(xhr, status, error) {
+    //             alert('Có lỗi xảy ra: ' + error);
+    //         }
+    //     });
+    //
+    // ghct()
+</script>

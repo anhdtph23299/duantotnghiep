@@ -19,16 +19,23 @@ import java.util.Date;
 public class HoaDon extends PrimaryEntity {
     @Column(name = "ngaytao")
     private Date ngayDat=new Date();
-    @Column(name = "tgdukiengh")
-    private Date thoiGianDuKienGiaoHang;
+
     @Column(name = "ngaythanhtoan")
     private Date ngayThanhToan;
-    @Column(name = "phuongthucthanhtoan")
+   @Column(name = "phuongthucthanhtoan")
     private Integer PhuongThucThanhToan;
-    @Column(name = "idttmuahang")
-    private Long thongTinMuaHang;
+    @Column(name = "tgdukiengh")
+    private Date thoiGianDuKienGiaoHang;
     @Column(name = "trangthai")
     private Integer trangThai=1;
+
+    @ManyToOne
+    @JoinColumn(name = "idkh")
+    private KhachHang khachHang;
+
+    @ManyToOne
+    @JoinColumn(name = "idttmuahang")
+    private ThongTinMuaHang thongTinMuaHang;
 
     @JsonProperty("getTrangThaiHD")
     public String getTrangThaiHD() {

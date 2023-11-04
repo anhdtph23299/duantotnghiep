@@ -19,7 +19,7 @@ import java.util.Date;
 public class LichSuTichDiem extends PrimaryEntity {
 
     @Column(name = "sodiem")
-    private int soDiem;
+    private Integer soDiem;
 
     @Column(name = "ngaytich")
     private Date ngayTich;

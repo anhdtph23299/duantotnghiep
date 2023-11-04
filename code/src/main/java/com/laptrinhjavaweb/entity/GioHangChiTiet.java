@@ -2,12 +2,12 @@ package com.laptrinhjavaweb.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,25 +18,30 @@ import java.math.BigDecimal;
 @Entity
 @ToString
 @Table(name = "giohangchitiet")
-public class GioHangChiTiet implements Serializable {
+public class GioHangChiTiet extends PrimaryEntity implements Serializable {
 
-    @EmbeddedId
-    private GioHangChiTietId gioHangChiTietId;
+//    @EmbeddedId
+//    private GioHangChiTietId gioHangChiTietId;
 
     @ManyToOne
-    @JoinColumn(name = "idgiohang",insertable = false,updatable = false)
+    @JoinColumn(name = "idgiohang")
     @JsonIgnore
     private GioHang gioHang;
     @ManyToOne
-    @JoinColumn(name = "idsp",insertable = false,updatable = false)
-    private SanPham sanPham;
+    @JoinColumn(name = "idbienthe")
+    private BienTheEntity bienThe;
 
     @Column(name = "soluong")
     private Integer soLuong;
 
+    @Column(name = "trangthai")
+    private Integer trangThai;
+
     @JsonProperty("tongTien")
-    public BigDecimal getTongTien(){
-//        return sanPham.getDonGia().multiply(BigDecimal.valueOf(soLuong));
-        return null;
+    public Double getTongTien(){
+        if (bienThe.getGia()==null){
+            return bienThe.getSanphams().getGia()*soLuong;
+        }
+        return bienThe.getGia()*soLuong;
     }
 }

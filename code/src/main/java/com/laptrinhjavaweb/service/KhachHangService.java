@@ -1,10 +1,9 @@
 package com.laptrinhjavaweb.service;
 
-import com.laptrinhjavaweb.dto.KhachHangDto;
-import com.laptrinhjavaweb.dto.LoginDto;
-import com.laptrinhjavaweb.dto.LoginMessage;
 import com.laptrinhjavaweb.entity.KhachHang;
+import org.apache.poi.ss.usermodel.Workbook;
 
+import java.io.InputStream;
 import java.util.List;
 
 public interface KhachHangService {
@@ -14,6 +13,7 @@ public interface KhachHangService {
     KhachHang findById(Long id);
 
     String update(KhachHang khachHang);
+
     KhachHang insert(KhachHang khachHang);
 
     void delete(Long id);
@@ -24,4 +24,8 @@ public interface KhachHangService {
     KhachHang addKhachHang(KhachHangDto khachHangDto);
     LoginMessage loginKhachHang(LoginDto loginDto);
 
+
+    void importCustomersFromExcel(InputStream inputStream);
+
+    Workbook exportCustomersToExcel(List<KhachHang> customers);
 }

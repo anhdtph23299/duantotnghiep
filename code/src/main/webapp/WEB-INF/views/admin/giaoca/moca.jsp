@@ -34,14 +34,6 @@
                     <div class="card-body ">
                         <div class="row">
                             <div class="col-4">
-                                <h6>Mã ca:</h6>
-                            </div>
-                            <div class="col-8">
-                                <span>CA0001</span>
-                            </div>
-                        </div>
-                        <div class="row mt-2 ">
-                            <div class="col-4">
                                 <h6>Tên nhân viên:</h6>
                             </div>
                             <div class="col-8">
@@ -53,16 +45,17 @@
                                 <h6>Giờ bắt đầu:</h6>
                             </div>
                             <div class="col-8">
-                                <span>20/10/2023 7:00</span>
+                                <span id="thoiGian"></span>
                             </div>
                         </div>
+
                         <div class="row mt-2">
                             <div class="col-4">
                                 <h6>Tiền mặt đầu ca:</h6>
                             </div>
                             <div class="col-8">
                                 <div class="input-wrapper1">
-                                    <input class="input-box1" type="text" placeholder="Nhập số tiền">
+                                    <input class="input-box1" type="text" id="soTienDauCa" placeholder="Nhập số tiền">
                                     <span class="underline1"></span>
                                 </div>
                             </div>
@@ -70,7 +63,7 @@
                         <div class="row mt-2 float-right">
                             <div class="">
                                 <a href="#" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Đăng xuất</a>
-                                <a href="/admin/giaoca/dongca" class="btn"  style="background-color: #A6edab; color: #00852d">Mở ca</a>
+                                <button class="btn" id="addMocaButton" style="background-color: #A6edab; color: #00852d">Mở ca</button>
                             </div>
                         </div>
                     </div>
@@ -83,5 +76,48 @@
 
     </div>
 </div>
+
+<script>
+    // function getThoiGianFromDB() {
+    //     $.ajax({
+    //         type: "GET",
+    //         url: "/api/admin/moca/getDateTimeFromDB",
+    //         success: function(data) {
+    //             $("#thoiGian").text(data);
+    //         },
+    //         error: function(xhr, status, error) {
+    //             showError("Hiển thị fail");
+    //         }
+    //     });
+    // }
+    $(document).ready(function() {
+
+        $("#addMocaButton").click(function() {
+            var soTienDauCa = $("#soTienDauCa").val();
+            $.ajax({
+                type: "POST",
+                url: "/api/admin/moca/insert",
+                data: JSON.stringify({
+                    "soTienDauCa": soTienDauCa
+                }),
+                contentType: "application/json",
+                success: function() {
+                    window.location.href = '/admin';
+                },
+                error: function(xhr, status, error) {
+                    showError("Thêm thất bại");
+                }
+            });
+        });
+    });
+
+    function updateDateTime() {
+        $.get("/api/admin/moca/getDateTime", function(response) {
+            $("#thoiGian").text(response);
+        });
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+</script>
 </body>
 </html>

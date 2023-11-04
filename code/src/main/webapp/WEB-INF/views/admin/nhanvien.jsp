@@ -142,11 +142,9 @@
             url: '/api/admin/nhanvien',
             method: 'GET',
             success: function (data) {
-                console.log(data.data);
                 var nhanVien = $('#cardNhanVien ');
                 nhanVien.empty();
                 data.data.forEach(function(item) {
-                    console.log(item);
                     var card =
                         ` <div class="col-xl-4 col-xxl-4 col-sm-6">
                                 <div class="card user-card">
@@ -192,7 +190,6 @@
                                     </div>
                          </div>
                             `;
-
                     nhanVien.append(card);
                 })
             },

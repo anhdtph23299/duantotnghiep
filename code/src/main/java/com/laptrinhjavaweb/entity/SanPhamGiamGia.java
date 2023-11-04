@@ -18,14 +18,14 @@ import javax.persistence.*;
 public class SanPhamGiamGia extends PrimaryEntity {
 
     @ManyToOne
-    @JoinColumn(name = "idctsanphamtt",insertable = false,updatable = false)
-    private ChiTietSanPhamThuocTinh chiTietSanPhamThuocTinh;
+    @JoinColumn(name = "idsanpham",insertable = false,updatable = false)
+    private SanPhamEntity sanPhamThuocTinh;
 
     @ManyToOne
     @JoinColumn(name = "idkhuyenmai",insertable = false,updatable = false)
     private KhuyenMai khuyenMai;
 
     @Column(name = "soluong")
-    private int soLuong;
+    private Integer soLuong;
 
 }

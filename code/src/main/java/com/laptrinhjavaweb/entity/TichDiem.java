@@ -14,11 +14,11 @@ import javax.persistence.*;
 @Builder
 @Entity
 @ToString
-@Table(name = "thongtinmuahang")
+@Table(name = "tichdiem")
 public class TichDiem extends PrimaryEntity {
 
     @Column(name = "sodiem")
-    private int soDiem;
+    private Integer soDiem;
 
     @OneToOne
     @JoinColumn(name = "idkh", referencedColumnName = "id")
