@@ -360,8 +360,6 @@
         fileInput.click();
     }
 
-<<<<<<< HEAD
-=======
     $(document).ready(function() {
         // Xác định thẻ table và thẻ th
         var table = $("table");
@@ -394,7 +392,6 @@
             return $(row).children('td').eq(index).text();
         }
     });
->>>>>>> thanh
 </script>
 </body>
 </html>

@@ -18,4 +18,13 @@ public interface NhanVienService {
 
     List<NhanVien> getSearchNhanVien(String maNV, String tenNV, String email, String sdt);
 
+    NhanVien findByEmail(String email);
+
+    String generateRandomPassword();
+
+//    String encodePassword(String password);
+
+//    String resetPassword(String email, String code, String password);
+
+
 }

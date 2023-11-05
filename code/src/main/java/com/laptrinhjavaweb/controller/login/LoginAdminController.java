@@ -6,11 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/admin")
-
 public class LoginAdminController {
 
     @GetMapping("/login")
     public String login(){
         return "loginAdmin/login";
+    }
+
+    @GetMapping("/forgotpassword")
+    public String changePass(){
+        return "loginAdmin/forgotpassword";
     }
 }

@@ -18,8 +18,16 @@
         <pattern>/login</pattern>
     </decorator>
 
+    <decorator name="loginWeb" page="loginWeb.jsp">
+        <pattern>/register</pattern>
+    </decorator>
+
     <decorator name="loginAdmin" page="loginAdmin.jsp">
         <pattern>/admin/login</pattern>
+    </decorator>
+
+    <decorator name="loginAdmin" page="loginAdmin.jsp">
+        <pattern>/admin/forgotpassword</pattern>
     </decorator>
 
 

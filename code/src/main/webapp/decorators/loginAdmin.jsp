@@ -21,17 +21,11 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<<<<<<< HEAD
-
-=======
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
->>>>>>> thanh
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="<c:url value='/template/login/css/vendor.min.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/login/vendor/icon-set/style.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/login/css/theme.min.css'/>" rel="stylesheet">
-<<<<<<< HEAD
-=======
 
     <script>
         function showConfirm(message, id) {
@@ -90,7 +84,6 @@
             })
         }
     </script>
->>>>>>> thanh
 </head>
 <body>
 
