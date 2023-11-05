@@ -25,7 +25,6 @@ public class GioHangChiTiet extends PrimaryEntity implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "idgiohang")
-    @JsonIgnore
     private GioHang gioHang;
     @ManyToOne
     @JoinColumn(name = "idbienthe")

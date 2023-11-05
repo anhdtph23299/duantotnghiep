@@ -4,6 +4,8 @@ import com.laptrinhjavaweb.model.request.ThayDoiSoLuongGioHangRequest;
 import com.laptrinhjavaweb.service.GioHangChiTietService;
 import com.laptrinhjavaweb.util.base.ResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +17,11 @@ public class ApiGioHangChiTietController {
 
     @Autowired
     GioHangChiTietService gioHangChiTietService;
+
+    @GetMapping
+    public String getdata(){
+        return "hello";
+    }
 
     @GetMapping("/{id}")
     public ResponseObject dsGioHangChiTietByKhachHang(@PathVariable(name = "id")Long idkh){
@@ -40,7 +47,7 @@ public class ApiGioHangChiTietController {
     }
     @GetMapping("/dsspttchiatheosp/{id}")
     public ResponseObject dsSpttChiaTheoSanPhamByIdKh(@PathVariable(name = "id")Long idkh){
-        return  new ResponseObject(gioHangChiTietService.dsGioHangChiaTheoSanPham(idkh));
+        return new ResponseObject(gioHangChiTietService.dsGioHangChiaTheoSanPham(idkh));
     }
 
 

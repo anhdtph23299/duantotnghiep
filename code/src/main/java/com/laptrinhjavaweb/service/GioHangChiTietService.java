@@ -18,5 +18,7 @@ public interface GioHangChiTietService {
 
    List<List<GioHangResponse>> dsGioHangChiaTheoSanPham(Long idKh);
 
+   List<GioHangResponse> ds(Long idkh);
+
 
 }

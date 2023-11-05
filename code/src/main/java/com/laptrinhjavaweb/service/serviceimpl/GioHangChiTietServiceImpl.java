@@ -57,7 +57,15 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
              ) {
             dsGioHangChiaTheoSanPham.add(gioHangChiTietRepository.getDsspThuocTinhByIdSanPhamAndIdKh(id,idKh));
         }
+        System.out.println(dsGioHangChiaTheoSanPham);
         return dsGioHangChiaTheoSanPham;
+    }
+
+    @Override
+    public List<GioHangResponse> ds(Long idKh) {
+        List<Long> dsIdSanPham = gioHangChiTietRepository.getDsIdSanPhamByKhachHang(idKh);
+
+        return gioHangChiTietRepository.getDsspThuocTinhByIdSanPhamAndIdKh(dsIdSanPham.get(0),idKh);
     }
 
 
