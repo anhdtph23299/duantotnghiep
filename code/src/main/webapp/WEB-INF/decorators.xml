@@ -30,8 +30,16 @@
         <pattern>/admin/forgotpassword</pattern>
     </decorator>
 
+    <decorator name="web403" page="web403.jsp">
+        <pattern>/403</pattern>
+    </decorator>
+
+    <decorator name="admin403" page="admin403.jsp">
+        <pattern>/admin/403</pattern>
+    </decorator>
 
     <decorator name="thongtinWeb" page="thongtinWeb.jsp">
         <pattern>/web*</pattern>
     </decorator>
+
 </decorators>
