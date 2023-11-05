@@ -41,7 +41,7 @@
                             <div class="text-center">
                                 <div class="mb-5">
                                     <h1 class="display-4">Create your account</h1>
-                                    <p>Already have an account? <a href="/user/login">Sign in here</a></p>
+                                    <p>Already have an account? <a href="/login">Sign in here</a></p>
                                 </div>
 
                                 <a class="btn btn-lg btn-block btn-white mb-4" href="#">

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Change Password</title>
+    <title>Forgot Password</title>
 
 </head>
 <body>
@@ -54,7 +54,7 @@
                             <button type="submit" class="btn btn-lg btn-block btn-primary">Submit</button>
 
                             <div class="text-center mt-2">
-                                <a class="btn btn-link" href="/user/login">
+                                <a class="btn btn-link" href="/login">
                                     <i class="tio-chevron-left"></i> Back to Sign in
                                 </a>
                             </div>

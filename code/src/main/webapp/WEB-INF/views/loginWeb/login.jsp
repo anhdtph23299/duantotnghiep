@@ -39,7 +39,7 @@
                             <div class="text-center">
                                 <div class="mb-5">
                                     <h1 class="display-4">Sign in</h1>
-                                    <p>Don't have an account yet? <a href="/user/register">Sign up here</a></p>
+                                    <p>Don't have an account yet? <a href="/register">Sign up here</a></p>
                                 </div>
 
                                 <a class="btn btn-lg btn-block btn-white mb-4" href="#">

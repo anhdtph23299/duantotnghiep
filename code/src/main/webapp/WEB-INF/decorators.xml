@@ -30,6 +30,10 @@
         <pattern>/admin/forgotpassword</pattern>
     </decorator>
 
+    <decorator name="loginWeb" page="loginWeb.jsp">
+        <pattern>/forgotpassword</pattern>
+    </decorator>
+
     <decorator name="web403" page="web403.jsp">
         <pattern>/403</pattern>
     </decorator>
