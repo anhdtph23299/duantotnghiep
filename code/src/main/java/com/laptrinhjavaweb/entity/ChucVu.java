@@ -28,6 +28,4 @@ public class ChucVu extends PrimaryEntity {
     @Column(name = "trangthai")
     private Integer trangThai;
 
-    @OneToMany(mappedBy = "chucVu", fetch = FetchType.LAZY)
-    private List<NhanVien> nhanVienEntities = new ArrayList<>();
 }
