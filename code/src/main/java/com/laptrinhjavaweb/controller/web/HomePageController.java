@@ -48,5 +48,9 @@ public class HomePageController {
         return "web/shop_us";
     }
 
+    @GetMapping("/403")
+    public String web403(){
+        return "web/403";
+    }
 
 }
