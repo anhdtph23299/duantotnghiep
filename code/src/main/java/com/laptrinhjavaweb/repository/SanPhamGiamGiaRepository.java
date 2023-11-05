@@ -12,4 +12,6 @@ public interface SanPhamGiamGiaRepository extends JpaRepository<SanPhamGiamGia, 
 
     @Query("select sp from SanPhamGiamGia sp where sp.khuyenMai = ?1")
     List<SanPhamGiamGia> findSanPhamGiamGiaByGiamGia(Long idproduct);
+
+
 }

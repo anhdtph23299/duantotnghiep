@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ public class DanhMucEntity extends BaseEntity {
     @Column(name = "tendm")
     private String tenDanhMuc;
 
+
     @ManyToOne
     @JoinColumn(name = "danhmuccha")
     private DanhMucEntity danhmuccha;
@@ -33,6 +35,7 @@ public class DanhMucEntity extends BaseEntity {
     @Column(name = "hienthitrangchu")
     private Integer isshowhomepage;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "danhmucs", fetch = FetchType.LAZY)
     private List<SanPhamEntity> sanPhamEntities = new ArrayList<>();
 

@@ -1,5 +1,7 @@
 package com.laptrinhjavaweb.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,15 +46,19 @@ public class SanPhamEntity extends BaseEntity {
     @JoinColumn(name = "thuonghieuid")
     private ThuongHieuEntity thuonghieus;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
     private List<ThuocTinhEntity> thuocTinhEntities = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
     private List<GiaTriThuocTinhEntity> giaTriThuocTinhEntities = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
     private List<BienTheEntity> bienTheEntities = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
     private List<SanPhamHinhAnhEntity> sanPhamHinhAnhEntities = new ArrayList<>();
 

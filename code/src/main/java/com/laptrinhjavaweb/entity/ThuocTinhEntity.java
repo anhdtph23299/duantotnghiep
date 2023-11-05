@@ -11,7 +11,7 @@ public class ThuocTinhEntity extends BaseEntity{
     @Column(name = "slug")
     private String slug;
 
-    @Column(name = "ten")
+    @Column(name = "tentt")
     private String ten;
 
     @ManyToOne

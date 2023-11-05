@@ -14,7 +14,7 @@ public class KhuyenMaiController {
         return "admin/discount/view";
     }
 
-    @GetMapping("/detail")
+    @GetMapping("/detail/{id}")
     public String detail() {
         return "admin/discount/detail-discount";
     }
@@ -34,9 +34,9 @@ public class KhuyenMaiController {
         return "admin/discount/view";
     }
 
-    @GetMapping("/edit")
+    @GetMapping("/edit/{id}")
     public String edit() {
-        return "admin/discount/create";
+        return "admin/discount/update";
     }
 
     @PostMapping("/update")

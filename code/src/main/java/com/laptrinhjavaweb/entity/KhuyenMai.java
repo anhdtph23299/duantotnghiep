@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -48,19 +49,20 @@ public class KhuyenMai extends PrimaryEntity {
     private String moTa;
 
     @ManyToOne
-    @JoinColumn(name = "nguoitao",insertable = false,updatable = false)
+    @JoinColumn(name = "nguoitao",referencedColumnName = "id")
     private NhanVien nguoiTao;
 
     @Column(name = "ngaysua")
     private Date ngaySua;
 
     @ManyToOne
-    @JoinColumn(name = "nguoisua",insertable = false,updatable = false)
+    @JoinColumn(name = "nguoisua",referencedColumnName = "id")
     private NhanVien nguoisua;
 
     @Column(name = "trangthai")
     private Integer trangThai;
 
-    @OneToMany(mappedBy = "khuyenMai")
+    @JsonIgnore
+    @OneToMany(mappedBy = "khuyenMai",cascade =  CascadeType.ALL)
     private List<SanPhamGiamGia> dsSanPhamKhuyenMai = new ArrayList<>();
 }

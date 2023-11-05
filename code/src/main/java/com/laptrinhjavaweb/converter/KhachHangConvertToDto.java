@@ -11,19 +11,20 @@ public class KhachHangConvertToDto {
     @Autowired
     private PasswordEncoder passwordEncoder;
     public KhachHang convertoDto(KhachHangDto khachHangDto){
-        KhachHang khachHang = new KhachHang(
-                khachHangDto.getMaKH(),
-                khachHangDto.getTenKH(),
-                khachHangDto.getSdt(),
-                khachHangDto.getEmail(),
-                khachHangDto.getGioiTinh(),
-                khachHangDto.getNgaySinh(),
-                khachHangDto.getTrangThai(),
-                khachHangDto.getDiaChi(),
-                khachHangDto.getCccd(),
-                khachHangDto.getMoTa(),
-                this.passwordEncoder.encode(khachHangDto.getMatKhau())
-        );
+//        KhachHang khachHang = new KhachHang(
+//                khachHangDto.getMaKH(),
+//                khachHangDto.getTenKH(),
+//                khachHangDto.getSdt(),
+//                khachHangDto.getEmail(),
+//                khachHangDto.getGioiTinh(),
+//                khachHangDto.getNgaySinh(),
+//                khachHangDto.getTrangThai(),
+//                khachHangDto.getDiaChi(),
+//                khachHangDto.getCccd(),
+//                khachHangDto.getMoTa(),
+//                this.passwordEncoder.encode(khachHangDto.getMatKhau())
+//        );
+        KhachHang khachHang = new KhachHang();
         return khachHang;
     }
 }

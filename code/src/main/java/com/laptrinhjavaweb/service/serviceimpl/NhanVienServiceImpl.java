@@ -69,23 +69,24 @@ public class NhanVienServiceImpl implements NhanVienService {
 
     @Override
     public LoginMessage loginKhachHang(LoginDto loginDto) {
-        NhanVien nv1 = this.nhanVienRepository.findByEmail(loginDto.getEmail());
-        if(nv1 != null){
-            String pass = loginDto.getPassword();
-            String encodedPassword = nv1.getMatKhau();
-            Boolean isCheck = passwordEncoder.matches(pass, encodedPassword);
-            if(isCheck ){
-                Optional<NhanVien> nv = nhanVienRepository.findByEmailAndMatKhau(loginDto.getEmail(), encodedPassword);
-                if(nv.isPresent()){
-                    return new LoginMessage("Login thanh cong", true);
-                }else{
-                    return  new LoginMessage("Login that bai", false);
-                }
-            }else{
-                return new LoginMessage("Mat khau khong chinh xac", false);
-            }
-        }else{
-            return new LoginMessage("Email khong chinh xac", false);
-        }
+//        NhanVien nv1 = this.nhanVienRepository.findByEmail(loginDto.getEmail());
+//        if(nv1 != null){
+//            String pass = loginDto.getPassword();
+//            String encodedPassword = nv1.getMatKhau();
+//            Boolean isCheck = passwordEncoder.matches(pass, encodedPassword);
+//            if(isCheck ){
+//                Optional<NhanVien> nv = nhanVienRepository.findByEmailAndMatKhau(loginDto.getEmail(), encodedPassword);
+//                if(nv.isPresent()){
+//                    return new LoginMessage("Login thanh cong", true);
+//                }else{
+//                    return  new LoginMessage("Login that bai", false);
+//                }
+//            }else{
+//                return new LoginMessage("Mat khau khong chinh xac", false);
+//            }
+//        }else{
+//            return new LoginMessage("Email khong chinh xac", false);
+//        }
+        return null;
     }
 }

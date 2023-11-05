@@ -54,7 +54,7 @@ public class NhanVien extends PrimaryEntity {
     @Column(name = "noicap")
     private String noiCap;
 
-    @Column(name = "password")
+    @Column(name = "matkhau")
     private String matKhau;
 
 

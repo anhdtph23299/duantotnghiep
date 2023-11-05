@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.ApiController;
 
+import com.laptrinhjavaweb.dto.KhuyenMaiDto;
 import com.laptrinhjavaweb.entity.KhuyenMai;
 import com.laptrinhjavaweb.service.KhuyenMaiService;
 import com.laptrinhjavaweb.util.base.ResponseObject;
@@ -19,12 +20,13 @@ public class ApiKhuyenMaiController {
 
     @GetMapping("/detail/{id}")
     public ResponseObject detail(@PathVariable(name = "id") Long id) {
-        KhuyenMai km = khuyenMaiService.findById(id);
+        KhuyenMaiDto km = khuyenMaiService.findById(id);
         return new ResponseObject(km);
     }
 
     @PostMapping("/insert")
     public ResponseObject insert(@RequestBody KhuyenMai khuyenMai) {
+//        System.out.println(khuyenMai.getNguoiTao());
         String res = khuyenMaiService.insert(khuyenMai);
         return new ResponseObject(res);
     }

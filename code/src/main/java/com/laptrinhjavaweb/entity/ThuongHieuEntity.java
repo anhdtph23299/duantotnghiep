@@ -1,5 +1,7 @@
 package com.laptrinhjavaweb.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ public class ThuongHieuEntity extends BaseEntity{
     @Column(name = "ten")
     private String ten;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "thuonghieus", fetch = FetchType.LAZY)
     private List<SanPhamEntity> sanPhamEntities = new ArrayList<>();
 
