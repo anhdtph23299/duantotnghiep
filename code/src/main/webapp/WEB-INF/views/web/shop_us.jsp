@@ -209,341 +209,80 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1" >
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content" >
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Địa chỉ của tôi</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" style="height: 450px; overflow-y: scroll;">
-                <div class="row">
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-                    <div class="col-10">
-                        <div class="ms-3" style="border-bottom: #6C757D">
-                            <input class="form-check-input" type="radio" name="radioNoLabel"  value="" aria-label="...">
-                            <div class="hstack gap-3 ms-3">
-                                <div>
-                                    <span class="text-dark">Khánh Linh</span>
-                                </div>
-                                <div class="vr" style="height: 30px"></div>
-                                <div >
-                                    <span class="">0987654321</span>
-                                </div>
-                            </div>
-                            <div class="ms-3">
-                                <p class="">Xóm yên lương, Xã Ngọc Lương, Huyện Yên Thủy, Hòa Bình</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a class="text-decoration-none" style="color: #00aced" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Cập nhật</a>
-                    </div>
-
-                </div>
-                <button class="btn btn-light" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal" >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
-                    </svg>
-                    Thêm địa chỉ mới</button>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Xác nhận</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Cập nhật địa chỉ</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                form update
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-light" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Trở lại</button>
-                <button class="btn btn-danger" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Hoàn thành</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalToggleLabel3">Địa chỉ mới</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                form add
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-light" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Trở lại</button>
-                <button class="btn btn-danger" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Hoàn thành</button>
-            </div>
-        </div>
-    </div>
-</div>
-<button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Thay đổi</button>
-
-<%--End modal--%>
-
 
 <div class="container-fluid pt-5">
     <div class="text-center my-5">
         <h2 class="section-title px-5"><span class="px-2"><s:message code="web.shop.thongtin10" /></span></h2>
     </div>
     <div class="row px-xl-5">
-        <div class="col-12">
+        <div class="col-6">
+            <div class="card">
+                <div class="form-check">
+                    <input class="form-check-input my-4 ms-3" type="radio" name="flexRadioDefault" id="paypalRadio" checked>
+                    <label class="form-check-label ms-5" for="paypalRadio">
+                        <img src="/template/web/img/paypal.png" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="paypal">
+                <p>Please click the "Checkout" button below to pay with Paypal</p>
+                <button class="btn btn-primary">Checkout</button>
+            </div>
+
+            <div class="card mt-3">
+                <div class="form-check">
+                    <input class="form-check-input my-4 ms-3" type="radio" name="flexRadioDefault" id="bankTransferRadio">
+                    <label class="form-check-label ms-5" for="bankTransferRadio">
+                        <img src="/template/web/img/banktransfer.png" alt="">
+                    </label>
+                </div>
+            </div>
+            <div class="banktransfer" style="display: none;">
+                <p>Please transfer according to the bank information below:</p>
+                <p>Recipient Bank Account:</p>
+                <p>Bank: MB BANK</p>
+                <p>Account number: 0987654321</p>
+                <p>Account holder name: KOC Shop</p>
+            </div>
+        </div>
+
+        <div class="col-6">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12525.381622199584!2d105.74598925796502!3d21.03995763828852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345544688c13a3%3A0x598a29eb40c7e5bb!2zVGjGocyAaSBUcmFuZyBWZW51cw!5e0!3m2!1sen!2s!4v1696573970081!5m2!1sen!2s"
                     style="border:0; width: 100%; height: 500px" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const paypalRadio = document.getElementById('paypalRadio');
+        const bankTransferRadio = document.getElementById('bankTransferRadio');
+        const paypalDiv = document.querySelector('.paypal');
+        const bankTransferDiv = document.querySelector('.banktransfer');
+
+        paypalRadio.checked = true;
+        paypalDiv.style.display = 'block';
+
+        bankTransferRadio.addEventListener('change', function () {
+            if (bankTransferRadio.checked) {
+                bankTransferDiv.style.display = 'block';
+                paypalDiv.style.display = 'none';
+            } else {
+                bankTransferDiv.style.display = 'none';
+            }
+        });
+
+        paypalRadio.addEventListener('change', function () {
+            if (paypalRadio.checked) {
+                paypalDiv.style.display = 'block';
+                bankTransferDiv.style.display = 'none';
+            } else {
+                paypalDiv.style.display = 'none';
+            }
+        });
+    });
+
+</script>
 </body>
 </html>
