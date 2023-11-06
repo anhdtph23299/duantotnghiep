@@ -282,7 +282,7 @@
                             <span >Thời gian giao dự kiến <span id="thoigiandukien">2 Th11 - 7 Th11</span></span>
                         </div>
                         <div class="col-2">
-                            <span class="float-right" id="sotiengiaohang">27500₫</span>
+                            <span class="float-right sotiengiaohang" >27500₫</span>
                         </div>
                     </div>
                     <div class="row my-3">
@@ -298,7 +298,7 @@
                             <span>Tổng số tiền (<span id="tongsanpham"></span> sản phẩm):</span>
                         </div>
                         <div class="col-4 text-right">
-                            <span id="tongtienghct">1.827.500₫</span>
+                            <span class="tongtienghct">1.827.500₫</span>
                         </div>
                     </div>
                 </div>
@@ -347,7 +347,7 @@
                             <span>Tổng tiền hàng</span>
                         </div>
                         <div class="col-6 text-right">
-                            <span>1800000₫</span>
+                            <span class="tongtienghct">1800000₫</span>
                         </div>
                     </div>
                     <div class="row my-3">
@@ -355,7 +355,7 @@
                             <span>Phí vận chuyển</span>
                         </div>
                         <div class="col-6 text-right">
-                            <span>27500₫</span>
+                            <span class="sotiengiaohang">27500₫</span>
                         </div>
                     </div>
                     <div class="row my-3">
@@ -363,7 +363,7 @@
                             <span>Tổng thanh toán:</span>
                         </div>
                         <div class="col-6 text-right">
-                            <span style="font-size: 30px; color: #C3817B">1.827.500₫</span>
+                            <span style="font-size: 30px; color: #C3817B" id="tongthanhtoan">1.827.500₫</span>
                         </div>
                     </div>
                     <div class="row my-3">
@@ -545,7 +545,7 @@
        $.ajax({
            url: '/api/user/ttgh/default/'+1,
            method: 'GET',
-           success: function(req) {
+           success: async function (req) {
                var data = req.data;
                $("#idttmuahang").html(data.id);
                $("#tennguoinhan").html(
@@ -553,9 +553,11 @@
                    \${data.tenNguoiNhan}(\${data.sdt})
                    `
                );
-              // $("#sdt").html(data.sdt);
+               // $("#sdt").html(data.sdt);
                $("#diachi").html(data.diaChi);
                getSoTienVanChuyen(data.id);
+               await dsthongtinmuahang();
+               $(`input:radio[name=diaChiNhanHang]:first`).prop('checked', true);
            },
            error: function(xhr, status, error) {
                console.log("Có lỗi xảy ra")
@@ -584,8 +586,9 @@
            }
        });
    }
+
     getAddressDefault()
-//Thành phố
+    //Thành phố
     $.ajax({
         url: '/api/user/ttgh/thanhpho',
         method: 'GET',
@@ -642,15 +645,16 @@
             method: 'GET',
             success: async function (data) {
                $("#thoigiandukien").text(convertMilisToDate(data.expected_delivery_time))
-                $("#sotiengiaohang").html(data.total_fee+"₫");
+                $(".sotiengiaohang").text(data.total_fee+"₫");
+                tongThanhToan();
             },
             error: function(xhr, status, error) {
                 console.log("Có lỗi xảy ra")
             }
         });
     }
-    function  dsthongtinmuahang (){
-        $.ajax({
+   async function  dsthongtinmuahang (){
+        await $.ajax({
             url: '/api/user/ttgh/dsthongtingiaohang/'+1,
             method: 'GET',
             success: function(req) {
@@ -689,7 +693,6 @@
             }
         });
     }
-   dsthongtinmuahang();
     function ghct(){
         $.ajax({
             url: '/api/user/giaohang/hdct/'+idkh,
@@ -740,28 +743,13 @@
         });
     }
 
-        // $.ajax({
-        //     url: '/api/user/ghct/subtotal/'+1,
-        //     method: 'GET',
-        //     success: function(req) {
-        //         var data = req.data;
-        //       //  $("#subtotal").html(convertVND(data));
-        //         $("#total").html(convertVND(data))
-        //         $("#totaldola").html(formatter.format(data/24570));
-        //         $("#pricethanhtoan").val(data/24570);
-        //     },
-        //     error: function(xhr, status, error) {
-        //         alert('Có lỗi xảy ra: ' + error);
-        //     }
-        // });
-
     function tongTienTheoHoaDon(idhd){
         console.log(idhd)
         $.ajax({
             url: 'api/user/giaohang/tongtienhd/'+idhd,
             method: 'GET',
             success: function (req) {
-                $("#tongtienghct").html(req.data+"₫");
+                $(".tongtienghct").html(req.data+"₫");
             },
             error: function(xhr, status, error) {
                 console.log("Có lỗi xảy ra")
@@ -769,4 +757,24 @@
         });
     }
     ghct()
+    function tongThanhToan() {
+        var tongtien = $(".tongtienghct:first").text(); // Lấy giá trị từ phần tử đầu tiên
+        var tienship = $(".sotiengiaohang:first").text(); // Lấy giá trị từ phần tử đầu tiên
+
+        console.log(tongtien);
+        console.log(tienship);
+
+        // Lấy chuỗi từ đầu đến length - 1
+        var tongtienSubstring = Number(tongtien.slice(0, tongtien.length - 1));
+        var tienshipSubstring = Number(tienship.slice(0, tienship.length - 1));
+
+        console.log(tongtienSubstring);
+        console.log(tienshipSubstring);
+
+        $("#tongthanhtoan").html(tongtienSubstring + tienshipSubstring + "₫");
+    }
+
+
+
+    tongThanhToan();
 </script>
