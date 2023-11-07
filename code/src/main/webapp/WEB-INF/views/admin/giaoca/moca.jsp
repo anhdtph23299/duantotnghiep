@@ -6,12 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.laptrinhjavaweb.security.utils.SecurityUtils" %>
+<%@include file="/common/taglib.jsp" %>
 <html>
 <head>
     <title>Mở ca làm việc</title>
 </head>
 <body>
 <div class="content-body">
+    <c:if test="${param.isNotOpenShift != null}">
+        <div class="alert alert-danger">
+            Bạn cần phải mở ca làm việc mới thực hiện được các quyền tiêp theo!
+        </div>
+    </c:if>
     <div class="container-fluid">
         <h4 style="margin-top: 0;
     margin-bottom: 30px;
@@ -37,7 +44,7 @@
                                 <h6>Tên nhân viên:</h6>
                             </div>
                             <div class="col-8">
-                                <span>Dinh Anh Tuan</span>
+                                <span><%=SecurityUtils.getPrincipal().getFullName()%></span>
                             </div>
                         </div>
                         <div class="row mt-2">

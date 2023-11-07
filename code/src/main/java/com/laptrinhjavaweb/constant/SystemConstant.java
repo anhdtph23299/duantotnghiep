@@ -6,5 +6,5 @@ public class SystemConstant {
 
     public static final Integer STATUS_ACTICE = 1;
 
-    public static final Integer STATUS_IN_ACTICE = 1;
+    public static final Integer STATUS_IN_ACTICE = 0;
 }

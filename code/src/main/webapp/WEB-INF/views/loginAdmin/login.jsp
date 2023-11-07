@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: asus
-  Date: 10/22/2023
-  Time: 3:56 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,23 +7,33 @@
 <body>
 <div class="main-parent">
     <div class="form-wrap">
-        <form action="">
+        <c:if test="${param.isNotOpenShift != null}">
+            <div class="alert alert-danger">
+                Tài khoản không hợp lệ. Xin kiểm tra lại
+            </div>
+        </c:if>
+        <c:if test="${param.sessionTimeout != null}">
+            <div class="alert alert-danger">
+                Phiên làm việc hết hạn, yêu cầu đăng nhập lại!
+            </div>
+        </c:if>
+        <form action="j_spring_security_check" method="POST">
             <h1><span>Login</span>Form</h1>
 
             <div class="single-input">
                 <input
                         required
-                        type="email"
+                        type="text"
                         id="email"
-                        placeholder="Email address"
+                        name="j_username"
                 />
             </div>
             <div class="single-input">
-                <input required type="password" id="pass" placeholder="Password" />
+                <input required type="password" id="pass" name="j_password" placeholder="Password" />
             </div>
 
             <div class="Sumbit-button">
-                <button class="button login">Login</button>
+                <button type="submit" class="button login">Login</button>
             </div>
             <div class="account-have">
                 <a href="/admin/forgotpassword">Forget password</a>

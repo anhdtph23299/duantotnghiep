@@ -8,6 +8,8 @@ public class KhachHangDTO {
 
     private String tenKH;
 
+    private Integer trangThai;
+
     public String getMaKH() {
         return maKH;
     }
@@ -30,5 +32,13 @@ public class KhachHangDTO {
 
     public void setTenKH(String tenKH) {
         this.tenKH = tenKH;
+    }
+
+    public Integer getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(Integer trangThai) {
+        this.trangThai = trangThai;
     }
 }

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp" %>
 <html>
 <head>
     <title>Login</title>
@@ -24,6 +25,16 @@
     </div>
 
     <!-- Content -->
+    <c:if test="${param.isNotOpenShift != null}">
+        <div class="alert alert-danger">
+            Tài khoản không hợp lệ. Xin kiểm tra lại
+        </div>
+    </c:if>
+    <c:if test="${param.sessionTimeout != null}">
+        <div class="alert alert-danger">
+            Phiên làm việc hết hạn, yêu cầu đăng nhập lại!
+        </div>
+    </c:if>
     <div class="container py-5 py-sm-7">
         <a class="d-flex justify-content-center mb-5" href="#">
             <img class="z-index-2" src="/template/login/svg/logos/logo.svg" alt="Image Description" style="width: 8rem;">

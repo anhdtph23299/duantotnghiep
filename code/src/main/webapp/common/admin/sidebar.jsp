@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.laptrinhjavaweb.security.utils.SecurityUtils" %>
+<%@include file="/common/taglib.jsp" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,10 +26,14 @@
         </div>
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                <i class="flaticon-144-layout"></i>
-                <span class="nav-text">Dashboard</span>
-            </a>
+
+            <li>
+                <security:authorize access="hasRole('ADMIN')">
+                    <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-144-layout"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </security:authorize>
                 <ul aria-expanded="false">
                     <li><a href="index.html">Dashboard Light</a></li>
                     <li><a href="index-2.html">Dashboard Dark</a></li>
@@ -37,12 +43,14 @@
                     <li><a href="portofolio.html">Portofolio</a></li>
                     <li><a href="market-capital.html">Market Capital</a></li>
                 </ul>
-
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                <i class="flaticon-061-puzzle"></i>
-                <span class="nav-text">Quản lý</span>
-            </a>
+            <li>
+                <security:authorize access="hasRole('ADMIN')">
+                    <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-061-puzzle"></i>
+                        <span class="nav-text">Quản lý</span>
+                    </a>
+                </security:authorize>
                 <ul aria-expanded="false">
                     <li><a href="/admin/nhanvien">Nhân viên</a></li>
                     <li><a href="/admin/khachhang">Khách hàng</a></li>
