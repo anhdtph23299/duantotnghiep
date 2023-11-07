@@ -8,14 +8,14 @@
 <div class="main-parent">
     <div class="form-wrap">
         <c:if test="${param.incorrectAccount != null}">
-            <div class="alert alert-danger">
-                Tài khoản không hợp lệ. Xin kiểm tra lại
-            </div>
+            <script>
+                showError("Tài khoản không hợp lệ. Xin kiểm tra lại")
+            </script>
         </c:if>
         <c:if test="${param.sessionTimeout != null}">
-            <div class="alert alert-danger">
-                Phiên làm việc hết hạn, yêu cầu đăng nhập lại!
-            </div>
+            <script>
+                showError("Phiên làm việc hết hạn, yêu cầu đăng nhập lại!")
+            </script>
         </c:if>
         <form action="j_spring_security_check" method="POST">
             <h1><span>Login</span>Form</h1>

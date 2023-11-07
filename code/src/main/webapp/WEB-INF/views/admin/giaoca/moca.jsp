@@ -15,9 +15,9 @@
 <body>
 <div class="content-body">
     <c:if test="${param.isNotOpenShift != null}">
-        <div class="alert alert-danger">
-            Bạn cần phải mở ca làm việc mới thực hiện được các quyền tiêp theo!
-        </div>
+        <script>
+            showError("Bạn cần phải mở ca làm việc mới thực hiện được các quyền tiêp theo!")
+        </script>
     </c:if>
     <div class="container-fluid">
         <h4 style="margin-top: 0;
