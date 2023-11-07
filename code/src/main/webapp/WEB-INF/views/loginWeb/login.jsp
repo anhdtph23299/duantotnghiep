@@ -76,7 +76,7 @@
                                 <label class="input-label" for="signupSrPassword" tabindex="0">
                         <span class="d-flex justify-content-between align-items-center">
                           Password
-                          <a class="input-label-secondary" href="/user/changePass">Forgot Password?</a>
+                          <a class="input-label-secondary" href="/forgotpassword">Forgot Password?</a>
                         </span>
                                 </label>
 

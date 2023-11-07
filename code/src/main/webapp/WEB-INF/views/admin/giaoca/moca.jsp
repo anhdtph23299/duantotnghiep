@@ -109,7 +109,7 @@
                 }),
                 contentType: "application/json",
                 success: function() {
-                    window.location.href = '/admin';
+                    window.location.href = '/admin/giaodich/hoadon';
                 },
                 error: function(xhr, status, error) {
                     showError("Thêm thất bại");
