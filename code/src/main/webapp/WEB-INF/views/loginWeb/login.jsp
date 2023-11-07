@@ -25,7 +25,7 @@
     </div>
 
     <!-- Content -->
-    <c:if test="${param.isNotOpenShift != null}">
+    <c:if test="${param.incorrectAccount != null}">
         <div class="alert alert-danger">
             Tài khoản không hợp lệ. Xin kiểm tra lại
         </div>

@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp" %>
 <html>
 <head>
     <title>Login</title>
-
 </head>
 <body>
 <div class="main-parent">
     <div class="form-wrap">
-        <c:if test="${param.isNotOpenShift != null}">
+        <c:if test="${param.incorrectAccount != null}">
             <div class="alert alert-danger">
                 Tài khoản không hợp lệ. Xin kiểm tra lại
             </div>

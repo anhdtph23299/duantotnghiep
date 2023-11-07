@@ -26,14 +26,14 @@ public interface HoaDonRepository extends JpaRepository<HoaDon,Long> {
     BigDecimal tongTienByHoaDon(@Param("idhd")Long idhd);
 
 
-    @Query("SELECT h.mahoadon, n.manv, k.makh, h.ngaytao, h.phuongthucthanhtoan, h.trangthai, " +
-            "(SELECT SUM(CASE WHEN bt.gia IS NULL THEN sp.gia * hdct.soluong ELSE bt.gia * hdct.soluong END) " +
-            "FROM dbo.hoadonchitiet hdct " +
-            "JOIN dbo.bienthe bt ON bt.id = hdct.idbienthe " +
-            "JOIN dbo.sanpham sp ON sp.id = bt.sanphamid " +
-            "WHERE hdct.idhd = h.id) AS tongtienhang " +
-            "FROM hoadon h " +
-            "JOIN khachhang k ON h.idkh = k.id " +
-            "JOIN nhanvien n ON h.idnv = n.id")
-    List<HoaDon> danhsachhoadon();
+//    @Query("SELECT h.mahoadon, n.manv, k.makh, h.ngaytao, h.phuongthucthanhtoan, h.trangthai, " +
+//            "(SELECT SUM(CASE WHEN bt.gia IS NULL THEN sp.gia * hdct.soluong ELSE bt.gia * hdct.soluong END) " +
+//            "FROM dbo.hoadonchitiet hdct " +
+//            "JOIN dbo.bienthe bt ON bt.id = hdct.idbienthe " +
+//            "JOIN dbo.sanpham sp ON sp.id = bt.sanphamid " +
+//            "WHERE hdct.idhd = h.id) AS tongtienhang " +
+//            "FROM hoadon h " +
+//            "JOIN khachhang k ON h.idkh = k.id " +
+//            "JOIN nhanvien n ON h.idnv = n.id")
+//    List<HoaDon> danhsachhoadon();
 }
