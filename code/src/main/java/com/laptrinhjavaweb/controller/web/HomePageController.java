@@ -1,7 +1,11 @@
+
 package com.laptrinhjavaweb.controller.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.math.BigDecimal;
 
 @Controller
 public class HomePageController {
@@ -16,8 +20,8 @@ public class HomePageController {
         return "web/shop";
     }
 
-    @GetMapping("/detail")
-    public String detail(){
+    @GetMapping("/sanphams/{slug}")
+    public String detail(@PathVariable("slug") String slug){
         return "web/detail";
     }
 
@@ -35,4 +39,21 @@ public class HomePageController {
     public String contact(){
         return "web/contact";
     }
+
+    @GetMapping("/faqs")
+    public String faqs(){
+        return "web/faqs";
+    }
+
+    @GetMapping("/shop_us")
+    public String shop_us(){
+        return "web/shop_us";
+    }
+
+    @GetMapping("/403")
+    public String web403(){
+        return "web/403";
+    }
+
 }
+
