@@ -21,6 +21,9 @@ public class HoaDon extends PrimaryEntity {
     @Column(name = "mahoadon")
     private String maHoaDon;
 
+    @Column(name = "khachthanhtoan")
+    private Integer khachThanhToan;
+
     @Column(name = "ngaytao")
     private Date ngayDat=new Date();
 

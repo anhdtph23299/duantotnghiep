@@ -51,103 +51,47 @@
                         </div>
                     </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="">
-                        <table class="table table-hover" >
-                            <thead>
-                            <tr>
-                                <th scope="col">STT</th>
-                                <th scope="col">Mã Hóa đơn</th>
-                                <th scope="col">Thời gian</th>
-                                <th scope="col">Khách hàng</th>
-                                <th scope="col">Tổng tiền hàng</th>
-                                <th scope="col">Giảm giá</th>
-                                <th scope="col">Khách trả</th>
-                                <th scope="col">Thao tác</th>
-                            </tr>
-                            </thead>
-                            <tbody >
-                            <tr>
-                                <td>1</td>
-                                <td>HD0001</td>
-                                <td>28/10/2023 14:20</td>
-                                <td>Văn An - Hà Nội</td>
-                                <td>150000</td>
-                                <td>0</td>
-                                <td>150000</td>
-                                <td>
-                                    <a class="btn btn-secondary"  href="/admin/giaodich/detailhoadon" style="text-decoration: none;color: white;">Chi tiết</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>HD0002</td>
-                                <td>28/10/2023 14:30</td>
-                                <td>Văn Anh - Hà Nội</td>
-                                <td>150000</td>
-                                <td>0</td>
-                                <td>150000</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>HD0003</td>
-                                <td>28/10/2023 14:35</td>
-                                <td>Văn Thu - Hà Nội</td>
-                                <td>150000</td>
-                                <td>0</td>
-                                <td>150000</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>HD0003</td>
-                                <td>28/10/2023 14:35</td>
-                                <td>Văn Thu - Hà Nội</td>
-                                <td>150000</td>
-                                <td>0</td>
-                                <td>150000</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>HD0003</td>
-                                <td>28/10/2023 14:35</td>
-                                <td>Văn Thu - Hà Nội</td>
-                                <td>150000</td>
-                                <td>0</td>
-                                <td>150000</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>HD0003</td>
-                                <td>28/10/2023 14:35</td>
-                                <td>Văn Thu - Hà Nội</td>
-                                <td>150000</td>
-                                <td>0</td>
-                                <td>150000</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>HD0003</td>
-                                <td>28/10/2023 14:35</td>
-                                <td>Văn Thu - Hà Nội</td>
-                                <td>150000</td>
-                                <td>0</td>
-                                <td>150000</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>HD0003</td>
-                                <td>28/10/2023 14:35</td>
-                                <td>Văn Thu - Hà Nội</td>
-                                <td>150000</td>
-                                <td>0</td>
-                                <td>150000</td>
-                            </tr>
-                            </tbody>
-                        </table>
+                <div class="card" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        padding: 20px; background-color: #fff">
+                    <div class="row col-12">
+                        <h4>Danh sách hóa đơn</h4>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+
+                        <hr>
+                            <table class="table table-hover" >
+                                <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Mã Hóa đơn</th>
+                                    <th scope="col">Nhân viên</th>
+                                    <th scope="col">Khách hàng</th>
+                                    <th scope="col">Thời gian</th>
+                                    <th scope="col">Tổng tiền hàng</th>
+                                    <th scope="col">Phương thức</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">Thao tác</th>
+                                </tr>
+                                </thead>
+                                <tbody >
+                                <tr>
+                                    <td>1</td>
+                                    <td>HD0001</td>
+                                    <td>NV01</td>
+                                    <td>Văn An - Hà Nội</td>
+                                    <td>28/10/2023 14:20</td>
+                                    <td>150000</td>
+                                    <td>Tiền mặt</td>
+                                    <td>Đã thanh toán</td>
+                                    <td>
+                                        <a class="btn btn-secondary"  href="/admin/giaodich/detailhoadon" style="text-decoration: none;color: white;">Chi tiết</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                     </div>
                 </div>
-            </div>
 
                 <nav class="mt-2">
                     <ul class="pagination pagination-gutter pagination-primary  no-bg">
