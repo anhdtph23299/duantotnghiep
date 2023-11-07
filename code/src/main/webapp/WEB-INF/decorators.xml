@@ -30,6 +30,10 @@
         <pattern>/admin/forgotpassword</pattern>
     </decorator>
 
+    <decorator name="loginAdmin" page="loginAdmin.jsp">
+        <pattern>/admin/changePassword</pattern>
+    </decorator>
+
     <decorator name="loginWeb" page="loginWeb.jsp">
         <pattern>/forgotpassword</pattern>
     </decorator>

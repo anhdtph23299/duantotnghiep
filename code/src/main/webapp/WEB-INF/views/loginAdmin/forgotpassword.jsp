@@ -26,10 +26,11 @@
             <div class="Sumbit-button">
                 <button class="button login"  onclick="quenMatKhau()">Submit</button>
             </div>
-            <div class="text-center mt-2">
+            <div class="account-have">
                 <a class="btn btn-link" style="text-decoration: none" href="/admin/login">
-                   < Back to Sign in
+                    < Back to Sign in
                 </a>
+                <a href="/admin/changePassword">ChangePass</a>
             </div>
     </div>
 </div>

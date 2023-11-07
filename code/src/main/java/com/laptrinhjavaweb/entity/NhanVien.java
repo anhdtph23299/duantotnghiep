@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -56,6 +57,9 @@ public class NhanVien extends PrimaryEntity {
 
     @Column(name = "noicap")
     private String noiCap;
+
+    @Column(name = "resettoken")
+    private String resetToken;
 
     @ManyToOne
     @JoinColumn(name = "idchucvu", referencedColumnName = "id")

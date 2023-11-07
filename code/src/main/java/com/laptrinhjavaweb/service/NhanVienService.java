@@ -22,9 +22,7 @@ public interface NhanVienService {
 
     String generateRandomPassword();
 
-//    String encodePassword(String password);
-
-//    String resetPassword(String email, String code, String password);
+    NhanVien findByResetToken(String resetToken);
 
 
 }

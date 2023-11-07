@@ -14,7 +14,12 @@ public class LoginAdminController {
     }
 
     @GetMapping("/forgotpassword")
-    public String changePass(){
+    public String forgotPassword(){
         return "loginAdmin/forgotpassword";
+    }
+
+    @GetMapping("/changePassword")
+    public String changePassword(){
+        return "loginAdmin/changePass";
     }
 }
