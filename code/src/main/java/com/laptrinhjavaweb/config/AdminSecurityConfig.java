@@ -16,8 +16,8 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 @Configuration
 @EnableWebSecurity
-@Order(2)
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+@Order(1)
+public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -46,16 +46,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
                 http.csrf().disable()
                 .authorizeRequests()
-                        .antMatchers("/trang-chu").hasAnyRole("MANAGER","STAFF", "CUSTOMER")
-                        .antMatchers("/login").permitAll()
+                        .antMatchers("/admin/dashboards").hasAnyRole("MANAGER")
+                        .antMatchers("/admin/dashboards/users").hasAnyRole("MANAGER")
+                        .antMatchers("/admin/login").permitAll()
                 .and()
-                .formLogin().loginPage("/login").usernameParameter("j_username").passwordParameter("j_password").permitAll()
-                .loginProcessingUrl("/j_spring_security_check")
+                .formLogin().loginPage("/admin/login").usernameParameter("j_username").passwordParameter("j_password").permitAll()
+                .loginProcessingUrl("/admin/j_spring_security_check")
                 .successHandler(myAuthenticationSuccessHandler())
-                .failureUrl("/login?incorrectAccount").and()
-                .logout().logoutUrl("/logout").deleteCookies("JSESSIONID")
-                .and().exceptionHandling().accessDeniedPage("/access-denied").and()
-                .sessionManagement().maximumSessions(1).expiredUrl("/login?sessionTimeout");
+                .failureUrl("/admin/login?incorrectAccount").and()
+                .logout().logoutUrl("/admin/logout").deleteCookies("JSESSIONID")
+                .and().exceptionHandling().accessDeniedPage("/admin/access-denied").and()
+                .sessionManagement().maximumSessions(1).expiredUrl("/admin/login?sessionTimeout");
     }
 
     @Bean

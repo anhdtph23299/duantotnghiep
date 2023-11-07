@@ -8,6 +8,7 @@ public class NhanVienDTO {
     private String tenNV;
     private String sdt;
     private ChucVuDTO chucVuDTO;
+    private Integer trangThai;
 
     public Long getId() {
         return id;
@@ -55,5 +56,13 @@ public class NhanVienDTO {
 
     public void setChucVuDTO(ChucVuDTO chucVuDTO) {
         this.chucVuDTO = chucVuDTO;
+    }
+
+    public Integer getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(Integer trangThai) {
+        this.trangThai = trangThai;
     }
 }

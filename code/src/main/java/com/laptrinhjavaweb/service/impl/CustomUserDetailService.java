@@ -30,7 +30,7 @@ public class CustomUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String ma) throws UsernameNotFoundException {
         MyUserDetail myUserDetail = null;
-        NhanVienDTO nhanVienDTO = nhanVienService.findByMaNVAndTrangThai(ma, SystemConstant.STATUS_ACTICE);
+        NhanVienDTO nhanVienDTO = nhanVienService.findByMaNVAndTrangThai(ma, SystemConstant.STATUS_IN_ACTICE);
         List<GrantedAuthority> authorities = new ArrayList<>();
         if(nhanVienDTO != null){
             authorities.add(new SimpleGrantedAuthority("ROLE_" + nhanVienDTO.getChucVuDTO().getMaCV()));
