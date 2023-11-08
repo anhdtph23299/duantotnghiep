@@ -18,10 +18,6 @@ public class ApiGioHangChiTietController {
     @Autowired
     GioHangChiTietService gioHangChiTietService;
 
-    @GetMapping
-    public String getdata(){
-        return "hello";
-    }
 
     @GetMapping("/{id}")
     public ResponseObject dsGioHangChiTietByKhachHang(@PathVariable(name = "id")Long idkh){

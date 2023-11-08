@@ -14,7 +14,8 @@ public interface GioHangChiTietRepository extends JpaRepository<GioHangChiTiet, 
 
     @Query("select ghct from GioHangChiTiet ghct where ghct.gioHang.khachHang.id=:idkh and ghct.trangThai= 1")
     List<GioHangResponse> dsGioHangChiTietByIdKh(@Param("idkh")Long idkh);
-
+    @Query("select ghct from GioHangChiTiet ghct where ghct.gioHang.id=:idgh and ghct.id in (:idghct) and ghct.trangThai= 1")
+    List<GioHangChiTiet> dsGioHangChiTietByIdGioHang(@Param("idgh")Long idgh,@Param("idghct")List<Long> idghct);
     @Query("select ghct from GioHangChiTiet ghct where ghct.id =:idghct")
     GioHangResponse getGioHangResponseById(@Param("idghct")Long idghct);
 

@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
+import com.laptrinhjavaweb.entity.enumentity.PhuongThucThanhToanEnum;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -39,6 +40,14 @@ public class HoaDon extends PrimaryEntity {
     @Column(name = "phuongthucthanhtoan")
     private Integer PhuongThucThanhToan;
 
+    public void setPhuongThucThanhToan(PhuongThucThanhToanEnum pttt) {
+        if (pttt == PhuongThucThanhToanEnum.CHUYENKHOAN){
+            PhuongThucThanhToan = 2;
+        }else {
+            PhuongThucThanhToan = 1;
+        }
+    }
+
     @Column(name = "trangthai")
     private Integer trangThai=1;
 
@@ -58,10 +67,20 @@ public class HoaDon extends PrimaryEntity {
     @JoinColumn(name = "idkm")
     private KhuyenMai khuyenMai;
 
+
     @JsonProperty("getTrangThaiHD")
     public String getTrangThaiHD() {
+        if (trangThai>9){//10 : Mới đặt trong giỏ hàng
+            if (trangThai==10){
+                return "Đang trong giỏ hàng";
+            }else if (trangThai==11){
+                return "Chờ gói hàng";
+            }
+        }
+
         return trangThai==1?"Đang chờ":trangThai==2?"Hoàn thành":"Huỷ";
     }
+
 
     @ManyToOne
     @JoinColumn(name = "idlydo",insertable = false,updatable = false)

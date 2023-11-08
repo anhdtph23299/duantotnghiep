@@ -1,13 +1,16 @@
 package com.laptrinhjavaweb.service.serviceimpl;
 
 import com.laptrinhjavaweb.entity.BienThe;
+import com.laptrinhjavaweb.entity.GioHang;
 import com.laptrinhjavaweb.entity.GioHangChiTiet;
 import com.laptrinhjavaweb.entity.HoaDon;
 import com.laptrinhjavaweb.entity.HoaDonChiTiet;
 import com.laptrinhjavaweb.entity.KhachHang;
+import com.laptrinhjavaweb.entity.ThongTinMuaHang;
 import com.laptrinhjavaweb.model.response.HoaDonChiTietResponse;
 import com.laptrinhjavaweb.repository.BienTheRepository;
 import com.laptrinhjavaweb.repository.GioHangChiTietRepository;
+import com.laptrinhjavaweb.repository.GioHangRepository;
 import com.laptrinhjavaweb.repository.HoaDonChiTietRepository;
 import com.laptrinhjavaweb.repository.HoaDonRepository;
 import com.laptrinhjavaweb.repository.KhachHangRepository;
@@ -20,10 +23,14 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 @Service
 public class HoaDonServiceImpl implements HoaDonService {
+
+    @Autowired
+    GioHangRepository gioHangRepository;
     @Autowired
     HoaDonRepository hoaDonRepository;
 
@@ -43,8 +50,13 @@ public class HoaDonServiceImpl implements HoaDonService {
     ThongTinMuaHangRepository thongTinMuaHangRepository;
 
     @Override
+    public HoaDon findById(Long idhd) {
+        return hoaDonRepository.findById(idhd).orElse(null);
+    }
+
+    @Override
     @Transactional
-    public ResponseObject taoHoaDonByIdGioHangChiTiet(Long idkh, List<Integer> idGhct) {
+    public ResponseObject taoHoaDonByIdGioHangChiTiet(Long idkh, List<Integer> idghct) {
         HoaDon hoaDon = hoaDonRepository.getHoaDonMoiTaoByIdkh(idkh);
         if (hoaDon!=null){
             return new ResponseObject("Đang có hoá đơn trạng thái chưa giao hàng,vui lòng xem lại");
@@ -52,20 +64,20 @@ public class HoaDonServiceImpl implements HoaDonService {
         KhachHang khachHang = khachHangRepository.findById(idkh).orElse(null);
         hoaDon = new HoaDon();
         hoaDon.setKhachHang(khachHang);
-        hoaDon.setTrangThai(0);
+        hoaDon.setTrangThai(10);
         hoaDon.setNgayDat(new Date());
         hoaDon = hoaDonRepository.save(hoaDon);
-
-        for (Integer idghct:idGhct) {
-            GioHangChiTiet gioHangChiTiet = gioHangChiTietRepo.findById(Long.valueOf(idghct)).orElse(null);
-//            if (gioHangChiTiet==null){
-//                return new ResponseObject("Có lỗi xảy ra khi không tìm thấy sản phẩm trong giỏ hàng");
-//            }
-
-            BienThe bienThe = bienTheRepository.findById(gioHangChiTiet.getId()).orElse(null);
-//            if (bienThe==null){
-//                return new ResponseObject("Có lỗi xảy ra khi không tìm thấy biến thể này");
-//            }
+        List<Long> dsghct = new ArrayList<>();
+        for (Integer integer :idghct
+             ) {
+            dsghct.add(Long.valueOf(integer));
+        }
+        assert khachHang != null;
+        GioHang gioHang = gioHangRepository.findGioHangByIdkh(khachHang.getGioHang().getId());
+        List<GioHangChiTiet> dsGioHangChiTiet = gioHangChiTietRepo.dsGioHangChiTietByIdGioHang(gioHang.getId(),dsghct);
+        for (GioHangChiTiet gioHangChiTiet:dsGioHangChiTiet) {
+           // GioHangChiTiet gioHangChiTiet = gioHangChiTietRepo.findById(Long.valueOf(idghct)).orElse(null);
+            BienThe bienThe = gioHangChiTiet.getBienThe();
             HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet();
             hoaDonChiTiet.setBienThe(bienThe);
             hoaDonChiTiet.setHoaDon(hoaDon);
@@ -100,8 +112,8 @@ public class HoaDonServiceImpl implements HoaDonService {
     }
 
     @Override
-    public String insert(HoaDon hoaDon) {
-        return hoaDonRepository.save(hoaDon)!=null?"Tạo hoá đơn thành công":"Có lỗi xảy ra";
+    public HoaDon saveOrUpdate(HoaDon hoaDon) {
+        return hoaDonRepository.save(hoaDon);
     }
 
     @Override

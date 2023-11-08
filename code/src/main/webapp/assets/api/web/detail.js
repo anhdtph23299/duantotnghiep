@@ -7,9 +7,10 @@ $.ajax({
     method: "GET",
     dataType: "json",
     success: (response) => {
+        console.log(response)
         $('.product-name').html(response.ten);
         $('.product-price').html(response.gia);
-        $('.product-image-primary').attr('src', `/assets/images/sanphams/${response.sanphamhinhanh[0].hinhanh}`);
+        $('.product-image-primary').attr('src', `/assets/images/sanphams/2747834138.jpg`);
         $.each(response.thuoctinh, (index, item) => {
             document.title = `${response.ten}`;
             let htmlAttr = ` <div class="d-flex mb-4">
@@ -28,7 +29,7 @@ $.ajax({
             if(index !== 0){
                 htmlImage += `<div class="card product-item border-0">
                                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                                    <img alt="Ảnh sản phẩm" class="img-fluid w-100" src="/assets/images/sanphams/${item.hinhanh}"/>
+                                    <img alt="Ảnh sản phẩm" class="img-fluid w-100" src="/assets/images/sanphams/2747834138.jpg"/>
                                 </div>
                             </div>`;
             }

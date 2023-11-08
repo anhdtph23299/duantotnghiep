@@ -311,21 +311,21 @@
                     <h5>Phương thức thanh toán:</h5>
                 </div>
                 <div class="col-9">
-                    <button class="btn btn-light" id="paypalButton" style="border: 1px solid #dedede">Ví PalPay</button>
+                    <button class="btn btn-light" id="paypalButton" style="border: 1px solid #dedede">Ví điện tử</button>
                     <button class="btn btn-light ms-2" id="codButton" style="border: 1px solid #dedede">Thanh toán khi nhận hàng</button>
                 </div>
             </div>
             <div class="row" style="border-bottom: 1px solid #dedede;">
                 <div class="form-check ms-3 my-3" id="mbBankRadio">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="exampleRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="payment" id="exampleRadios1" value="mbb" checked>
                     <label class="form-check-label" for="exampleRadios1">
                         <img src="/template/web/img/mb.png" alt=""> MB Bank
                     </label>
                 </div>
                 <div class="form-check ms-3 my-3" id="vpBankRadio">
-                    <input class="form-check-input" type="radio" name="paymentMethod" id="exampleRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="payment" id="exampleRadios2" value="paypal">
                     <label class="form-check-label" for="exampleRadios2">
-                        <img src="/template/web/img/vp.png" alt=""> VP Bank
+                        <img src="/template/web/img/pp.webp" style="width: 70px;height: 70px" alt=""> PayPal
                     </label>
                 </div>
                 <div class="thanhtoan">
@@ -367,7 +367,7 @@
                         </div>
                     </div>
                     <div class="row my-3">
-                        <button class="btn w-75 ms-5 text-light" style="background-color: #C3817B;">Đặt hàng</button>
+                        <button class="btn w-75 ms-5 text-light" style="background-color: #C3817B;" onclick="datHang()">Đặt hàng</button>
                     </div>
                 </div>
             </div>
@@ -375,8 +375,18 @@
 
     </div>
 </div>
-<input type="hidden" id="idttmuahang">
+<form action="${pageContext.request.contextPath}/pay" method="post" style="display: none">
+    <input type="hidden" name="method" value="paypal">
+    <input type="hidden" name="intent" value="sale">
+    <input type="hidden" name="currency" value="USD">
+    <input type="hidden" name="description" value="Product Description">
+    <input type="hidden" name="price"  value="10.00">
+    <input type="hidden" name="idkh"  value="1">
+    <input type="hidden" name="idttmuahang" value="" id="idttmuahang">
+    <button id="submidpaypal" type="submit">Pay with PayPal</button>
+</form>
 <script>
+    var loaiDatHang = 1;
     // Ẩn thanh toán khi nhận hàng khi load lại trang
     document.querySelector(".thanhtoan").style.display = "none";
 
@@ -387,6 +397,7 @@
         // Hiển thị radio của MB Bank và VP Bank
         document.getElementById("mbBankRadio").style.display = "block";
         document.getElementById("vpBankRadio").style.display = "block";
+        loaiDatHang = 1;
     });
     //click thanh toán khi nhaanh hàng
     document.getElementById("codButton").addEventListener("click", function() {
@@ -395,6 +406,7 @@
         // Ẩn radio MB Bank và VP Bank
         document.getElementById("mbBankRadio").style.display = "none";
         document.getElementById("vpBankRadio").style.display = "none";
+        loaiDatHang = 2;
     });
 
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -547,7 +559,8 @@
            method: 'GET',
            success: async function (req) {
                var data = req.data;
-               $("#idttmuahang").html(data.id);
+               $("#idttmuahang").val(data.id);
+               console.log(data.id)
                $("#tennguoinhan").html(
                    `
                    \${data.tenNguoiNhan}(\${data.sdt})
@@ -571,7 +584,7 @@
            method: 'GET',
            success: async function (req) {
                var data = req.data;
-               $("#idttmuahang").html(data.id);
+               $("#idttmuahang").val(data.id);
                $("#tennguoinhan").html(
                    `
                    \${data.tenNguoiNhan}(\${data.sdt})
@@ -761,9 +774,6 @@
         var tongtien = $(".tongtienghct:first").text(); // Lấy giá trị từ phần tử đầu tiên
         var tienship = $(".sotiengiaohang:first").text(); // Lấy giá trị từ phần tử đầu tiên
 
-        console.log(tongtien);
-        console.log(tienship);
-
         // Lấy chuỗi từ đầu đến length - 1
         var tongtienSubstring = Number(tongtien.slice(0, tongtien.length - 1));
         var tienshipSubstring = Number(tienship.slice(0, tienship.length - 1));
@@ -773,8 +783,28 @@
 
         $("#tongthanhtoan").html(tongtienSubstring + tienshipSubstring + "₫");
     }
-
-
-
     tongThanhToan();
+    function datHang(){
+        if (loaiDatHang === 1){
+            var payment = $('input[name="payment"]:checked').val();
+            if (payment==="paypal"){
+                callPayPal();
+            }
+        }
+    }
+    function callPayPal(){
+        // var order = {
+        //     method: 'paypal',
+        //     intent: 'sale',
+        //     currency: 'USD',
+        //     description: 'Product Description',
+        //     price: '10.00'
+        // };
+        var tien = $("#tongthanhtoan").text();
+        var tienshipSubstring = Number(tien.slice(0, tien.length - 1));
+
+        $("input[name='price']").val(tienshipSubstring/23000);
+
+        $("#submidpaypal").click();
+    }
 </script>

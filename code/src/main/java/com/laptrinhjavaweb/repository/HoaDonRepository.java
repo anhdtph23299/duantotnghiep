@@ -14,7 +14,7 @@ public interface HoaDonRepository extends JpaRepository<HoaDon,Long> {
 
     @Query("select hd from HoaDon hd order by hd.ngayDat desc")
     List<HoaDon> dsHoaDon();
-    @Query("select hd from HoaDon hd where hd.trangThai = 0 and hd.khachHang.id=:idkh")
+    @Query("select hd from HoaDon hd where hd.trangThai = 10 and hd.khachHang.id=:idkh")
     HoaDon getHoaDonMoiTaoByIdkh(@Param("idkh")Long idkh);
 
     @Query(value = """

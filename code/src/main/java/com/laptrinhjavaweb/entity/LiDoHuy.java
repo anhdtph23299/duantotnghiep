@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;

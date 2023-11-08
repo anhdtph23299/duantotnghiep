@@ -7,6 +7,7 @@ import com.laptrinhjavaweb.model.response.ThongTinMuaHangResponse;
 import java.util.List;
 
 public interface ThongTinMuaHangService {
+    ThongTinMuaHang findById(Long idttmh);
     ThongTinMuaHangResponse findThongTinMuaHangDefault(Long idkh);
 
     List<ThongTinMuaHangResponse> dsThongTinMuaHang(Long idkh);

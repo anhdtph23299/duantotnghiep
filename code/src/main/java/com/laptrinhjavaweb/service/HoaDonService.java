@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface HoaDonService {
+    HoaDon findById(Long idhd);
 
     ResponseObject taoHoaDonByIdGioHangChiTiet(Long idkh, List<Integer> idGhct);
 
@@ -21,7 +22,7 @@ public interface HoaDonService {
 
     List<HoaDon> getDsHoaDon();
 
-    String insert(HoaDon hoaDon);
+    HoaDon saveOrUpdate(HoaDon hoaDon);
 
     void delete(Long id);
 

@@ -21,7 +21,7 @@ public class ApiHoaDonController {
     @PostMapping("/insert")
     public ResponseObject insert(@RequestBody HoaDon hoaDon){
         System.out.println(hoaDon);
-        return new ResponseObject(hoaDonService.insert(hoaDon));
+        return new ResponseObject(hoaDonService.saveOrUpdate(hoaDon));
     }
 
     @DeleteMapping("/delete/{id}")

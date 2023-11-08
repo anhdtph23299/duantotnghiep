@@ -51,13 +51,11 @@ public class GioHangChiTietServiceImpl implements GioHangChiTietService {
     @Override
     public List<List<GioHangResponse>> dsGioHangChiaTheoSanPham(Long idKh) {
         List<Long> dsIdSanPham = gioHangChiTietRepository.getDsIdSanPhamByKhachHang(idKh);
-        System.out.println(dsIdSanPham);
         List<List<GioHangResponse>> dsGioHangChiaTheoSanPham = new ArrayList<>();
         for (Long id: dsIdSanPham
              ) {
             dsGioHangChiaTheoSanPham.add(gioHangChiTietRepository.getDsspThuocTinhByIdSanPhamAndIdKh(id,idKh));
         }
-        System.out.println(dsGioHangChiaTheoSanPham);
         return dsGioHangChiaTheoSanPham;
     }
 

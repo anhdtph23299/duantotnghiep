@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -26,7 +27,7 @@ import java.util.Date;
 @Table(name = "giohang")
 public class GioHang extends PrimaryEntity {
 
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idkh")
     private KhachHang khachHang;
 

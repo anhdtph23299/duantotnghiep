@@ -27,7 +27,6 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/user/giaohang")
-@CrossOrigin(origins = "*")
 public class ApiGiaoHangController {
 
     @Autowired
@@ -41,7 +40,6 @@ public class ApiGiaoHangController {
     private String urlGiaoHang ;
 
     RestTemplate restTemplate = new RestTemplate();
-
 
 
     private HttpHeaders getHeader (){
@@ -74,6 +72,27 @@ public class ApiGiaoHangController {
         return ResponseEntity.ok(responseEntity);
     }
 
+    @GetMapping("/datHang/{idhd}")
+    public ResponseEntity<?> datHang(@PathVariable(name = "idhd") Long idhd){
+        final String uri = urlGiaoHang + "/create";
+
+        // Tạo HttpHeaders và đặt các header
+        HttpHeaders headers = getHeader();
+
+        // Tạo đối tượng request
+        ThongTinDatHangRequest request = giaoHangService.datHangGiaoHangNhanh(idhd);
+
+        // Sử dụng `request` để truyền dữ liệu JSON
+        HttpEntity<ThongTinDatHangRequest> requestEntity = new HttpEntity<>(request, headers);
+
+        // Gọi API với yêu cầu POST và `requestEntity`
+        Object responseEntity = ConvertJson.convert(restTemplate,uri
+                ,HttpMethod.POST,requestEntity
+                ,   new ParameterizedTypeReference<>() {}
+        );
+        // Xử lý khi yêu cầu thành công
+        return ResponseEntity.ok(responseEntity);
+    }
 
     @GetMapping("/hdct/{idkh}")
     public ResponseObject getHoaDonChiTiet(@PathVariable(name = "idkh")Long idkh){

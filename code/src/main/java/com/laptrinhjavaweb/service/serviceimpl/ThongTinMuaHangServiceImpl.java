@@ -17,6 +17,12 @@ public class ThongTinMuaHangServiceImpl implements ThongTinMuaHangService {
 
     @Autowired
     private ThongTinMuaHangRepository thongTinMuaHangRepository;
+
+    @Override
+    public ThongTinMuaHang findById(Long idttmh) {
+        return thongTinMuaHangRepository.findById(idttmh).orElse(null);
+    }
+
     @Override
     public ThongTinMuaHangResponse findThongTinMuaHangDefault(Long idkh) {
         return thongTinMuaHangRepository.getTTMuaHangByIdKHAndTrangThai(idkh,2);
