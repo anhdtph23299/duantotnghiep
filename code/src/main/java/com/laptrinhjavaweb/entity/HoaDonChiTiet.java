@@ -34,6 +34,10 @@ public class HoaDonChiTiet extends PrimaryEntity {
     @JoinColumn(name = "idbienthe")
     private BienThe bienThe;
 
+    @ManyToOne
+    @JoinColumn(name = "idsp")
+    private SanPham sanPham;
+
     @Column(name = "soluong")
     private Integer soLuong;
 

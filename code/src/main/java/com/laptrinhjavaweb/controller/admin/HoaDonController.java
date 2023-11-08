@@ -12,10 +12,10 @@ public class HoaDonController {
 
     @GetMapping("/hoadon")
     public String hoadons(){
-        MyUserDetail myUserDetail = SecurityUtils.getPrincipal();
-        if(myUserDetail.getTrangThai() == 0){
-            return "redirect: /admin/giaoca/moca?isNotOpenShift";
-        }
+//        MyUserDetail myUserDetail = SecurityUtils.getPrincipal();
+//        if(myUserDetail.getTrangThai() == 0){
+//            return "redirect: /admin/giaoca/moca?isNotOpenShift";
+//        }
         return "admin/hoadon/hoadon";
     }
 
@@ -24,7 +24,7 @@ public class HoaDonController {
         return "admin/hoadon/themhoadon";
     }
 
-    @GetMapping("/detailhoadon")
+    @GetMapping("/detailhoadon/{id}")
     public String detailhoadon(){
         return "admin/hoadon/detailhoadon";
     }

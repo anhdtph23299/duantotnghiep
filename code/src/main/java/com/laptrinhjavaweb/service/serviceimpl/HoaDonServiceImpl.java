@@ -1,5 +1,9 @@
 package com.laptrinhjavaweb.service.serviceimpl;
 
+import com.laptrinhjavaweb.converter.HoaDonConverter;
+import com.laptrinhjavaweb.dto.GiaTriThuocTinhDTO;
+import com.laptrinhjavaweb.dto.HoaDonDTO;
+import com.laptrinhjavaweb.dto.ThuocTinhDTO;
 import com.laptrinhjavaweb.entity.BienThe;
 import com.laptrinhjavaweb.entity.GioHangChiTiet;
 import com.laptrinhjavaweb.entity.HoaDon;
@@ -22,6 +26,8 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class HoaDonServiceImpl implements HoaDonService {
     @Autowired
@@ -41,6 +47,9 @@ public class HoaDonServiceImpl implements HoaDonService {
 
     @Autowired
     ThongTinMuaHangRepository thongTinMuaHangRepository;
+
+    @Autowired
+    HoaDonConverter hoaDonConverter;
 
     @Override
     @Transactional
@@ -94,19 +103,17 @@ public class HoaDonServiceImpl implements HoaDonService {
     }
 
 
-    @Override
-    public List<HoaDon> getDsHoaDon() {
-        return hoaDonRepository.findAll();
-    }
 
-    @Override
-    public String insert(HoaDon hoaDon) {
-        return hoaDonRepository.save(hoaDon)!=null?"Tạo hoá đơn thành công":"Có lỗi xảy ra";
-    }
 
+    // tuấn
     @Override
-    public void delete(Long id) {
-        hoaDonRepository.deleteById(id);
+    public List<HoaDonDTO> getDsHoaDon() {
+        List<HoaDon> listHD = hoaDonRepository.findAll();
+        List<HoaDonDTO> listHDDTO = listHD.stream().map(
+                item ->
+                     hoaDonConverter.convertToDTO(item)
+                ).collect(Collectors.toList());
+        return listHDDTO;
     }
 
     @Override

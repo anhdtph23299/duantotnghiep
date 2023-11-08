@@ -1,5 +1,6 @@
 package com.laptrinhjavaweb.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.laptrinhjavaweb.entity.base.PrimaryEntity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -63,6 +64,7 @@ public class NhanVien extends PrimaryEntity {
 
     @ManyToOne
     @JoinColumn(name = "idchucvu", referencedColumnName = "id")
+    @JsonIgnoreProperties("nhanVien")
     private ChucVu chucVu;
 
 }

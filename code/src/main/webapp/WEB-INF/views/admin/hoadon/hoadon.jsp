@@ -60,7 +60,7 @@
                     <div class="d-flex justify-content-between">
 
                         <hr>
-                            <table class="table table-hover" >
+                            <table class="table table-hover" id="tblHoaDon" >
                                 <thead>
                                 <tr>
                                     <th scope="col">STT</th>
@@ -75,19 +75,7 @@
                                 </tr>
                                 </thead>
                                 <tbody >
-                                <tr>
-                                    <td>1</td>
-                                    <td>HD0001</td>
-                                    <td>NV01</td>
-                                    <td>Văn An - Hà Nội</td>
-                                    <td>28/10/2023 14:20</td>
-                                    <td>150000</td>
-                                    <td>Tiền mặt</td>
-                                    <td>Đã thanh toán</td>
-                                    <td>
-                                        <a class="btn btn-secondary"  href="/admin/giaodich/detailhoadon" style="text-decoration: none;color: white;">Chi tiết</a>
-                                    </td>
-                                </tr>
+
                                 </tbody>
                             </table>
                     </div>
@@ -114,6 +102,56 @@
         </div>
     </div>
 </section>
+
+<script>
+    function loadDsHoaDon(){
+        $.ajax({
+            url: '/api/admin/hoadon',
+            method: 'GET',
+            success: function(req) {
+                console.log(req.data);
+                var tbody = $('#tblHoaDon tbody');
+                tbody.empty();
+                var index = 0;
+                req.data.forEach(function(item) {
+                    var row = `
+                            <tr>
+                                <td>\${++index}</td>
+                                <td>\${item.maHoaDon}</td>
+                                 <td>\${item.nguoiBan.maNV}</td>
+                                 <td>\${item.khachHang.tenKH}</td>
+                                 <td>\${getDateTime(item.ngayDat)}</td>
+                                 <td>\${item.tongTienHang}</td>
+                                 <td>\${item.phuongThucThanhToan == 1 ? "Tiền mặt": "Chuyển khoản"}</td>
+                                 <td>\${formatStatus(item.trangThai)}</td>
+                                 <td>
+                                       <a class="btn btn-secondary"  href="/admin/giaodich/detailhoadon/\${item.id}" style="text-decoration: none;color: white;">Chi tiết</a>
+                                    </td>
+                            </tr>
+                        `;
+                    tbody.append(row);
+                });
+            },
+            error: function(xhr, status, error) {
+                alert('Có lỗi xảy ra: ' + error);
+            }
+        });
+    }
+
+    loadDsHoaDon()
+
+    function formatStatus(status) {
+        if (status === 0) {
+            return "Đã thanh toán";
+        } else if (status === 1) {
+            return "Đang chờ";
+        } else if (status === 2) {
+            return "Đã hủy";
+        } else {
+            return "Không xác định";
+        }
+    }
+</script>
 
 </body>
 </html>

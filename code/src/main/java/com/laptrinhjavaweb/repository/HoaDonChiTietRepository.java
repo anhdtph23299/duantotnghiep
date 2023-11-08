@@ -1,5 +1,7 @@
 package com.laptrinhjavaweb.repository;
 
+import com.laptrinhjavaweb.dto.HoaDonChiTietDTO;
+import com.laptrinhjavaweb.dto.HoaDonDTO;
 import com.laptrinhjavaweb.entity.HoaDonChiTiet;
 import com.laptrinhjavaweb.model.response.GioHangResponse;
 import com.laptrinhjavaweb.model.response.HoaDonChiTietResponse;
@@ -18,5 +20,6 @@ public interface HoaDonChiTietRepository extends JpaRepository<HoaDonChiTiet,Lon
     @Query("select hdct from HoaDonChiTiet hdct where hdct.hoaDon.id=:idhd ")
     List<HoaDonChiTietResponse> dsHoaDonChiTietByIdHoaDon(@Param("idhd")Long idhd);
 
-
+    @Query("select hdct from HoaDonChiTiet hdct where hdct.hoaDon.id=:idhd ")
+    List<HoaDonChiTiet> findByHoaDon(@Param("idhd")Long idhd);
 }

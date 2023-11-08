@@ -31,14 +31,16 @@
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between">
-                            <div class="row ms-2" >
-                                    <div class="col-lg-4 col-md-4 col-sm-4 ">
-                                        <img src="/template/web/img/anh1.png" width="50px" style="border-radius: 50%" alt="">
-                                    </div>
-                                    <div class="col-lg-8 col-md-8 col-sm-8" >
-                                        <h5 style="color: #EB8153">seiichitakashi</h5>
-                                       <span>0987654321</span>
-                                    </div>
+                            <div class="">
+                                <div class="row my-2 " >
+                                        <div class="col-lg-3 col-md-3 col-sm-3">
+                                            <img src="/template/web/img/anh1.png" width="50px" style="border-radius: 50%" alt="">
+                                        </div>
+                                        <div class="col-lg-9 col-md-9 col-sm-9" >
+                                            <h5 style="color: #EB8153" id="tenkh"></h5>
+                                           <span id="sdtkh"></span>
+                                        </div>
+                                </div>
                             </div>
                             <div class="">
                                 <button type="button" class="buttonExport" id="exportButton">
@@ -146,52 +148,57 @@
                          <h4>Thông tin hóa đơn</h4>
                          <hr>
                          <div class="row">
-                             <div class="col-4">
+                             <div class="col-5">
                                  <h6>Mã hóa đơn:</h6>
                              </div>
-                             <div class="col-8">
-                                 <span style="color: #EB8153">HD01</span>
+                             <div class="col-7">
+                                 <span style="color: #EB8153" id="mahoadon"></span>
                              </div>
                          </div>
                          <div class="row mt-3">
-                             <div class="col-4">
+                             <div class="col-5">
                                  <h6>Thời gian:</h6>
                              </div>
-                             <div class="col-8">
-                                 <div class="input-wrapper1">
-                                     <input class="input-box1" type="date"  disabled>
-                                     <span class="underline1"></span>
-                                 </div>
+                             <div class="col-7">
+                                 <span  id="thoigian"></span>
                              </div>
                          </div>
                          <div class="row mt-3">
-                             <div class="col-4">
+                             <div class="col-5">
                                  <h6>Người tạo:</h6>
                              </div>
-                             <div class="col-8">
+                             <div class="col-7">
                                  <div class="input-wrapper1">
-                                     <input class="input-box1" type="text" placeholder="Khánh Linh" disabled>
+                                     <input class="input-box1" type="text" id="nguoitao"  disabled>
                                      <span class="underline1"></span>
                                  </div>
                              </div>
                          </div>
                          <div class="row mt-3">
-                             <div class="col-4">
+                             <div class="col-5">
                                  <h6>Người bán:</h6>
                              </div>
-                             <div class="col-8">
+                             <div class="col-7">
                                  <div class="input-wrapper1">
-                                     <input class="input-box1" type="text" placeholder="Khánh Linh" disabled>
+                                     <input class="input-box1" type="text" id="nguoiban"  disabled>
                                      <span class="underline1"></span>
                                  </div>
                              </div>
                          </div>
                          <div class="row mt-3">
-                             <div class="col-4">
-                                 <h6>Trạng thái</h6>
+                             <div class="col-5">
+                                 <h6>Phương thức thanh toán:</h6>
                              </div>
-                             <div class="col-8">
-                                 <span style="color: #EB8153">Hoàn thành</span>
+                             <div class="col-7">
+                                 <span  id="phuongthuc"></span>
+                             </div>
+                         </div>
+                         <div class="row mt-3">
+                             <div class="col-5">
+                                 <h6>Trạng thái:</h6>
+                             </div>
+                             <div class="col-7">
+                                 <span style="color: #EB8153" id="trangthai"></span>
                              </div>
                          </div>
                          <div class="row mt-3">
@@ -201,43 +208,50 @@
                      </div>
                  </div>
              </div>
-             <div class="card" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    padding: 20px; background-color: #fff">
-                 <div class="row col-12">
-                     <h4>Lịch sử thanh toán</h4>
-                 </div>
-                 <hr>
-                 <div class="d-flex justify-content-between">
-
-                     <hr>
-                     <table class="table table-hover table-striped">
-                         <thead>
-                         <tr class="table-success">
-                             <th scope="col">Mã phiếu</th>
-                             <th scope="col">Thời gian </th>
-                             <th scope="col">Người tạo</th>
-                             <th scope="col">Giá trị phiếu</th>
-                             <th scope="col">Phương thức</th>
-                             <th scope="col">Trạng thái</th>
-                             <th scope="col">Tiền thu/chi</th>
-                         </tr>
-                         </thead>
-                         <tbody>
-                         <tr>
-                             <td>MP0001</td>
-                             <td>30/10/2023 14:25</td>
-                             <td>Khánh Linh</td>
-                             <td>300,000</td>
-                             <td>Tiền mặt</td>
-                             <td>Đã thanh toán</td>
-                             <td><b>300,000</b></td>
-                         </tr>
-                         </tbody>
-                     </table>
-                 </div>
-             </div>
          </div>
      </div>
  </section>
+
+ <script>
+     function getDetailHoaDonCT() {
+         var url = window.location.pathname.split("/");
+         var id = url[url.length - 1];
+         $.ajax({
+             url: '/api/admin/hoadonchitiet/detail/' + id,
+             method: 'GET',
+             success: function (req) {
+                 var datareq = req.data;
+                 var data = datareq[0];
+                 $("#id").val(data.id);
+                 $("#mahoadon").text(data.hoaDonDTO.maHoaDon);
+                 $("#tenkh").text(data.hoaDonDTO.khachHang.tenKH);
+                 $("#sdtkh").text(data.hoaDonDTO.khachHang.sdt);
+                 $("#thoigian").text(getDateTime(data.hoaDonDTO.ngayDat));
+                 $("#nguoitao").val(data.hoaDonDTO.nguoiTao.tenNV);
+                 $("#nguoiban").val(data.hoaDonDTO.nguoiBan.tenNV);
+                 $("#phuongthuc").text(data.hoaDonDTO.phuongThucThanhToan == 1 ? "Tiền mặt": "Chuyển khoản");
+                 $("#trangthai").text(formatStatus(data.hoaDonDTO.trangThai));
+             },
+             error: function (xhr, status, error) {
+                 console.log(error);
+                 alert('Có lỗi xảy ra: ' + error);
+             }
+         });
+     }
+
+     getDetailHoaDonCT();
+
+     function formatStatus(status) {
+         if (status === 0) {
+             return "Đã thanh toán";
+         } else if (status === 1) {
+             return "Đang chờ";
+         } else if (status === 2) {
+             return "Đã hủy";
+         } else {
+             return "Không xác định";
+         }
+     }
+ </script>
 </body>
 </html>

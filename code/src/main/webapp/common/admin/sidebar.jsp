@@ -45,7 +45,7 @@
                 </ul>
             </li>
             <li>
-                <security:authorize access="hasRole('ADMIN')">
+                <security:authorize access="hasRole('MANAGER')">
                     <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                         <i class="flaticon-061-puzzle"></i>
                         <span class="nav-text">Quản lý</span>
@@ -69,10 +69,11 @@
                     <li><a href="/admin/giaoca/dongca">Đóng ca</a></li>
                 </ul>
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                <i class="flaticon-044-file"></i>
-                <span class="nav-text">Giao dịch</span>
-            </a>
+            <li>
+                    <a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        <i class="flaticon-044-file"></i>
+                        <span class="nav-text">Giao dịch</span>
+                    </a>
                 <ul aria-expanded="false">
                     <li><a href="/admin/giaodich/hoadon">Hóa đơn</a></li>
                 </ul>

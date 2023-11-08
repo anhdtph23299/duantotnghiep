@@ -18,17 +18,7 @@ public class ApiHoaDonController {
         return new ResponseObject(hoaDonService.getDsHoaDon());
     }
 
-    @PostMapping("/insert")
-    public ResponseObject insert(@RequestBody HoaDon hoaDon){
-        System.out.println(hoaDon);
-        return new ResponseObject(hoaDonService.insert(hoaDon));
-    }
 
-    @DeleteMapping("/delete/{id}")
-    public String delete(@PathVariable(name = "id")Long id){
-        hoaDonService.delete(id);
-        return "Xoá thành công";
-    }
 
     @GetMapping("/getDateTime")
     @ResponseBody

@@ -39,6 +39,9 @@ public class HoaDon extends PrimaryEntity {
     @Column(name = "mota")
     private String moTa;
 
+    @Column(name = "tongtienhang")
+    private Double tongTienHang;
+
     @Column(name = "phuongthucthanhtoan")
     private Integer PhuongThucThanhToan;
 
@@ -54,8 +57,12 @@ public class HoaDon extends PrimaryEntity {
     private ThongTinMuaHang thongTinMuaHang;
 
     @ManyToOne
-    @JoinColumn(name = "idnv")
-    private NhanVien nhanVien;
+    @JoinColumn(name = "nguoitao")
+    private NhanVien nguoiTao;
+
+    @ManyToOne
+    @JoinColumn(name = "nguoiban")
+    private NhanVien nguoiBan;
 
     @ManyToOne
     @JoinColumn(name = "idkm")

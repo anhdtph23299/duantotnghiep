@@ -31,6 +31,8 @@ public class SanPham extends BaseEntity {
 	@Column(name = "motasanpham", columnDefinition = "TEXT")
 	private String motasanpham;
 
+
+
 //	@Column(name = "isnew")
 //	private Integer isnew;
 
@@ -62,6 +64,17 @@ public class SanPham extends BaseEntity {
 
 	@OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
 	private List<SanPhamHinhAnh> sanPhamHinhAnhEntities = new ArrayList<>();
+
+	@OneToMany(mappedBy = "sanPham")
+	private List<HoaDonChiTiet> hoaDonChiTiets;
+
+	public List<HoaDonChiTiet> getHoaDonChiTiets() {
+		return hoaDonChiTiets;
+	}
+
+	public void setHoaDonChiTiets(List<HoaDonChiTiet> hoaDonChiTiets) {
+		this.hoaDonChiTiets = hoaDonChiTiets;
+	}
 
 	public String getSlug() {
 		return slug;
