@@ -16,11 +16,16 @@ $.ajax({
             let htmlAttr = ` <div class="d-flex mb-4">
                             <p class="text-dark font-weight-medium mb-0 mr-3">${item.ten}:</p><form>`;
             $.each(item.giatrithuoctinh, (index, itemAttrValue) => {
-                htmlAttr += `<div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" class="custom-control-input" value="${itemAttrValue.id}">
-                                <label class="custom-control-label">${itemAttrValue.giatri}</label>
-                            </div>`;
+                htmlAttr += `<div class="form-check" style="display: inline-block; margin-right: 10px;">
+                    <input class="form-check-input" type="radio" name="thuoctinh-${response.id}" 
+                        id="giatrithuoctinh-${itemAttrValue.id}"
+                        value="${itemAttrValue.id}">
+                    <label class="form-check-label" for="giatrithuoctinh-${itemAttrValue.id}">
+                        ${itemAttrValue.giatri}
+                    </label>
+                </div>`;
             })
+
             htmlAttr += '</form></div>';
             $('.product-attribute').append(htmlAttr);
         })
