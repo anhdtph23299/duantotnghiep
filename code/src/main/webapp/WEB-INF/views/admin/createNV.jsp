@@ -40,6 +40,10 @@
                             <div class="modal-body">
                                 <label>Nhập tên chức vụ mới:</label>
                                 <input type="text" id="tencv" class="form-control" >
+                                <div class="mt-3">
+                                    <input type="checkbox" class="btn-check"  value="STAFF" autocomplete="off" id="staffCheckbox">
+                                    <label class="btn" for="staffCheckbox">STAFF</label>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" id="themcv" class="btn btn-outline-primary">Add</button>
@@ -198,8 +202,10 @@
 
         $("#themcv").click(function () {
             var tenCV = $("#tencv").val();
+            var maCV = $("#staffCheckbox").val();
             var cv = {
-                tenCV: tenCV
+                tenCV: tenCV,
+                maCV: maCV
             };
 
             $.ajax({
@@ -208,7 +214,7 @@
                 contentType: 'application/json',
                 data: JSON.stringify(cv),
                 success: function (response) {
-                    updateChucVuSelect()
+                    updateChucVuSelect();
                     showSuccess("Thêm chức vụ thành công");
                 },
                 error: function (xhr, status, error) {
