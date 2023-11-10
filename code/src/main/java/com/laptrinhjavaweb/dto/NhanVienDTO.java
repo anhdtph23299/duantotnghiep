@@ -1,52 +1,47 @@
 package com.laptrinhjavaweb.dto;
 
-public class NhanVienDTO {
+public class NhanVienDTO extends AbstractDTO<NhanVienDTO>{
 
-    private Long id;
-    private String maNV;
-    private String matKhau;
-    private String tenNV;
-    private String sdt;
+    private String ma;
+
+    private String matkhau;
+
+    private String ten;
+
+    private String sodienthoai;
+
     private ChucVuDTO chucVuDTO;
 
-    public Long getId() {
-        return id;
+    public String getMa() {
+        return ma;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setMa(String ma) {
+        this.ma = ma;
     }
 
-    public String getMaNV() {
-        return maNV;
+    public String getMatkhau() {
+        return matkhau;
     }
 
-    public void setMaNV(String maNV) {
-        this.maNV = maNV;
+    public void setMatkhau(String matkhau) {
+        this.matkhau = matkhau;
     }
 
-    public String getMatKhau() {
-        return matKhau;
+    public String getTen() {
+        return ten;
     }
 
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
+    public void setTen(String ten) {
+        this.ten = ten;
     }
 
-    public String getTenNV() {
-        return tenNV;
+    public String getSodienthoai() {
+        return sodienthoai;
     }
 
-    public void setTenNV(String tenNV) {
-        this.tenNV = tenNV;
-    }
-
-    public String getSdt() {
-        return sdt;
-    }
-
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
+    public void setSodienthoai(String sodienthoai) {
+        this.sodienthoai = sodienthoai;
     }
 
     public ChucVuDTO getChucVuDTO() {

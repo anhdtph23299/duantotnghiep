@@ -45,22 +45,22 @@ public class SanPhamEntity extends BaseEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "danhmucid")
-	private DanhMucEntity danhmucs;
+	private DanhMucEntity danhmuc;
 
 	@ManyToOne
 	@JoinColumn(name = "thuonghieuid")
-	private ThuongHieuEntity thuonghieus;
+	private ThuongHieuEntity thuonghieu;
 
-	@OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "sanpham", fetch = FetchType.LAZY)
 	private List<ThuocTinhEntity> thuocTinhEntities = new ArrayList<>();
 
-	@OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "sanpham", fetch = FetchType.LAZY)
 	private List<GiaTriThuocTinhEntity> giaTriThuocTinhEntities = new ArrayList<>();
 
-	@OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "sanpham", fetch = FetchType.LAZY)
 	private List<BienTheEntity> bienTheEntities = new ArrayList<>();
 
-	@OneToMany(mappedBy = "sanphams", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "sanpham", fetch = FetchType.LAZY)
 	private List<SanPhamHinhAnhEntity> sanPhamHinhAnhEntities = new ArrayList<>();
 
 	public String getSlug() {
@@ -135,20 +135,20 @@ public class SanPhamEntity extends BaseEntity {
 		this.isbestseller = isbestseller;
 	}
 
-	public DanhMucEntity getDanhmucs() {
-		return danhmucs;
+	public DanhMucEntity getDanhmuc() {
+		return danhmuc;
 	}
 
-	public void setDanhmucs(DanhMucEntity danhmucs) {
-		this.danhmucs = danhmucs;
+	public void setDanhmuc(DanhMucEntity danhmucs) {
+		this.danhmuc = danhmucs;
 	}
 
-	public ThuongHieuEntity getThuonghieus() {
-		return thuonghieus;
+	public ThuongHieuEntity getThuonghieu() {
+		return thuonghieu;
 	}
 
-	public void setThuonghieus(ThuongHieuEntity thuonghieus) {
-		this.thuonghieus = thuonghieus;
+	public void setThuonghieu(ThuongHieuEntity thuonghieus) {
+		this.thuonghieu = thuonghieus;
 	}
 
 	public List<ThuocTinhEntity> getThuocTinhEntities() {

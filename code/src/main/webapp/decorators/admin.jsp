@@ -8,19 +8,20 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><dec:title>Dashboard</dec:title></title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="icon" type="image/png" sizes="50x50" href="<c:url value='/template/admin/images/logoKFC.png'/>">
     <link rel="stylesheet" href="<c:url value='/template/admin/vendor/chartist/css/chartist.min.css'/>">
     <link href="<c:url value='/template/admin/vendor/bootstrap-select/dist/css/bootstrap-select.min.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/admin/vendor/owl-carousel/owl.carousel.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/admin/css/style.css'/>" rel="stylesheet">
     <link href="<c:url value='/template/admin/css/main.css'/>" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
     <script>
         function getFormattedDate(longDate) {
             date = new Date(longDate);

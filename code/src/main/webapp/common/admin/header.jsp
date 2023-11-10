@@ -723,8 +723,8 @@
                             <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                                 <img src="<c:url value='/template/admin/images/profile/pic1.jpg'/>" width="20" alt="">
                                 <div class="header-info">
-                                    <span>Johndoe</span>
-                                    <small>Super Admin</small>
+                                    <span class="name-login">Johndoe</span>
+                                    <small class="username-login">Super Admin</small>
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
@@ -760,5 +760,10 @@
     <!--**********************************
         Header end ti-comment-alt
     ***********************************-->
+    <script src="<c:url value='/assets/api/login/information.js'/>"></script>
+    <script>
+        $('.name-login').text(full_name);
+        $('.username-login').text(user_name);
+    </script>
 </body>
 </html>

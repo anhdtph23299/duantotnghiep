@@ -27,15 +27,15 @@ public class GiaTriThuocTinhBienTheConverter {
 		GiaTriThuocTinhBienTheEntity entity = modelMapper.map(dto, GiaTriThuocTinhBienTheEntity.class);
 		GiaTriThuocTinhEntity giaTriThuocTinhEntity = giaTriThuocTinhRepository.findById(dto.getGiatrithuoctinhid()).get();
 		BienTheEntity bienTheEntity = bienTheRepository.findById(dto.getBientheid()).get();
-		entity.setGiatrithuoctinhs(giaTriThuocTinhEntity);
-		entity.setBienthes(bienTheEntity);
+		entity.setGiatrithuoctinh(giaTriThuocTinhEntity);
+		entity.setBienthe(bienTheEntity);
 		return entity;
 	}
 
 	public GiaTriThuocTinhBienTheDTO convertToDTO(GiaTriThuocTinhBienTheEntity entity){
 		GiaTriThuocTinhBienTheDTO dto = modelMapper.map(entity, GiaTriThuocTinhBienTheDTO.class);
-		dto.setBientheid(entity.getBienthes().getId());
-		dto.setGiatrithuoctinhid(entity.getGiatrithuoctinhs().getId());
+		dto.setBientheid(entity.getBienthe().getId());
+		dto.setGiatrithuoctinhid(entity.getGiatrithuoctinh().getId());
 		return dto;
 	}
 

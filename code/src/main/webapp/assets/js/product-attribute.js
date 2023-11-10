@@ -195,6 +195,3 @@ $("#ten").keyup(function () {
     const slug = customNameToSlug(name);
     $("#slug").val(slug);
 });
-
-
-

@@ -21,13 +21,13 @@ public class GiaTriThuocTinhEntity extends BaseEntity{
 	
 	@ManyToOne
     @JoinColumn(name = "sanphamid")
-    private SanPhamEntity sanphams;
+    private SanPhamEntity sanpham;
 
 	@ManyToOne
     @JoinColumn(name = "thuoctinhid")
-    private ThuocTinhEntity thuoctinhs;
+    private ThuocTinhEntity thuoctinh;
 	
-	@OneToMany(mappedBy = "giatrithuoctinhs", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "giatrithuoctinh", fetch = FetchType.LAZY)
 	private List<GiaTriThuocTinhBienTheEntity> giaTriThuocTinhBienTheEntities = new ArrayList<>();
 
 	public String getGiatri() {
@@ -38,20 +38,20 @@ public class GiaTriThuocTinhEntity extends BaseEntity{
 		this.giatri = giatri;
 	}
 
-	public SanPhamEntity getSanphams() {
-		return sanphams;
+	public SanPhamEntity getSanpham() {
+		return sanpham;
 	}
 
-	public void setSanphams(SanPhamEntity sanphams) {
-		this.sanphams = sanphams;
+	public void setSanpham(SanPhamEntity sanphams) {
+		this.sanpham = sanphams;
 	}
 
-	public ThuocTinhEntity getThuoctinhs() {
-		return thuoctinhs;
+	public ThuocTinhEntity getThuoctinh() {
+		return thuoctinh;
 	}
 
-	public void setThuoctinhs(ThuocTinhEntity thuoctinhs) {
-		this.thuoctinhs = thuoctinhs;
+	public void setThuoctinh(ThuocTinhEntity thuoctinhs) {
+		this.thuoctinh = thuoctinhs;
 	}
 
 	public List<GiaTriThuocTinhBienTheEntity> getGiaTriThuocTinhBienTheEntities() {

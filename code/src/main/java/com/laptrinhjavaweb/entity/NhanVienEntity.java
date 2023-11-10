@@ -7,147 +7,147 @@ import java.util.Date;
 @Table(name = "nhanvien")
 public class NhanVienEntity extends BaseEntity {
 
-    @Column(name = "manv")
-    private String maNV;
+    @Column(name = "ma", unique = true)
+    private String ma;
 
     @Column(name = "matkhau")
-    private String matKhau;
+    private String matkhau;
 
-    @Column(name = "tennv")
-    private String tenNV;
+    @Column(name = "ten")
+    private String ten;
 
-    @Column(name = "sdt")
-    private String sdt;
+    @Column(name = "sodienthoai", unique = true)
+    private String sodienthoai;
 
     @Column(name = "email")
     private String email;
 
     @Column(name = "gioitinh")
-    private Boolean gioiTinh;
+    private Boolean gioitinh;
 
     @Column(name = "ngaysinh")
-    private Date ngaySinh;
+    private Date ngaysinh;
 
     @Column(name = "hinhanh")
-    private String hinhAnh;
+    private String hinhanh;
 
     @Column(name = "diachi")
-    private String diaChi;
+    private String diachi;
 
-    @Column(name = "cccd")
-    private String cccd;
+    @Column(name = "cancuoccongdan")
+    private String cancuoccongdan;
 
     @Column(name = "ngaycap")
-    private Date ngayCap;
+    private Date ngaycap;
 
     @Column(name = "noicap")
-    private String noiCap;
+    private String noicap;
 
     @ManyToOne
-    @JoinColumn(name = "idchucvu", referencedColumnName = "id")
-    private ChucVuEntity chucVu;
+    @JoinColumn(name = "chucvuid")
+    private ChucVuEntity chucvu;
 
-    public String getMaNV() {
-        return maNV;
-    }
+	public String getMa() {
+		return ma;
+	}
 
-    public void setMaNV(String maNV) {
-        this.maNV = maNV;
-    }
+	public void setMa(String ma) {
+		this.ma = ma;
+	}
 
-    public String getTenNV() {
-        return tenNV;
-    }
+	public String getMatkhau() {
+		return matkhau;
+	}
 
-    public void setTenNV(String tenNV) {
-        this.tenNV = tenNV;
-    }
+	public void setMatkhau(String matkhau) {
+		this.matkhau = matkhau;
+	}
 
-    public String getMatKhau() {
-        return matKhau;
-    }
+	public String getTen() {
+		return ten;
+	}
 
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
-    }
+	public void setTen(String ten) {
+		this.ten = ten;
+	}
 
-    public String getSdt() {
-        return sdt;
-    }
+	public String getSodienthoai() {
+		return sodienthoai;
+	}
 
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
-    }
+	public void setSodienthoai(String sodienthoai) {
+		this.sodienthoai = sodienthoai;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public Boolean getGioiTinh() {
-        return gioiTinh;
-    }
+	public Boolean getGioitinh() {
+		return gioitinh;
+	}
 
-    public void setGioiTinh(Boolean gioiTinh) {
-        this.gioiTinh = gioiTinh;
-    }
+	public void setGioitinh(Boolean gioitinh) {
+		this.gioitinh = gioitinh;
+	}
 
-    public Date getNgaySinh() {
-        return ngaySinh;
-    }
+	public Date getNgaysinh() {
+		return ngaysinh;
+	}
 
-    public void setNgaySinh(Date ngaySinh) {
-        this.ngaySinh = ngaySinh;
-    }
+	public void setNgaysinh(Date ngaysinh) {
+		this.ngaysinh = ngaysinh;
+	}
 
-    public String getHinhAnh() {
-        return hinhAnh;
-    }
+	public String getHinhanh() {
+		return hinhanh;
+	}
 
-    public void setHinhAnh(String hinhAnh) {
-        this.hinhAnh = hinhAnh;
-    }
+	public void setHinhanh(String hinhanh) {
+		this.hinhanh = hinhanh;
+	}
 
-    public String getDiaChi() {
-        return diaChi;
-    }
+	public String getDiachi() {
+		return diachi;
+	}
 
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
-    }
+	public void setDiachi(String diachi) {
+		this.diachi = diachi;
+	}
 
-    public String getCccd() {
-        return cccd;
-    }
+	public String getCancuoccongdan() {
+		return cancuoccongdan;
+	}
 
-    public void setCccd(String cccd) {
-        this.cccd = cccd;
-    }
+	public void setCancuoccongdan(String cancuoccongdan) {
+		this.cancuoccongdan = cancuoccongdan;
+	}
 
-    public Date getNgayCap() {
-        return ngayCap;
-    }
+	public Date getNgaycap() {
+		return ngaycap;
+	}
 
-    public void setNgayCap(Date ngayCap) {
-        this.ngayCap = ngayCap;
-    }
+	public void setNgaycap(Date ngaycap) {
+		this.ngaycap = ngaycap;
+	}
 
-    public String getNoiCap() {
-        return noiCap;
-    }
+	public String getNoicap() {
+		return noicap;
+	}
 
-    public void setNoiCap(String noiCap) {
-        this.noiCap = noiCap;
-    }
+	public void setNoicap(String noicap) {
+		this.noicap = noicap;
+	}
 
-    public ChucVuEntity getChucVu() {
-        return chucVu;
-    }
+	public ChucVuEntity getChucvu() {
+		return chucvu;
+	}
 
-    public void setChucVu(ChucVuEntity chucVu) {
-        this.chucVu = chucVu;
-    }
+	public void setChucvu(ChucVuEntity chucvus) {
+		this.chucvu = chucvus;
+	}
 }

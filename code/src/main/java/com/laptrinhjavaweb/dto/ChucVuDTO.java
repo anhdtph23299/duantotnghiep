@@ -3,26 +3,10 @@ package com.laptrinhjavaweb.dto;
 public class ChucVuDTO {
 
 	private Long id;
-    private String maCV;
-    private String tenCV;
-    private String name;
-    private String code;
-    
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    private String ma;
 
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
+    private String ten;
 
 	public Long getId() {
 		return id;
@@ -32,19 +16,19 @@ public class ChucVuDTO {
 		this.id = id;
 	}
 
-	public String getMaCV() {
-		return maCV;
+	public String getMa() {
+		return ma;
 	}
 
-	public void setMaCV(String maCV) {
-		this.maCV = maCV;
+	public void setMa(String ma) {
+		this.ma = ma;
 	}
 
-	public String getTenCV() {
-		return tenCV;
+	public String getTen() {
+		return ten;
 	}
 
-	public void setTenCV(String tenCV) {
-		this.tenCV = tenCV;
+	public void setTen(String ten) {
+		this.ten = ten;
 	}
 }

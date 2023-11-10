@@ -30,13 +30,13 @@ public class BienTheConverter {
 	public BienTheEntity convertToEntity(BienTheDTO dto) {
 		BienTheEntity entity = modelMapper.map(dto, BienTheEntity.class);
 		SanPhamEntity sanPhamEntity = sanPhamRepository.findById(dto.getSanphamid()).get();
-		entity.setSanphams(sanPhamEntity);
+		entity.setSanpham(sanPhamEntity);
 		return entity;
 	}
 	
 	public BienTheDTO convertToDTO(BienTheEntity entity) {
 		BienTheDTO dto = modelMapper.map(entity, BienTheDTO.class);
-		dto.setSanphamid(entity.getSanphams().getId());
+		dto.setSanphamid(entity.getSanpham().getId());
 		List<GiaTriThuocTinhBienTheDTO> listGiaTriBienTheThuocTinhsDTO = entity.getGiaTriThuocTinhBienTheEntities().stream().map(
                 itemGiaTriBienThe -> giaTriThuocTinhBienTheConverter.convertToDTO(itemGiaTriBienThe)
         ).collect(Collectors.toList());
@@ -47,7 +47,7 @@ public class BienTheConverter {
 	public SanPhamHinhAnhEntity convertToSanPhamHinhAnhEntity(BienTheDTO dto){
 		SanPhamHinhAnhEntity entity = modelMapper.map(dto, SanPhamHinhAnhEntity.class);
 		SanPhamEntity sanPhamEntity = sanPhamRepository.findById(dto.getSanphamid()).get();
-		entity.setSanphams(sanPhamEntity);
+		entity.setSanpham(sanPhamEntity);
 		return entity;
 	}
 }

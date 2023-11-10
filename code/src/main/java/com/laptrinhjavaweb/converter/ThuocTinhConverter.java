@@ -28,7 +28,7 @@ public class ThuocTinhConverter {
 	public ThuocTinhEntity convertToEntity(ThuocTinhDTO dto) {
 		ThuocTinhEntity entity = modelMapper.map(dto, ThuocTinhEntity.class);
 		SanPhamEntity sanPhamEntity = sanPhamRepository.findById(dto.getSanphamid()).get();
-		entity.setSanphams(sanPhamEntity);
+		entity.setSanpham(sanPhamEntity);
 		return entity;
 	}
 
@@ -39,7 +39,7 @@ public class ThuocTinhConverter {
 
 	public ThuocTinhDTO convertToDTO(ThuocTinhEntity entity) {
 		ThuocTinhDTO dto = modelMapper.map(entity, ThuocTinhDTO.class);
-		dto.setSanphamid(entity.getSanphams().getId());
+		dto.setSanphamid(entity.getSanpham().getId());
 		List<GiaTriThuocTinhDTO> listGiaTriThuocTinhDTO = entity.getGiaTriThuocTinhEntities().stream()
 				.map(itemGiaTri -> giaTriThuocTinhConvert.convertToDTO(itemGiaTri)).collect(Collectors.toList());
 		dto.setGiatrithuoctinh(listGiaTriThuocTinhDTO);

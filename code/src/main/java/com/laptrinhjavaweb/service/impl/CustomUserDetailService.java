@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Service(value = "userCustomService")
 public class CustomUserDetailService implements UserDetailsService {
 
     @Autowired
@@ -28,21 +28,23 @@ public class CustomUserDetailService implements UserDetailsService {
     private IKhachHangService khachHangService;
 
     @Override
-    public UserDetails loadUserByUsername(String ma) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         MyUserDetail myUserDetail = null;
-        NhanVienDTO nhanVienDTO = nhanVienService.findByMaNVAndTrangthai(ma, SystemConstant.STATUS_ACTICE);
+        NhanVienDTO nhanVienDTO = nhanVienService.findByMaAndTrangthai(username, SystemConstant.STATUS_IN_ACTICE);
         List<GrantedAuthority> authorities = new ArrayList<>();
         if(nhanVienDTO != null){
-            authorities.add(new SimpleGrantedAuthority("ROLE_" + nhanVienDTO.getChucVuDTO().getMaCV()));
-            myUserDetail = new MyUserDetail(ma, nhanVienDTO.getMatKhau(), true, true, true, true, authorities);
-            myUserDetail.setFullName(nhanVienDTO.getTenNV());
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + nhanVienDTO.getChucVuDTO().getMa()));
+            myUserDetail = new MyUserDetail(username, nhanVienDTO.getMatkhau(), true, true, true, true, authorities);
+            myUserDetail.setFullname(nhanVienDTO.getTen());
+            myUserDetail.setChucvu(nhanVienDTO.getChucVuDTO().getMa());
             BeanUtils.copyProperties(nhanVienDTO, myUserDetail);
         }
-        KhachHangDTO khachHangDTO = khachHangService.findByMaKHAndTrangthai(ma, SystemConstant.STATUS_ACTICE);
+        KhachHangDTO khachHangDTO = khachHangService.findByMaAndTrangthai(username, SystemConstant.STATUS_ACTICE);
         if (khachHangDTO != null) {
             authorities.add(new SimpleGrantedAuthority("ROLE_" + SystemConstant.ROLE_CUSTOMER));
-            myUserDetail = new MyUserDetail(ma, khachHangDTO.getMatKhau(), true, true, true, true, authorities);
-            myUserDetail.setFullName(khachHangDTO.getTenKH());
+            myUserDetail = new MyUserDetail(username, khachHangDTO.getMatkhau(), true, true, true, true, authorities);
+            myUserDetail.setFullname(khachHangDTO.getTen());
+            myUserDetail.setChucvu("CUSTOMER");
             BeanUtils.copyProperties(khachHangDTO, myUserDetail);
         }
         if(myUserDetail == null){

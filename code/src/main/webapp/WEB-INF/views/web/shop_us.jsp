@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: asus
-  Date: 10/10/2023
-  Time: 11:39 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
 <%@include file="/common/taglib.jsp" %>
@@ -209,7 +202,7 @@
     </div>
 </div>
 
-    <!-- Modal -->
+<!-- Modal -->
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1" >
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content" >

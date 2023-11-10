@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ChucVuRepository extends JpaRepository<ChucVuEntity, Long> {
 
-    ChucVuEntity findByMaCV(String maChucVu);
+    ChucVuEntity findByMa(String maChucVu);
 }

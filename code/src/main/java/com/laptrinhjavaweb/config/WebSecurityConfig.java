@@ -1,65 +1,63 @@
 package com.laptrinhjavaweb.config;
 
-import com.laptrinhjavaweb.security.CustomSuccessHandler;
-import com.laptrinhjavaweb.service.impl.CustomUserDetailService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.annotation.Resource;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return new CustomUserDetailService();
-    }
+    @Resource(name = "userCustomService")
+    private UserDetailsService userDetailsService;
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public DaoAuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userDetailsService());
-        authProvider.setPasswordEncoder(passwordEncoder());
-        return authProvider;
-    }
+    @Autowired
+    private JwtAuthenticationEntryPoint unauthorizedHandler;
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) {
-        auth.authenticationProvider(authenticationProvider());
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    @Autowired
+    public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
+    }
+
+    @Bean
+    public JwtAuthenticationFilter authenticationTokenFilterBean() throws Exception {
+        return new JwtAuthenticationFilter();
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-                http.csrf().disable()
-                .authorizeRequests()
-                        .antMatchers("/admin/dashboards").hasAnyRole("MANAGER", "STAFF")
-                        .antMatchers("/admin/dashboards/users").hasAnyRole("MANAGER")
-                        .antMatchers("/trang-chu").hasAnyRole("MANAGER","STAFF", "CUSTOMER")
-                        .antMatchers("/login").permitAll()
+        http
+                .cors().and().csrf().disable().authorizeRequests()
+                .antMatchers("/**").permitAll()
+                .antMatchers(HttpMethod.PUT,"/api/staff/**").hasAnyRole("STAFF", "MANAGER")
+                .antMatchers(HttpMethod.POST, "/api/sanphams").hasAnyRole("STAFF", "MANAGER")
+                .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/login").usernameParameter("j_username").passwordParameter("j_password").permitAll()
-                .loginProcessingUrl("/j_spring_security_check")
-                .successHandler(myAuthenticationSuccessHandler())
-                .failureUrl("/login?incorrectAccount").and()
-                .logout().logoutUrl("/logout").deleteCookies("JSESSIONID")
-                .and().exceptionHandling().accessDeniedPage("/access-denied").and()
-                .sessionManagement().maximumSessions(1).expiredUrl("/login?sessionTimeout");
+                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Bean
-    public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
-        return new CustomSuccessHandler();
+    public BCryptPasswordEncoder encoder(){
+        return new BCryptPasswordEncoder();
     }
 }

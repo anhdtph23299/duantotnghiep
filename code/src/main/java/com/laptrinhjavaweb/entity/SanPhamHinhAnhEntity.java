@@ -16,7 +16,7 @@ public class SanPhamHinhAnhEntity extends BaseEntity{
 	
 	@ManyToOne
 	@JoinColumn(name = "sanphamid")
-	private SanPhamEntity sanphams;
+	private SanPhamEntity sanpham;
 
 	public String getHinhanh() {
 		return hinhanh;
@@ -26,11 +26,11 @@ public class SanPhamHinhAnhEntity extends BaseEntity{
 		this.hinhanh = hinhanh;
 	}
 
-	public SanPhamEntity getSanphams() {
-		return sanphams;
+	public SanPhamEntity getSanpham() {
+		return sanpham;
 	}
 
-	public void setSanphams(SanPhamEntity sanphams) {
-		this.sanphams = sanphams;
+	public void setSanpham(SanPhamEntity sanphams) {
+		this.sanpham = sanphams;
 	}
 }

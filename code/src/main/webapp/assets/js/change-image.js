@@ -61,4 +61,3 @@ function openImageVariant(input, imageView,eleClick) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-

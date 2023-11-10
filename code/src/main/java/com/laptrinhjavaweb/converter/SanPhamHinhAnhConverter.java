@@ -21,13 +21,13 @@ public class SanPhamHinhAnhConverter {
 	public SanPhamHinhAnhEntity convertToEntity(SanPhamHinhAnhDTO dto) {
 		SanPhamHinhAnhEntity entity = modelMapper.map(dto, SanPhamHinhAnhEntity.class);
 		SanPhamEntity sanPhamEntity = sanPhamRepository.findById(dto.getSanphamid()).get();
-		entity.setSanphams(sanPhamEntity);
+		entity.setSanpham(sanPhamEntity);
 		return entity;
 	}
 	
 	public SanPhamHinhAnhDTO convertToDTO(SanPhamHinhAnhEntity entity) {
 		SanPhamHinhAnhDTO dto = modelMapper.map(entity, SanPhamHinhAnhDTO.class);
-		dto.setSanphamid(entity.getSanphams().getId());
+		dto.setSanphamid(entity.getSanpham().getId());
 		return dto;
 	}
 }

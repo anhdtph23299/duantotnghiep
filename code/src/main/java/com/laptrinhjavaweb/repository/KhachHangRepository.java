@@ -5,5 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface KhachHangRepository extends JpaRepository<KhachHangEntity, Long> {
 
-    KhachHangEntity findByMaKHAndTrangthai(String maKhachHang, int trangThai);
+    KhachHangEntity findByMaAndTrangthai(String ma, int trangThai);
+
+    KhachHangEntity findByMaAndMatkhau(String ma, String matkhau);
 }

@@ -12,7 +12,9 @@ public class MyUserDetail extends User {
     }
 
     private Long id;
-    private String fullName;
+    private String fullname;
+    private Integer trangthai;
+    private String chucvu;
 
     public Long getId() {
         return id;
@@ -22,11 +24,28 @@ public class MyUserDetail extends User {
         this.id = id;
     }
 
-    public String getFullName() {
-        return fullName;
+
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public Integer getTrangthai() {
+        return trangthai;
+    }
+
+    public void setTrangthai(Integer trangthai) {
+        this.trangthai = trangthai;
+    }
+
+    public String getChucvu() {
+        return chucvu;
+    }
+
+    public void setChucvu(String chucvu) {
+        this.chucvu = chucvu;
     }
 }

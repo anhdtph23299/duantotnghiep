@@ -20,7 +20,7 @@ public class ThuongHieuEntity extends BaseEntity{
 	@Column(name = "ten")
 	private String ten;
 	
-	@OneToMany(mappedBy = "thuonghieus", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "thuonghieu", fetch = FetchType.LAZY)
 	private List<SanPhamEntity> sanPhamEntities = new ArrayList<>();
 
 	public String getSlug() {

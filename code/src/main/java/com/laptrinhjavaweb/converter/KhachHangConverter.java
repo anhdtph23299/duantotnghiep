@@ -17,4 +17,9 @@ public class KhachHangConverter {
         KhachHangDTO result = modelMapper.map(entity, KhachHangDTO.class);
         return result;
     }
+
+    public KhachHangEntity convertToEntity (KhachHangDTO dto){
+        KhachHangEntity result = modelMapper.map(dto, KhachHangEntity.class);
+        return result;
+    }
 }

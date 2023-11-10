@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: asus
-  Date: 10/19/2023
-  Time: 10:42 AM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/common/taglib.jsp" %>
 <html>
 <head>
     <title>Mở ca làm việc</title>
@@ -37,7 +31,7 @@
                                 <h6>Tên nhân viên:</h6>
                             </div>
                             <div class="col-8">
-                                <span>Dinh Anh Tuan</span>
+                                <span class="name-login">Nhân viên đăng nhập</span>
                             </div>
                         </div>
                         <div class="row mt-2">
@@ -63,12 +57,10 @@
                         <div class="row mt-2 float-right">
                             <div class="">
                                 <a href="#" class="btn ms-2" style="background-color: #FFc5c4; color: #be2329">Đăng xuất</a>
-                                <button class="btn" id="addMocaButton" style="background-color: #A6edab; color: #00852d">Mở ca</button>
+                                <button class="btn" id="add-mo-ca" style="background-color: #A6edab; color: #00852d">Mở ca</button>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <div class="col-12 col-md-3 col-lg-3 col-xl-6"></div>
@@ -76,48 +68,17 @@
 
     </div>
 </div>
-
 <script>
-    // function getThoiGianFromDB() {
-    //     $.ajax({
-    //         type: "GET",
-    //         url: "/api/admin/moca/getDateTimeFromDB",
-    //         success: function(data) {
-    //             $("#thoiGian").text(data);
-    //         },
-    //         error: function(xhr, status, error) {
-    //             showError("Hiển thị fail");
-    //         }
-    //     });
-    // }
-    $(document).ready(function() {
-
-        $("#addMocaButton").click(function() {
-            var soTienDauCa = $("#soTienDauCa").val();
-            $.ajax({
-                type: "POST",
-                url: "/api/admin/moca/insert",
-                data: JSON.stringify({
-                    "soTienDauCa": soTienDauCa
-                }),
-                contentType: "application/json",
-                success: function() {
-                    window.location.href = '/admin';
-                },
-                error: function(xhr, status, error) {
-                    showError("Thêm thất bại");
-                }
-            });
-        });
-    });
-
-    function updateDateTime() {
-        $.get("/api/admin/moca/getDateTime", function(response) {
-            $("#thoiGian").text(response);
-        });
+    $('.name-login').text(full_name);
+    if(role === "STAFF"){
+        if(role === "STAFF"){
+            $('#menu').html('');
+        }
     }
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
 </script>
+<script>
+    $('#thoiGian').text(new Date().toLocaleString());
+</script>
+<script src="<c:url value='/assets/api/admin/ca.js'/> "></script>
 </body>
 </html>

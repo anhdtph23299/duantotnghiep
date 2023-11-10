@@ -4,6 +4,7 @@ package com.laptrinhjavaweb.controller.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import java.math.BigDecimal;
 
 @Controller
 public class HomePageController {
@@ -48,6 +49,9 @@ public class HomePageController {
         return "web/shop_us";
     }
 
-
+    @GetMapping("/403")
+    public String web403(){
+        return "web/403";
+    }
 }
 

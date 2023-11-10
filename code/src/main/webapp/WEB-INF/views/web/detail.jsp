@@ -20,14 +20,14 @@
     <div class="row px-xl-5">
         <div class="col-lg-5 col-md-5 col-sm-12">
             <div class="row">
-            <img class="product-image-primary" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
+                <img class="product-image-primary" src="<c:url value='/template/web/img/anh2.png'/>" alt="Image">
             </div>
             <div class="row mt-3">
-                    <div class="col">
-                        <div class="owl-carousel related-carousel product-list-images">
+                <div class="col">
+                    <div class="owl-carousel related-carousel product-list-images">
 
-                        </div>
                     </div>
+                </div>
             </div>
         </div>
 

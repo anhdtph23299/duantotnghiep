@@ -12,25 +12,25 @@ public class GiaTriThuocTinhBienTheEntity extends BaseEntity{
 	
 	@ManyToOne
     @JoinColumn(name = "bientheid")
-    private BienTheEntity bienthes;
+    private BienTheEntity bienthe;
 	
 	@ManyToOne
     @JoinColumn(name = "giatrithuoctinhid")
-    private GiaTriThuocTinhEntity giatrithuoctinhs;
+    private GiaTriThuocTinhEntity giatrithuoctinh;
 
-	public BienTheEntity getBienthes() {
-		return bienthes;
+	public BienTheEntity getBienthe() {
+		return bienthe;
 	}
 
-	public void setBienthes(BienTheEntity bienthes) {
-		this.bienthes = bienthes;
+	public void setBienthe(BienTheEntity bienthes) {
+		this.bienthe = bienthes;
 	}
 
-	public GiaTriThuocTinhEntity getGiatrithuoctinhs() {
-		return giatrithuoctinhs;
+	public GiaTriThuocTinhEntity getGiatrithuoctinh() {
+		return giatrithuoctinh;
 	}
 
-	public void setGiatrithuoctinhs(GiaTriThuocTinhEntity giatrithuoctinhs) {
-		this.giatrithuoctinhs = giatrithuoctinhs;
+	public void setGiatrithuoctinh(GiaTriThuocTinhEntity giatrithuoctinhs) {
+		this.giatrithuoctinh = giatrithuoctinhs;
 	}
 }

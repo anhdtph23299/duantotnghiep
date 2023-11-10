@@ -4,11 +4,13 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @MappedSuperclass
+//@EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,44 +46,44 @@ public abstract class BaseEntity {
 		this.id = id;
 	}
 
-	public Date getCreateddate() {
+	public Date getNgaytao() {
 		return ngaytao;
 	}
 
-	public void setCreateddate(Date createddate) {
-		this.ngaytao = createddate;
+	public void setNgaytao(Date ngaytao) {
+		this.ngaytao = ngaytao;
 	}
 
-	public String getCreatedby() {
+	public String getNguoitao() {
 		return nguoitao;
 	}
 
-	public void setCreatedby(String createdby) {
-		this.nguoitao = createdby;
+	public void setNguoitao(String nguoitao) {
+		this.nguoitao = nguoitao;
 	}
 
-	public Date getModifieddate() {
+	public Date getNgaysua() {
 		return ngaysua;
 	}
 
-	public void setModifieddate(Date modifieddate) {
-		this.ngaysua = modifieddate;
+	public void setNgaysua(Date ngaysua) {
+		this.ngaysua = ngaysua;
 	}
 
-	public String getModifiedby() {
+	public String getNguoisua() {
 		return nguoisua;
 	}
 
-	public void setModifiedby(String modifiedby) {
-		this.nguoisua = modifiedby;
+	public void setNguoisua(String nguoisua) {
+		this.nguoisua = nguoisua;
 	}
 
-	public Integer getStatus() {
+	public Integer getTrangthai() {
 		return trangthai;
 	}
 
-	public void setStatus(Integer status) {
-		this.trangthai = status;
+	public void setTrangthai(Integer trangthai) {
+		this.trangthai = trangthai;
 	}
 
 	public Integer getOrdering() {

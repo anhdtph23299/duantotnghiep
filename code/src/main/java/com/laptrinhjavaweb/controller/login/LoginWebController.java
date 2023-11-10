@@ -16,4 +16,8 @@ public class LoginWebController {
         return "loginWeb/register";
     }
 
+    @GetMapping("/forgotpassword")
+    public String forgotpassword(){
+        return "loginWeb/forgotpassword";
+    }
 }

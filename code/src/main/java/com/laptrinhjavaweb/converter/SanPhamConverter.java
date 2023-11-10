@@ -43,16 +43,16 @@ public class SanPhamConverter {
         SanPhamEntity entity = modelMapper.map(dto, SanPhamEntity.class);
         DanhMucEntity danhMucEntity = danhMucRepository.findBySlug(dto.getDanhmucslug());
         ThuongHieuEntity thuongHieuEntity = thuongHieuRepository.findBySlug(dto.getThuonghieuslug());
-        entity.setDanhmucs(danhMucEntity);
-        entity.setThuonghieus(thuongHieuEntity);
+        entity.setDanhmuc(danhMucEntity);
+        entity.setThuonghieu(thuongHieuEntity);
         return entity;
     }
 
     public SanPhamDTO convertToDTO(SanPhamEntity entity) {
         modelMapper.getConfiguration().setAmbiguityIgnored(true);
         SanPhamDTO dto = modelMapper.map(entity, SanPhamDTO.class);
-        dto.setDanhmucslug(entity.getDanhmucs().getSlug());
-        dto.setThuonghieuslug(entity.getThuonghieus().getSlug());
+        dto.setDanhmucslug(entity.getDanhmuc().getSlug());
+        dto.setThuonghieuslug(entity.getThuonghieu().getSlug());
         List<ThuocTinhDTO> listThuocTinhDTO = entity.getThuocTinhEntities().stream().map(item -> {
             ThuocTinhDTO thuocTinhDTO = thuocTinhConverter.convertToDTO(item);
             return thuocTinhDTO;

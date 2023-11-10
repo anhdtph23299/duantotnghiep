@@ -16,13 +16,13 @@ public class NhanVienConverter {
 
     public NhanVienDTO convertToDTO (NhanVienEntity entity){
         NhanVienDTO result = modelMapper.map(entity, NhanVienDTO.class);
-        result.setChucVuDTO(chucVuConverter.convertToDTO(entity.getChucVu()));
+        result.setChucVuDTO(chucVuConverter.convertToDTO(entity.getChucvu()));
         return result;
     }
 
     public NhanVienEntity convertToEntity (NhanVienDTO dto) {
         NhanVienEntity result = modelMapper.map(dto, NhanVienEntity.class);
-        result.setChucVu(chucVuConverter.convertToEntity(dto.getChucVuDTO()));
+        result.setChucvu(chucVuConverter.convertToEntity(dto.getChucVuDTO()));
         return result;
     }
 }

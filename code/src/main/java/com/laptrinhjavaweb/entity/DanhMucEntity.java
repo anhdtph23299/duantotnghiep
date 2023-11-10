@@ -32,7 +32,7 @@ public class DanhMucEntity extends BaseEntity {
 	@Column(name = "isshowhomepage")
     private Integer isshowhomepage;
 	
-	@OneToMany(mappedBy = "danhmucs", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "danhmuc", fetch = FetchType.LAZY)
     private List<SanPhamEntity> sanPhamEntities = new ArrayList<>();
 
 	public String getSlug() {

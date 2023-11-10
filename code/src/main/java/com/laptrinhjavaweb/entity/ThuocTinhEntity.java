@@ -24,9 +24,9 @@ public class ThuocTinhEntity extends BaseEntity{
 	
 	@ManyToOne
     @JoinColumn(name = "sanphamid")
-    private SanPhamEntity sanphams;
+    private SanPhamEntity sanpham;
 	
-	@OneToMany(mappedBy = "thuoctinhs", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "thuoctinh", fetch = FetchType.LAZY)
 	private List<GiaTriThuocTinhEntity> giaTriThuocTinhEntities = new ArrayList<>();
 
 	public String getSlug() {
@@ -45,12 +45,12 @@ public class ThuocTinhEntity extends BaseEntity{
 		this.ten = ten;
 	}
 
-	public SanPhamEntity getSanphams() {
-		return sanphams;
+	public SanPhamEntity getSanpham() {
+		return sanpham;
 	}
 
-	public void setSanphams(SanPhamEntity sanphams) {
-		this.sanphams = sanphams;
+	public void setSanpham(SanPhamEntity sanphams) {
+		this.sanpham = sanphams;
 	}
 
 	public List<GiaTriThuocTinhEntity> getGiaTriThuocTinhEntities() {

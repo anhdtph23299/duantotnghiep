@@ -4,5 +4,9 @@ import com.laptrinhjavaweb.dto.KhachHangDTO;
 
 public interface IKhachHangService {
 
-    KhachHangDTO findByMaKHAndTrangthai(String maKhachHang, int trangThai);
+    KhachHangDTO findByMaAndTrangthai(String ma, int trangThai);
+
+    KhachHangDTO save(KhachHangDTO khachHangDTO);
+
+    KhachHangDTO findByMaAndMatkhau(String ma, String matkhau);
 }

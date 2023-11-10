@@ -98,7 +98,5 @@
 
 <!-- Template Javascript -->
 <script src="<c:url value='/template/web/js/main.js'/>"></script>
-
-
 </body>
 </html>

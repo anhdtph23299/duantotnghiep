@@ -2,7 +2,7 @@ package com.laptrinhjavaweb.dto;
 
 import java.util.Date;
 
-public class AbstractDTO<T> {
+public abstract class AbstractDTO<T> {
 
 	private Long id;
 	
@@ -13,6 +13,8 @@ public class AbstractDTO<T> {
 	private Date ngaysua;
 	
 	private String nguoisua;
+
+	private Integer trangthai;
 
 	public Long getId() {
 		return id;
@@ -52,5 +54,13 @@ public class AbstractDTO<T> {
 
 	public void setNguoisua(String nguoisua) {
 		this.nguoisua = nguoisua;
+	}
+
+	public Integer getTrangthai() {
+		return trangthai;
+	}
+
+	public void setTrangthai(Integer trangthai) {
+		this.trangthai = trangthai;
 	}
 }

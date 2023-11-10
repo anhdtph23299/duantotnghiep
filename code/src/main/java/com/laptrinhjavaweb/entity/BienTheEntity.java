@@ -13,7 +13,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "bienthe")
-
 public class BienTheEntity extends BaseEntity{
 
 	@Column(name = "ten")
@@ -27,9 +26,9 @@ public class BienTheEntity extends BaseEntity{
 	
 	@ManyToOne
     @JoinColumn(name = "sanphamid")
-    private SanPhamEntity sanphams;
+    private SanPhamEntity sanpham;
 	
-	@OneToMany(mappedBy = "bienthes", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "bienthe", fetch = FetchType.LAZY)
 	private List<GiaTriThuocTinhBienTheEntity> giaTriThuocTinhBienTheEntities = new ArrayList<>();
 
 	public String getTen() {
@@ -56,12 +55,12 @@ public class BienTheEntity extends BaseEntity{
 		this.hinhanh = hinhanh;
 	}
 
-	public SanPhamEntity getSanphams() {
-		return sanphams;
+	public SanPhamEntity getSanpham() {
+		return sanpham;
 	}
 
-	public void setSanphams(SanPhamEntity sanphams) {
-		this.sanphams = sanphams;
+	public void setSanpham(SanPhamEntity sanphams) {
+		this.sanpham = sanphams;
 	}
 
 	public List<GiaTriThuocTinhBienTheEntity> getGiaTriThuocTinhBienTheEntities() {

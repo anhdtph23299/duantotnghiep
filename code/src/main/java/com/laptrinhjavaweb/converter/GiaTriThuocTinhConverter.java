@@ -27,15 +27,15 @@ public class GiaTriThuocTinhConverter {
 		GiaTriThuocTinhEntity entity = modelMapper.map(dto, GiaTriThuocTinhEntity.class);
 		SanPhamEntity sanPhamEntity = sanPhamRepository.findById(dto.getSanphamid()).get();
 		ThuocTinhEntity thuocTinhEntity = thuocTinhRepository.findById(dto.getThuoctinhid()).get();
-		entity.setSanphams(sanPhamEntity);
-		entity.setThuoctinhs(thuocTinhEntity);
+		entity.setSanpham(sanPhamEntity);
+		entity.setThuoctinh(thuocTinhEntity);
 		return entity;
 	}
 	
 	public GiaTriThuocTinhDTO convertToDTO(GiaTriThuocTinhEntity entity) {
 		GiaTriThuocTinhDTO dto = modelMapper.map(entity, GiaTriThuocTinhDTO.class);
-		dto.setThuoctinhid(entity.getThuoctinhs().getId());
-		dto.setSanphamid(entity.getSanphams().getId());
+		dto.setThuoctinhid(entity.getThuoctinh().getId());
+		dto.setSanphamid(entity.getSanpham().getId());
 		return dto;
 	}
 }

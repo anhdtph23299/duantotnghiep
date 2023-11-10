@@ -8,36 +8,36 @@ import java.util.List;
 @Table(name = "chucvu")
 public class ChucVuEntity extends BaseEntity {
 
-    @Column(name = "macv")
-    private String maCV;
+    @Column(name = "ma")
+    private String ma;
 
-    @Column(name = "tencv")
-    private String tenCV;
+    @Column(name = "ten")
+    private String ten;
 
-    @OneToMany(mappedBy = "chucVu", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "chucvu", fetch = FetchType.LAZY)
     private List<NhanVienEntity> nhanVienEntities = new ArrayList<>();
 
-    public String getMaCV() {
-        return maCV;
-    }
+	public String getMa() {
+		return ma;
+	}
 
-    public void setMaCV(String maCV) {
-        this.maCV = maCV;
-    }
+	public void setMachucvu(String ma) {
+		this.ma = ma;
+	}
 
-    public String getTenCV() {
-        return tenCV;
-    }
+	public String getTen() {
+		return ten;
+	}
 
-    public void setTenCV(String tenCV) {
-        this.tenCV = tenCV;
-    }
+	public void setTenchucvu(String ten) {
+		this.ten = ten;
+	}
 
-    public List<NhanVienEntity> getNhanVienEntities() {
-        return nhanVienEntities;
-    }
+	public List<NhanVienEntity> getNhanVienEntities() {
+		return nhanVienEntities;
+	}
 
-    public void setNhanVienEntities(List<NhanVienEntity> nhanVienEntities) {
-        this.nhanVienEntities = nhanVienEntities;
-    }
+	public void setNhanVienEntities(List<NhanVienEntity> nhanVienEntities) {
+		this.nhanVienEntities = nhanVienEntities;
+	}
 }

@@ -10,5 +10,5 @@ public interface ISanPhamService {
 	
 	SanPhamDTO findBySlug(String slug);
 
-	Map<String, Object> pageAble(Integer page, Integer limit);
+	Map<String, Object> pagingOrsearchProducts(String param, Integer pageCurrent, Integer limit);
 }
