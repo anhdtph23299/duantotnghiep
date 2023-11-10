@@ -118,7 +118,7 @@
                             <tr>
                                 <td>\${++index}</td>
                                 <td>\${item.maHoaDon}</td>
-                                 <td>\${item.nguoiBan.maNV}</td>
+                                 <td>\${item.nhanVien.maNV}</td>
                                  <td>\${item.khachHang.tenKH}</td>
                                  <td>\${getDateTime(item.ngayDat)}</td>
                                  <td>\${item.tongTienHang}</td>

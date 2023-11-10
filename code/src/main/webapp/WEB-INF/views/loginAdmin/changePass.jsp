@@ -48,7 +48,7 @@
                 showSuccess("Đổi mật khẩu thành công")
             },
             error: function(xhr, textStatus, error) {
-              showError("Đổi mật khẩu thất bại")
+              showError("Mã code không đúng")
             }
         });
     }

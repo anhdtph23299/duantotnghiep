@@ -19,4 +19,12 @@ public class HoaDonChiTietDTO {
     private Integer soLuong;
 
     private Double donGia;
+
+    public Double getThanhTien(){
+        if (donGia == null){
+            return bienTheDTO.getGia()*soLuong;
+        }
+        return donGia*soLuong;
+
+    }
 }

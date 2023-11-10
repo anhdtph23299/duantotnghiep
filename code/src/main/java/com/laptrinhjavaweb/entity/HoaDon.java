@@ -57,12 +57,8 @@ public class HoaDon extends PrimaryEntity {
     private ThongTinMuaHang thongTinMuaHang;
 
     @ManyToOne
-    @JoinColumn(name = "nguoitao")
-    private NhanVien nguoiTao;
-
-    @ManyToOne
-    @JoinColumn(name = "nguoiban")
-    private NhanVien nguoiBan;
+    @JoinColumn(name = "idnv")
+    private NhanVien nhanVien;
 
     @ManyToOne
     @JoinColumn(name = "idkm")

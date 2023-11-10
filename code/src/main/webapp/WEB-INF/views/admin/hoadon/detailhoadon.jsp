@@ -26,29 +26,23 @@
                  <div class="col-lg-8">
                     <div class="card" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 20px; background-color: #fff">
-                        <div class="row col-12">
+                        <div class=" d-flex justify-content-between">
                             <h4>Thông tin khách hàng</h4>
+                            <button type="button" class="buttonExport" id="exportButton">
+                                <span class="button__text">Export</span>
+                                <span class="button__icon"><svg class="svgExport" data-name="Layer 2" id="bdd05811-e15d-428c-bb53-8661459f9307" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
+                            </button>
                         </div>
                         <hr>
-                        <div class="d-flex justify-content-between">
-                            <div class="">
-                                <div class="row my-2 " >
-                                        <div class="col-lg-3 col-md-3 col-sm-3">
-                                            <img src="/template/web/img/anh1.png" width="50px" style="border-radius: 50%" alt="">
+                        <div class="row my-2 " >
+                                        <div class="col-lg-1 col-md-1 col-sm-1">
+                                            <img src="/template/web/img/anh1.png" width="60px" style="border-radius: 50%" alt="">
                                         </div>
-                                        <div class="col-lg-9 col-md-9 col-sm-9" >
+                                        <div class="col-lg-11 col-md-11 col-sm-11 my-2" >
                                             <h5 style="color: #EB8153" id="tenkh"></h5>
                                            <span id="sdtkh"></span>
                                         </div>
                                 </div>
-                            </div>
-                            <div class="">
-                                <button type="button" class="buttonExport" id="exportButton">
-                                    <span class="button__text">Export</span>
-                                    <span class="button__icon"><svg class="svgExport" data-name="Layer 2" id="bdd05811-e15d-428c-bb53-8661459f9307" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
-                                </button>
-                            </div>
-                        </div>
                     </div>
                      <div class="card mt-2" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 20px; background-color: #fff">
@@ -165,22 +159,11 @@
                          </div>
                          <div class="row mt-3">
                              <div class="col-5">
-                                 <h6>Người tạo:</h6>
+                                 <h6>Nhân viên:</h6>
                              </div>
                              <div class="col-7">
                                  <div class="input-wrapper1">
-                                     <input class="input-box1" type="text" id="nguoitao"  disabled>
-                                     <span class="underline1"></span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="row mt-3">
-                             <div class="col-5">
-                                 <h6>Người bán:</h6>
-                             </div>
-                             <div class="col-7">
-                                 <div class="input-wrapper1">
-                                     <input class="input-box1" type="text" id="nguoiban"  disabled>
+                                     <input class="input-box1" type="text" id="nhanvien"  disabled>
                                      <span class="underline1"></span>
                                  </div>
                              </div>
@@ -227,8 +210,7 @@
                  $("#tenkh").text(data.hoaDonDTO.khachHang.tenKH);
                  $("#sdtkh").text(data.hoaDonDTO.khachHang.sdt);
                  $("#thoigian").text(getDateTime(data.hoaDonDTO.ngayDat));
-                 $("#nguoitao").val(data.hoaDonDTO.nguoiTao.tenNV);
-                 $("#nguoiban").val(data.hoaDonDTO.nguoiBan.tenNV);
+                 $("#nhanvien").val(data.hoaDonDTO.nhanVien.tenNV);
                  $("#phuongthuc").text(data.hoaDonDTO.phuongThucThanhToan == 1 ? "Tiền mặt": "Chuyển khoản");
                  $("#trangthai").text(formatStatus(data.hoaDonDTO.trangThai));
              },

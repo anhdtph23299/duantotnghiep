@@ -8,7 +8,7 @@ public class BienTheDTO extends AbstractDTO<BienTheDTO>{
 	
 	private Long sanphamid;
 	
-	private String gia;
+	private Double gia;
 	
 	private String hinhanh;
 
@@ -18,6 +18,14 @@ public class BienTheDTO extends AbstractDTO<BienTheDTO>{
 
 	public String getTen() {
 		return ten;
+	}
+
+	public Double getGia() {
+		return gia;
+	}
+
+	public void setGia(Double gia) {
+		this.gia = gia;
 	}
 
 	public void setTen(String name) {
@@ -32,13 +40,7 @@ public class BienTheDTO extends AbstractDTO<BienTheDTO>{
 		this.sanphamid = sanphamid;
 	}
 
-	public String getGia() {
-		return gia;
-	}
 
-	public void setGia(String gia) {
-		this.gia = gia;
-	}
 
 	public String getHinhanh() {
 		return hinhanh;

@@ -15,9 +15,7 @@ public class HoaDonDTO {
 
     private String maHoaDon;
 
-    private NhanVien nguoiTao;
-
-    private NhanVien nguoiBan;
+    private NhanVien nhanVien;
 
     private KhachHang khachHang;
 
