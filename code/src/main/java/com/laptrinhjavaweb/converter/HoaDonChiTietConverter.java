@@ -30,9 +30,7 @@ public class HoaDonChiTietConverter {
         result.setHoaDonDTO(hd);
         result.setSanPhamDTO(sp);
         result.setBienTheDTO(bt);
-        result.setDonGia(entity.getDonGia());
-        result.setSoLuong(entity.getSoLuong());
-        result.setId(entity.getId());
+        result.setThanhTien(result.getDonGia() * result.getSoLuong());
         return result;
     }
 }

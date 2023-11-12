@@ -30,6 +30,7 @@ public class HoaDonChiTiet extends PrimaryEntity {
     @ManyToOne
     @JoinColumn(name = "idhd")
     private HoaDon hoaDon;
+
     @ManyToOne
     @JoinColumn(name = "idbienthe")
     private BienThe bienThe;
@@ -43,6 +44,10 @@ public class HoaDonChiTiet extends PrimaryEntity {
 
     @Column(name = "dongia")
     private Double donGia;
+
+    @Column(name = "thanhtien")
+    private Double thanhTien;
+
 
     public Double getTongTien(){
         if (donGia==null){

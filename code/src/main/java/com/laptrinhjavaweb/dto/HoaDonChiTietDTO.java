@@ -3,7 +3,6 @@ package com.laptrinhjavaweb.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Setter
 @Getter
 public class HoaDonChiTietDTO {
@@ -20,11 +19,5 @@ public class HoaDonChiTietDTO {
 
     private Double donGia;
 
-    public Double getThanhTien(){
-        if (donGia == null){
-            return bienTheDTO.getGia()*soLuong;
-        }
-        return donGia*soLuong;
-
-    }
+    private Double thanhTien;
 }

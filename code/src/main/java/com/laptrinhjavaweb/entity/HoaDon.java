@@ -6,7 +6,10 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
@@ -63,6 +66,9 @@ public class HoaDon extends PrimaryEntity {
     @ManyToOne
     @JoinColumn(name = "idkm")
     private KhuyenMai khuyenMai;
+
+    @OneToMany(mappedBy = "hoaDon", fetch = FetchType.LAZY)
+    private List<HoaDonChiTiet> hoaDonChiTiets = new ArrayList<>();
 
     @JsonProperty("getTrangThaiHD")
     public String getTrangThaiHD() {

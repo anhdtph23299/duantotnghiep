@@ -24,5 +24,7 @@ public interface HoaDonService {
     //tuấn
     List<HoaDonDTO> getDsHoaDon();
 
+//    HoaDonDTO detailHD(String maHoaDon);
+
     String getCurrentDateTime();
 }

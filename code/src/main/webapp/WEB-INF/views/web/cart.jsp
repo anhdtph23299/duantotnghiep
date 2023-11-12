@@ -100,7 +100,41 @@
                                         <div class="col-lg-9">
                                             <div class="card-body">
                                                 <h5 class="card-title">Áo polo nam </h5>
-                                                <span>Xanh than, Size L</span>
+                                                <div class="btn-group">
+                                                    <span class="dropdown-toggle"  data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false" >
+                                                        Phân loại hàng
+                                                    </span>
+                                                    <ul class="dropdown-menu p-3">
+                                                        <li>
+                                                            <div class="color-selector">
+                                                                <label>Color:</label>
+                                                                <div class="color-buttons">
+                                                                    <button class="color-button" data-color="black">Black</button>
+                                                                    <button class="color-button" data-color="red">Red</button>
+                                                                    <button class="color-button" data-color="blue">BLue</button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="color-selector">
+                                                                <label>Size:</label>
+                                                                <div class="color-buttons">
+                                                                    <button class="size-button" data-color="s">Size S</button>
+                                                                    <button class="size-button" data-color="m">Size M</button>
+                                                                    <button class="size-button" data-color="l">Size L</button>
+                                                                    <button class="size-button" data-color="xl">Size XL</button>
+                                                                    <button class="size-button" data-color="xxl">Size XXL</button>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="text-right ">
+                                                            <button type="button" class="btn btn-light" id="cancelButton" >Cancel</button>
+                                                            <button type="button" class="btn text-light" style="background-color: #C3817B" >Submit</button>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                                <p id="selectedItems"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -205,201 +239,237 @@
 </div>
 
 
-
 <script>
-    var idkh = 1;
-    var dsCheckbox = [];
+    $(document).ready(function () {
+        var selectedColor = null;
+        var selectedSize = null;
 
-    $("#allchecked").click(function (){
-        var isChecked = $(this).is(":checked");
-        if (isChecked){
-            $("input[name='idghct']").prop('checked',true)
-        }else{
-            $("input[name='idghct']").prop('checked',false)
-        }
-        loadDataCheckbox();
+        $(".color-button").on("click", function () {
+            // Xóa lớp 'active' từ tất cả các nút
+            $(".color-button").removeClass("active");
+            // Thêm lớp 'active' vào nút đang được chọn
+            $(this).addClass("active");
 
-    })
-   async function ghct(){
-      await  $.ajax({
-            url: '/api/user/ghct/dsspttchiatheosp/'+idkh,
-            method: 'GET',
-            success: function(req) {
-                var data = req.data;
-                var tbody =$("#cart");
-                tbody.empty();
-                data.forEach(function (item){
-                    item.forEach(function (sp){
-                        var html =
-                            `
-                                        <div class="row mt-2" style="border-bottom: 1px solid #dedede">
-                <div class="col-5">
-                    <div class="form-check align-items-center justify-content-between mb-3 datacart">
-                        <input class="form-check-input" type="checkbox" name="idghct" value="\${sp.idGhct}">
-                        <label class="form-check-label">
-                            <div class="mb-3" style="max-width: 540px;">
-                                <div class="row g-0">
-                                    <div class="col-lg-3">
-                                        <img src="/template/web/img/anh2.png" class="img-fluid rounded-start" alt="...">
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <div class="card-body">
-                                            <h5 class="card-title">\${sp.tenSanPham}</h5>
-                                            <span>\${sp.tenBienThe}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <span>\${sp.giaTien}₫</span>
-                </div>
-                <div class="col-2">
-                    <span>
-                        <div class="input-group quantity" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" onclick="thayDoiSoLuong(\${sp.idGhct},-1)">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="\${sp.soLuong}" id="soluong-\${sp.idGhct}">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus" onclick="thayDoiSoLuong(\${sp.idGhct},1)">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                    </span>
-                </div>
-                <div class="col-2">
-                    <span id="tongtien-\${sp.idGhct}">\${sp.tongTien}</span>
-                </div>
-                <div class="col-1">
-                    <a>Xóa</a>
-                </div>
-            </div>
-
-                            `;
-                        tbody.append(html);
-                    })
-                })
-                setCheckBox();
-            },
-            error: function(xhr, status, error) {
-                console.log('Có lỗi xảy ra: ' + error);
-            }
+            selectedColor = $(this).data("color");
+            updateSelectedItems();
         });
-    }
 
-        function tongTien(){
-            $.ajax({
-                url: '/api/user/ghct/subtotal/'+idkh,
-                method: 'GET',
-                success: function(req) {
-                    var data = req.data;
-                    $("#thanhtien").html(data+"₫");
-                    $("#tongthanhtoan").html(data+"₫");
+        $(".size-button").on("click", function () {
+            $(".size-button").removeClass("active");
+            $(this).addClass("active");
 
-                },
-                error: function(xhr, status, error) {
-                    console.log('Có lỗi xảy ra: ' + error);
-                }
-            });
+            selectedSize = $(this).data("color");
+            updateSelectedItems();
+        });
 
-        }
+        $('#cancelButton').on('click', function () {
+            // Ẩn dropdown khi nhấn nút "Cancel"
+            $('.dropdown-menu').removeClass('show');
+        });
 
-   function thayDoiSoLuong(idghct,sl){
-            $.ajax({
-                url: '/api/user/ghct/thaydoisoluong',
-                method: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({
-                    idGhct:idghct,
-                    soLuong:sl
-                }),
-                success: async function (req) {
-            //        await ghct();
-                    var data = req.data;
-                    $("#soluong-"+data.idGhct).val(data.soLuong);
-                    $("#tongtien-"+data.idGhct).html(data.tongTien);
-                    tongTienTheoGhct(dsCheckbox);
-                },
-                error: function(xhr, status, error) {
-                    console.log('Có lỗi xảy ra: ' + error);
-                }
-            });
-        }
-     function muahang() {
-         var listsp = getValByCheckbox();
-         var listspAsNumbers = listsp.map(str => parseInt(str, 10));
-         if (listsp.length == 0) {
-             showError("Bạn chưa chọn sản phẩm để mua")
-         }
-         var data = JSON.stringify({
-             dsghct: listspAsNumbers,
-         });
-          $.ajax({
-             url: '/api/user/dathang/' + idkh,
-             method: 'POST',
-             contentType: 'application/json',
-             data: data,
-             success: function (req) {
-                 window.location.href = "/checkout"
-             },
-             error: function (xhr, status, error) {
-                 showError("Có lỗi xảy ra");
-             }
-         });
-    }
-  async function  init(){
-       await ghct();
-       //tongTien()
-   }
-   // Đặt sự kiện delegating cho phần tử body để bắt sự kiện click của checkbox
-
-   function setCheckBox(){
-       $('input[name="idghct"]').click(function() {
-           loadDataCheckbox();
-       });
-   }
-   function loadDataCheckbox(){
-       var listCheckbox = getValByCheckbox();
-
-       dsCheckbox = listCheckbox;
-       tongTienTheoGhct(dsCheckbox)
-   }
-   function getValByCheckbox(){
-        return $("input[name='idghct']:checked").map(function () {
-            return this.value;
-        }).get();
-   }
-function tongTienTheoGhct(listCheckbox){
-    if (listCheckbox.length==0){
-        $("#thanhtien").html(0+"₫");
-        $("#tongthanhtoan").html(0+"₫");
-        $("#totalproduct").html(0);
-        return;
-    }
-       var data = JSON.stringify({
-           collection:listCheckbox
-       });
-    $.ajax({
-        url: '/api/user/ghct/subtotaltheoghct/'+idkh,
-        method: 'POST',
-        contentType: 'application/json',
-        data:data ,
-        success: function (req) {
-            var data = req.data;
-            $("#thanhtien").html(data+"₫");
-            $("#tongthanhtoan").html(data+"₫");
-            $("#totalproduct").html(listCheckbox.length);
-        },
-        error: function(xhr, status, error) {
-            console.log('Có lỗi xảy ra: ' + error);
+        function updateSelectedItems() {
+            // Cập nhật nội dung thẻ <span> với màu sắc và kích thước đã chọn
+            var selectedItems = "Color: " + (selectedColor ? selectedColor : "Chưa chọn");
+            selectedItems += " - Size: " + (selectedSize ? selectedSize : "Chưa chọn");
+            $("#selectedItems").text(selectedItems);
         }
     });
-}
-   init();
 </script>
+
+<%--<script>--%>
+<%--    var idkh = 1;--%>
+<%--    var dsCheckbox = [];--%>
+
+<%--    $("#allchecked").click(function (){--%>
+<%--        var isChecked = $(this).is(":checked");--%>
+<%--        if (isChecked){--%>
+<%--            $("input[name='idghct']").prop('checked',true)--%>
+<%--        }else{--%>
+<%--            $("input[name='idghct']").prop('checked',false)--%>
+<%--        }--%>
+<%--        loadDataCheckbox();--%>
+
+<%--    })--%>
+<%--   async function ghct(){--%>
+<%--      await  $.ajax({--%>
+<%--            url: '/api/user/ghct/dsspttchiatheosp/'+idkh,--%>
+<%--            method: 'GET',--%>
+<%--            success: function(req) {--%>
+<%--                var data = req.data;--%>
+<%--                var tbody =$("#cart");--%>
+<%--                tbody.empty();--%>
+<%--                data.forEach(function (item){--%>
+<%--                    item.forEach(function (sp){--%>
+<%--                        var html =--%>
+<%--                            `--%>
+<%--                                        <div class="row mt-2" style="border-bottom: 1px solid #dedede">--%>
+<%--                <div class="col-5">--%>
+<%--                    <div class="form-check align-items-center justify-content-between mb-3 datacart">--%>
+<%--                        <input class="form-check-input" type="checkbox" name="idghct" value="\${sp.idGhct}">--%>
+<%--                        <label class="form-check-label">--%>
+<%--                            <div class="mb-3" style="max-width: 540px;">--%>
+<%--                                <div class="row g-0">--%>
+<%--                                    <div class="col-lg-3">--%>
+<%--                                        <img src="/template/web/img/anh2.png" class="img-fluid rounded-start" alt="...">--%>
+<%--                                    </div>--%>
+<%--                                    <div class="col-lg-9">--%>
+<%--                                        <div class="card-body">--%>
+<%--                                            <h5 class="card-title">\${sp.tenSanPham}</h5>--%>
+<%--                                            <span>\${sp.tenBienThe}</span>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </label>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <div class="col-2">--%>
+<%--                    <span>\${sp.giaTien}₫</span>--%>
+<%--                </div>--%>
+<%--                <div class="col-2">--%>
+<%--                    <span>--%>
+<%--                        <div class="input-group quantity" style="width: 100px;">--%>
+<%--                                    <div class="input-group-btn">--%>
+<%--                                        <button class="btn btn-sm btn-primary btn-minus" onclick="thayDoiSoLuong(\${sp.idGhct},-1)">--%>
+<%--                                            <i class="fa fa-minus"></i>--%>
+<%--                                        </button>--%>
+<%--                                    </div>--%>
+<%--                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="\${sp.soLuong}" id="soluong-\${sp.idGhct}">--%>
+<%--                                    <div class="input-group-btn">--%>
+<%--                                        <button class="btn btn-sm btn-primary btn-plus" onclick="thayDoiSoLuong(\${sp.idGhct},1)">--%>
+<%--                                            <i class="fa fa-plus"></i>--%>
+<%--                                        </button>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                    </span>--%>
+<%--                </div>--%>
+<%--                <div class="col-2">--%>
+<%--                    <span id="tongtien-\${sp.idGhct}">\${sp.tongTien}</span>--%>
+<%--                </div>--%>
+<%--                <div class="col-1">--%>
+<%--                    <a>Xóa</a>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+
+<%--                            `;--%>
+<%--                        tbody.append(html);--%>
+<%--                    })--%>
+<%--                })--%>
+<%--                setCheckBox();--%>
+<%--            },--%>
+<%--            error: function(xhr, status, error) {--%>
+<%--                console.log('Có lỗi xảy ra: ' + error);--%>
+<%--            }--%>
+<%--        });--%>
+<%--    }--%>
+
+<%--        function tongTien(){--%>
+<%--            $.ajax({--%>
+<%--                url: '/api/user/ghct/subtotal/'+idkh,--%>
+<%--                method: 'GET',--%>
+<%--                success: function(req) {--%>
+<%--                    var data = req.data;--%>
+<%--                    $("#thanhtien").html(data+"₫");--%>
+<%--                    $("#tongthanhtoan").html(data+"₫");--%>
+
+<%--                },--%>
+<%--                error: function(xhr, status, error) {--%>
+<%--                    console.log('Có lỗi xảy ra: ' + error);--%>
+<%--                }--%>
+<%--            });--%>
+
+<%--        }--%>
+
+<%--   function thayDoiSoLuong(idghct,sl){--%>
+<%--            $.ajax({--%>
+<%--                url: '/api/user/ghct/thaydoisoluong',--%>
+<%--                method: 'POST',--%>
+<%--                contentType: 'application/json',--%>
+<%--                data: JSON.stringify({--%>
+<%--                    idGhct:idghct,--%>
+<%--                    soLuong:sl--%>
+<%--                }),--%>
+<%--                success: async function (req) {--%>
+<%--            //        await ghct();--%>
+<%--                    var data = req.data;--%>
+<%--                    $("#soluong-"+data.idGhct).val(data.soLuong);--%>
+<%--                    $("#tongtien-"+data.idGhct).html(data.tongTien);--%>
+<%--                    tongTienTheoGhct(dsCheckbox);--%>
+<%--                },--%>
+<%--                error: function(xhr, status, error) {--%>
+<%--                    console.log('Có lỗi xảy ra: ' + error);--%>
+<%--                }--%>
+<%--            });--%>
+<%--        }--%>
+<%--     function muahang() {--%>
+<%--         var listsp = getValByCheckbox();--%>
+<%--         var listspAsNumbers = listsp.map(str => parseInt(str, 10));--%>
+<%--         if (listsp.length == 0) {--%>
+<%--             showError("Bạn chưa chọn sản phẩm để mua")--%>
+<%--         }--%>
+<%--         var data = JSON.stringify({--%>
+<%--             dsghct: listspAsNumbers,--%>
+<%--         });--%>
+<%--          $.ajax({--%>
+<%--             url: '/api/user/dathang/' + idkh,--%>
+<%--             method: 'POST',--%>
+<%--             contentType: 'application/json',--%>
+<%--             data: data,--%>
+<%--             success: function (req) {--%>
+<%--                 window.location.href = "/checkout"--%>
+<%--             },--%>
+<%--             error: function (xhr, status, error) {--%>
+<%--                 showError("Có lỗi xảy ra");--%>
+<%--             }--%>
+<%--         });--%>
+<%--    }--%>
+<%--  async function  init(){--%>
+<%--       await ghct();--%>
+<%--       //tongTien()--%>
+<%--   }--%>
+<%--   // Đặt sự kiện delegating cho phần tử body để bắt sự kiện click của checkbox--%>
+
+<%--   function setCheckBox(){--%>
+<%--       $('input[name="idghct"]').click(function() {--%>
+<%--           loadDataCheckbox();--%>
+<%--       });--%>
+<%--   }--%>
+<%--   function loadDataCheckbox(){--%>
+<%--       var listCheckbox = getValByCheckbox();--%>
+
+<%--       dsCheckbox = listCheckbox;--%>
+<%--       tongTienTheoGhct(dsCheckbox)--%>
+<%--   }--%>
+<%--   function getValByCheckbox(){--%>
+<%--        return $("input[name='idghct']:checked").map(function () {--%>
+<%--            return this.value;--%>
+<%--        }).get();--%>
+<%--   }--%>
+<%--function tongTienTheoGhct(listCheckbox){--%>
+<%--    if (listCheckbox.length==0){--%>
+<%--        $("#thanhtien").html(0+"₫");--%>
+<%--        $("#tongthanhtoan").html(0+"₫");--%>
+<%--        $("#totalproduct").html(0);--%>
+<%--        return;--%>
+<%--    }--%>
+<%--       var data = JSON.stringify({--%>
+<%--           collection:listCheckbox--%>
+<%--       });--%>
+<%--    $.ajax({--%>
+<%--        url: '/api/user/ghct/subtotaltheoghct/'+idkh,--%>
+<%--        method: 'POST',--%>
+<%--        contentType: 'application/json',--%>
+<%--        data:data ,--%>
+<%--        success: function (req) {--%>
+<%--            var data = req.data;--%>
+<%--            $("#thanhtien").html(data+"₫");--%>
+<%--            $("#tongthanhtoan").html(data+"₫");--%>
+<%--            $("#totalproduct").html(listCheckbox.length);--%>
+<%--        },--%>
+<%--        error: function(xhr, status, error) {--%>
+<%--            console.log('Có lỗi xảy ra: ' + error);--%>
+<%--        }--%>
+<%--    });--%>
+<%--}--%>
+<%--   init();--%>
+<%--</script>--%>

@@ -130,3 +130,53 @@ input:hover {
         fill: var(--fill);
     }
 }
+
+
+
+/*cart*/
+.color-selector {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.color-buttons {
+    display: flex;
+}
+
+.color-button {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #fff;
+    margin-right: 10px;
+    transition: border-color 0.3s; /* Thêm hiệu ứng transition cho border-color */
+}
+
+.color-button:hover {
+    border-color: red;
+}
+
+.color-button.active {
+    border-color: red;
+}
+
+.size-button {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: #fff;
+    margin-right: 10px;
+    transition: border-color 0.3s; /* Thêm hiệu ứng transition cho border-color */
+}
+.size-button:hover {
+    border-color: red;
+}
+
+.size-button.active {
+    border-color: red;
+}

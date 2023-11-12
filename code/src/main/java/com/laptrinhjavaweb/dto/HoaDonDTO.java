@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Setter
 @Getter
@@ -15,9 +16,9 @@ public class HoaDonDTO {
 
     private String maHoaDon;
 
-    private NhanVien nhanVien;
+    private NhanVienDTO nhanVienDTO;
 
-    private KhachHang khachHang;
+    private KhachHangDTO khachHangDTO;
 
     private Date ngayDat;
 
@@ -26,5 +27,9 @@ public class HoaDonDTO {
     private Integer PhuongThucThanhToan;
 
     private Integer trangThai;
+
+    private List<HoaDonChiTietDTO> hoaDonChiTietDTO;
+
+    private Integer tongSoLuong;
 
 }

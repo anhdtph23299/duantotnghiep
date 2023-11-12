@@ -2,6 +2,7 @@ package com.laptrinhjavaweb.service.serviceimpl;
 
 import com.laptrinhjavaweb.converter.HoaDonConverter;
 import com.laptrinhjavaweb.dto.GiaTriThuocTinhDTO;
+import com.laptrinhjavaweb.dto.HoaDonChiTietDTO;
 import com.laptrinhjavaweb.dto.HoaDonDTO;
 import com.laptrinhjavaweb.dto.ThuocTinhDTO;
 import com.laptrinhjavaweb.entity.BienThe;
@@ -115,6 +116,11 @@ public class HoaDonServiceImpl implements HoaDonService {
                 ).collect(Collectors.toList());
         return listHDDTO;
     }
+
+//    @Override
+//    public HoaDonDTO detailHD(String maHoaDon) {
+//        HoaDonChiTietDTO hoaDonChiTietDTO =
+//    }
 
     @Override
     public String getCurrentDateTime() {
